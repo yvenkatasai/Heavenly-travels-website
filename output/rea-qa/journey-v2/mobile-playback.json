@@ -1,0 +1,37 @@
+{
+  "browser": {
+    "mode": "launch",
+    "executable_path": "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe"
+  },
+  "start_url": {
+    "url": "http://127.0.0.1:4188/playback-qa.html"
+  },
+  "environment": {
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "timezone": "Asia/Calcutta",
+    "reduced_motion": "no-preference"
+  },
+  "actions": [
+    {
+      "step_id": "playback-sample-ready",
+      "action": "wait_for",
+      "locator": {
+        "kind": "css",
+        "selector": "#results[data-state]"
+      },
+      "state": "visible",
+      "timeout_ms": 20000
+    }
+  ],
+  "capture": {
+    "at_end": [
+      "dom"
+    ],
+    "events": [
+      "page-errors"
+    ]
+  }
+}

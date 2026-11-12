@@ -1,0 +1,392 @@
+[
+  {
+    "name": "Five tours",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Four vehicles",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Fourteen temple stops",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Family estimate \u20b95,995",
+    "pass": true,
+    "detail": "\u20b95,995"
+  },
+  {
+    "name": "Traveller estimate \u20b98,995",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Removing stop subtracts \u20b9249",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Reset restores package",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Vehicle tab semantics",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Keyboard tabs",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Empty custom route blocked",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Flexible date disables input",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Quote drawer opens",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Traveller upper bound",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Traveller lower bound",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "WhatsApp correct destination",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Quote contains real newlines",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Quote retains custom temple",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Dialog closes",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "FAQ expands",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "FAQ collapses",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Film opens on demand",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Film pauses when closed",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "No horizontal document overflow at 320",
+    "pass": true,
+    "detail": {
+      "scroll": 320,
+      "viewport": 320
+    }
+  },
+  {
+    "name": "Enquiry fits width 320",
+    "pass": true,
+    "detail": {
+      "scroll": 320,
+      "viewport": 320
+    }
+  },
+  {
+    "name": "No horizontal document overflow at 390",
+    "pass": true,
+    "detail": {
+      "scroll": 390,
+      "viewport": 390
+    }
+  },
+  {
+    "name": "Enquiry fits width 390",
+    "pass": true,
+    "detail": {
+      "scroll": 390,
+      "viewport": 390
+    }
+  },
+  {
+    "name": "No horizontal document overflow at 768",
+    "pass": true,
+    "detail": {
+      "scroll": 768,
+      "viewport": 768
+    }
+  },
+  {
+    "name": "Enquiry fits width 768",
+    "pass": true,
+    "detail": {
+      "scroll": 768,
+      "viewport": 768
+    }
+  },
+  {
+    "name": "No horizontal document overflow at 1024",
+    "pass": true,
+    "detail": {
+      "scroll": 1024,
+      "viewport": 1024
+    }
+  },
+  {
+    "name": "Enquiry fits width 1024",
+    "pass": true,
+    "detail": {
+      "scroll": 1024,
+      "viewport": 1024
+    }
+  },
+  {
+    "name": "No horizontal document overflow at 1440",
+    "pass": true,
+    "detail": {
+      "scroll": 1440,
+      "viewport": 1440
+    }
+  },
+  {
+    "name": "Enquiry fits width 1440",
+    "pass": true,
+    "detail": {
+      "scroll": 1440,
+      "viewport": 1440
+    }
+  },
+  {
+    "name": "Temple gateway follows hero",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Packages follow gateway",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Seven named temple destinations",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Five exact packages",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "All package inclusions visible in markup",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Traveller needs table has six groups",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Full services opens",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "All seven service categories",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Official availability qualification retained",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Group types and capacity retained",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Travel reach and fleet present",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Group enquiry transitions from services",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Enquiry remains scroll locked after dialog transition",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Group minimum is three",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Group minus respects minimum",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Invalid group count blocked",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Group maximum is 200",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Group request retained in WhatsApp draft",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Flight enquiry uses departure-city fields",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Flight quote keeps service and city details",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Flight quote omits unrelated temple estimate",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Other services keep individual travel available",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Package action sets planner route",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "No overflow with package cards 320",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Services dialog fits 320",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Sections remain in order 320",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "No overflow with package cards 390",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Services dialog fits 390",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Sections remain in order 390",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "No overflow with package cards 768",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Services dialog fits 768",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Sections remain in order 768",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "No overflow with package cards 1440",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Services dialog fits 1440",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Sections remain in order 1440",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Package motion follows preference",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Canvas fallback remains readable",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Local fonts loaded",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Motion preference honored",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "done": true,
+    "passed": 71,
+    "failed": 0
+  }
+]

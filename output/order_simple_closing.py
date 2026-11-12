@@ -1,0 +1,3 @@
+from pathlib import Path
+R=Path(__file__).resolve().parents[1];p=R/'src/v3/page.html';s=p.read_text(encoding='utf-8');start=s.index('<details class="custom-plan-fold"');end=s.index('</section></details>',start)+len('</section></details>');custom=s[start:end];s=s[:start]+s[end:];start=s.index('<section id="our-approach"');s=s[:start]+custom+'\n'+s[start:];p.write_text(s,encoding='utf-8')
+p=R/'src/v3/app.js';s=p.read_text(encoding='utf-8').replace('Hello Heavenly Tours & Travels, I would like a trip quote.','Hello Heavenly Tours & Travels, I need help planning a trip.');p.write_text(s,encoding='utf-8')

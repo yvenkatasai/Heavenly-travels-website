@@ -1,0 +1,23 @@
+{
+  "method": "Subpixel affine camera motion from original AI-created still; no frame-sequence handoff",
+  "resolution": [
+    1920,
+    1080
+  ],
+  "fps": 60,
+  "seconds": 20,
+  "frames": 1200,
+  "zoom_range": [
+    1.012,
+    1.032
+  ],
+  "desktop": "mountain-dawn-smooth-v2.mp4",
+  "mobile": "mountain-dawn-smooth-mobile-v2.mp4",
+  "loop": "Position and velocity continuous at loop boundary",
+  "mobile_resolution": [
+    1920,
+    1080
+  ],
+  "mobile_fps": 30,
+  "mobile_max_bitrate": "3 Mbps"
+}

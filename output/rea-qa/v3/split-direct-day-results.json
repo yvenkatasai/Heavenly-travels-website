@@ -1,0 +1,744 @@
+{
+  "checks": [
+    {
+      "name": "reduce uses supplied Split Nav",
+      "pass": true
+    },
+    {
+      "name": "reduce old static navigation removed",
+      "pass": true
+    },
+    {
+      "name": "reduce detached day details removed",
+      "pass": true
+    },
+    {
+      "name": "reduce five explicit card buttons",
+      "pass": true
+    },
+    {
+      "name": "reduce page fits 320",
+      "pass": true
+    },
+    {
+      "name": "reduce pilgrimage direct navigation 320",
+      "pass": true,
+      "detail": 93.921875
+    },
+    {
+      "name": "reduce pilgrimage selected state 320",
+      "pass": true
+    },
+    {
+      "name": "reduce journeys direct navigation 320",
+      "pass": true,
+      "detail": 107.078125
+    },
+    {
+      "name": "reduce journeys selected state 320",
+      "pass": true
+    },
+    {
+      "name": "reduce day-packages direct navigation 320",
+      "pass": true,
+      "detail": 106.8125
+    },
+    {
+      "name": "reduce day-packages selected state 320",
+      "pass": true
+    },
+    {
+      "name": "reduce page fits 390",
+      "pass": true
+    },
+    {
+      "name": "reduce pilgrimage direct navigation 390",
+      "pass": true,
+      "detail": 93.921875
+    },
+    {
+      "name": "reduce pilgrimage selected state 390",
+      "pass": true
+    },
+    {
+      "name": "reduce journeys direct navigation 390",
+      "pass": true,
+      "detail": 107.28125
+    },
+    {
+      "name": "reduce journeys selected state 390",
+      "pass": true
+    },
+    {
+      "name": "reduce day-packages direct navigation 390",
+      "pass": true,
+      "detail": 107.046875
+    },
+    {
+      "name": "reduce day-packages selected state 390",
+      "pass": true
+    },
+    {
+      "name": "reduce page fits 768",
+      "pass": true
+    },
+    {
+      "name": "reduce pilgrimage direct navigation 768",
+      "pass": true,
+      "detail": 110.140625
+    },
+    {
+      "name": "reduce pilgrimage selected state 768",
+      "pass": true
+    },
+    {
+      "name": "reduce journeys direct navigation 768",
+      "pass": true,
+      "detail": 122.921875
+    },
+    {
+      "name": "reduce journeys selected state 768",
+      "pass": true
+    },
+    {
+      "name": "reduce day-packages direct navigation 768",
+      "pass": true,
+      "detail": 123.484375
+    },
+    {
+      "name": "reduce day-packages selected state 768",
+      "pass": true
+    },
+    {
+      "name": "reduce page fits 1024",
+      "pass": true
+    },
+    {
+      "name": "reduce pilgrimage direct navigation 1024",
+      "pass": true,
+      "detail": 110
+    },
+    {
+      "name": "reduce pilgrimage selected state 1024",
+      "pass": true
+    },
+    {
+      "name": "reduce journeys direct navigation 1024",
+      "pass": true,
+      "detail": 122.78125
+    },
+    {
+      "name": "reduce journeys selected state 1024",
+      "pass": true
+    },
+    {
+      "name": "reduce day-packages direct navigation 1024",
+      "pass": true,
+      "detail": 122.8125
+    },
+    {
+      "name": "reduce day-packages selected state 1024",
+      "pass": true
+    },
+    {
+      "name": "reduce page fits 1440",
+      "pass": true
+    },
+    {
+      "name": "reduce pilgrimage direct navigation 1440",
+      "pass": true,
+      "detail": 110
+    },
+    {
+      "name": "reduce pilgrimage selected state 1440",
+      "pass": true
+    },
+    {
+      "name": "reduce journeys direct navigation 1440",
+      "pass": true,
+      "detail": 122.78125
+    },
+    {
+      "name": "reduce journeys selected state 1440",
+      "pass": true
+    },
+    {
+      "name": "reduce day-packages direct navigation 1440",
+      "pass": true,
+      "detail": 122.9375
+    },
+    {
+      "name": "reduce day-packages selected state 1440",
+      "pass": true
+    },
+    {
+      "name": "reduce keyboard moves between package types",
+      "pass": true
+    },
+    {
+      "name": "reduce keyboard selects category",
+      "pass": true
+    },
+    {
+      "name": "reduce card 1 opens exact details",
+      "pass": true
+    },
+    {
+      "name": "reduce card 1 selection carries correct ID",
+      "pass": true
+    },
+    {
+      "name": "reduce one day ticket condition",
+      "pass": true
+    },
+    {
+      "name": "reduce modal closes and returns focus 1",
+      "pass": true
+    },
+    {
+      "name": "reduce card 2 opens exact details",
+      "pass": true
+    },
+    {
+      "name": "reduce card 2 selection carries correct ID",
+      "pass": true
+    },
+    {
+      "name": "reduce two days all local temples",
+      "pass": true
+    },
+    {
+      "name": "reduce modal closes and returns focus 2",
+      "pass": true
+    },
+    {
+      "name": "reduce card 3 opens exact details",
+      "pass": true
+    },
+    {
+      "name": "reduce card 3 selection carries correct ID",
+      "pass": true
+    },
+    {
+      "name": "reduce three-day plan",
+      "pass": true
+    },
+    {
+      "name": "reduce modal closes and returns focus 3",
+      "pass": true
+    },
+    {
+      "name": "reduce card 4 opens exact details",
+      "pass": true
+    },
+    {
+      "name": "reduce card 4 selection carries correct ID",
+      "pass": true
+    },
+    {
+      "name": "reduce four-day night stay",
+      "pass": true
+    },
+    {
+      "name": "reduce modal closes and returns focus 4",
+      "pass": true
+    },
+    {
+      "name": "reduce card 5 opens exact details",
+      "pass": true
+    },
+    {
+      "name": "reduce card 5 selection carries correct ID",
+      "pass": true
+    },
+    {
+      "name": "reduce complete five-day plan",
+      "pass": true
+    },
+    {
+      "name": "reduce itinerary dialog fits 320",
+      "pass": true,
+      "detail": {
+        "x": 12,
+        "y": 28.40625,
+        "width": 296,
+        "height": 511.1875
+      }
+    },
+    {
+      "name": "reduce select action stays visible 320",
+      "pass": true,
+      "detail": {
+        "x": 33,
+        "y": 440.59375,
+        "width": 254,
+        "height": 45
+      }
+    },
+    {
+      "name": "reduce itinerary dialog fits 390",
+      "pass": true,
+      "detail": {
+        "x": 12,
+        "y": 63.296875,
+        "width": 366,
+        "height": 717.390625
+      }
+    },
+    {
+      "name": "reduce select action stays visible 390",
+      "pass": true,
+      "detail": {
+        "x": 33,
+        "y": 678.6875,
+        "width": 324,
+        "height": 45
+      }
+    },
+    {
+      "name": "reduce itinerary dialog fits 768",
+      "pass": true,
+      "detail": {
+        "x": 74,
+        "y": 122.65625,
+        "width": 620,
+        "height": 778.6875
+      }
+    },
+    {
+      "name": "reduce select action stays visible 768",
+      "pass": true,
+      "detail": {
+        "x": 105,
+        "y": 793.15625,
+        "width": 558,
+        "height": 45.1875
+      }
+    },
+    {
+      "name": "reduce itinerary dialog fits 1024",
+      "pass": true,
+      "detail": {
+        "x": 202,
+        "y": 30,
+        "width": 620,
+        "height": 540
+      }
+    },
+    {
+      "name": "reduce select action stays visible 1024",
+      "pass": true,
+      "detail": {
+        "x": 233,
+        "y": 468.8125,
+        "width": 558,
+        "height": 45.1875
+      }
+    },
+    {
+      "name": "reduce itinerary dialog fits 1440",
+      "pass": true,
+      "detail": {
+        "x": 410,
+        "y": 67.5,
+        "width": 620,
+        "height": 765
+      }
+    },
+    {
+      "name": "reduce select action stays visible 1440",
+      "pass": true,
+      "detail": {
+        "x": 441,
+        "y": 724.3125,
+        "width": 558,
+        "height": 45.1875
+      }
+    },
+    {
+      "name": "reduce modal closes and returns focus 5",
+      "pass": true
+    },
+    {
+      "name": "reduce selected day package goes directly to fleet",
+      "pass": true
+    },
+    {
+      "name": "reduce WhatsApp preserves selected package vehicle and days",
+      "pass": true
+    },
+    {
+      "name": "no-preference uses supplied Split Nav",
+      "pass": true
+    },
+    {
+      "name": "no-preference old static navigation removed",
+      "pass": true
+    },
+    {
+      "name": "no-preference detached day details removed",
+      "pass": true
+    },
+    {
+      "name": "no-preference five explicit card buttons",
+      "pass": true
+    },
+    {
+      "name": "no-preference page fits 320",
+      "pass": true
+    },
+    {
+      "name": "no-preference pilgrimage direct navigation 320",
+      "pass": true,
+      "detail": 93.921875
+    },
+    {
+      "name": "no-preference pilgrimage selected state 320",
+      "pass": true
+    },
+    {
+      "name": "no-preference journeys direct navigation 320",
+      "pass": true,
+      "detail": 107.078125
+    },
+    {
+      "name": "no-preference journeys selected state 320",
+      "pass": true
+    },
+    {
+      "name": "no-preference day-packages direct navigation 320",
+      "pass": true,
+      "detail": 106.8125
+    },
+    {
+      "name": "no-preference day-packages selected state 320",
+      "pass": true
+    },
+    {
+      "name": "no-preference page fits 390",
+      "pass": true
+    },
+    {
+      "name": "no-preference pilgrimage direct navigation 390",
+      "pass": true,
+      "detail": 93.921875
+    },
+    {
+      "name": "no-preference pilgrimage selected state 390",
+      "pass": true
+    },
+    {
+      "name": "no-preference journeys direct navigation 390",
+      "pass": true,
+      "detail": 107.28125
+    },
+    {
+      "name": "no-preference journeys selected state 390",
+      "pass": true
+    },
+    {
+      "name": "no-preference day-packages direct navigation 390",
+      "pass": true,
+      "detail": 107.046875
+    },
+    {
+      "name": "no-preference day-packages selected state 390",
+      "pass": true
+    },
+    {
+      "name": "no-preference page fits 768",
+      "pass": true
+    },
+    {
+      "name": "no-preference pilgrimage direct navigation 768",
+      "pass": true,
+      "detail": 110.140625
+    },
+    {
+      "name": "no-preference pilgrimage selected state 768",
+      "pass": true
+    },
+    {
+      "name": "no-preference journeys direct navigation 768",
+      "pass": true,
+      "detail": 122.921875
+    },
+    {
+      "name": "no-preference journeys selected state 768",
+      "pass": true
+    },
+    {
+      "name": "no-preference day-packages direct navigation 768",
+      "pass": true,
+      "detail": 123.484375
+    },
+    {
+      "name": "no-preference day-packages selected state 768",
+      "pass": true
+    },
+    {
+      "name": "no-preference page fits 1024",
+      "pass": true
+    },
+    {
+      "name": "no-preference pilgrimage direct navigation 1024",
+      "pass": true,
+      "detail": 118
+    },
+    {
+      "name": "no-preference pilgrimage selected state 1024",
+      "pass": true
+    },
+    {
+      "name": "no-preference journeys direct navigation 1024",
+      "pass": true,
+      "detail": 122.78125
+    },
+    {
+      "name": "no-preference journeys selected state 1024",
+      "pass": true
+    },
+    {
+      "name": "no-preference day-packages direct navigation 1024",
+      "pass": true,
+      "detail": 122.8125
+    },
+    {
+      "name": "no-preference day-packages selected state 1024",
+      "pass": true
+    },
+    {
+      "name": "no-preference page fits 1440",
+      "pass": true
+    },
+    {
+      "name": "no-preference pilgrimage direct navigation 1440",
+      "pass": true,
+      "detail": 114
+    },
+    {
+      "name": "no-preference pilgrimage selected state 1440",
+      "pass": true
+    },
+    {
+      "name": "no-preference journeys direct navigation 1440",
+      "pass": true,
+      "detail": 122.78125
+    },
+    {
+      "name": "no-preference journeys selected state 1440",
+      "pass": true
+    },
+    {
+      "name": "no-preference day-packages direct navigation 1440",
+      "pass": true,
+      "detail": 122.9375
+    },
+    {
+      "name": "no-preference day-packages selected state 1440",
+      "pass": true
+    },
+    {
+      "name": "no-preference keyboard moves between package types",
+      "pass": true
+    },
+    {
+      "name": "no-preference keyboard selects category",
+      "pass": true
+    },
+    {
+      "name": "no-preference card 1 opens exact details",
+      "pass": true
+    },
+    {
+      "name": "no-preference card 1 selection carries correct ID",
+      "pass": true
+    },
+    {
+      "name": "no-preference one day ticket condition",
+      "pass": true
+    },
+    {
+      "name": "no-preference modal closes and returns focus 1",
+      "pass": true
+    },
+    {
+      "name": "no-preference card 2 opens exact details",
+      "pass": true
+    },
+    {
+      "name": "no-preference card 2 selection carries correct ID",
+      "pass": true
+    },
+    {
+      "name": "no-preference two days all local temples",
+      "pass": true
+    },
+    {
+      "name": "no-preference modal closes and returns focus 2",
+      "pass": true
+    },
+    {
+      "name": "no-preference card 3 opens exact details",
+      "pass": true
+    },
+    {
+      "name": "no-preference card 3 selection carries correct ID",
+      "pass": true
+    },
+    {
+      "name": "no-preference three-day plan",
+      "pass": true
+    },
+    {
+      "name": "no-preference modal closes and returns focus 3",
+      "pass": true
+    },
+    {
+      "name": "no-preference card 4 opens exact details",
+      "pass": true
+    },
+    {
+      "name": "no-preference card 4 selection carries correct ID",
+      "pass": true
+    },
+    {
+      "name": "no-preference four-day night stay",
+      "pass": true
+    },
+    {
+      "name": "no-preference modal closes and returns focus 4",
+      "pass": true
+    },
+    {
+      "name": "no-preference card 5 opens exact details",
+      "pass": true
+    },
+    {
+      "name": "no-preference card 5 selection carries correct ID",
+      "pass": true
+    },
+    {
+      "name": "no-preference complete five-day plan",
+      "pass": true
+    },
+    {
+      "name": "no-preference itinerary dialog fits 320",
+      "pass": true,
+      "detail": {
+        "x": 12,
+        "y": 28.40625,
+        "width": 296,
+        "height": 511.1875
+      }
+    },
+    {
+      "name": "no-preference select action stays visible 320",
+      "pass": true,
+      "detail": {
+        "x": 33,
+        "y": 440.59375,
+        "width": 254,
+        "height": 45
+      }
+    },
+    {
+      "name": "no-preference itinerary dialog fits 390",
+      "pass": true,
+      "detail": {
+        "x": 12,
+        "y": 63.296875,
+        "width": 366,
+        "height": 717.390625
+      }
+    },
+    {
+      "name": "no-preference select action stays visible 390",
+      "pass": true,
+      "detail": {
+        "x": 33,
+        "y": 678.6875,
+        "width": 324,
+        "height": 45
+      }
+    },
+    {
+      "name": "no-preference itinerary dialog fits 768",
+      "pass": true,
+      "detail": {
+        "x": 74,
+        "y": 122.65625,
+        "width": 620,
+        "height": 778.6875
+      }
+    },
+    {
+      "name": "no-preference select action stays visible 768",
+      "pass": true,
+      "detail": {
+        "x": 105,
+        "y": 793.15625,
+        "width": 558,
+        "height": 45.1875
+      }
+    },
+    {
+      "name": "no-preference itinerary dialog fits 1024",
+      "pass": true,
+      "detail": {
+        "x": 202,
+        "y": 30,
+        "width": 620,
+        "height": 540
+      }
+    },
+    {
+      "name": "no-preference select action stays visible 1024",
+      "pass": true,
+      "detail": {
+        "x": 233,
+        "y": 468.8125,
+        "width": 558,
+        "height": 45.1875
+      }
+    },
+    {
+      "name": "no-preference itinerary dialog fits 1440",
+      "pass": true,
+      "detail": {
+        "x": 410,
+        "y": 67.5,
+        "width": 620,
+        "height": 765
+      }
+    },
+    {
+      "name": "no-preference select action stays visible 1440",
+      "pass": true,
+      "detail": {
+        "x": 441,
+        "y": 724.3125,
+        "width": 558,
+        "height": 45.1875
+      }
+    },
+    {
+      "name": "no-preference modal closes and returns focus 5",
+      "pass": true
+    },
+    {
+      "name": "no-preference selected day package goes directly to fleet",
+      "pass": true
+    },
+    {
+      "name": "no-preference WhatsApp preserves selected package vehicle and days",
+      "pass": true
+    },
+    {
+      "name": "No runtime errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": []
+}

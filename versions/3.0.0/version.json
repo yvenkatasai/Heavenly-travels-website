@@ -1,0 +1,8 @@
+{
+  "version": "3.0.0",
+  "description": "REA reconstruction of Incredibles adapted to Heavenly temple travel, with plain copy and mobile trip shortcuts.",
+  "build": "python build.py",
+  "static_directory": "dist",
+  "source": "src/v3",
+  "preserved_previous_as": "2.0.0"
+}

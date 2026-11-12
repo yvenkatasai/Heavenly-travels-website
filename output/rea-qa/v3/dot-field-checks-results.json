@@ -1,0 +1,238 @@
+[
+  {
+    "name": "Dot canvas initializes",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Business heading preserved",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Hero uses one 2D canvas",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Mobile dot budget",
+    "pass": true,
+    "detail": {
+      "frames": 9,
+      "physicsSteps": 0,
+      "lastFrameMs": 0.7999999988824129,
+      "maxFrameMs": 4.599999999627471,
+      "averageFrameMs": 3.417109158393638,
+      "visible": true,
+      "animated": true,
+      "dots": 989,
+      "spacing": 18,
+      "dpr": 1,
+      "shocks": 0,
+      "awake": false,
+      "offsetMax": 0,
+      "finite": true,
+      "motionAllowed": true
+    }
+  },
+  {
+    "name": "Mobile DPR capped",
+    "pass": true,
+    "detail": 1
+  },
+  {
+    "name": "Motion preference respected",
+    "pass": true,
+    "detail": {
+      "frames": 15,
+      "physicsSteps": 0,
+      "lastFrameMs": 1.199999999254942,
+      "maxFrameMs": 4.599999999627471,
+      "averageFrameMs": 2.8850688143634455,
+      "visible": true,
+      "animated": true,
+      "dots": 989,
+      "spacing": 18,
+      "dpr": 1,
+      "shocks": 0,
+      "awake": false,
+      "offsetMax": 0,
+      "finite": true,
+      "motionAllowed": true
+    }
+  },
+  {
+    "name": "Tap produces a wave",
+    "pass": true,
+    "detail": {
+      "frames": 20,
+      "physicsSteps": 15,
+      "lastFrameMs": 1.400000000372529,
+      "maxFrameMs": 5.900000000372529,
+      "averageFrameMs": 2.7799887206669323,
+      "visible": true,
+      "animated": true,
+      "dots": 989,
+      "spacing": 18,
+      "dpr": 1,
+      "shocks": 1,
+      "awake": true,
+      "offsetMax": 12.075162887573242,
+      "finite": true,
+      "motionAllowed": true
+    }
+  },
+  {
+    "name": "Touch scrolling not cancelled",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Controls do not produce shockwaves",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Shock queue bounded",
+    "pass": true,
+    "detail": 2
+  },
+  {
+    "name": "Physics stays finite",
+    "pass": true,
+    "detail": {
+      "frames": 57,
+      "physicsSteps": 109,
+      "lastFrameMs": 1.5,
+      "maxFrameMs": 5.900000000372529,
+      "averageFrameMs": 1.5984602171331304,
+      "visible": true,
+      "animated": true,
+      "dots": 989,
+      "spacing": 18,
+      "dpr": 1,
+      "shocks": 2,
+      "awake": true,
+      "offsetMax": 28.752037048339844,
+      "finite": true,
+      "motionAllowed": true
+    }
+  },
+  {
+    "name": "Frame work sampled",
+    "pass": true,
+    "detail": {
+      "averageMs": 1.5984602171331304,
+      "maxMs": 5.900000000372529,
+      "dots": 989
+    }
+  },
+  {
+    "name": "Pause motion stops frames",
+    "pass": true,
+    "detail": {
+      "frames": 57,
+      "physicsSteps": 109,
+      "lastFrameMs": 1.5,
+      "maxFrameMs": 5.900000000372529,
+      "averageFrameMs": 1.5984602171331304,
+      "visible": true,
+      "animated": false,
+      "dots": 989,
+      "spacing": 18,
+      "dpr": 1,
+      "shocks": 0,
+      "awake": false,
+      "offsetMax": 0,
+      "finite": true,
+      "motionAllowed": false
+    }
+  },
+  {
+    "name": "Offscreen field stops frames",
+    "pass": true,
+    "detail": {
+      "frames": 61,
+      "physicsSteps": 109,
+      "lastFrameMs": 0.8000000007450581,
+      "maxFrameMs": 5.900000000372529,
+      "averageFrameMs": 1.481938337256025,
+      "visible": false,
+      "animated": false,
+      "dots": 989,
+      "spacing": 18,
+      "dpr": 1,
+      "shocks": 0,
+      "awake": false,
+      "offsetMax": 0,
+      "finite": true,
+      "motionAllowed": true
+    }
+  },
+  {
+    "name": "Returning to hero resumes correctly",
+    "pass": true,
+    "detail": {
+      "frames": 65,
+      "physicsSteps": 109,
+      "lastFrameMs": 1.400000000372529,
+      "maxFrameMs": 5.900000000372529,
+      "averageFrameMs": 1.3807049127743407,
+      "visible": true,
+      "animated": true,
+      "dots": 989,
+      "spacing": 18,
+      "dpr": 1,
+      "shocks": 0,
+      "awake": false,
+      "offsetMax": 0,
+      "finite": true,
+      "motionAllowed": true
+    }
+  },
+  {
+    "name": "No overflow at 320",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Canvas fits hero at 320",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "No overflow at 390",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Canvas fits hero at 390",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "No overflow at 768",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Canvas fits hero at 768",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "No overflow at 1440",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Canvas fits hero at 1440",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "done": true,
+    "passed": 23,
+    "failed": 0
+  }
+]

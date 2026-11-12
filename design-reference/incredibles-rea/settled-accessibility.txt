@@ -1,0 +1,4 @@
+- document:
+  - heading "500" [level=1]
+  - heading "Internal Server Error" [level=2]
+  - paragraph: "Failed to execute 'add' on 'DOMTokenList': The token provided ('is-microsoft edge') contains HTML space characters, which are not valid in tokens."

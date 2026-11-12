@@ -1,0 +1,35 @@
+- document:
+  - banner:
+    - navigation:
+      - list:
+        - listitem:
+          - link "ICONS":
+            - /url: https://www.pasquashop.it/it/linea-icons
+        - listitem:
+          - link "PASQUA":
+            - /url: https://www.pasquashop.it/it/linea-pasqua
+        - listitem:
+          - link "FAMIGLIA PASQUA":
+            - /url: https://www.pasquashop.it/it/linea-famiglia-pasqua
+      - list:
+        - listitem:
+          - link "CONFEZIONI":
+            - /url: https://www.pasquashop.it/it/confezioni
+        - listitem:
+          - link "DIGITAL TASTING":
+            - /url: https://www.pasquashop.it/it/digital-tasting
+        - listitem:
+          - link "I NOSTRI VINI":
+            - /url: https://www.pasquashop.it/it/i-nostri-vini
+      - figure
+    - navigation:
+      - list
+  - main:
+    - heading "PASQUA PRESENTS" [level=2]
+    - button "P L E A S E W A I T START THE EXPERIENCE"
+  - heading [level=2]
+  - slider "Seek": "0"
+  - slider "Seek": "0"
+  - slider "Volume": "0"
+  - slider "Volume": "0"
+  - img

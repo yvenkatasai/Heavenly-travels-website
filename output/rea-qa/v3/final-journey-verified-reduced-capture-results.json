@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Hero highlights business",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Hero has packages and booking actions",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Signature immediately follows hero",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Seven destinations",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Five individual packages",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Five day-wise cards",
+    "pass": false,
+    "detail": ""
+  },
+  {
+    "name": "Journey completes without exceptions",
+    "pass": false,
+    "detail": "TypeError: Cannot read properties of null (reading 'getBoundingClientRect')\n    at http://127.0.0.1:4191/final-journey-qa.html:12:649"
+  },
+  {
+    "done": true,
+    "passed": 5,
+    "failed": 2
+  }
+]

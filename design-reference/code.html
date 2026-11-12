@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ABC Travels | Sacred Seven Hills Pilgrimages</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,600;0,700;1,600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body { margin: 0; padding: 0; scroll-behavior: smooth; }
+      ::-webkit-scrollbar { display: none; }
+    }
+    .carousel-perspective {
+      perspective: 1200px;
+    }
+    .hero-zoom-bg {
+      transform-origin: center center;
+      transition: transform 0.15s ease-out;
+      will-change: transform;
+    }
+    .modal-backdrop-blur {
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    /* Radiant Golden Shine & Shimmer for Active Navigation */
+    @keyframes goldShimmerSweep {
+      0% {
+        transform: translateX(-150%) skewX(-20deg);
+      }
+      50%, 100% {
+        transform: translateX(250%) skewX(-20deg);
+      }
+    }
+
+    @keyframes goldPulseGlow {
+      0%, 100% {
+        box-shadow: 0 0 14px 2px rgba(201, 151, 43, 0.45), 0 0 28px 4px rgba(245, 190, 79, 0.25);
+        border-color: rgba(201, 151, 43, 0.95);
+      }
+      50% {
+        box-shadow: 0 0 22px 5px rgba(201, 151, 43, 0.75), 0 0 38px 8px rgba(245, 190, 79, 0.45);
+        border-color: #f5be4f;
+      }
+    }
+
+    .nav-link-shine {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .nav-link-shine::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        115deg,
+        transparent 35%,
+        rgba(255, 255, 255, 0.7) 48%,
+        rgba(245, 190, 79, 0.8) 52%,
+        transparent 65%
+      );
+      opacity: 0;
+      pointer-events: none;
+      transform: translateX(-150%) skewX(-20deg);
+    }
+
+    .nav-link-shine.is-active {
+      background: linear-gradient(135deg, #5b0617 0%, #7a1f2b 100%);
+      color: #ffffff !important;
+      animation: goldPulseGlow 2.5s infinite ease-in-out;
+      border: 1.5px solid #f5be4f;
+      transform: translateY(-1px);
+    }
+
+    .nav-link-shine.is-active::before {
+      opacity: 1;
+      animation: goldShimmerSweep 3.2s infinite ease-in-out;
+    }
+
+    .nav-link-shine.is-active .nav-icon {
+      color: #f5be4f !important;
+      transform: scale(1.1);
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#5b0617",
+            "primary-container": "#7a1f2b",
+            "on-primary": "#ffffff",
+            "secondary": "#914d00",
+            "secondary-container": "#fc9430",
+            "surface": "#fff8f6",
+            "surface-container": "#feeae3",
+            "surface-container-low": "#fff1ec",
+            "surface-container-high": "#f8e4de",
+            "on-surface": "#241916",
+            "on-surface-variant": "#564242",
+            "outline": "#897172",
+            "tertiary": "#3b2800"
+          },
+          fontFamily: {
+            "headline-xl": ["Playfair Display", "serif"],
+            "headline-lg": ["Playfair Display", "serif"],
+            "headline-md": ["Playfair Display", "serif"],
+            "headline-sm": ["Playfair Display", "serif"],
+            "body-xl": ["Inter", "sans-serif"],
+            "body-lg": ["Inter", "sans-serif"],
+            "body-md": ["Inter", "sans-serif"],
+            "body-sm": ["Inter", "sans-serif"],
+            "label-lg": ["Inter", "sans-serif"],
+            "label-md": ["Inter", "sans-serif"],
+            "label-sm": ["Inter", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-[#FFF8EC] font-body-md text-on-surface antialiased selection:bg-secondary/20">
+<!-- TOP HEADER -->
+<header class="sticky top-0 z-50 bg-[#FFF8EC]/95 backdrop-blur-md border-b border-[#C9972B]/30 shadow-sm transition-all duration-300">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+<!-- Brand Name -->
+<a class="flex items-center gap-3 group" href="#">
+<div class="w-11 h-11 rounded-xl bg-primary-container text-white flex items-center justify-center shadow-md group-hover:scale-105 transition-transform border border-[#C9972B]/40">
+<span class="material-symbols-outlined text-2xl text-[#f5be4f]">temple_hindu</span>
+</div>
+<div>
+<span class="font-headline-md text-primary font-bold tracking-tight block leading-tight text-xl">ABC Travels</span>
+<span class="font-label-sm text-secondary font-medium tracking-wider text-[11px] block uppercase">Heavenly Tours &amp; Chauffeurs</span>
+</div>
+</a>
+<!-- Right Nav Buttons (Packages, Select Vehicles, Contact with Active Shine Effect) -->
+<nav class="flex items-center gap-2 sm:gap-3" id="main-nav">
+<a class="nav-link-shine px-3 sm:px-4 py-2 rounded-xl text-primary font-label-md font-semibold text-xs sm:text-sm border border-transparent hover:border-[#C9972B]/50 hover:bg-[#feeae3]/60 transition-all duration-200 flex items-center gap-1.5 cursor-pointer" data-target="packages-section" href="#packages-section" id="nav-btn-packages">
+<span class="material-symbols-outlined text-lg sm:text-xl text-[#914d00] nav-icon transition-transform">temple_hindu</span>
+<span>Packages</span>
+</a>
+<a class="nav-link-shine px-3 sm:px-4 py-2 rounded-xl text-primary font-label-md font-semibold text-xs sm:text-sm border border-transparent hover:border-[#C9972B]/50 hover:bg-[#feeae3]/60 transition-all duration-200 flex items-center gap-1.5 cursor-pointer" data-target="vehicles-section" href="#vehicles-section" id="nav-btn-vehicles">
+<span class="material-symbols-outlined text-lg sm:text-xl text-[#914d00] nav-icon transition-transform">airport_shuttle</span>
+<span>Select Vehicles</span>
+</a>
+<a class="nav-link-shine px-3 sm:px-4 py-2 rounded-xl text-primary font-label-md font-semibold text-xs sm:text-sm border border-transparent hover:border-[#C9972B]/50 hover:bg-[#feeae3]/60 transition-all duration-200 flex items-center gap-1.5 cursor-pointer" data-target="contact-section" href="#contact-section" id="nav-btn-contact">
+<span class="material-symbols-outlined text-lg sm:text-xl text-[#914d00] nav-icon transition-transform">headset_mic</span>
+<span>Contact</span>
+</a>
+</nav>
+</div>
+</header>
+<main class="w-full flex flex-col items-center overflow-hidden">
+<!-- 1. FULL-HEIGHT IMMERSIVE HERO WITH SCROLL-DRIVEN ZOOM EFFECT -->
+<section class="relative w-full h-[90vh] min-h-[620px] max-h-[850px] overflow-hidden flex items-center justify-center border-b-4 border-[#C9972B]" id="hero-section">
+<!-- Background Hill & Temple Panorama with Scroll Zoom -->
+<div class="absolute inset-0 w-full h-full overflow-hidden">
+<img alt="Sacred Seven Hills Tirumala" class="hero-zoom-bg w-full h-full object-cover scale-100" data-alt="Tirumala hills morning mist temple panorama" id="hero-zoom-image" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXALkIZc96to0CakqAq7YqOXiLpDpWpVs8MPT8Py0EEE2sLtDyiOydeJRuhphd2v_7Vv5b644ieAHHRghAHhWNN0eT84SXogIseue2DLFT02nqWq-qt9y07CwDDCIkwkVp6Y0QbrYqgsFkH5ZVDYIio5PxjUGhfStfThJsDcSH33DfkCAl8i72f77NVDQDlzGneIiHYgmcN2ovNVuLmOhcTuKNeGQUIdfgqLWXB2M"/>
+<!-- Deep Auspicious Gradient Overlay -->
+<div class="absolute inset-0 bg-gradient-to-t from-[#241916]/95 via-[#241916]/65 to-[#3b2800]/40"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-[#5b0617]/50 via-transparent to-[#3b2800]/50 mix-blend-multiply"></div>
+</div>
+<!-- Sacred Floating Particle/Temple Glow accents -->
+<div class="absolute top-12 left-1/2 -translate-x-1/2 w-96 h-96 bg-[#C9972B]/20 rounded-full blur-3xl pointer-events-none"></div>
+<!-- Hero Content -->
+<div class="relative z-10 max-w-5xl mx-auto px-6 text-center flex flex-col items-center">
+<!-- Auspicious Badge -->
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary-container/90 backdrop-blur-md text-[#2f1500] font-label-sm font-bold shadow-lg border border-[#f5be4f]/40 mb-5 animate-pulse">
+<span class="material-symbols-outlined text-base">verified</span>
+<span class="">ESTD. 2008 • VERIFIED TIRUMALA SACRED CHAUFFEURS &amp; DARSHAN DESK</span>
+</div>
+<h1 class="font-headline-xl text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white mb-4 leading-[1.15] drop-shadow-md">
+          ABC Travels • <span class="text-[#f5be4f] italic">Heavenly Pilgrimages</span>
+</h1>
+<p class="font-body-lg text-surface-container-low max-w-3xl text-lg sm:text-xl font-normal leading-relaxed mb-8 drop-shadow">
+          Consecrated Seven Hills ascent, certified Ghat chauffeurs, and customized temple itineraries crafted with timeless devotion and comfort.
+        </p>
+<!-- Quick Jump Buttons (Wireframe Style) -->
+<!-- Scroll indicator prompt -->
+<div class="mt-12 flex flex-col items-center text-white/80 animate-bounce"><span class="text-xs uppercase tracking-widest font-label-sm text-[#f5be4f] font-semibold">Scroll down to choose your sacred package ↓</span><span class="material-symbols-outlined text-2xl mt-1 text-[#f5be4f]">keyboard_double_arrow_down</span></div>
+</div>
+</section>
+<!-- SELECT OPTION BAR -->
+<!-- 2. PACKAGES SECTION (FLOATING 3D PERSPECTIVE CAROUSEL WITH FLANKING LOW OPACITY TILES) -->
+<section class="w-full py-20 px-4 sm:px-6 max-w-7xl mx-auto border-b border-[#C9972B]/20 scroll-mt-20" id="packages-section">
+<div class="text-center mb-10">
+<span class="font-label-sm uppercase tracking-widest text-secondary font-bold text-xs bg-secondary-fixed/50 px-3 py-1 rounded-full border border-secondary/20">Handcrafted Pilgrimage Packages</span>
+<h2 class="font-headline-xl text-3xl sm:text-5xl font-bold text-primary tracking-tight mt-2">PACKAGES</h2>
+<p class="font-body-md text-on-surface-variant max-w-xl mx-auto mt-2 text-sm sm:text-base">Select your ideal spiritual itinerary. Click "Book this Package" to proceed seamlessly to vehicle selection.</p>
+</div>
+<!-- 3D Carousel Stage with Center Focus & Low Opacity Flankers -->
+<div class="relative w-full overflow-hidden py-6 carousel-perspective">
+<div class="relative flex items-center justify-center min-h-[580px] max-w-5xl mx-auto">
+<!-- Flanking Left Package Tile (Low Opacity) -->
+<div class="hidden md:flex absolute -left-12 lg:-left-6 w-72 lg:w-80 h-[480px] bg-surface rounded-3xl border-2 border-primary/20 opacity-35 scale-90 -rotate-y-12 shadow-lg overflow-hidden pointer-events-none transition-all duration-500 flex-col z-0 select-none" id="pkg-tile-prev">
+<div class="h-40 w-full overflow-hidden bg-surface-container-high relative">
+<img alt="Previous Package" class="w-full h-full object-cover grayscale" id="pkg-prev-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRWMo75vbR-50aCQEZFIQT8IRLs6O8sJhj-GLuf36dbKRcnV6yJVk8qX7wf4lORFJ8SLiVsx6c31a6n_vU7HV4JQVGbEScgHXvNvT7yJoWZkcCL0lxTpltSmtaSqWZ9JHxli-Ks_QVYMIk_pX5GkLjhMAN-ai-owSy3XyUGaADEZYYALjiE8hiq0clq0YLtnylDuGOztIjWEepeU8d4WFB1AVKKDoLLHq1Lb0NQug"/>
+<div class="absolute inset-0 bg-primary/20"></div>
+</div>
+<div class="p-5 flex flex-col justify-between flex-1">
+<div>
+<span class="px-2 py-0.5 rounded bg-secondary/80 text-white font-label-sm text-xs" id="pkg-prev-badge">3 Days / 2 Nights</span>
+<h4 class="font-headline-md text-lg font-bold text-primary mt-2" id="pkg-prev-title">Tirupati &amp; Vellore Golden Temple</h4>
+<p class="text-xs text-on-surface-variant mt-1 line-clamp-2" id="pkg-prev-sub">Tirupati Balaji + Sripuram Golden Mandir</p>
+</div>
+<div class="text-right">
+<span class="font-headline-md text-xl font-bold text-primary" id="pkg-prev-price">₹5,750</span>
+</div>
+</div>
+</div>
+<!-- Stepped Chevron Left Nav Button -->
+<button aria-label="Previous Package" class="absolute left-1 sm:left-4 lg:left-12 z-20 group p-2 select-none cursor-pointer focus:outline-none transition-transform hover:-translate-x-1" id="pkg-prev-btn">
+<div class="flex items-center -space-x-4 md:-space-x-5 text-secondary group-hover:text-primary transition-colors">
+<div class="w-4 h-8 md:w-5 md:h-12 border-l-2 border-y-2 border-current rounded-l-md rotate-45 transform origin-right opacity-30"></div>
+<div class="w-6 h-12 md:w-8 md:h-16 border-l-3 border-y-3 border-current rounded-l-md rotate-45 transform origin-right opacity-60"></div>
+<div class="w-8 h-16 md:w-11 md:h-24 border-l-4 border-y-4 border-current rounded-l-lg rotate-45 transform origin-right shadow-sm bg-white/30 backdrop-blur-sm"></div>
+<span class="material-symbols-outlined text-3xl md:text-5xl font-bold -ml-3 md:-ml-4 text-primary">chevron_left</span>
+</div>
+</button>
+<!-- ACTIVE CENTER PACKAGE TILE (Elevated, Crisp & Comprehensive) -->
+<div class="w-full max-w-lg bg-surface rounded-3xl border-3 border-primary/50 shadow-2xl overflow-hidden transition-all duration-500 z-10 scale-100 ring-4 ring-[#C9972B]/30" id="package-active-card">
+<!-- Card Visual Image & Title Header -->
+<div class="relative h-56 w-full overflow-hidden bg-surface-container-high">
+<img alt="Selected Pilgrimage" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" data-alt="Pilgrimage Temple package destination" id="pkg-card-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChKHRQFTQ2pkmykUajzeyw3y_yBa9w0Pop6-rpjyKrR1DX4yedIYWkwQCmjmYwNnQkdZl9BADMhmI_6ndiJCuMGmLvsgm0qUa1VOWQK58_97hh0sNTVwSbkHNUo9MRiTr9WpW0pM8lSGCqSkotgE5m-aFT_HR3nWVu3eaxsyf9vwNuxjKL8NcaPE47aZRgF7ED5uQVxCSdhqlXHfZabc_FKmXT317iMUmZ_aI8NTE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#241916]/95 via-[#241916]/40 to-transparent"></div>
+<!-- Top Active Ribbon -->
+<div class="absolute top-4 left-5">
+<span class="px-3 py-1 rounded-full bg-[#f5be4f] text-[#271900] font-label-sm font-bold text-xs shadow-md uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">stars</span> Recommended
+                </span>
+</div>
+<div class="absolute bottom-4 left-6 right-6 text-white flex items-end justify-between">
+<div>
+<span class="px-2.5 py-0.5 rounded bg-secondary text-white font-label-sm font-semibold text-xs" id="pkg-card-badge">1 Day Express</span>
+<h3 class="font-headline-md text-2xl sm:text-3xl font-bold leading-tight mt-1 text-white drop-shadow" id="pkg-card-title">Tirupati Quick Darshan</h3>
+</div>
+</div>
+</div>
+<!-- Card Body & Counters -->
+<div class="p-6 sm:p-8 space-y-6">
+<p class="font-body-md text-on-surface-variant text-sm sm:text-base leading-relaxed" id="pkg-card-desc">Same-day sacred turnaround with station reception, 2nd Ghat road transit, VIP queue accompaniment, and Laddu Prasadam assistance.</p>
+<!-- Inclusions mini-tags -->
+<div class="flex flex-wrap gap-2 text-xs text-secondary font-semibold" id="pkg-card-tags">
+<span class="px-2.5 py-1 rounded-md bg-[#FFF8EC] border border-[#C9972B]/30 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-primary">temple_hindu</span> Special Entry Darshan
+                </span>
+<span class="px-2.5 py-1 rounded-md bg-[#FFF8EC] border border-[#C9972B]/30 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-primary">volunteer_activism</span> Laddu Prasadam
+                </span>
+<span class="px-2.5 py-1 rounded-md bg-[#FFF8EC] border border-[#C9972B]/30 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-primary">verified_user</span> Pilgrim Desk Guide
+                </span>
+</div>
+<!-- Devotees Counter & Tariff -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 border-t border-[#C9972B]/20">
+<!-- Members counter -->
+<div class="bg-surface-container-low p-4 rounded-xl border border-[#C9972B]/30 flex flex-col justify-between shadow-inner">
+<span class="font-label-sm text-secondary font-bold uppercase tracking-wider text-xs">Number of Members</span>
+<div class="flex items-center justify-between mt-2">
+<button class="w-8 h-8 rounded-full bg-surface border border-primary text-primary hover:bg-primary hover:text-white font-bold flex items-center justify-center transition-colors shadow-sm" id="member-minus">
+                      -
+                    </button>
+<span class="font-headline-md text-xl sm:text-2xl font-bold text-primary" id="member-count-display">4 Devotees</span>
+<button class="w-8 h-8 rounded-full bg-surface border border-primary text-primary hover:bg-primary hover:text-white font-bold flex items-center justify-center transition-colors shadow-sm" id="member-plus">
+                      +
+                    </button>
+</div>
+</div>
+<!-- Cost / Fare per Person -->
+<div class="bg-surface-container-low p-4 rounded-xl border border-[#C9972B]/30 flex flex-col justify-between shadow-inner">
+<span class="font-label-sm text-secondary font-bold uppercase tracking-wider text-xs">Cost per Person</span>
+<div class="mt-2 flex items-baseline gap-1">
+<span class="font-headline-md text-2xl sm:text-3xl font-bold text-primary" id="pkg-card-price">₹1,999</span>
+<span class="font-body-sm text-on-surface-variant text-xs">/ devotee</span>
+</div>
+</div>
+</div>
+<!-- Primary CTA: "Book this Package" (Smooth-scrolls directly to Vehicles & updates summary) -->
+<button class="w-full py-4 rounded-xl bg-primary text-white font-headline-sm font-bold text-lg hover:bg-[#7a1f2b] shadow-xl hover:shadow-2xl transition-all duration-200 flex items-center justify-center gap-2 group cursor-pointer" id="select-pkg-btn">
+<span class="material-symbols-outlined text-2xl group-hover:scale-110 transition-transform text-[#f5be4f]">check_circle</span>
+<span class="">Book this Package &amp; Pick Vehicle →</span>
+</button>
+</div>
+</div>
+<!-- Stepped Chevron Right Nav Button -->
+<button aria-label="Next Package" class="absolute right-1 sm:right-4 lg:right-12 z-20 group p-2 select-none cursor-pointer focus:outline-none transition-transform hover:translate-x-1" id="pkg-next-btn">
+<div class="flex items-center -space-x-4 md:-space-x-5 text-secondary group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-3xl md:text-5xl font-bold -mr-3 md:-mr-4 text-primary">chevron_right</span>
+<div class="w-8 h-16 md:w-11 md:h-24 border-r-4 border-y-4 border-current rounded-r-lg -rotate-45 transform origin-left shadow-sm bg-white/30 backdrop-blur-sm"></div>
+<div class="w-6 h-12 md:w-8 md:h-16 border-r-3 border-y-3 border-current rounded-r-md -rotate-45 transform origin-left opacity-60"></div>
+<div class="w-4 h-8 md:w-5 md:h-12 border-r-2 border-y-2 border-current rounded-r-md -rotate-45 transform origin-left opacity-30"></div>
+</div>
+</button>
+<!-- Flanking Right Package Tile (Low Opacity) -->
+<div class="hidden md:flex absolute -right-12 lg:-right-6 w-72 lg:w-80 h-[480px] bg-surface rounded-3xl border-2 border-primary/20 opacity-35 scale-90 rotate-y-12 shadow-lg overflow-hidden pointer-events-none transition-all duration-500 flex-col z-0 select-none" id="pkg-tile-next">
+<div class="h-40 w-full overflow-hidden bg-surface-container-high relative">
+<img alt="Next Package" class="w-full h-full object-cover grayscale" id="pkg-next-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJXwG6zQMZkMj5R5ytuTz3a1w5mm_pNVt7ay3wCs7fWQzeu3mXIb1b0pbunrrFOUcEdDaFvd2Wkj9FMt9GY5CkeMAR41ExNlqA3wcNr4y55fBvaPi9Zzkl1LYIkMHTbeuvsisznRNUvBrGh-Pkis7KrbmGQc8AL0iLlwgxOO9T0fLhzn-2jeTyEvePvU9wP576t4a4eesK94iZPgOrJlorDe9valgQ_yuPzjdOlUc"/>
+<div class="absolute inset-0 bg-primary/20"></div>
+</div>
+<div class="p-5 flex flex-col justify-between flex-1">
+<div>
+<span class="px-2 py-0.5 rounded bg-secondary/80 text-white font-label-sm text-xs" id="pkg-next-badge">2 Days / 1 Night</span>
+<h4 class="font-headline-md text-lg font-bold text-primary mt-2" id="pkg-next-title">Family Spiritual Tour</h4>
+<p class="text-xs text-on-surface-variant mt-1 line-clamp-2" id="pkg-next-sub">Tirumala + Padmavathi Temple + Kapila Theertham</p>
+</div>
+<div class="text-right">
+<span class="font-headline-md text-xl font-bold text-primary" id="pkg-next-price">₹3,499</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick package index indicator dots -->
+<div class="flex justify-center items-center gap-2 mt-4" id="pkg-indicators">
+<span class="w-3 h-3 rounded-full bg-primary ring-2 ring-primary/40"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-[#C9972B]/40"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-[#C9972B]/40"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-[#C9972B]/40"></span>
+</div>
+</section>
+<!-- 3. VEHICLES SECTION (MATCHING CAROUSEL WITH FLANKING LOW OPACITY TILES) -->
+<section class="w-full py-20 px-4 sm:px-6 max-w-7xl mx-auto border-b border-[#C9972B]/20 bg-[#F8E4DE]/25 scroll-mt-20" id="vehicles-section">
+<div class="text-center mb-10">
+<span class="font-label-sm uppercase tracking-widest text-secondary font-bold text-xs bg-secondary-fixed/50 px-3 py-1 rounded-full border border-secondary/20">Hill-Certified Fleet &amp; Vehicle Selection</span>
+<h2 class="font-headline-xl text-3xl sm:text-5xl font-bold text-primary tracking-tight mt-2">VEHICLES</h2>
+<p class="font-body-md text-on-surface-variant max-w-xl mx-auto mt-2 text-sm sm:text-base">All vehicles certified for Tirumala 1st &amp; 2nd Ghat roads with veteran hill drivers.</p>
+</div>
+<!-- 3D Carousel Stage with Center Focus & Low Opacity Flankers -->
+<div class="relative w-full overflow-hidden py-6 carousel-perspective">
+<div class="relative flex items-center justify-center min-h-[540px] max-w-5xl mx-auto">
+<!-- Flanking Left Vehicle Tile (Low Opacity) -->
+<div class="hidden md:flex absolute -left-12 lg:-left-6 w-72 lg:w-80 h-[460px] bg-surface rounded-3xl border-2 border-primary/20 opacity-35 scale-90 -rotate-y-12 shadow-lg overflow-hidden pointer-events-none transition-all duration-500 flex-col z-0 select-none" id="veh-tile-prev">
+<div class="h-36 w-full overflow-hidden bg-surface-container-high relative">
+<img alt="Previous Vehicle" class="w-full h-full object-cover grayscale opacity-75" id="veh-prev-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwalf49ZG0vGPShDaFRTJBAyOTJFAGikZERrAJOdCbt9xjsiiLO0IP6T4Y2_6h_l2T6JZT3eNbzOiNwzL8-b4hL4plrdNUdPL0c0Co-e4ALIUN8yAtSJERmBZHaUi81PLggBkYe3XhJ0PNQO4nlYVdbIpqosgbR2YfLX6n-ON54BmivZEbxMySNnl_xU6gk5E1UK9u-1QGBhzPY4n_yjWr8H27eKbNC0BC4xlupyo"/>
+<div class="absolute inset-0 bg-primary/20"></div>
+</div>
+<div class="p-5 flex flex-col justify-between flex-1">
+<div>
+<span class="px-2 py-0.5 rounded bg-secondary/80 text-white font-label-sm text-xs" id="veh-prev-badge">Compact &amp; Nimble</span>
+<h4 class="font-headline-md text-lg font-bold text-primary mt-2" id="veh-prev-name">Swift Dzire / Etios AC</h4>
+<p class="text-xs text-on-surface-variant mt-1" id="veh-prev-sub">3-4 Devotees</p>
+</div>
+<div class="text-right">
+<span class="font-headline-md text-xl font-bold text-primary" id="veh-prev-cost">₹1,800</span>
+</div>
+</div>
+</div>
+<!-- Stepped Chevron Left Nav Button -->
+<button aria-label="Previous Vehicle" class="absolute left-1 sm:left-4 lg:left-12 z-20 group p-2 select-none cursor-pointer focus:outline-none transition-transform hover:-translate-x-1" id="veh-prev-btn">
+<div class="flex items-center -space-x-4 md:-space-x-5 text-secondary group-hover:text-primary transition-colors">
+<div class="w-4 h-8 md:w-5 md:h-12 border-l-2 border-y-2 border-current rounded-l-md rotate-45 transform origin-right opacity-30"></div>
+<div class="w-6 h-12 md:w-8 md:h-16 border-l-3 border-y-3 border-current rounded-l-md rotate-45 transform origin-right opacity-60"></div>
+<div class="w-8 h-16 md:w-11 md:h-24 border-l-4 border-y-4 border-current rounded-l-lg rotate-45 transform origin-right shadow-sm bg-white/30 backdrop-blur-sm"></div>
+<span class="material-symbols-outlined text-3xl md:text-5xl font-bold -ml-3 md:-ml-4 text-primary">chevron_left</span>
+</div>
+</button>
+<!-- ACTIVE CENTER VEHICLE TILE -->
+<div class="w-full max-w-lg bg-surface rounded-3xl border-3 border-primary/50 shadow-2xl overflow-hidden transition-all duration-500 z-10 scale-100 ring-4 ring-[#C9972B]/30" id="vehicle-active-card">
+<!-- Header graphic / Realistic Photo -->
+<div class="relative h-52 sm:h-56 w-full overflow-hidden bg-surface-container-high border-b border-[#C9972B]/30">
+<img alt="Toyota Innova Crysta AC" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" id="veh-card-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjCbTQ7xHLHEKhRXmV0VvEuOgk4i7eFYRVHjxlfYeITxnxNQ6fspFZzGslbG9Y1N1XlAyBNbAZWp0p-eZe9Hl8KRFmXGOavju9REGP55sH4QeBF_KUxAzEko21tIu57BO7tLXiFZ1ATffSBC4rtzcavvdhN3jL99Vh08naf9H2O_NTv5IXGYHWB3LsVFL-GLq1OExhcG4nOcHxsLhfahiXujco6eeeCH6WDl3vlmE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#241916]/90 via-[#241916]/30 to-transparent"></div>
+<div class="absolute top-4 right-4">
+<span class="px-3 py-1 rounded-full bg-secondary text-white font-label-sm font-bold text-xs uppercase tracking-wider shadow-md" id="veh-badge">Devotee Favorite</span>
+</div>
+<div class="absolute bottom-3 left-6 right-6">
+<h3 class="font-headline-md text-2xl sm:text-3xl font-bold text-white drop-shadow" id="veh-card-name">Toyota Innova Crysta AC</h3>
+<p class="font-body-sm text-[#f5be4f] font-semibold" id="veh-card-sub">Premium Hill MPV</p>
+</div>
+</div>
+<!-- Card Body: Cost and Time/Capacity breakdown matching the wireframe -->
+<div class="p-6 sm:p-8 space-y-6">
+<div class="grid grid-cols-2 gap-4">
+<!-- Cost field -->
+<div class="bg-surface-container-low p-4 rounded-xl border border-[#C9972B]/30 shadow-inner">
+<span class="font-label-sm text-secondary font-bold uppercase tracking-wider text-xs">Cost (Base Tariff)</span>
+<p class="font-headline-md text-2xl sm:text-3xl font-bold text-primary mt-1" id="veh-card-cost">₹2,450</p>
+<span class="text-xs text-on-surface-variant">Includes Ghat allowance</span>
+</div>
+<!-- Time / Capacity field -->
+<div class="bg-surface-container-low p-4 rounded-xl border border-[#C9972B]/30 shadow-inner">
+<span class="font-label-sm text-secondary font-bold uppercase tracking-wider text-xs">Time &amp; Capacity</span>
+<p class="font-headline-md text-xl sm:text-2xl font-bold text-primary mt-1" id="veh-card-time">6-7 Devotees</p>
+<span class="text-xs text-on-surface-variant">45m ascent / Reclining Seats</span>
+</div>
+</div>
+<!-- Features bullets -->
+<ul class="space-y-2 font-body-sm text-on-surface-variant text-sm" id="veh-card-features"><li class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-sm">check_circle</span>4 Large bags + overhead storage</li><li class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-sm">check_circle</span>High suspension comfort for elder devotees on 2nd Ghat hairpins</li></ul>
+<!-- Select Vehicle Confirmation Button -->
+<button class="w-full py-4 rounded-xl bg-primary text-white font-headline-sm font-bold text-lg hover:bg-[#7a1f2b] shadow-xl hover:shadow-2xl transition-all duration-200 flex items-center justify-center gap-2 group cursor-pointer" id="select-veh-btn">
+<span class="material-symbols-outlined text-2xl group-hover:scale-110 transition-transform text-[#f5be4f]">check_circle</span>
+<span class="">Select this Vehicle &amp; Review Route →</span>
+</button>
+</div>
+</div>
+<!-- Stepped Chevron Right Nav Button -->
+<button aria-label="Next Vehicle" class="absolute right-1 sm:right-4 lg:right-12 z-20 group p-2 select-none cursor-pointer focus:outline-none transition-transform hover:translate-x-1" id="veh-next-btn">
+<div class="flex items-center -space-x-4 md:-space-x-5 text-secondary group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-3xl md:text-5xl font-bold -mr-3 md:-mr-4 text-primary">chevron_right</span>
+<div class="w-8 h-16 md:w-11 md:h-24 border-r-4 border-y-4 border-current rounded-r-lg -rotate-45 transform origin-left shadow-sm bg-white/30 backdrop-blur-sm"></div>
+<div class="w-6 h-12 md:w-8 md:h-16 border-r-3 border-y-3 border-current rounded-r-md -rotate-45 transform origin-left opacity-60"></div>
+<div class="w-4 h-8 md:w-5 md:h-12 border-r-2 border-y-2 border-current rounded-r-md -rotate-45 transform origin-left opacity-30"></div>
+</div>
+</button>
+<!-- Flanking Right Vehicle Tile (Low Opacity) -->
+<div class="hidden md:flex absolute -right-12 lg:-right-6 w-72 lg:w-80 h-[460px] bg-surface rounded-3xl border-2 border-primary/20 opacity-35 scale-90 rotate-y-12 shadow-lg overflow-hidden pointer-events-none transition-all duration-500 flex-col z-0 select-none" id="veh-tile-next">
+<div class="h-36 w-full overflow-hidden bg-surface-container-high relative">
+<img alt="Next Vehicle" class="w-full h-full object-cover grayscale opacity-75" id="veh-next-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJXr_rRv6SRP1RBupfbyF5vmk8SKcaDzzr5h4Ms-LuaQ7VyLERVcZn29jzxf2qZrAtV-wKcwc5SdUdBVcM_6gFrwa5ECm14lbcgyp_oDllG-JDhAF187pGw5n37p8-ZHLQDd_qB3c0lJH7K-lKXFF47rjKjQMLEqIFGsYsamRo3A0Z50gUvXfZ3HdgrlPh8TJQBczJZ8ms61PV7Abdiv-MGUgAgyh17Gn-sj0m6Zg"/>
+<div class="absolute inset-0 bg-primary/20"></div>
+</div>
+<div class="p-5 flex flex-col justify-between flex-1">
+<div>
+<span class="px-2 py-0.5 rounded bg-secondary/80 text-white font-label-sm text-xs" id="veh-next-badge">Joint Family Pick</span>
+<h4 class="font-headline-md text-lg font-bold text-primary mt-2" id="veh-next-name">Force Tempo Traveller AC</h4>
+<p class="text-xs text-on-surface-variant mt-1" id="veh-next-sub">12-17 Devotees</p>
+</div>
+<div class="text-right">
+<span class="font-headline-md text-xl font-bold text-primary" id="veh-next-cost">₹4,200</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick vehicle indicator dots -->
+<div class="flex justify-center items-center gap-2 mt-4" id="veh-indicators">
+<span class="w-2.5 h-2.5 rounded-full bg-[#C9972B]/40"></span>
+<span class="w-3 h-3 rounded-full bg-primary ring-2 ring-primary/40"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-[#C9972B]/40"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-[#C9972B]/40"></span>
+</div>
+<!-- Prompt below Vehicle Selection -->
+<div class="text-center mt-8">
+<a class="inline-flex items-center gap-2 text-secondary font-headline-sm font-semibold hover:text-primary transition-colors text-base" href="#booking-section"><span class="font-headline-sm font-semibold text-secondary hover:text-primary transition-colors text-base">↓ Review &amp; customize your sacred itinerary stops</span></a>
+</div>
+</section>
+<!-- 4. CART & INTERACTIVE BOOKING ITINERARY MODULE (WITH RICH IMAGE TILES & SWITCH CAPABILITY) -->
+<section class="w-full py-20 px-4 sm:px-6 max-w-6xl mx-auto" id="booking-section">
+<div class="bg-surface rounded-3xl border-3 border-primary/50 shadow-2xl p-6 sm:p-10 lg:p-12 space-y-10">
+<!-- Section Header -->
+<div class="border-b border-[#C9972B]/30 pb-5 text-center">
+<span class="font-label-sm uppercase tracking-widest text-secondary font-bold text-xs bg-secondary-fixed/50 px-3 py-1 rounded-full border border-secondary/20">Final Dispatch Summary</span>
+<h2 class="font-headline-xl text-3xl sm:text-5xl font-bold text-primary tracking-tight mt-2">Review Booking &amp; Sacred Itinerary</h2>
+<p class="font-body-md text-on-surface-variant mt-2 text-sm sm:text-base">Review your selected package, vehicle, and add sacred in-between temple visits to tailor your pilgrimage route.</p>
+</div>
+<!-- 2-COLUMN BOOKING MODULE -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- LEFT COLUMN: Selected Package & Vehicle Cards (Rich Photo Previews & Quick Change Feature) -->
+<div class="lg:col-span-5 space-y-6">
+<h3 class="font-headline-sm text-xl font-bold text-primary flex items-center justify-between">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">shopping_bag</span>
+<span class="">1. Selected Pilgrimage Order</span>
+</span>
+<span class="text-xs font-label-sm text-secondary font-semibold bg-secondary-fixed/40 px-2.5 py-0.5 rounded-full">2 Items Ready</span>
+</h3>
+<!-- Selected Package Card with Rich Visual Preview Image & Quick Change Button -->
+<div class="group rounded-2xl bg-surface-container-low border-2 border-primary/30 shadow-md overflow-hidden transition-all duration-200 hover:shadow-lg relative">
+<div class="relative h-32 w-full overflow-hidden bg-surface-container-high">
+<img alt="Selected Pilgrimage Preview" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" id="summary-pkg-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChKHRQFTQ2pkmykUajzeyw3y_yBa9w0Pop6-rpjyKrR1DX4yedIYWkwQCmjmYwNnQkdZl9BADMhmI_6ndiJCuMGmLvsgm0qUa1VOWQK58_97hh0sNTVwSbkHNUo9MRiTr9WpW0pM8lSGCqSkotgE5m-aFT_HR3nWVu3eaxsyf9vwNuxjKL8NcaPE47aZRgF7ED5uQVxCSdhqlXHfZabc_FKmXT317iMUmZ_aI8NTE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#241916]/90 via-[#241916]/30 to-transparent"></div>
+<!-- Top Badges -->
+<div class="absolute top-2.5 left-3">
+<span class="px-2.5 py-0.5 rounded-full bg-primary/90 text-white font-label-sm text-[11px] font-bold shadow-sm uppercase tracking-wide border border-white/20 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-[#f5be4f]">temple_hindu</span> Selected Package
+                </span>
+</div>
+<button aria-label="Change Selected Package" class="change-pkg-trigger absolute top-2.5 right-3 px-3 py-1 rounded-lg bg-white/95 hover:bg-white text-primary font-label-sm text-xs font-bold shadow-md hover:shadow transition-all flex items-center gap-1 border border-[#C9972B]/50 hover:scale-105 active:scale-95" id="btn-change-pkg" title="Change Package">
+<span class="material-symbols-outlined text-sm text-secondary">sync_alt</span>
+<span class="">Change</span>
+</button>
+<!-- Card bottom caption -->
+<div class="absolute bottom-2 left-3 right-3 text-white">
+<h4 class="font-headline-sm text-base sm:text-lg font-bold leading-tight drop-shadow truncate" id="summary-pkg-name">Tirupati Quick Darshan</h4>
+</div>
+</div>
+<div class="p-4 space-y-2.5">
+<p class="font-body-sm text-xs text-on-surface-variant line-clamp-1" id="summary-pkg-sub">Same-Day Tirumala Seven Hills Ascent &amp; Darshan</p>
+<div class="pt-2 border-t border-[#C9972B]/20 flex items-center justify-between text-xs">
+<span class="text-on-surface-variant font-medium">Rate: <strong class="text-primary font-bold" id="summary-pkg-rate">₹1,999</strong> × <span class="font-bold text-primary" id="summary-pkg-members-sub">4</span> devotees</span>
+<span class="font-headline-sm font-bold text-primary text-base" id="summary-pkg-subtotal">₹7,996</span>
+</div>
+<!-- Quick switch helper link -->
+<div class="pt-1 flex items-center justify-between text-[11px]">
+<button class="change-pkg-trigger text-secondary hover:text-primary font-semibold underline underline-offset-2 flex items-center gap-0.5">
+<span class="material-symbols-outlined text-xs">swap_horiz</span> Switch to 2-Day or Circuit Package
+              </button>
+<span class="text-on-surface-variant/70 text-[10px]">Tirumala Balaji Special Entry</span>
+</div>
+</div>
+</div>
+<!-- Selected Vehicle Card with Rich Photo Preview & Quick Change Button -->
+<div class="group rounded-2xl bg-surface-container-low border-2 border-primary/30 shadow-md overflow-hidden transition-all duration-200 hover:shadow-lg relative">
+<div class="relative h-32 w-full overflow-hidden bg-surface-container-high">
+<img alt="Selected Vehicle Preview" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" id="summary-veh-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4OJ3pIYfcN_8_ykS4dqteupLCuxVyqXE3JULYYzNm6FcngjNErCLFJCz0s_t_oqm_ULGO3Nm9gWnp780xutGaVnVwSmkWChZ_ycc4kHsUm5XzFV286jYnEXWNNdNi-BEmazbelGcK0irWEwzoEpwRL_652kGWGcr8d9jPK-u6pzRAistlZYxGo3yNvPiM_a5jh83AGH9C4N3ITlxGzfGvT6McnsSOOb7on4QTWvE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#241916]/90 via-[#241916]/30 to-transparent"></div>
+<!-- Top Badges -->
+<div class="absolute top-2.5 left-3">
+<span class="px-2.5 py-0.5 rounded-full bg-secondary text-white font-label-sm text-[11px] font-bold shadow-sm uppercase tracking-wide border border-white/20 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-[#f5be4f]">airport_shuttle</span> Selected Vehicle
+                </span>
+</div>
+<button aria-label="Change Selected Vehicle" class="change-veh-trigger absolute top-2.5 right-3 px-3 py-1 rounded-lg bg-white/95 hover:bg-white text-secondary font-label-sm text-xs font-bold shadow-md hover:shadow transition-all flex items-center gap-1 border border-[#C9972B]/50 hover:scale-105 active:scale-95" id="btn-change-veh" title="Change Vehicle">
+<span class="material-symbols-outlined text-sm text-primary">sync_alt</span>
+<span class="">Change</span>
+</button>
+<!-- Card bottom caption -->
+<div class="absolute bottom-2 left-3 right-3 text-white">
+<h4 class="font-headline-sm text-base sm:text-lg font-bold leading-tight drop-shadow truncate" id="summary-veh-name">Toyota Innova Crysta AC</h4>
+</div>
+</div>
+<div class="p-4 space-y-2.5">
+<p class="font-body-sm text-xs text-on-surface-variant line-clamp-1" id="summary-veh-sub">6-7 Devotees • Hill-Ghat Certified</p>
+<div class="pt-2 border-t border-[#C9972B]/20 flex items-center justify-between text-xs">
+<span class="text-on-surface-variant font-medium">Base Vehicle Tariff (Includes Ghat toll)</span>
+<span class="font-headline-sm font-bold text-primary text-base" id="summary-veh-rate">₹2,450</span>
+</div>
+<!-- Quick switch helper link -->
+<div class="pt-1 flex items-center justify-between text-[11px]">
+<button class="change-veh-trigger text-secondary hover:text-primary font-semibold underline underline-offset-2 flex items-center gap-0.5">
+<span class="material-symbols-outlined text-xs">swap_horiz</span> Switch to Sedan, Tempo or Coach
+              </button>
+<span class="text-on-surface-variant/70 text-[10px]">Hill Experienced Chauffeur</span>
+</div>
+</div>
+</div>
+<!-- Total Members summary badge -->
+<div class="p-4 rounded-xl bg-[#FFF8EC] border border-[#C9972B]/30 flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-lg">group</span>
+<span class="font-label-sm text-secondary font-bold uppercase tracking-wider text-xs">Total Traveling Members:</span>
+</div>
+<span class="font-headline-sm font-bold text-primary text-lg" id="summary-total-members">4 Devotees</span>
+</div>
+</div>
+<!-- RIGHT COLUMN: Wireframe Image 2 Route & In-Between Places Builder -->
+<div class="lg:col-span-7 space-y-6">
+<h3 class="font-headline-sm text-xl font-bold text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">alt_route</span>
+<span class="">2. Sacred Route &amp; In-Between Temple Stops</span>
+</h3>
+<!-- Route Visualization Card (Direct Wireframe IMAGE_2 replica) -->
+<div class="p-6 rounded-2xl bg-[#FFF8EC] border-2 border-[#C9972B]/40 space-y-5">
+<!-- Starting Origin Node -->
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-primary text-white flex items-center justify-center text-xs font-bold shrink-0 shadow">
+                  A
+                </div>
+<div class="flex-1 bg-white p-3 rounded-xl border border-[#C9972B]/30 shadow-sm flex items-center justify-between">
+<div>
+<span class="font-label-sm text-[11px] text-secondary font-bold uppercase tracking-wider block">Starting Origin (TPT / Station)</span>
+<strong class="font-body-md text-sm text-primary">Tirupati Central / Renigunta Airport</strong>
+</div>
+<span class="material-symbols-outlined text-secondary text-lg">flight_land</span>
+</div>
+</div>
+<!-- Connecting Line with "Select more places in-between" -->
+<div class="relative pl-4 border-l-2 border-dashed border-[#C9972B] ml-4 py-2 space-y-4">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-xs font-bold text-primary uppercase tracking-wider flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base text-secondary">add_location_alt</span>
+                    Select more places in-between (Optional stops):
+                  </span>
+<span class="text-[11px] text-secondary font-semibold" id="stops-counter">2 Stops Selected</span>
+</div>
+<!-- Interactive In-Between Stops List (Directly as sketched in wireframe) -->
+<div class="space-y-2.5" id="stops-container">
+<!-- Stop 1: Srikalahasti -->
+<label class="flex items-center justify-between p-3 rounded-xl bg-white border border-[#C9972B]/40 hover:border-primary cursor-pointer transition-all duration-150 select-none shadow-sm">
+<div class="flex items-center gap-3">
+<input checked="" class="stop-checkbox w-5 h-5 text-primary rounded border-[#C9972B] focus:ring-primary" data-name="Srikalahasti Rahu-Ketu Kshetra" data-price="850" type="checkbox"/>
+<div>
+<span class="font-body-md text-sm font-semibold text-primary block leading-tight">Srikalahasti Rahu-Ketu Kshetra</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">Famous Vayu Linga &amp; Sarpadosha Nivaranam</span>
+</div>
+</div>
+<span class="font-headline-sm text-xs sm:text-sm font-bold text-secondary">+₹850</span>
+</label>
+<!-- Stop 2: Kanipakam -->
+<label class="flex items-center justify-between p-3 rounded-xl bg-white border border-[#C9972B]/40 hover:border-primary cursor-pointer transition-all duration-150 select-none shadow-sm">
+<div class="flex items-center gap-3">
+<input checked="" class="stop-checkbox w-5 h-5 text-primary rounded border-[#C9972B] focus:ring-primary" data-name="Kanipakam Swayambhu Vinayaka" data-price="1200" type="checkbox"/>
+<div>
+<span class="font-body-md text-sm font-semibold text-primary block leading-tight">Kanipakam Swayambhu Vinayaka</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">Ever-growing miraculous holy Ganesh shrine</span>
+</div>
+</div>
+<span class="font-headline-sm text-xs sm:text-sm font-bold text-secondary">+₹1,200</span>
+</label>
+<!-- Stop 3: Srinivasa Mangapuram -->
+<label class="flex items-center justify-between p-3 rounded-xl bg-white border border-[#C9972B]/40 hover:border-primary cursor-pointer transition-all duration-150 select-none shadow-sm">
+<div class="flex items-center gap-3">
+<input class="stop-checkbox w-5 h-5 text-primary rounded border-[#C9972B] focus:ring-primary" data-name="Srinivasa Mangapuram" data-price="400" type="checkbox"/>
+<div>
+<span class="font-body-md text-sm font-semibold text-primary block leading-tight">Srinivasa Mangapuram</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">Kalyana Venkateswara Swamy blessing couples</span>
+</div>
+</div>
+<span class="font-headline-sm text-xs sm:text-sm font-bold text-secondary">+₹400</span>
+</label>
+<!-- Stop 4: Vellore Golden Temple -->
+<label class="flex items-center justify-between p-3 rounded-xl bg-white border border-[#C9972B]/40 hover:border-primary cursor-pointer transition-all duration-150 select-none shadow-sm">
+<div class="flex items-center gap-3">
+<input class="stop-checkbox w-5 h-5 text-primary rounded border-[#C9972B] focus:ring-primary" data-name="Sripuram Golden Temple (Vellore)" data-price="1800" type="checkbox"/>
+<div>
+<span class="font-body-md text-sm font-semibold text-primary block leading-tight">Sripuram Golden Temple (Vellore)</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">1,500 kg Pure gold Mahalakshmi sanctum</span>
+</div>
+</div>
+<span class="font-headline-sm text-xs sm:text-sm font-bold text-secondary">+₹1,800</span>
+</label>
+<!-- Stop 5: Chandragiri Fort -->
+<label class="flex items-center justify-between p-3 rounded-xl bg-white border border-[#C9972B]/40 hover:border-primary cursor-pointer transition-all duration-150 select-none shadow-sm">
+<div class="flex items-center gap-3">
+<input class="stop-checkbox w-5 h-5 text-primary rounded border-[#C9972B] focus:ring-primary" data-name="Chandragiri Heritage Fort" data-price="350" type="checkbox"/>
+<div>
+<span class="font-body-md text-sm font-semibold text-primary block leading-tight">Chandragiri Heritage Fort</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">Historical Vijayanagara palace &amp; gardens</span>
+</div>
+</div>
+<span class="font-headline-sm text-xs sm:text-sm font-bold text-secondary">+₹350</span>
+</label>
+</div>
+</div>
+<!-- Ending Destination Node (Wireframe Image 2: "ABC / Chennai") -->
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-secondary text-white flex items-center justify-center text-xs font-bold shrink-0 shadow">
+                  B
+                </div>
+<div class="flex-1 bg-white p-3 rounded-xl border border-[#C9972B]/30 shadow-sm flex items-center justify-between">
+<div>
+<span class="font-label-sm text-[11px] text-secondary font-bold uppercase tracking-wider block">Destination Drop-off (ABC / Tirumala / Chennai)</span>
+<strong class="font-body-md text-sm text-primary">Tirumala Temple Sanctum / Chennai Drop (ABC)</strong>
+</div>
+<span class="material-symbols-outlined text-secondary text-lg">temple_buddhist</span>
+</div>
+</div>
+</div>
+<!-- Dynamic Selected Itinerary Summary Banner -->
+<div class="p-3.5 rounded-xl bg-primary-container text-white text-xs flex items-center justify-between shadow-md">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-base text-[#f5be4f]">route</span>
+<span class="" id="itinerary-preview-text">Origin → Srikalahasti → Kanipakam → Tirumala Sanctum</span>
+</span>
+<span class="font-bold text-[#f5be4f]" id="stops-cost-badge">+₹2,050 for stops</span>
+</div>
+</div>
+</div>
+<!-- TOTAL COST SUMMARY BLOCK & WHATSAPP DISPATCH -->
+<div class="pt-6 border-t-2 border-[#C9972B]/30 space-y-6">
+<div class="p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-[#FFF8EC] via-surface-container to-[#FFF8EC] border-2 border-[#C9972B]/40 shadow-inner flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="space-y-1 text-center md:text-left">
+<span class="font-label-sm text-xs text-secondary font-bold uppercase tracking-widest block">Total Instant All-Inclusive Tariff</span>
+<div class="text-xs text-on-surface-variant space-x-2">
+<span class="">Pkg (<span class="" id="calc-pkg-lbl">₹7,996</span>)</span>
+<span class="">+</span>
+<span class="">Vehicle (<span class="" id="calc-veh-lbl">₹2,450</span>)</span>
+<span class="">+</span>
+<span class="">Stops (<span class="" id="calc-stops-lbl">₹2,050</span>)</span>
+</div>
+<p class="text-[11px] text-on-surface-variant font-normal">Includes AC Chauffeur, Ghat toll allowance, Laddu assistance &amp; GST</p>
+</div>
+<!-- Auspicious Total Display -->
+<div class="text-center md:text-right">
+<span class="text-xs text-secondary font-semibold block uppercase">Total Cost</span>
+<div class="font-headline-xl font-bold text-primary text-4xl sm:text-5xl leading-none mt-1" id="summary-total-cost">₹12,496</div>
+</div>
+</div>
+<!-- PRIMARY ACTION BUTTONS: WhatsApp & Helpline -->
+<div class="grid grid-cols-1 sm:grid-cols-12 gap-4">
+<a class="sm:col-span-8 w-full h-16 rounded-2xl bg-[#25D366] hover:bg-[#20ba59] text-white font-headline-md font-bold text-lg sm:text-2xl flex items-center justify-center gap-3 shadow-xl hover:shadow-2xl transition-all duration-200 transform hover:-translate-y-0.5 cursor-pointer" href="https://wa.me/919490088221?text=Namaskaram%20ABC%20Travels%2C%0A%0A*PILGRIMAGE%20BOOKING%20INQUIRY*%0A%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%0A%E2%80%A2%20*Package%3A*%20Tirupati%20Quick%20Darshan%20(1%20Day%20Express)%0A%E2%80%A2%20*Devotees%3A*%204%20Members%0A%E2%80%A2%20*Package%20Fare%3A*%20Rs.%207%2C996%20(Rs.%201999%2Fperson)%0A%E2%80%A2%20*Vehicle%3A*%20Toyota%20Innova%20Crysta%20AC%20(Rs.%202%2C450)%0A%E2%80%A2%20*Selected%20Intermediate%20Stops%3A*%0A%20%20%E2%80%A2%20Srikalahasti%20Rahu-Ketu%20Kshetra%20(%2BRs.850)%0A%20%20%E2%80%A2%20Kanipakam%20Swayambhu%20Vinayaka%20(%2BRs.1200)%0A%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%0A*ESTIMATED%20TOTAL%20FARE%3A*%20Rs.%2012%2C496%0A%0APlease%20confirm%20available%20slot%20and%20chauffeur%20details." id="whatsapp-order-btn" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-3xl">chat</span>
+<span class="">Message Order on WhatsApp</span>
+</a>
+<a class="sm:col-span-4 w-full h-16 rounded-2xl bg-primary hover:bg-[#7a1f2b] text-white font-headline-sm font-bold text-base sm:text-lg flex items-center justify-center gap-2 shadow-xl hover:shadow-2xl transition-all duration-200" href="tel:+919490088221"><span class="material-symbols-outlined text-2xl text-[#f5be4f]">call</span><span class="">Call Dispatch Desk</span></a>
+</div>
+<p class="text-center text-xs text-on-surface-variant">Instant response within 3 minutes from Tirupati dispatch supervisor • No advance required for initial inquiry</p>
+</div>
+</div>
+</section>
+<!-- CONTACT & HELPLINE SECTION -->
+<section class="w-full bg-primary text-white py-14 px-6 border-t-4 border-[#C9972B] scroll-mt-20" id="contact-section">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+<div>
+<span class="font-label-sm uppercase tracking-widest text-[#ffdcc3] font-semibold text-xs">24/7 Tirupati Pilgrim Helpline</span>
+<h3 class="font-headline-lg text-3xl sm:text-4xl font-bold mt-1">Ready for the Sacred Seven Hills Ascent?</h3>
+<p class="font-body-sm text-[#ffdad6] text-sm mt-1">Govindaraja Sannidhi Street, Tirupati • Direct Hill Chauffeur Dispatch Desk</p>
+</div>
+<div class="flex flex-wrap items-center gap-4">
+<a class="h-12 px-6 rounded-xl bg-white text-primary font-label-md font-bold flex items-center gap-2 hover:bg-[#ffdada] transition-colors shadow" href="tel:+919490088221">
+<span class="material-symbols-outlined text-xl">call</span>
+<span class="">+91 94900 88221</span>
+</a>
+<a class="h-12 px-6 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-white font-label-md font-bold flex items-center gap-2 transition-colors shadow" href="https://wa.me/919490088221" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-xl">chat</span>
+<span class="">WhatsApp Us</span>
+</a>
+</div>
+</div>
+</section>
+</main>
+<!-- FOOTER -->
+<footer class="w-full bg-[#FFF8EC] border-t border-[#C9972B]/30 py-8 px-6 text-center text-on-surface-variant text-sm">
+<div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-lg">temple_hindu</span>
+<span class="font-headline-sm font-semibold text-primary">ABC Travels • Heavenly Tours</span>
+</div>
+<p class="font-body-sm text-xs">“Your Tirupati Pilgrimage, Our Devotional Responsibility” • Estd. 2008</p>
+<p class="font-body-sm text-xs text-secondary font-medium">AP Tourism Authorized Pilgrim Partner</p>
+</div>
+</footer>
+<!-- QUICK-SWITCH MODAL FOR PACKAGES & VEHICLES -->
+<div aria-hidden="true" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#241916]/80 modal-backdrop-blur hidden transition-opacity duration-300" id="quick-switch-modal">
+<div class="relative w-full max-w-lg bg-[#FFF8EC] rounded-3xl border-3 border-primary/50 shadow-2xl p-6 sm:p-7 space-y-5 animate-scale-up" role="dialog">
+<div class="flex items-center justify-between border-b border-[#C9972B]/30 pb-3">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-xl bg-primary text-white flex items-center justify-center shadow">
+<span class="material-symbols-outlined text-xl text-[#f5be4f]" id="modal-title-icon">sync_alt</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-xl font-bold text-primary" id="modal-title">Switch Selection</h3>
+<p class="text-xs text-secondary font-medium" id="modal-subtitle">Choose from our sacred offerings</p>
+</div>
+</div>
+<button aria-label="Close dialog" class="w-8 h-8 rounded-full bg-surface-container hover:bg-surface-container-high text-primary flex items-center justify-center transition-colors" id="modal-close-btn">
+<span class="material-symbols-outlined text-lg">close</span>
+</button>
+</div>
+<!-- Modal List items container -->
+<div class="space-y-3 max-h-[60vh] overflow-y-auto pr-1" id="modal-options-list">
+<!-- Dynamically populated options -->
+</div>
+<div class="pt-2 border-t border-[#C9972B]/20 flex items-center justify-between text-xs text-on-surface-variant">
+<span class="">Or explore detailed specifications above:</span>
+<button class="font-bold text-primary underline" id="modal-jump-link">Go to Carousel</button>
+</div>
+</div>
+</div>
+<!-- INTERACTIVE SCRIPT: SCROLL ZOOM + 3D CAROUSELS + DYNAMIC ITINERARY BUILDER + QUICK SWITCH + SCROLL-SPY ACTIVE NAV SHINE -->
+<script>
+    (function() {
+      // 1. SCROLL-DRIVEN HERO ZOOM EFFECT
+      const heroImg = document.getElementById('hero-zoom-image');
+      window.addEventListener('scroll', () => {
+        const scrolled = window.scrollY;
+        if (scrolled < 900) {
+          const scaleVal = 1 + (scrolled / 2200);
+          heroImg.style.transform = `scale(${scaleVal})`;
+        }
+      }, { passive: true });
+
+      // 2. PACKAGES DATA
+      const packages = [
+        {
+          id: 'pkg-1',
+          name: 'Tirupati Quick Darshan',
+          badge: '1 Day Express',
+          desc: 'Same-day sacred turnaround with station reception, 2nd Ghat road transit, VIP queue accompaniment, and Laddu Prasadam assistance.',
+          price: 1999,
+          sub: 'Same-Day Tirumala Seven Hills Ascent & Darshan',
+          img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuChKHRQFTQ2pkmykUajzeyw3y_yBa9w0Pop6-rpjyKrR1DX4yedIYWkwQCmjmYwNnQkdZl9BADMhmI_6ndiJCuMGmLvsgm0qUa1VOWQK58_97hh0sNTVwSbkHNUo9MRiTr9WpW0pM8lSGCqSkotgE5m-aFT_HR3nWVu3eaxsyf9vwNuxjKL8NcaPE47aZRgF7ED5uQVxCSdhqlXHfZabc_FKmXT317iMUmZ_aI8NTE'
+        },
+        {
+          id: 'pkg-2',
+          name: 'Family Spiritual Tour',
+          badge: '2 Days / 1 Night',
+          desc: 'Relaxed two-day yatra including Tirumala Balaji Darshan, Padmavathi Ammavari Temple, and holy bath at Kapila Theertham sanctum.',
+          price: 3499,
+          sub: 'Tirumala + Padmavathi Temple + Kapila Theertham',
+          img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAJXwG6zQMZkMj5R5ytuTz3a1w5mm_pNVt7ay3wCs7fWQzeu3mXIb1b0pbunrrFOUcEdDaFvd2Wkj9FMt9GY5CkeMAR41ExNlqA3wcNr4y55fBvaPi9Zzkl1LYIkMHTbeuvsisznRNUvBrGh-Pkis7KrbmGQc8AL0iLlwgxOO9T0fLhzn-2jeTyEvePvU9wP576t4a4eesK94iZPgOrJlorDe9valgQ_yuPzjdOlUc'
+        },
+        {
+          id: 'pkg-3',
+          name: 'South Andhra Temple Circuit',
+          badge: '3 Days Circuit',
+          desc: 'Consecrated triangle journey uniting Tirumala Balaji, Srikalahasti Rahu-Ketu Kshetra, and Swayambhu Kanipakam Vinayaka shrine.',
+          price: 5200,
+          sub: 'Tirupati + Srikalahasti + Kanipakam Vinayaka',
+          img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAgBbglrIS3HZrZMAQwE0LoWR1L9xZf_2osiDKVBwoTpCH-cKG6Qz0085d9_2Op5x_K5TZjPR0VnGP82eMVbmRB7zH6uSLOcUXxbvoeMjT2UT_DMgC_pRIdkqEHVmxYvj1VXOomhq0pTpfx2LQo_WBBhANv0ZZuFVxrQunNoVCi34_jQ82CUyHuf9WLD0LLagLMBpi3wqNlfE39QqSb7ZNTD5_zpsnZ2MjK14OFwGY'
+        },
+        {
+          id: 'pkg-4',
+          name: 'Tirupati & Vellore Golden Temple',
+          badge: '3 Days / 2 Nights',
+          desc: 'Sacred cross-state route combining the Seven Hills ascent with the breathtaking Sripuram Mahalakshmi Golden Temple in Vellore.',
+          price: 5750,
+          sub: 'Tirupati Balaji + Sripuram Golden Mandir',
+          img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDRWMo75vbR-50aCQEZFIQT8IRLs6O8sJhj-GLuf36dbKRcnV6yJVk8qX7wf4lORFJ8SLiVsx6c31a6n_vU7HV4JQVGbEScgHXvNvT7yJoWZkcCL0lxTpltSmtaSqWZ9JHxli-Ks_QVYMIk_pX5GkLjhMAN-ai-owSy3XyUGaADEZYYALjiE8hiq0clq0YLtnylDuGOztIjWEepeU8d4WFB1AVKKDoLLHq1Lb0NQug'
+        }
+      ];
+
+      // 3. VEHICLES DATA (With Rich Photo Previews)
+      const vehicles = [
+        {
+          id: 'veh-1',
+          name: 'Swift Dzire / Etios AC',
+          sub: 'Executive Sedan',
+          badge: 'Compact & Nimble',
+          img: 'https://images.unsplash.com/photo-1550355291-bbee04a92027?auto=format&fit=crop&w=900&q=80',
+          cost: 1800,
+          capacity: '3-4 Devotees',
+          features: [
+            '2 Standard Suitcases + small bags',
+            'Comfortable ride for couples and elderly parents'
+          ]
+        },
+        {
+          id: 'veh-2',
+          name: 'Toyota Innova Crysta AC',
+          sub: 'Premium Hill MPV',
+          badge: 'Devotee Favorite',
+          img: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=900&q=80',
+          cost: 2450,
+          capacity: '6-7 Devotees',
+          features: [
+            '4 Large bags + overhead storage',
+            'High suspension comfort for elder devotees on 2nd Ghat hairpins'
+          ]
+        },
+        {
+          id: 'veh-3',
+          name: 'Force Tempo Traveller AC',
+          sub: '12 to 17 Seater Van',
+          badge: 'Joint Family Pick',
+          img: 'https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=900&q=80',
+          cost: 4200,
+          capacity: '12-17 Devotees',
+          features: [
+            'Dedicated rear boot and roof carrier available',
+            'Pushback seats and unified travel for large family sanghams'
+          ]
+        },
+        {
+          id: 'veh-4',
+          name: 'Luxury AC Mini Coach',
+          sub: '21 to 35 Seater Bus',
+          badge: 'Bhajan Mandali',
+          img: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=900&q=80',
+          cost: 7500,
+          capacity: '21-35 Devotees',
+          features: [
+            'Deep underfloor luggage bay for instruments and puja kits',
+            'Twin air-suspension with public address audio system'
+          ]
+        }
+      ];
+
+      // Current State
+      let currentPkgIdx = 0;
+      let currentVehIdx = 1; // Default Innova Crysta
+      let memberCount = 4;
+
+      // Package Elements
+      const pkgCardTitle = document.getElementById('pkg-card-title');
+      const pkgCardBadge = document.getElementById('pkg-card-badge');
+      const pkgCardDesc = document.getElementById('pkg-card-desc');
+      const pkgCardPrice = document.getElementById('pkg-card-price');
+      const pkgCardImg = document.getElementById('pkg-card-img');
+      const memberCountDisplay = document.getElementById('member-count-display');
+
+      // Package Flanker Elements
+      const pkgPrevTitle = document.getElementById('pkg-prev-title');
+      const pkgPrevBadge = document.getElementById('pkg-prev-badge');
+      const pkgPrevSub = document.getElementById('pkg-prev-sub');
+      const pkgPrevPrice = document.getElementById('pkg-prev-price');
+      const pkgPrevImg = document.getElementById('pkg-prev-img');
+
+      const pkgNextTitle = document.getElementById('pkg-next-title');
+      const pkgNextBadge = document.getElementById('pkg-next-badge');
+      const pkgNextSub = document.getElementById('pkg-next-sub');
+      const pkgNextPrice = document.getElementById('pkg-next-price');
+      const pkgNextImg = document.getElementById('pkg-next-img');
+
+      // Vehicle Elements
+      const vehCardName = document.getElementById('veh-card-name');
+      const vehCardSub = document.getElementById('veh-card-sub');
+      const vehCardBadge = document.getElementById('veh-badge');
+      const vehCardCost = document.getElementById('veh-card-cost');
+      const vehCardTime = document.getElementById('veh-card-time');
+      const vehCardImg = document.getElementById('veh-card-img');
+      const vehCardFeatures = document.getElementById('veh-card-features');
+
+      // Vehicle Flanker Elements
+      const vehPrevName = document.getElementById('veh-prev-name');
+      const vehPrevBadge = document.getElementById('veh-prev-badge');
+      const vehPrevSub = document.getElementById('veh-prev-sub');
+      const vehPrevCost = document.getElementById('veh-prev-cost');
+      const vehPrevImg = document.getElementById('veh-prev-img');
+
+      const vehNextName = document.getElementById('veh-next-name');
+      const vehNextBadge = document.getElementById('veh-next-badge');
+      const vehNextSub = document.getElementById('veh-next-sub');
+      const vehNextCost = document.getElementById('veh-next-cost');
+      const vehNextImg = document.getElementById('veh-next-img');
+
+      // Summary Elements
+      const summaryPkgImg = document.getElementById('summary-pkg-img');
+      const summaryPkgName = document.getElementById('summary-pkg-name');
+      const summaryPkgSub = document.getElementById('summary-pkg-sub');
+      const summaryPkgRate = document.getElementById('summary-pkg-rate');
+      const summaryPkgMembersSub = document.getElementById('summary-pkg-members-sub');
+      const summaryPkgSubtotal = document.getElementById('summary-pkg-subtotal');
+
+      const summaryVehImg = document.getElementById('summary-veh-img');
+      const summaryVehName = document.getElementById('summary-veh-name');
+      const summaryVehSub = document.getElementById('summary-veh-sub');
+      const summaryVehRate = document.getElementById('summary-veh-rate');
+
+      const summaryTotalMembers = document.getElementById('summary-total-members');
+      const summaryTotalCost = document.getElementById('summary-total-cost');
+      const calcPkgLbl = document.getElementById('calc-pkg-lbl');
+      const calcVehLbl = document.getElementById('calc-veh-lbl');
+      const calcStopsLbl = document.getElementById('calc-stops-lbl');
+      const stopsCounter = document.getElementById('stops-counter');
+      const stopsCostBadge = document.getElementById('stops-cost-badge');
+      const itineraryPreviewText = document.getElementById('itinerary-preview-text');
+      const whatsappOrderBtn = document.getElementById('whatsapp-order-btn');
+
+      // Quick Switch Modal Elements
+      const quickSwitchModal = document.getElementById('quick-switch-modal');
+      const modalTitle = document.getElementById('modal-title');
+      const modalSubtitle = document.getElementById('modal-subtitle');
+      const modalOptionsList = document.getElementById('modal-options-list');
+      const modalCloseBtn = document.getElementById('modal-close-btn');
+      const modalJumpLink = document.getElementById('modal-jump-link');
+
+      let currentModalMode = 'package'; // 'package' or 'vehicle'
+
+      function updatePackageCard() {
+        const pkg = packages[currentPkgIdx];
+        pkgCardTitle.textContent = pkg.name;
+        pkgCardBadge.textContent = pkg.badge;
+        pkgCardDesc.textContent = pkg.desc;
+        pkgCardPrice.textContent = '₹' + pkg.price.toLocaleString('en-IN');
+        pkgCardImg.src = pkg.img;
+
+        // Update Flankers
+        const prevIdx = (currentPkgIdx - 1 + packages.length) % packages.length;
+        const nextIdx = (currentPkgIdx + 1) % packages.length;
+        const prevPkg = packages[prevIdx];
+        const nextPkg = packages[nextIdx];
+
+        pkgPrevTitle.textContent = prevPkg.name;
+        pkgPrevBadge.textContent = prevPkg.badge;
+        pkgPrevSub.textContent = prevPkg.sub;
+        pkgPrevPrice.textContent = '₹' + prevPkg.price.toLocaleString('en-IN');
+        pkgPrevImg.src = prevPkg.img;
+
+        pkgNextTitle.textContent = nextPkg.name;
+        pkgNextBadge.textContent = nextPkg.badge;
+        pkgNextSub.textContent = nextPkg.sub;
+        pkgNextPrice.textContent = '₹' + nextPkg.price.toLocaleString('en-IN');
+        pkgNextImg.src = nextPkg.img;
+
+        // update dots
+        const dots = document.querySelectorAll('#pkg-indicators span');
+        dots.forEach((dot, idx) => {
+          if (idx === currentPkgIdx) {
+            dot.className = 'w-3 h-3 rounded-full bg-primary ring-2 ring-primary/40';
+          } else {
+            dot.className = 'w-2.5 h-2.5 rounded-full bg-[#C9972B]/40';
+          }
+        });
+
+        updateSummary();
+      }
+
+      function updateVehicleCard() {
+        const veh = vehicles[currentVehIdx];
+        vehCardName.textContent = veh.name;
+        vehCardSub.textContent = veh.sub;
+        vehCardBadge.textContent = veh.badge;
+        vehCardCost.textContent = '₹' + veh.cost.toLocaleString('en-IN');
+        vehCardTime.textContent = veh.capacity;
+        vehCardImg.src = veh.img;
+
+        vehCardFeatures.innerHTML = veh.features.map(f => 
+          `<li class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-sm">check_circle</span>${f}</li>`
+        ).join('');
+
+        // Update Flankers
+        const prevIdx = (currentVehIdx - 1 + vehicles.length) % vehicles.length;
+        const nextIdx = (currentVehIdx + 1) % vehicles.length;
+        const prevVeh = vehicles[prevIdx];
+        const nextVeh = vehicles[nextIdx];
+
+        vehPrevName.textContent = prevVeh.name;
+        vehPrevBadge.textContent = prevVeh.badge;
+        vehPrevSub.textContent = prevVeh.capacity;
+        vehPrevCost.textContent = '₹' + prevVeh.cost.toLocaleString('en-IN');
+        vehPrevImg.src = prevVeh.img;
+
+        vehNextName.textContent = nextVeh.name;
+        vehNextBadge.textContent = nextVeh.badge;
+        vehNextSub.textContent = nextVeh.capacity;
+        vehNextCost.textContent = '₹' + nextVeh.cost.toLocaleString('en-IN');
+        vehNextImg.src = nextVeh.img;
+
+        // update dots
+        const dots = document.querySelectorAll('#veh-indicators span');
+        dots.forEach((dot, idx) => {
+          if (idx === currentVehIdx) {
+            dot.className = 'w-3 h-3 rounded-full bg-primary ring-2 ring-primary/40';
+          } else {
+            dot.className = 'w-2.5 h-2.5 rounded-full bg-[#C9972B]/40';
+          }
+        });
+
+        updateSummary();
+      }
+
+      function getSelectedStops() {
+        const checkboxes = document.querySelectorAll('.stop-checkbox:checked');
+        const stops = [];
+        let totalStopsCost = 0;
+        checkboxes.forEach(cb => {
+          const name = cb.getAttribute('data-name');
+          const price = parseInt(cb.getAttribute('data-price'), 10) || 0;
+          stops.push({ name, price });
+          totalStopsCost += price;
+        });
+        return { stops, totalStopsCost };
+      }
+
+      function updateSummary() {
+        const pkg = packages[currentPkgIdx];
+        const veh = vehicles[currentVehIdx];
+        const { stops, totalStopsCost } = getSelectedStops();
+
+        // 1. Package summary with Rich Image sync
+        const pkgSubtotal = pkg.price * memberCount;
+        summaryPkgName.textContent = pkg.name;
+        summaryPkgSub.textContent = pkg.sub;
+        summaryPkgRate.textContent = '₹' + pkg.price.toLocaleString('en-IN');
+        summaryPkgMembersSub.textContent = memberCount;
+        summaryPkgSubtotal.textContent = '₹' + pkgSubtotal.toLocaleString('en-IN');
+        calcPkgLbl.textContent = '₹' + pkgSubtotal.toLocaleString('en-IN');
+        summaryPkgImg.src = pkg.img;
+
+        // 2. Vehicle summary with Rich Image sync
+        summaryVehName.textContent = veh.name;
+        summaryVehSub.textContent = veh.capacity + ' • Hill-Ghat Certified';
+        summaryVehRate.textContent = '₹' + veh.cost.toLocaleString('en-IN');
+        summaryVehImg.src = veh.img;
+        calcVehLbl.textContent = '₹' + veh.cost.toLocaleString('en-IN');
+
+        // 3. Members
+        summaryTotalMembers.textContent = memberCount + ' Devotees';
+
+        // 4. Stops summary
+        stopsCounter.textContent = `${stops.length} Stop${stops.length === 1 ? '' : 's'} Selected`;
+        stopsCostBadge.textContent = `+₹${totalStopsCost.toLocaleString('en-IN')} for stops`;
+        calcStopsLbl.textContent = '₹' + totalStopsCost.toLocaleString('en-IN');
+
+        if (stops.length > 0) {
+          const stopNames = stops.map(s => s.name.split(' ')[0]).join(' → ');
+          itineraryPreviewText.textContent = `Origin → ${stopNames} → Tirumala Sanctum`;
+        } else {
+          itineraryPreviewText.textContent = `Origin (Direct Ghat Transit) → Tirumala Sanctum`;
+        }
+
+        // 5. Total Computation
+        const grandTotal = pkgSubtotal + veh.cost + totalStopsCost;
+        summaryTotalCost.textContent = '₹' + grandTotal.toLocaleString('en-IN');
+
+        // 6. WhatsApp Message
+        const stopsListStr = stops.length > 0 ? stops.map(s => `  • ${s.name} (+Rs.${s.price})`).join('\n') : '  • Direct Tirumala Ascent';
+        const msg = `Namaskaram ABC Travels,\n\n*PILGRIMAGE BOOKING INQUIRY*\n━━━━━━━━━━━━━━━━━━━━\n• *Package:* ${pkg.name} (${pkg.badge})\n• *Devotees:* ${memberCount} Members\n• *Package Fare:* Rs. ${pkgSubtotal.toLocaleString('en-IN')} (Rs. ${pkg.price}/person)\n• *Vehicle:* ${veh.name} (Rs. ${veh.cost.toLocaleString('en-IN')})\n• *Selected Intermediate Stops:*\n${stopsListStr}\n━━━━━━━━━━━━━━━━━━━━\n*ESTIMATED TOTAL FARE:* Rs. ${grandTotal.toLocaleString('en-IN')}\n\nPlease confirm available slot and chauffeur details.`;
+        whatsappOrderBtn.href = `https://wa.me/919490088221?text=${encodeURIComponent(msg)}`;
+      }
+
+      // Quick Switch Modal Open/Render
+      function openSwitchModal(type) {
+        currentModalMode = type;
+        quickSwitchModal.classList.remove('hidden');
+        quickSwitchModal.setAttribute('aria-hidden', 'false');
+
+        if (type === 'package') {
+          modalTitle.textContent = 'Switch Pilgrimage Package';
+          modalSubtitle.textContent = 'Select one of our sacred itineraries';
+          document.getElementById('modal-title-icon').textContent = 'temple_hindu';
+          modalJumpLink.textContent = 'Go to Packages Carousel ↑';
+
+          modalOptionsList.innerHTML = packages.map((p, idx) => {
+            const isSelected = idx === currentPkgIdx;
+            return `
+              <div data-idx="${idx}" class="modal-option-item flex items-center gap-3 p-3 rounded-2xl border-2 ${isSelected ? 'border-primary bg-primary/5 ring-2 ring-primary/20' : 'border-[#C9972B]/30 bg-white hover:border-primary/60'} cursor-pointer transition-all duration-150">
+                <img src="${p.img}" alt="${p.name}" class="w-16 h-16 rounded-xl object-cover shadow-sm shrink-0"/>
+                <div class="flex-1 min-w-0">
+                  <div class="flex items-center gap-2">
+                    <span class="font-headline-sm text-sm font-bold text-primary truncate">${p.name}</span>
+                    <span class="text-[10px] px-1.5 py-0.5 rounded bg-secondary/20 text-secondary font-bold">${p.badge}</span>
+                  </div>
+                  <p class="text-[11px] text-on-surface-variant truncate">${p.sub}</p>
+                  <p class="text-xs font-bold text-primary mt-0.5">₹${p.price.toLocaleString('en-IN')} <span class="font-normal text-[10px] text-on-surface-variant">/ person</span></p>
+                </div>
+                <div class="shrink-0">
+                  <span class="material-symbols-outlined text-2xl ${isSelected ? 'text-primary' : 'text-gray-300'}">
+                    ${isSelected ? 'check_circle' : 'radio_button_unchecked'}
+                  </span>
+                </div>
+              </div>
+            `;
+          }).join('');
+        } else {
+          modalTitle.textContent = 'Switch Certified Vehicle';
+          modalSubtitle.textContent = 'Select an authorized hill-ghat vehicle';
+          document.getElementById('modal-title-icon').textContent = 'directions_car';
+          modalJumpLink.textContent = 'Go to Vehicles Carousel ↑';
+
+          modalOptionsList.innerHTML = vehicles.map((v, idx) => {
+            const isSelected = idx === currentVehIdx;
+            return `
+              <div data-idx="${idx}" class="modal-option-item flex items-center gap-3 p-3 rounded-2xl border-2 ${isSelected ? 'border-primary bg-primary/5 ring-2 ring-primary/20' : 'border-[#C9972B]/30 bg-white hover:border-primary/60'} cursor-pointer transition-all duration-150">
+                <img src="${v.img}" alt="${v.name}" class="w-16 h-16 rounded-xl object-cover shadow-sm shrink-0"/>
+                <div class="flex-1 min-w-0">
+                  <div class="flex items-center gap-2">
+                    <span class="font-headline-sm text-sm font-bold text-primary truncate">${v.name}</span>
+                    <span class="text-[10px] px-1.5 py-0.5 rounded bg-secondary text-white font-bold">${v.badge}</span>
+                  </div>
+                  <p class="text-[11px] text-on-surface-variant">${v.capacity} • ${v.sub}</p>
+                  <p class="text-xs font-bold text-primary mt-0.5">₹${v.cost.toLocaleString('en-IN')} <span class="font-normal text-[10px] text-on-surface-variant">base tariff</span></p>
+                </div>
+                <div class="shrink-0">
+                  <span class="material-symbols-outlined text-2xl ${isSelected ? 'text-primary' : 'text-gray-300'}">
+                    ${isSelected ? 'check_circle' : 'radio_button_unchecked'}
+                  </span>
+                </div>
+              </div>
+            `;
+          }).join('');
+        }
+
+        // Attach clicks to items
+        document.querySelectorAll('.modal-option-item').forEach(item => {
+          item.addEventListener('click', () => {
+            const idx = parseInt(item.getAttribute('data-idx'), 10);
+            if (currentModalMode === 'package') {
+              currentPkgIdx = idx;
+              updatePackageCard();
+            } else {
+              currentVehIdx = idx;
+              updateVehicleCard();
+            }
+            closeSwitchModal();
+          });
+        });
+      }
+
+      function closeSwitchModal() {
+        quickSwitchModal.classList.add('hidden');
+        quickSwitchModal.setAttribute('aria-hidden', 'true');
+      }
+
+      modalCloseBtn.addEventListener('click', closeSwitchModal);
+      quickSwitchModal.addEventListener('click', (e) => {
+        if (e.target === quickSwitchModal) closeSwitchModal();
+      });
+
+      modalJumpLink.addEventListener('click', () => {
+        closeSwitchModal();
+        if (currentModalMode === 'package') {
+          document.getElementById('packages-section').scrollIntoView({ behavior: 'smooth' });
+        } else {
+          document.getElementById('vehicles-section').scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+
+      // Wire triggers for Change Buttons & Switch links
+      document.querySelectorAll('.change-pkg-trigger').forEach(btn => {
+        btn.addEventListener('click', () => openSwitchModal('package'));
+      });
+
+      document.querySelectorAll('.change-veh-trigger').forEach(btn => {
+        btn.addEventListener('click', () => openSwitchModal('vehicle'));
+      });
+
+      // Event Listeners for Package Carousel
+      document.getElementById('pkg-prev-btn').addEventListener('click', () => {
+        currentPkgIdx = (currentPkgIdx - 1 + packages.length) % packages.length;
+        updatePackageCard();
+      });
+
+      document.getElementById('pkg-next-btn').addEventListener('click', () => {
+        currentPkgIdx = (currentPkgIdx + 1) % packages.length;
+        updatePackageCard();
+      });
+
+      // Member counter
+      document.getElementById('member-minus').addEventListener('click', () => {
+        if (memberCount > 1) {
+          memberCount--;
+          memberCountDisplay.textContent = memberCount + ' Devotees';
+          updateSummary();
+        }
+      });
+
+      document.getElementById('member-plus').addEventListener('click', () => {
+        if (memberCount < 40) {
+          memberCount++;
+          memberCountDisplay.textContent = memberCount + ' Devotees';
+          updateSummary();
+        }
+      });
+
+      // Event Listeners for Vehicle Carousel
+      document.getElementById('veh-prev-btn').addEventListener('click', () => {
+        currentVehIdx = (currentVehIdx - 1 + vehicles.length) % vehicles.length;
+        updateVehicleCard();
+      });
+
+      document.getElementById('veh-next-btn').addEventListener('click', () => {
+        currentVehIdx = (currentVehIdx + 1) % vehicles.length;
+        updateVehicleCard();
+      });
+
+      // "Book this Package & Pick Vehicle" Button -> Syncs & Smooth scrolls to Vehicles
+      document.getElementById('select-pkg-btn').addEventListener('click', () => {
+        updateSummary();
+        document.getElementById('vehicles-section').scrollIntoView({ behavior: 'smooth' });
+      });
+
+      // "Select this Vehicle & Review Route" Button -> Syncs & Smooth scrolls to Booking/Itinerary
+      document.getElementById('select-veh-btn').addEventListener('click', () => {
+        updateSummary();
+        document.getElementById('booking-section').scrollIntoView({ behavior: 'smooth' });
+      });
+
+      // In-between Stops Checkboxes change event
+      document.querySelectorAll('.stop-checkbox').forEach(cb => {
+        cb.addEventListener('change', () => {
+          updateSummary();
+        });
+      });
+
+      // 4. SCROLL-SPY ACTIVE NAV SHINE IMPLEMENTATION
+      const navLinks = [
+        { btn: document.getElementById('nav-btn-packages'), targetId: 'packages-section' },
+        { btn: document.getElementById('nav-btn-vehicles'), targetId: 'vehicles-section' },
+        { btn: document.getElementById('nav-btn-contact'), targetId: 'contact-section' }
+      ];
+
+      function setActiveNav(targetId) {
+        navLinks.forEach(item => {
+          if (item.targetId === targetId) {
+            item.btn.classList.add('is-active');
+          } else {
+            item.btn.classList.remove('is-active');
+          }
+        });
+      }
+
+      // Smooth scroll click handler for nav links
+      navLinks.forEach(item => {
+        item.btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const targetEl = document.getElementById(item.targetId);
+          if (targetEl) {
+            targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            setActiveNav(item.targetId);
+          }
+        });
+      });
+
+      // Scroll Spy using scroll positions
+      function handleScrollSpy() {
+        const scrollPosition = window.scrollY + 160; // offset for fixed header
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+
+        // If close to bottom of document, highlight contact
+        if (window.scrollY + windowHeight >= documentHeight - 120) {
+          setActiveNav('contact-section');
+          return;
+        }
+
+        const sections = [
+          { id: 'packages-section', el: document.getElementById('packages-section') },
+          { id: 'vehicles-section', el: document.getElementById('vehicles-section') },
+          { id: 'contact-section', el: document.getElementById('contact-section') }
+        ];
+
+        let activeSectionId = null;
+
+        for (let i = sections.length - 1; i >= 0; i--) {
+          const s = sections[i];
+          if (s.el) {
+            const top = s.el.offsetTop;
+            if (scrollPosition >= top - 80) {
+              activeSectionId = s.id;
+              break;
+            }
+          }
+        }
+
+        if (activeSectionId) {
+          setActiveNav(activeSectionId);
+        } else {
+          // In hero or above first section
+          navLinks.forEach(item => item.btn.classList.remove('is-active'));
+        }
+      }
+
+      window.addEventListener('scroll', handleScrollSpy, { passive: true });
+      handleScrollSpy();
+
+      // Initial Render
+      updatePackageCard();
+      updateVehicleCard();
+    })();
+  </script>
+</body></html>

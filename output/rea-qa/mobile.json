@@ -1,0 +1,150 @@
+{
+  "browser": {
+    "mode": "launch",
+    "executable_path": "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe"
+  },
+  "start_url": {
+    "url": "http://127.0.0.1:4188"
+  },
+  "environment": {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "timezone": "Asia/Calcutta",
+    "reduced_motion": "reduce"
+  },
+  "actions": [
+    {
+      "step_id": "ready",
+      "action": "wait_for_timeout",
+      "duration_ms": 800
+    },
+    {
+      "step_id": "plan",
+      "action": "click",
+      "locator": {
+        "kind": "css",
+        "selector": ".nav-plan"
+      },
+      "timeout_ms": 5000
+    },
+    {
+      "step_id": "pickup",
+      "action": "fill",
+      "locator": {
+        "kind": "css",
+        "selector": "#pickup"
+      },
+      "value": {
+        "source": "literal",
+        "value": "Tirupati Railway Station"
+      },
+      "timeout_ms": 5000
+    },
+    {
+      "step_id": "dropoff",
+      "action": "fill",
+      "locator": {
+        "kind": "css",
+        "selector": "#dropoff"
+      },
+      "value": {
+        "source": "literal",
+        "value": "Tirupati hotel"
+      },
+      "timeout_ms": 5000
+    },
+    {
+      "step_id": "name",
+      "action": "fill",
+      "locator": {
+        "kind": "css",
+        "selector": "#name"
+      },
+      "value": {
+        "source": "literal",
+        "value": "Frontend QA"
+      },
+      "timeout_ms": 5000
+    },
+    {
+      "step_id": "flexible",
+      "action": "click",
+      "locator": {
+        "kind": "css",
+        "selector": "#flexible-date"
+      },
+      "timeout_ms": 5000
+    },
+    {
+      "step_id": "people-plus",
+      "action": "click",
+      "locator": {
+        "kind": "css",
+        "selector": "#people-plus"
+      },
+      "timeout_ms": 5000
+    },
+    {
+      "step_id": "change-tour",
+      "action": "click",
+      "locator": {
+        "kind": "css",
+        "selector": "[data-change=\"tour\"]"
+      },
+      "timeout_ms": 5000
+    },
+    {
+      "step_id": "choose-tour",
+      "action": "click",
+      "locator": {
+        "kind": "css",
+        "selector": "[data-change-type=\"tour\"][data-index=\"2\"]"
+      },
+      "timeout_ms": 5000
+    },
+    {
+      "step_id": "selection",
+      "action": "wait_for_timeout",
+      "duration_ms": 800
+    },
+    {
+      "step_id": "calendar-unlock",
+      "action": "click",
+      "locator": {
+        "kind": "css",
+        "selector": "#flexible-date"
+      },
+      "timeout_ms": 5000
+    },
+    {
+      "step_id": "open-calendar",
+      "action": "click",
+      "locator": {
+        "kind": "css",
+        "selector": ".calendar-open"
+      },
+      "timeout_ms": 5000
+    },
+    {
+      "step_id": "calendar",
+      "action": "wait_for_timeout",
+      "duration_ms": 800
+    }
+  ],
+  "capture": {
+    "after_each_step": [
+      "dom"
+    ],
+    "at_end": [
+      "screenshot",
+      "accessibility",
+      "url"
+    ],
+    "events": [
+      "console",
+      "page-errors"
+    ]
+  }
+}

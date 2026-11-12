@@ -1,0 +1,2 @@
+# Keep archived releases byte-for-byte intact.
+versions/** -text

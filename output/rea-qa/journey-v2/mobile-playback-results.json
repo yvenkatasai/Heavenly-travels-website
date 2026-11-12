@@ -1,0 +1,13 @@
+{
+  "state": "COMPLETE",
+  "passed": true,
+  "sample": {
+    "width": 1920,
+    "height": 1080,
+    "elapsedVideoSeconds": 3.3053999999999997,
+    "decodedFrames": 100,
+    "droppedFrames": 0,
+    "source": "http://127.0.0.1:4188/assets/mountains/mountain-dawn-smooth-mobile-v2.mp4",
+    "paused": false
+  }
+}

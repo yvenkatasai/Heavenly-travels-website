@@ -1,0 +1,81 @@
+{
+  "browser": {
+    "mode": "launch",
+    "executable_path": "C:/Program Files/Google/Chrome/Application/chrome.exe"
+  },
+  "start_url": {
+    "url": "https://incredibles.dev/"
+  },
+  "environment": {
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "reduced_motion": "no-preference",
+    "timezone": "Asia/Calcutta"
+  },
+  "actions": [
+    {
+      "step_id": "ready",
+      "action": "wait_for_timeout",
+      "duration_ms": 1800
+    },
+    {
+      "step_id": "pricing-link",
+      "action": "click",
+      "locator": {
+        "kind": "css",
+        "selector": "a[href=\"#pricing\"]"
+      },
+      "timeout_ms": 8000
+    },
+    {
+      "step_id": "pricing-ready",
+      "action": "wait_for_timeout",
+      "duration_ms": 1500
+    },
+    {
+      "step_id": "next-page",
+      "action": "press",
+      "locator": {
+        "kind": "css",
+        "selector": "body"
+      },
+      "key": "PageDown",
+      "timeout_ms": 5000
+    },
+    {
+      "step_id": "faq-ready",
+      "action": "wait_for_timeout",
+      "duration_ms": 1000
+    },
+    {
+      "step_id": "bottom",
+      "action": "press",
+      "locator": {
+        "kind": "css",
+        "selector": "body"
+      },
+      "key": "End",
+      "timeout_ms": 5000
+    },
+    {
+      "step_id": "footer-ready",
+      "action": "wait_for_timeout",
+      "duration_ms": 1500
+    }
+  ],
+  "capture": {
+    "after_each_step": [
+      "screenshot"
+    ],
+    "at_end": [
+      "dom",
+      "accessibility",
+      "url"
+    ],
+    "events": [
+      "page-errors"
+    ]
+  }
+}

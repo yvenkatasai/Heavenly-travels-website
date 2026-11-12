@@ -1,0 +1,209 @@
+[
+  {
+    "name": "Normal packages retained",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "New itinerary contains five days",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Five-day section follows normal packages",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Four package levels",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Five separate vehicle types",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Both service controls present",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Service controls synchronise",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Below-card selector synchronises back",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Inside service picker is above card overlay",
+    "pass": true,
+    "detail": "SELECT"
+  },
+  {
+    "name": "Vehicle selection requires package first",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Tier selection goes to vehicle section",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Vehicle opens review popup",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Review includes tier and vehicle",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Legacy planner receives vehicle",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "WhatsApp correct destination",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "WhatsApp contains selected package and vehicle",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "WhatsApp has real newline and customer details",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Popup closes and dock remains",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Five-day choice updates service",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Five-day selection retained in review",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Five-day WhatsApp draft includes the plan",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Group popup limits travellers 3\u2013200",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Group under minimum blocked",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Group over maximum blocked",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Group count can be entered naturally",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Vehicle rail overflows horizontally",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Vehicle next arrow slides rail",
+    "pass": true,
+    "detail": 270
+  },
+  {
+    "name": "End arrow disables at final tile",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Page fits width 320",
+    "pass": true,
+    "detail": {
+      "scroll": 320,
+      "viewport": 320
+    }
+  },
+  {
+    "name": "Review fits width 320",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Page fits width 390",
+    "pass": true,
+    "detail": {
+      "scroll": 390,
+      "viewport": 390
+    }
+  },
+  {
+    "name": "Review fits width 390",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Page fits width 768",
+    "pass": true,
+    "detail": {
+      "scroll": 768,
+      "viewport": 768
+    }
+  },
+  {
+    "name": "Review fits width 768",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Page fits width 1440",
+    "pass": true,
+    "detail": {
+      "scroll": 1440,
+      "viewport": 1440
+    }
+  },
+  {
+    "name": "Review fits width 1440",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Dependency styling does not reset native planner",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "No unsupported tier price promises",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "done": true,
+    "passed": 38,
+    "failed": 0
+  }
+]

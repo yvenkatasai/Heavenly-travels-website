@@ -1,0 +1,149 @@
+[
+  {
+    "name": "Three package navigation choices",
+    "pass": true
+  },
+  {
+    "name": "Complete Package is explicit",
+    "pass": true
+  },
+  {
+    "name": "Individual Packages is explicit",
+    "pass": true
+  },
+  {
+    "name": "Day-wise Packages is explicit",
+    "pass": true
+  },
+  {
+    "name": "Travel Assistance is explicit",
+    "pass": true
+  },
+  {
+    "name": "Custom packages explicitly named",
+    "pass": true
+  },
+  {
+    "name": "Inscription font loads",
+    "pass": true
+  },
+  {
+    "name": "Inscription font assigned to category headings",
+    "pass": true
+  },
+  {
+    "name": "Category navigation fits 320",
+    "pass": true
+  },
+  {
+    "name": "Page fits 320",
+    "pass": true
+  },
+  {
+    "name": "Navigation shows pilgrimage label at 320",
+    "pass": true,
+    "detail": 93.734375
+  },
+  {
+    "name": "Navigation shows journeys label at 320",
+    "pass": true,
+    "detail": 106.890625
+  },
+  {
+    "name": "Navigation shows day-packages label at 320",
+    "pass": true,
+    "detail": 106.625
+  },
+  {
+    "name": "Category navigation fits 390",
+    "pass": true
+  },
+  {
+    "name": "Page fits 390",
+    "pass": true
+  },
+  {
+    "name": "Navigation shows pilgrimage label at 390",
+    "pass": true,
+    "detail": 93.734375
+  },
+  {
+    "name": "Navigation shows journeys label at 390",
+    "pass": true,
+    "detail": 107.09375
+  },
+  {
+    "name": "Navigation shows day-packages label at 390",
+    "pass": true,
+    "detail": 106.859375
+  },
+  {
+    "name": "Category navigation fits 768",
+    "pass": true
+  },
+  {
+    "name": "Page fits 768",
+    "pass": true
+  },
+  {
+    "name": "Navigation shows pilgrimage label at 768",
+    "pass": true,
+    "detail": 109.640625
+  },
+  {
+    "name": "Navigation shows journeys label at 768",
+    "pass": true,
+    "detail": 123.421875
+  },
+  {
+    "name": "Navigation shows day-packages label at 768",
+    "pass": true,
+    "detail": 122.984375
+  },
+  {
+    "name": "Category navigation fits 1024",
+    "pass": true
+  },
+  {
+    "name": "Page fits 1024",
+    "pass": true
+  },
+  {
+    "name": "Navigation shows pilgrimage label at 1024",
+    "pass": true,
+    "detail": 109.5
+  },
+  {
+    "name": "Navigation shows journeys label at 1024",
+    "pass": true,
+    "detail": 123.28125
+  },
+  {
+    "name": "Navigation shows day-packages label at 1024",
+    "pass": true,
+    "detail": 123.3125
+  },
+  {
+    "name": "Category navigation fits 1440",
+    "pass": true
+  },
+  {
+    "name": "Page fits 1440",
+    "pass": true
+  },
+  {
+    "name": "Navigation shows pilgrimage label at 1440",
+    "pass": true,
+    "detail": 109.5
+  },
+  {
+    "name": "Navigation shows journeys label at 1440",
+    "pass": true,
+    "detail": 123.28125
+  },
+  {
+    "name": "Navigation shows day-packages label at 1440",
+    "pass": true,
+    "detail": 123.4375
+  }
+]

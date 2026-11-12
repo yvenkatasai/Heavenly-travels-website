@@ -1,0 +1,21 @@
+{
+  "generation": "Built-in image_gen",
+  "description": "AI-generated Tirumala-inspired hills, no roads or buildings. Cinematic forest greens, mist and warm dawn light.",
+  "original_size": [
+    1672,
+    941
+  ],
+  "original_file": "output\\imagegen\\tirumala-hills-cinematic-v1.png",
+  "desktop": {
+    "file": "tirumala-hills-cinematic-v1.webp",
+    "bytes": 308742
+  },
+  "mobile": {
+    "file": "tirumala-hills-cinematic-mobile-v1.webp",
+    "size": [
+      960,
+      540
+    ],
+    "bytes": 100876
+  }
+}

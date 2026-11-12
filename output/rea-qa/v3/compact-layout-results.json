@@ -1,0 +1,272 @@
+{
+  "checks": [
+    {
+      "name": "Main package has no misleading arrows",
+      "pass": true
+    },
+    {
+      "name": "Only one service selector",
+      "pass": true
+    },
+    {
+      "name": "Seven temple stops retained",
+      "pass": true
+    },
+    {
+      "name": "Five tours retained",
+      "pass": true
+    },
+    {
+      "name": "Tour stops are collapsed by default",
+      "pass": true
+    },
+    {
+      "name": "Day itinerary collapsed by default",
+      "pass": true
+    },
+    {
+      "name": "No page overflow 320",
+      "pass": true
+    },
+    {
+      "name": "Tour card compact 320",
+      "pass": true,
+      "detail": {
+        "x": 34,
+        "y": 1944.484375,
+        "width": 252,
+        "height": 363.390625
+      }
+    },
+    {
+      "name": "Package modal fits 320",
+      "pass": true,
+      "detail": {
+        "x": 12,
+        "y": 34.078125,
+        "width": 296,
+        "height": 499.828125
+      }
+    },
+    {
+      "name": "Services still accessible 320",
+      "pass": true
+    },
+    {
+      "name": "No page overflow 390",
+      "pass": true
+    },
+    {
+      "name": "Tour card compact 390",
+      "pass": true,
+      "detail": {
+        "x": 34,
+        "y": 1864.890625,
+        "width": 322,
+        "height": 365.59375
+      }
+    },
+    {
+      "name": "Package modal fits 390",
+      "pass": true,
+      "detail": {
+        "x": 12,
+        "y": 63.296875,
+        "width": 366,
+        "height": 717.390625
+      }
+    },
+    {
+      "name": "Services still accessible 390",
+      "pass": true
+    },
+    {
+      "name": "No page overflow 768",
+      "pass": true
+    },
+    {
+      "name": "Tour card compact 768",
+      "pass": true,
+      "detail": {
+        "x": 60,
+        "y": 1712.171875,
+        "width": 648,
+        "height": 292
+      }
+    },
+    {
+      "name": "Package modal fits 768",
+      "pass": true,
+      "detail": {
+        "x": 16,
+        "y": 76.796875,
+        "width": 736,
+        "height": 870.390625
+      }
+    },
+    {
+      "name": "Services still accessible 768",
+      "pass": true
+    },
+    {
+      "name": "No page overflow 1024",
+      "pass": true
+    },
+    {
+      "name": "Tour card compact 1024",
+      "pass": true,
+      "detail": {
+        "x": 64,
+        "y": 1501.3125,
+        "width": 896,
+        "height": 292
+      }
+    },
+    {
+      "name": "Package modal fits 1024",
+      "pass": true,
+      "detail": {
+        "x": 142,
+        "y": 36,
+        "width": 740,
+        "height": 528
+      }
+    },
+    {
+      "name": "Services still accessible 1024",
+      "pass": true
+    },
+    {
+      "name": "No page overflow 1440",
+      "pass": true
+    },
+    {
+      "name": "Tour card compact 1440",
+      "pass": true,
+      "detail": {
+        "x": 160,
+        "y": 1656.4375,
+        "width": 1120,
+        "height": 292
+      }
+    },
+    {
+      "name": "Package modal fits 1440",
+      "pass": true,
+      "detail": {
+        "x": 350,
+        "y": 67.5,
+        "width": 740,
+        "height": 765
+      }
+    },
+    {
+      "name": "Services still accessible 1440",
+      "pass": true
+    },
+    {
+      "name": "Tour details open on request",
+      "pass": true
+    },
+    {
+      "name": "Day itinerary opens on request",
+      "pass": true
+    },
+    {
+      "name": "Optional fields collapsed",
+      "pass": true
+    },
+    {
+      "name": "Review summary retains package and vehicle",
+      "pass": true
+    },
+    {
+      "name": "Review fits 320",
+      "pass": true,
+      "detail": {
+        "x": 14,
+        "y": 34.078125,
+        "width": 292,
+        "height": 499.828125
+      }
+    },
+    {
+      "name": "Review content fits 320",
+      "pass": true
+    },
+    {
+      "name": "Review fits 390",
+      "pass": true,
+      "detail": {
+        "x": 14,
+        "y": 148.171875,
+        "width": 362,
+        "height": 547.640625
+      }
+    },
+    {
+      "name": "Review content fits 390",
+      "pass": true
+    },
+    {
+      "name": "Review fits 768",
+      "pass": true,
+      "detail": {
+        "x": 129,
+        "y": 242.5,
+        "width": 510,
+        "height": 539
+      }
+    },
+    {
+      "name": "Review content fits 768",
+      "pass": true
+    },
+    {
+      "name": "Review fits 1024",
+      "pass": true,
+      "detail": {
+        "x": 257,
+        "y": 36,
+        "width": 510,
+        "height": 528
+      }
+    },
+    {
+      "name": "Review content fits 1024",
+      "pass": true
+    },
+    {
+      "name": "Review fits 1440",
+      "pass": true,
+      "detail": {
+        "x": 465,
+        "y": 180.5,
+        "width": 510,
+        "height": 539
+      }
+    },
+    {
+      "name": "Review content fits 1440",
+      "pass": true
+    },
+    {
+      "name": "Extra travel fields accessible",
+      "pass": true
+    },
+    {
+      "name": "WhatsApp draft still works",
+      "pass": true
+    },
+    {
+      "name": "No prices restored",
+      "pass": true
+    },
+    {
+      "name": "No runtime errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": []
+}

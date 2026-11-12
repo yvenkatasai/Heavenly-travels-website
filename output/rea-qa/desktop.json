@@ -1,0 +1,135 @@
+{
+  "browser": {
+    "mode": "launch",
+    "executable_path": "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe"
+  },
+  "start_url": {
+    "url": "http://127.0.0.1:4188"
+  },
+  "environment": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "timezone": "Asia/Calcutta",
+    "reduced_motion": "reduce"
+  },
+  "actions": [
+    {
+      "step_id": "hero",
+      "action": "wait_for_timeout",
+      "duration_ms": 1800
+    },
+    {
+      "step_id": "menu",
+      "action": "click",
+      "locator": {
+        "kind": "css",
+        "selector": "#menu-toggle"
+      },
+      "timeout_ms": 5000
+    },
+    {
+      "step_id": "menu-view",
+      "action": "wait_for_timeout",
+      "duration_ms": 800
+    },
+    {
+      "step_id": "close-menu",
+      "action": "click",
+      "locator": {
+        "kind": "css",
+        "selector": "#menu-close"
+      },
+      "timeout_ms": 5000
+    },
+    {
+      "step_id": "journeys",
+      "action": "click",
+      "locator": {
+        "kind": "css",
+        "selector": ".round-link"
+      },
+      "timeout_ms": 5000
+    },
+    {
+      "step_id": "packages",
+      "action": "wait_for_timeout",
+      "duration_ms": 800
+    },
+    {
+      "step_id": "next-package",
+      "action": "click",
+      "locator": {
+        "kind": "css",
+        "selector": "[data-next=\"package-list\"]"
+      },
+      "timeout_ms": 5000
+    },
+    {
+      "step_id": "second-package",
+      "action": "wait_for_timeout",
+      "duration_ms": 800
+    },
+    {
+      "step_id": "choose-package",
+      "action": "click",
+      "locator": {
+        "kind": "css",
+        "selector": "[data-tour=\"1\"]"
+      },
+      "timeout_ms": 5000
+    },
+    {
+      "step_id": "fleet",
+      "action": "wait_for_timeout",
+      "duration_ms": 800
+    },
+    {
+      "step_id": "next-vehicle",
+      "action": "click",
+      "locator": {
+        "kind": "css",
+        "selector": "[data-next=\"fleet-list\"]"
+      },
+      "timeout_ms": 5000
+    },
+    {
+      "step_id": "choose-vehicle",
+      "action": "click",
+      "locator": {
+        "kind": "css",
+        "selector": "[data-vehicle=\"1\"]"
+      },
+      "timeout_ms": 5000
+    },
+    {
+      "step_id": "check-trip",
+      "action": "click",
+      "locator": {
+        "kind": "css",
+        "selector": "#confirm-scroll"
+      },
+      "timeout_ms": 5000
+    },
+    {
+      "step_id": "booking",
+      "action": "wait_for_timeout",
+      "duration_ms": 800
+    }
+  ],
+  "capture": {
+    "after_each_step": [
+      "dom",
+      "screenshot"
+    ],
+    "at_end": [
+      "accessibility",
+      "url"
+    ],
+    "events": [
+      "console",
+      "page-errors"
+    ]
+  }
+}

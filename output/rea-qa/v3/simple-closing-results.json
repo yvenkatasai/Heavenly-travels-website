@@ -1,0 +1,284 @@
+{
+  "checks": [
+    {
+      "name": "Simple package heading",
+      "pass": true
+    },
+    {
+      "name": "Simple card buttons",
+      "pass": true
+    },
+    {
+      "name": "No hard itinerary word in visible page",
+      "pass": true
+    },
+    {
+      "name": "Four clear other services",
+      "pass": true
+    },
+    {
+      "name": "Old crowded assistance layout removed",
+      "pass": true
+    },
+    {
+      "name": "Custom trip comes before other services",
+      "pass": true
+    },
+    {
+      "name": "Six short common questions",
+      "pass": true
+    },
+    {
+      "name": "Closing WhatsApp contact",
+      "pass": true
+    },
+    {
+      "name": "Closing phone contact",
+      "pass": true
+    },
+    {
+      "name": "Service Hotel stays opens form",
+      "pass": true
+    },
+    {
+      "name": "Service Hotel stays keeps correct booking value",
+      "pass": true
+    },
+    {
+      "name": "Service Hotel stays has plain display label",
+      "pass": true
+    },
+    {
+      "name": "Hotel request hides unrelated temple plan",
+      "pass": true
+    },
+    {
+      "name": "Service Flight tickets opens form",
+      "pass": true
+    },
+    {
+      "name": "Service Flight tickets keeps correct booking value",
+      "pass": true
+    },
+    {
+      "name": "Service Flight tickets has plain display label",
+      "pass": true
+    },
+    {
+      "name": "Flight request asks departure city",
+      "pass": true
+    },
+    {
+      "name": "Service Airport / station pickup opens form",
+      "pass": true
+    },
+    {
+      "name": "Service Airport / station pickup keeps correct booking value",
+      "pass": true
+    },
+    {
+      "name": "Service Airport / station pickup has plain display label",
+      "pass": true
+    },
+    {
+      "name": "Service Group trip opens form",
+      "pass": true
+    },
+    {
+      "name": "Service Group trip keeps correct booking value",
+      "pass": true
+    },
+    {
+      "name": "Service Group trip has plain display label",
+      "pass": true
+    },
+    {
+      "name": "Group limit still 3 to 200",
+      "pass": true
+    },
+    {
+      "name": "Booking answer is available",
+      "pass": true
+    },
+    {
+      "name": "Page fits 320",
+      "pass": true
+    },
+    {
+      "name": ".travel-help-section fits 320",
+      "pass": true,
+      "detail": {
+        "x": 20,
+        "y": -416.609375,
+        "width": 280,
+        "height": 736.53125
+      }
+    },
+    {
+      "name": ".closing-booking fits 320",
+      "pass": true,
+      "detail": {
+        "x": 20,
+        "y": 1065.71875,
+        "width": 280,
+        "height": 433.0625
+      }
+    },
+    {
+      "name": "Service form fits 320",
+      "pass": true,
+      "detail": {
+        "x": 12,
+        "y": 34.078125,
+        "width": 296,
+        "height": 499.828125
+      }
+    },
+    {
+      "name": "Page fits 390",
+      "pass": true
+    },
+    {
+      "name": ".travel-help-section fits 390",
+      "pass": true,
+      "detail": {
+        "x": 20,
+        "y": -74.875,
+        "width": 350,
+        "height": 667.890625
+      }
+    },
+    {
+      "name": ".closing-booking fits 390",
+      "pass": true,
+      "detail": {
+        "x": 20,
+        "y": 1230.40625,
+        "width": 350,
+        "height": 419.109375
+      }
+    },
+    {
+      "name": "Service form fits 390",
+      "pass": true,
+      "detail": {
+        "x": 12,
+        "y": 63.296875,
+        "width": 366,
+        "height": 717.390625
+      }
+    },
+    {
+      "name": "Page fits 768",
+      "pass": true
+    },
+    {
+      "name": ".travel-help-section fits 768",
+      "pass": true,
+      "detail": {
+        "x": 40,
+        "y": -535.515625,
+        "width": 688,
+        "height": 630.421875
+      }
+    },
+    {
+      "name": ".closing-booking fits 768",
+      "pass": true,
+      "detail": {
+        "x": 40,
+        "y": 618.40625,
+        "width": 688,
+        "height": 242.9375
+      }
+    },
+    {
+      "name": "Service form fits 768",
+      "pass": true,
+      "detail": {
+        "x": 16,
+        "y": 76.796875,
+        "width": 736,
+        "height": 870.390625
+      }
+    },
+    {
+      "name": "Page fits 1024",
+      "pass": true
+    },
+    {
+      "name": ".travel-help-section fits 1024",
+      "pass": true,
+      "detail": {
+        "x": 40,
+        "y": 222.84375,
+        "width": 944,
+        "height": 473.28125
+      }
+    },
+    {
+      "name": ".closing-booking fits 1024",
+      "pass": true,
+      "detail": {
+        "x": 40,
+        "y": 1195.125,
+        "width": 944,
+        "height": 260.90625
+      }
+    },
+    {
+      "name": "Service form fits 1024",
+      "pass": true,
+      "detail": {
+        "x": 72,
+        "y": 36,
+        "width": 880,
+        "height": 528
+      }
+    },
+    {
+      "name": "Page fits 1440",
+      "pass": true
+    },
+    {
+      "name": ".travel-help-section fits 1440",
+      "pass": true,
+      "detail": {
+        "x": 160,
+        "y": 243.09375,
+        "width": 1120,
+        "height": 499.4375
+      }
+    },
+    {
+      "name": ".closing-booking fits 1440",
+      "pass": true,
+      "detail": {
+        "x": 160,
+        "y": 1241.53125,
+        "width": 1120,
+        "height": 290.21875
+      }
+    },
+    {
+      "name": "Service form fits 1440",
+      "pass": true,
+      "detail": {
+        "x": 280,
+        "y": 67.5,
+        "width": 880,
+        "height": 765
+      }
+    },
+    {
+      "name": "No fixed prices",
+      "pass": true
+    },
+    {
+      "name": "No runtime errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": []
+}

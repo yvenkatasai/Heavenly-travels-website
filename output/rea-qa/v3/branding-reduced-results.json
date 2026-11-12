@@ -1,0 +1,73 @@
+[
+  {
+    "name": "Business name is main heading",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Intro respects motion setting",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Intro automatically clears",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Scrolling unlocked",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Hero fits 320",
+    "pass": true,
+    "detail": {
+      "left": 32,
+      "right": 288,
+      "viewport": 320
+    }
+  },
+  {
+    "name": "Hero fits 390",
+    "pass": true,
+    "detail": {
+      "left": 32,
+      "right": 358,
+      "viewport": 390
+    }
+  },
+  {
+    "name": "Hero fits 768",
+    "pass": true,
+    "detail": {
+      "left": 48,
+      "right": 720,
+      "viewport": 768
+    }
+  },
+  {
+    "name": "Hero fits 1440",
+    "pass": true,
+    "detail": {
+      "left": 194,
+      "right": 1246,
+      "viewport": 1440
+    }
+  },
+  {
+    "name": "Returning visit skips intro",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Main enquiry works after intro",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "done": true,
+    "passed": 10,
+    "failed": 0
+  }
+]

@@ -1,0 +1,164 @@
+{
+  "checks": [
+    {
+      "name": "Confusing selector removed",
+      "pass": true
+    },
+    {
+      "name": "All seven named temples remain",
+      "pass": true
+    },
+    {
+      "name": "Complete package clearly named",
+      "pass": true
+    },
+    {
+      "name": "All seven explicitly included",
+      "pass": true
+    },
+    {
+      "name": "No selection button before list",
+      "pass": true
+    },
+    {
+      "name": "One clear main package selection action",
+      "pass": true
+    },
+    {
+      "name": "Next step explained",
+      "pass": true
+    },
+    {
+      "name": "Selection follows list at 320",
+      "pass": true,
+      "detail": {
+        "listBottom": 1260.671875,
+        "buttonTop": 1430.015625
+      }
+    },
+    {
+      "name": "Page fits 320",
+      "pass": true
+    },
+    {
+      "name": "Selection fits 320",
+      "pass": true,
+      "detail": {
+        "x": 20,
+        "y": 1430.015625,
+        "width": 280,
+        "height": 48
+      }
+    },
+    {
+      "name": "Selection follows list at 390",
+      "pass": true,
+      "detail": {
+        "listBottom": 1266.078125,
+        "buttonTop": 1435.421875
+      }
+    },
+    {
+      "name": "Page fits 390",
+      "pass": true
+    },
+    {
+      "name": "Selection fits 390",
+      "pass": true,
+      "detail": {
+        "x": 24,
+        "y": 1435.421875,
+        "width": 342,
+        "height": 48
+      }
+    },
+    {
+      "name": "Selection follows list at 754",
+      "pass": true,
+      "detail": {
+        "listBottom": 1295.421875,
+        "buttonTop": 1464.765625
+      }
+    },
+    {
+      "name": "Page fits 754",
+      "pass": true
+    },
+    {
+      "name": "Selection fits 754",
+      "pass": true,
+      "detail": {
+        "x": 24,
+        "y": 1464.765625,
+        "width": 706,
+        "height": 48
+      }
+    },
+    {
+      "name": "Selection follows list at 1024",
+      "pass": true,
+      "detail": {
+        "listBottom": 1171.796875,
+        "buttonTop": 1311.640625
+      }
+    },
+    {
+      "name": "Page fits 1024",
+      "pass": true
+    },
+    {
+      "name": "Selection fits 1024",
+      "pass": true,
+      "detail": {
+        "x": 459.796875,
+        "y": 1311.640625,
+        "width": 241.21875,
+        "height": 48
+      }
+    },
+    {
+      "name": "Selection follows list at 1440",
+      "pass": true,
+      "detail": {
+        "listBottom": 1251.796875,
+        "buttonTop": 1391.640625
+      }
+    },
+    {
+      "name": "Page fits 1440",
+      "pass": true
+    },
+    {
+      "name": "Selection fits 1440",
+      "pass": true,
+      "detail": {
+        "x": 637.390625,
+        "y": 1391.640625,
+        "width": 241.21875,
+        "height": 48
+      }
+    },
+    {
+      "name": "Button selects exact complete package",
+      "pass": true
+    },
+    {
+      "name": "Vehicle page retains all seven temples",
+      "pass": true
+    },
+    {
+      "name": "Review retains complete package",
+      "pass": true
+    },
+    {
+      "name": "WhatsApp contains all seven and selected vehicle",
+      "pass": true
+    },
+    {
+      "name": "No runtime errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": []
+}

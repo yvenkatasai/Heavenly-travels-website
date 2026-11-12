@@ -1,0 +1,214 @@
+- document:
+  - link "Skip to main content":
+    - /url: "#main-content"
+  - banner:
+    - link "incredibles":
+      - /url: /
+      - img "incredibles"
+    - navigation:
+      - list:
+        - listitem:
+          - button "Start a conversation Start a conversation Start a conversation"
+  - main:
+    - list:
+      - listitem: 1x Webby Award
+      - listitem: 5x FWA
+      - listitem: 18x Awwwards
+    - heading "Creative development team for agencies that can't afford to miss" [level=1]
+    - paragraph: Two senior developers with 15+ years of experience, collaborating with agencies across the globe.
+    - paragraph: Trusted by teams behind projects for
+    - list:
+      - listitem:
+        - img "Chanel"
+      - listitem:
+        - img "Nespresso"
+      - listitem:
+        - img "Vanguart"
+      - listitem:
+        - img "Tissot"
+    - heading "Incredible devs you can count on." [level=2]
+    - paragraph: We step in on high-stakes projects where execution can’t fail, from rebrands and marketing campaigns to product launches.
+    - list:
+      - listitem:
+        - heading "Start to Finish" [level=3]
+        - paragraph: We work as one unit, ensuring your entire project is completed without delays.
+      - listitem:
+        - heading "Higher Potential" [level=3]
+        - paragraph: Together we accomplish more. Even the most complex builds move with relentless quality.
+      - listitem:
+        - heading "Experienced Pros" [level=3]
+        - paragraph: We understand project briefs, working quickly and skillfully without constant supervision.
+      - listitem:
+        - heading "Top Quality" [level=3]
+        - paragraph: We’re proven on high-end projects, delivering excellence for agencies who care about quality.
+    - heading "See for yourself" [level=2]
+    - blockquote:
+      - text: “
+      - paragraph: Clean, well-finished work with a true creative eye, always flexible and quick to respond.
+      - text: — Adrien Pin, founding partner @Merci-Michel
+    - button "Showreel Showreel Showreel"
+    - heading "Latest delivery" [level=2]
+    - paragraph: New projects typically start within 2 weeks.
+    - list:
+      - listitem:
+        - paragraph: Landing page for an international product launch.
+        - text: Europe 6 weeks NDA
+      - listitem:
+        - paragraph: Six pages b2b site for a sport investment company.
+        - text: US 4 weeks
+        - link "View project":
+          - /url: https://www.gsepartners.net/
+      - listitem:
+        - paragraph: Creative landing page for a DeFi startup.
+        - text: UK 4 weeks
+        - link "View project":
+          - /url: https://hypernova.xyz/
+      - listitem:
+        - paragraph: Brochure site for a world-leading drinks solution company.
+        - text: Australia 10 weeks
+        - link "View project":
+          - /url: https://frothstop.com.au/
+    - heading "Let’s talk about your project." [level=2]
+    - heading "Simple pricing" [level=2]
+    - paragraph: Most projects will be priced according to your needs, but we can still give a clear idea of timelines and budget.
+    - paragraph: For ongoing demands, we can also offer monthly engagements.
+    - tablist:
+      - tab "Single project" [selected]
+      - tab "Recurring"
+    - heading "Single Project" [level=3]
+    - text: For clearly defined projects, with a fixed scope, timeline, and budget. 1 Project type Select project type
+    - combobox "Select project type":
+      - option "Select project type*" [disabled] [selected]
+      - option "Landing page"
+      - option "Website"
+      - option "Creative portfolio"
+    - text: 2 Project size Select project size
+    - combobox "Select project size":
+      - option "Select project size*" [disabled] [selected]
+    - text: 3 Project creativity Select project creativity
+    - combobox "Select project creativity":
+      - option "Select project creativity*" [disabled] [selected]
+      - option "Standard — clean and functional"
+      - option "Enhanced — refined motion and details"
+      - option "Creative — bold and expressive"
+    - text: 4 Project timeline Select project timeline
+    - combobox "Select project timeline":
+      - option "Select project timeline*" [disabled] [selected]
+      - option "ASAP — short deadline"
+      - option "Flexible — long deadline"
+    - paragraph: Fill in your project information to get an estimated timeline and price range.
+    - heading "Recurring collaboration" [level=3]
+    - text: For ongoing needs, with flexible capacity and continuous delivery over time. Standard €4,999/month Great for small agencies with a lighter flow of projects.
+    - list:
+      - listitem: Shared capacity
+      - listitem: One project at a time
+      - listitem: One expert-level developer
+      - listitem: Unlimited requests
+      - listitem: Dedicated communication channel
+    - button "Start a conversation Start a conversation Start a conversation"
+    - text: Extended €9,999/month Great for agencies handling multiple projects at once.
+    - list:
+      - listitem: Dedicated capacity
+      - listitem: Up to two concurrent projects
+      - listitem: Two expert-level developers
+      - listitem: Unlimited requests
+      - listitem: Dedicated communication channel
+    - button "Start a conversation Start a conversation Start a conversation"
+    - heading "Answers to your questions" [level=2]
+    - paragraph:
+      - text: Need more information? Feel free to
+      - link "reach out.":
+        - /url: "#triggerSiteContact"
+    - heading "How do you work with agencies?" [level=3]:
+      - button "How do you work with agencies?"
+    - text: The short answer is ‘extremely well’. We will integrate into your existing workflow, so you’ll feel from day one that we are part of your team. With years of experience partnering with agencies around the world, we can promise excellent communication, efficient project management, and results you’ll be proud to call your own.
+    - heading "What types of projects do you specialize in?" [level=3]:
+      - button "What types of projects do you specialize in?"
+    - text: Earlier on the site, we said we partner with agencies that can't afford to miss and that we excel on high-stakes projects where execution can’t fail. Well, that’s true. Whether it’s a rebrand, marketing campaign, product launch, or something else, our team is the one you employ when you ensure the best outcome possible.
+    - heading "How do you ensure quality and consistency?" [level=3]:
+      - button "How do you ensure quality and consistency?"
+    - text: First, we’ll address ‘quality’. We are a team of two senior developers who share a real enthusiasm for always delivering the best work possible. Sure, we can work quicker when required. We can also work under pressure. But never at the cost of quality. We truly believe in that. Looking at ‘Consistency’, we feel that this is the real benefit of incredibles. Because there’s two of us working as one unit, we can maintain continuity and split work efficiently to keep even the most complex builds moving quickly.
+    - heading "Do you handle design as well as development?" [level=3]:
+      - button "Do you handle design as well as development?"
+    - text: We are primarily a development team, not a design studio. That said, we can absolutely support the full project by bringing in trusted design partners when needed. With our years of experience, we have assembled a network of skillful and reliable creatives that we can always recommend when required. Whether you already have an in-house designer, an external creative team, or need us to assemble the right people, we translate design direction into precise, production-ready code.
+    - heading "Who is behind incredibles?" [level=3]:
+      - button "Who is behind incredibles?"
+    - text: "As mentioned, we are two senior and experienced developers:"
+    - link "Antoine Wodniack":
+      - /url: https://wodniack.dev
+    - text: and
+    - link "Olivier Guilleux":
+      - /url: https://olivier-guilleux.com
+    - text: . You can check out our individual portfolios alongside the incredibles portfolio to get a sense of what we’re capable of. As for the incredibles unit, there are no juniors, project managers, or subcontractors involved. You’re directly talking to and working with the people writing the code - us!
+    - heading "How is working with you different from hiring a freelancer?" [level=3]:
+      - button "How is working with you different from hiring a freelancer?"
+    - text: There are many differences. The standout one is perhaps how efficiently we work together, as one team. On your side, the difference will be largely felt in how smooth and steady the project progresses. There will be no gaps and you’ll see that we are able to achieve much more as a team than two independent freelancers would be able to do. When you consider the fact that we can work successfully without constant supervision then we can only see our offer as a major advantage to agencies. That’s why we’re doing this! It makes sense and it works!
+    - heading "How do you integrate into existing workflows?" [level=3]:
+      - button "How do you integrate into existing workflows?"
+    - text: When we team up, you can invite us into your current processes and tools. We have partnered with many agencies around the world, so we would be surprised if we were not already familiar with your preferred methods. We adapt to what is most comfortable for your team, whether that means collaborating day to day with your designer, joining weekly check-ins with your PM, or fitting into your existing QA workflow. We have worked with everything from visual feedback tools to spreadsheets and email threads. As long as requests are clear, we will make it work and keep the process smooth.
+    - heading "What’s your availability?" [level=3]:
+      - button "What’s your availability?"
+    - text: We are available to take on new projects and can accommodate various timelines. Please reach out to discuss your specific needs and schedule.
+    - heading "Build your next project with us" [level=2]
+    - button "Start a conversation Start a conversation Start a conversation"
+    - dialog "Contact form":
+      - heading "Project enquiry" [level=2]
+      - paragraph: Share your project details and timeline, and we’ll get back to you shortly.
+      - paragraph:
+        - text: You can also
+        - link "send us an email":
+          - /url: mailto:hi@incredibles.dev
+        - text: "- we generally respond within 48h."
+      - paragraph:
+        - text: Need to move fast? We’re on
+        - link "WhatsApp":
+          - /url: https://wa.me/33749565776
+        - text: .
+      - paragraph: France, CET timezone
+      - text: 1 you Name
+      - textbox "Name":
+        - /placeholder: Name*
+      - text: Email
+      - textbox "Email":
+        - /placeholder: Email*
+      - text: 2 your company Company name
+      - textbox "Company name"
+      - text: Website
+      - textbox "Website"
+      - text: 3 your project Budget range
+      - combobox "Budget range":
+        - option "Budget range*" [disabled] [selected]
+        - option "5k€ - 10k€"
+        - option "10k€ - 15k€"
+        - option "15k€ - 25k€"
+        - option "+25k€"
+      - text: Estimated start date
+      - textbox "Estimated start date"
+      - text: Expected launch date
+      - textbox "Expected launch date"
+      - text: 4 Tell us more My project is ...
+      - textbox "My project is ...":
+        - /placeholder: My project is ...*
+      - text: By submitting this form, you agree to our
+      - link "privacy policy":
+        - /url: /privacy/
+      - text: .
+      - button "Send Send Send" [disabled]
+      - button "Close"
+  - contentinfo:
+    - navigation:
+      - list:
+        - listitem:
+          - link "Legals":
+            - /url: /legals/
+        - listitem:
+          - link "Privacy":
+            - /url: /privacy/
+    - link "hi@incredibles.dev":
+      - /url: mailto:hi@incredibles.dev
+    - list:
+      - listitem:
+        - link "LinkedIn":
+          - /url: https://www.linkedin.com/company/incredibles-dev/
+  - dialog "Showreel video":
+    - button "Close showreel": Close showreel Close showreel Close showreel

@@ -1,0 +1,6 @@
+from pathlib import Path
+p=Path('src/v3/style.css');s=p.read_text(encoding='utf-8');s+='''
+/* Keep words distinct while retaining the reference's large display type. */
+.value-copy h3,.panel-intro h3,.delivery-heading h2,.tour-mini h3,.contact-intro h2{letter-spacing:-.035em}.value-copy p,.hero-description{letter-spacing:-.015em}
+.motion-paused .values-section{height:auto;margin:0;padding:80px 0}.motion-paused .values-stage{position:relative;height:auto;perspective:none}.motion-paused .values-heading{position:relative;left:auto;top:auto;transform:none;margin-bottom:45px}.motion-paused .value-stack{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:25px;margin:auto;width:min(940px,calc(100% - 64px))}.motion-paused .value-card{position:relative;top:auto;left:auto;width:100%;height:auto;min-height:510px;transform:none!important;opacity:1!important}.motion-paused .work-section{margin-top:0}.motion-paused .catchphrase{height:auto;margin-top:0;padding:100px 24px}.motion-paused .catchphrase-pin{position:relative;height:auto;padding:0}.motion-paused .catchphrase h2>span{transform:none!important;opacity:1!important}@media(max-width:767px){.motion-paused .value-stack{grid-template-columns:1fr;width:calc(100% - 48px);max-width:390px}.motion-paused .value-card{min-height:460px}}
+''';p.write_text(s,encoding='utf-8')

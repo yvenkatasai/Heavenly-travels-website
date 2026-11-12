@@ -1,0 +1,425 @@
+[
+  {
+    "name": "Five tours",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Four vehicles",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Fourteen temple stops",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Family estimate \u20b95,995",
+    "pass": true,
+    "detail": "\u20b95,995"
+  },
+  {
+    "name": "Traveller estimate \u20b98,995",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Removing stop subtracts \u20b9249",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Reset restores package",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Vehicle tab semantics",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Keyboard tabs",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Empty custom route blocked",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Flexible date disables input",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Quote drawer opens",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Traveller upper bound",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Traveller lower bound",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "WhatsApp correct destination",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Quote contains real newlines",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Quote retains custom temple",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Dialog closes",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "FAQ expands",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "FAQ collapses",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Film opens on demand",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Film pauses when closed",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "No horizontal document overflow at 320",
+    "pass": true,
+    "detail": {
+      "scroll": 320,
+      "viewport": 320
+    }
+  },
+  {
+    "name": "Enquiry fits width 320",
+    "pass": true,
+    "detail": {
+      "scroll": 320,
+      "viewport": 320
+    }
+  },
+  {
+    "name": "No horizontal document overflow at 390",
+    "pass": true,
+    "detail": {
+      "scroll": 390,
+      "viewport": 390
+    }
+  },
+  {
+    "name": "Enquiry fits width 390",
+    "pass": true,
+    "detail": {
+      "scroll": 390,
+      "viewport": 390
+    }
+  },
+  {
+    "name": "No horizontal document overflow at 768",
+    "pass": true,
+    "detail": {
+      "scroll": 768,
+      "viewport": 768
+    }
+  },
+  {
+    "name": "Enquiry fits width 768",
+    "pass": true,
+    "detail": {
+      "scroll": 768,
+      "viewport": 768
+    }
+  },
+  {
+    "name": "No horizontal document overflow at 1024",
+    "pass": true,
+    "detail": {
+      "scroll": 1024,
+      "viewport": 1024
+    }
+  },
+  {
+    "name": "Enquiry fits width 1024",
+    "pass": true,
+    "detail": {
+      "scroll": 1024,
+      "viewport": 1024
+    }
+  },
+  {
+    "name": "No horizontal document overflow at 1440",
+    "pass": true,
+    "detail": {
+      "scroll": 1440,
+      "viewport": 1440
+    }
+  },
+  {
+    "name": "Enquiry fits width 1440",
+    "pass": true,
+    "detail": {
+      "scroll": 1440,
+      "viewport": 1440
+    }
+  },
+  {
+    "name": "Sections do not overlap at 320",
+    "pass": true,
+    "detail": [
+      {
+        "top": -3657,
+        "bottom": -2757
+      },
+      {
+        "top": -2757,
+        "bottom": -2253.96875
+      },
+      {
+        "top": -2253.96875,
+        "bottom": -5.015625
+      },
+      {
+        "top": -5.015625,
+        "bottom": 1326.703125
+      },
+      {
+        "top": 1326.703125,
+        "bottom": 3219.53125
+      },
+      {
+        "top": 3219.53125,
+        "bottom": 4182.71875
+      },
+      {
+        "top": 4182.71875,
+        "bottom": 4580.71875
+      }
+    ]
+  },
+  {
+    "name": "All five tours in visible grid at 320",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Business name fits at 320",
+    "pass": true,
+    "detail": {
+      "text": 252.015625,
+      "container": 280
+    }
+  },
+  {
+    "name": "Sections do not overlap at 390",
+    "pass": true,
+    "detail": [
+      {
+        "top": -3657,
+        "bottom": -2757
+      },
+      {
+        "top": -2757,
+        "bottom": -2284.1875
+      },
+      {
+        "top": -2284.1875,
+        "bottom": 66.546875
+      },
+      {
+        "top": 66.546875,
+        "bottom": 1378.109375
+      },
+      {
+        "top": 1378.109375,
+        "bottom": 3243.265625
+      },
+      {
+        "top": 3243.265625,
+        "bottom": 4204.390625
+      },
+      {
+        "top": 4204.390625,
+        "bottom": 4576.453125
+      }
+    ]
+  },
+  {
+    "name": "All five tours in visible grid at 390",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Business name fits at 390",
+    "pass": true,
+    "detail": {
+      "text": 287.9375,
+      "container": 342
+    }
+  },
+  {
+    "name": "Sections do not overlap at 768",
+    "pass": true,
+    "detail": [
+      {
+        "top": -3657,
+        "bottom": -2867
+      },
+      {
+        "top": -2867,
+        "bottom": -2462.5
+      },
+      {
+        "top": -2462.5,
+        "bottom": -787.75
+      },
+      {
+        "top": -787.75,
+        "bottom": 39.65625
+      },
+      {
+        "top": 39.65625,
+        "bottom": 1615.765625
+      },
+      {
+        "top": 1615.765625,
+        "bottom": 2366.765625
+      },
+      {
+        "top": 2366.765625,
+        "bottom": 2801.078125
+      }
+    ]
+  },
+  {
+    "name": "All five tours in visible grid at 768",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Business name fits at 768",
+    "pass": true,
+    "detail": {
+      "text": 385.921875,
+      "container": 704
+    }
+  },
+  {
+    "name": "Sections do not overlap at 1440",
+    "pass": true,
+    "detail": [
+      {
+        "top": -3657,
+        "bottom": -2657
+      },
+      {
+        "top": -2657,
+        "bottom": -2231
+      },
+      {
+        "top": -2231,
+        "bottom": -882.65625
+      },
+      {
+        "top": -882.65625,
+        "bottom": 30.09375
+      },
+      {
+        "top": 30.09375,
+        "bottom": 1634.609375
+      },
+      {
+        "top": 1634.609375,
+        "bottom": 2435.609375
+      },
+      {
+        "top": 2435.609375,
+        "bottom": 2770.953125
+      }
+    ]
+  },
+  {
+    "name": "All five tours in visible grid at 1440",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Business name fits at 1440",
+    "pass": true,
+    "detail": {
+      "text": 434.921875,
+      "container": 1216
+    }
+  },
+  {
+    "name": "Headings use heritage serif",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "No pinned card sequence",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Footer call to action accepts pointers",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "FAQ expansion marker visible",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Header vehicles opens vehicle choices",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Canvas fallback remains readable",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Heritage fonts loaded",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Motion preference honored",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "done": true,
+    "passed": 52,
+    "failed": 0
+  }
+]

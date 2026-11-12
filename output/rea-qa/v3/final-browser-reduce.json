@@ -1,0 +1,379 @@
+{
+  "results": [
+    {
+      "name": "Hero highlights business",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Hero has packages and booking actions",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Signature immediately follows hero",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Seven destinations",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Five individual packages",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Five day-wise cards",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Day packages follow individual packages",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "No required package tier step",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "No visible homepage prices",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "No currency in page source",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Service controls synchronise",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "View package opens details",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Services include Comfortable AC Cars",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Services include Subject to Official Availability",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Services include International Flight",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Services include Accommodation",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Services include Airport",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Services include Senior Citizens",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Services include 3–200",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Services include Corporate",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Services include Mini Buses",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Services include Bengaluru",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Services include Across India",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Services include Select this package",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Package details have vehicle-page CTA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Momentum rail selects 1 days",
+      "pass": true,
+      "detail": "days-1"
+    },
+    {
+      "name": "One-day ticket condition visible",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Momentum rail selects 2 days",
+      "pass": true,
+      "detail": "days-2"
+    },
+    {
+      "name": "Two-day includes all four local temples",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Momentum rail selects 3 days",
+      "pass": true,
+      "detail": "days-3"
+    },
+    {
+      "name": "Three-day Varahaswamy is on day one",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Momentum rail selects 4 days",
+      "pass": true,
+      "detail": "days-4"
+    },
+    {
+      "name": "Four-day night stay preserved",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Momentum rail selects 5 days",
+      "pass": true,
+      "detail": "days-5"
+    },
+    {
+      "name": "Five-day Kanchi and Thiruthani exact",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Custom planner still works without estimates",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Homepage fits 320",
+      "pass": true,
+      "detail": {
+        "scroll": 320,
+        "viewport": 320
+      }
+    },
+    {
+      "name": "Homepage fits 390",
+      "pass": true,
+      "detail": {
+        "scroll": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "name": "Homepage fits 768",
+      "pass": true,
+      "detail": {
+        "scroll": 768,
+        "viewport": 768
+      }
+    },
+    {
+      "name": "Homepage fits 1440",
+      "pass": true,
+      "detail": {
+        "scroll": 1440,
+        "viewport": 1440
+      }
+    },
+    {
+      "name": "Signature selection opens vehicle page",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Vehicle page retains group service",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Five separate floating vehicle tiles",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "No vehicle page prices",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Vehicle opens booking popup",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Popup carries package and vehicle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Group bounds are 3–200",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Group below minimum invalid",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Group above maximum invalid",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Accessible WhatsApp alternative works",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "WhatsApp contains correct package and vehicle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "WhatsApp includes customer and full seven places",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "WhatsApp has actual newlines and no prices",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Review closes without locked body",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Vehicle page fits 320",
+      "pass": true,
+      "detail": {
+        "scroll": 320,
+        "viewport": 320
+      }
+    },
+    {
+      "name": "Vehicle page fits 390",
+      "pass": true,
+      "detail": {
+        "scroll": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "name": "Vehicle page fits 768",
+      "pass": true,
+      "detail": {
+        "scroll": 768,
+        "viewport": 768
+      }
+    },
+    {
+      "name": "Vehicle page fits 1440",
+      "pass": true,
+      "detail": {
+        "scroll": 1440,
+        "viewport": 1440
+      }
+    },
+    {
+      "name": "Popup fits 320",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Popup fits 390",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Popup fits 768",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Popup fits 1440",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Vehicle arrow slides horizontally",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Individual package goes directly to vehicle page",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Day package goes directly to vehicle page",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Slide release opens WhatsApp draft",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Five-day draft includes all days and final temples",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Slide uses enquiry labels, not payment labels",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "No package cannot book a vehicle",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "done": true,
+      "passed": 69,
+      "failed": 0
+    }
+  ],
+  "errors": []
+}

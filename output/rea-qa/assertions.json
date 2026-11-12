@@ -1,0 +1,22 @@
+{
+  "desktop-second-package.html": {
+    "passed": true,
+    "missing": []
+  },
+  "desktop-booking.html": {
+    "passed": true,
+    "missing": []
+  },
+  "mobile-selection.html": {
+    "passed": true,
+    "missing": []
+  },
+  "mobile-flexible.html": {
+    "passed": true,
+    "missing": []
+  },
+  "mobile-calendar.html": {
+    "passed": true,
+    "missing": []
+  }
+}

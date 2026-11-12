@@ -1,0 +1,238 @@
+[
+  {
+    "name": "Dot canvas initializes",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Business heading preserved",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Hero uses one 2D canvas",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Mobile dot budget",
+    "pass": true,
+    "detail": {
+      "frames": 0,
+      "physicsSteps": 0,
+      "lastFrameMs": 0,
+      "maxFrameMs": 0,
+      "averageFrameMs": 0,
+      "visible": true,
+      "animated": false,
+      "dots": 989,
+      "spacing": 18,
+      "dpr": 1,
+      "shocks": 0,
+      "awake": false,
+      "offsetMax": 0,
+      "finite": true,
+      "motionAllowed": false
+    }
+  },
+  {
+    "name": "Mobile DPR capped",
+    "pass": true,
+    "detail": 1
+  },
+  {
+    "name": "Motion preference respected",
+    "pass": true,
+    "detail": {
+      "frames": 0,
+      "physicsSteps": 0,
+      "lastFrameMs": 0,
+      "maxFrameMs": 0,
+      "averageFrameMs": 0,
+      "visible": true,
+      "animated": false,
+      "dots": 989,
+      "spacing": 18,
+      "dpr": 1,
+      "shocks": 0,
+      "awake": false,
+      "offsetMax": 0,
+      "finite": true,
+      "motionAllowed": false
+    }
+  },
+  {
+    "name": "Tap produces a wave",
+    "pass": true,
+    "detail": {
+      "frames": 0,
+      "physicsSteps": 0,
+      "lastFrameMs": 0,
+      "maxFrameMs": 0,
+      "averageFrameMs": 0,
+      "visible": true,
+      "animated": false,
+      "dots": 989,
+      "spacing": 18,
+      "dpr": 1,
+      "shocks": 0,
+      "awake": false,
+      "offsetMax": 0,
+      "finite": true,
+      "motionAllowed": false
+    }
+  },
+  {
+    "name": "Touch scrolling not cancelled",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Controls do not produce shockwaves",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Shock queue bounded",
+    "pass": true,
+    "detail": 0
+  },
+  {
+    "name": "Physics stays finite",
+    "pass": true,
+    "detail": {
+      "frames": 0,
+      "physicsSteps": 0,
+      "lastFrameMs": 0,
+      "maxFrameMs": 0,
+      "averageFrameMs": 0,
+      "visible": true,
+      "animated": false,
+      "dots": 989,
+      "spacing": 18,
+      "dpr": 1,
+      "shocks": 0,
+      "awake": false,
+      "offsetMax": 0,
+      "finite": true,
+      "motionAllowed": false
+    }
+  },
+  {
+    "name": "Frame work sampled",
+    "pass": true,
+    "detail": {
+      "averageMs": 0,
+      "maxMs": 0,
+      "dots": 989
+    }
+  },
+  {
+    "name": "Pause motion stops frames",
+    "pass": true,
+    "detail": {
+      "frames": 0,
+      "physicsSteps": 0,
+      "lastFrameMs": 0,
+      "maxFrameMs": 0,
+      "averageFrameMs": 0,
+      "visible": true,
+      "animated": false,
+      "dots": 989,
+      "spacing": 18,
+      "dpr": 1,
+      "shocks": 0,
+      "awake": false,
+      "offsetMax": 0,
+      "finite": true,
+      "motionAllowed": false
+    }
+  },
+  {
+    "name": "Offscreen field stops frames",
+    "pass": true,
+    "detail": {
+      "frames": 0,
+      "physicsSteps": 0,
+      "lastFrameMs": 0,
+      "maxFrameMs": 0,
+      "averageFrameMs": 0,
+      "visible": false,
+      "animated": false,
+      "dots": 989,
+      "spacing": 18,
+      "dpr": 1,
+      "shocks": 0,
+      "awake": false,
+      "offsetMax": 0,
+      "finite": true,
+      "motionAllowed": false
+    }
+  },
+  {
+    "name": "Returning to hero resumes correctly",
+    "pass": true,
+    "detail": {
+      "frames": 0,
+      "physicsSteps": 0,
+      "lastFrameMs": 0,
+      "maxFrameMs": 0,
+      "averageFrameMs": 0,
+      "visible": true,
+      "animated": false,
+      "dots": 989,
+      "spacing": 18,
+      "dpr": 1,
+      "shocks": 0,
+      "awake": false,
+      "offsetMax": 0,
+      "finite": true,
+      "motionAllowed": false
+    }
+  },
+  {
+    "name": "No overflow at 320",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Canvas fits hero at 320",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "No overflow at 390",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Canvas fits hero at 390",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "No overflow at 768",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Canvas fits hero at 768",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "No overflow at 1440",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "Canvas fits hero at 1440",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "done": true,
+    "passed": 23,
+    "failed": 0
+  }
+]

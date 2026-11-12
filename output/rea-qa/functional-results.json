@@ -1,0 +1,147 @@
+{
+  "state": "COMPLETE",
+  "passed": 28,
+  "total": 28,
+  "results": [
+    {
+      "name": "Five packages rendered",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Four vehicle choices rendered",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Thirty generated landscapes rendered",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Selected package retained in summary",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Selected vehicle retained in summary",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Base and four stops total 8995",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Added fifth stop recalculates to 9244",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pickup and dropoff reflected in route",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "People minimum is one",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "People maximum is 200",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Past travel date rejected",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Flexible date disables date and calendar",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Complete enquiry with flexible date is valid",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Selections and stops persisted",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Menu opens as modal",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Menu closes",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Landscape viewer advances",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Landscape viewer closes",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "No page overflow at 320",
+      "pass": true,
+      "detail": "scrollWidth=320"
+    },
+    {
+      "name": "Package content fits at 320",
+      "pass": true,
+      "detail": "scrollHeight=712 clientHeight=712"
+    },
+    {
+      "name": "No page overflow at 390",
+      "pass": true,
+      "detail": "scrollWidth=390"
+    },
+    {
+      "name": "Package content fits at 390",
+      "pass": true,
+      "detail": "scrollHeight=674 clientHeight=674"
+    },
+    {
+      "name": "No page overflow at 768",
+      "pass": true,
+      "detail": "scrollWidth=768"
+    },
+    {
+      "name": "Package content fits at 768",
+      "pass": true,
+      "detail": "scrollHeight=696 clientHeight=696"
+    },
+    {
+      "name": "No page overflow at 1440",
+      "pass": true,
+      "detail": "scrollWidth=1440"
+    },
+    {
+      "name": "Package content fits at 1440",
+      "pass": true,
+      "detail": "scrollHeight=675 clientHeight=675"
+    },
+    {
+      "name": "Inactive packages are inert",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Loaded images decode successfully",
+      "pass": true,
+      "detail": ""
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Heavenly journey and playback checks</title></head><body><h1>Heavenly journey checks</h1><pre id="results">RUNNING</pre><iframe id="app" src="/index.html" title="Frontend under test" style="width:1440px;height:900px;border:0"></iframe><script>
+const frame=document.querySelector('#app'),results=[];
+const check=(name,pass,detail='')=>results.push({name,pass:!!pass,detail});
+const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+frame.addEventListener('load',async()=>{
+ try{
+  const d=frame.contentDocument,w=frame.contentWindow,$=s=>d.querySelector(s),all=s=>[...d.querySelectorAll(s)];
+  const input=(selector,value)=>{const el=$(selector);el.value=value;el.dispatchEvent(new w.Event('input',{bubbles:true}));};
+  await sleep(200);
+  check('Five packages visible without carousel',all('[data-tour-card]').length===5&&all('[data-tour-card]').every(el=>!el.hidden&&!el.inert&&w.getComputedStyle(el).position!=='absolute'));
+  check('Four vehicle types visible together',all('[data-vehicle-card]').length===4&&all('[data-vehicle-card]').every(el=>!el.hidden&&!el.inert));
+  check('Planning steps have explicit labels',all('[data-step-link]').map(el=>el.textContent.trim()).join(' ').includes('Customize stops'));
+  check('Packages immediately follow planning instructions',d.querySelector('.welcome-strip').nextElementSibling.id==='packages');
+  check('No scroll canvas or frame-sequence switching',!$('#mountain-frames'));
+  check('Thirty landscape assets retained',all('[data-landscape]').length===30);
+  check('Gallery does not interrupt planning',$('.optional-gallery').compareDocumentPosition($('#booking'))&w.Node.DOCUMENT_POSITION_PRECEDING);
+  $('[data-filter="family"]').click();check('Family filter shows one matching tour',all('[data-tour-card]').filter(el=>!el.hidden).length===1&&$('[data-tour-card="1"]').hidden===false);
+  $('[data-filter="multi"]').click();check('Multi-temple filter shows three matching tours',all('[data-tour-card]').filter(el=>!el.hidden).length===3);
+  $('[data-filter="all"]').click();check('All tours easily restored',all('[data-tour-card]').every(el=>!el.hidden));
+  $('.package-includes').open=true;check('Package inclusions available before selection',$('.package-includes').textContent.includes('Tirumala transport'));
+  $('[data-tour="1"]').click();
+  check('Choosing a package opens its dedicated editor',!$('#customize-panel').hidden&&$('#customize-empty').hidden);
+  check('Editor labels the selected package',$('#customize-tour-name').textContent==='Family Temple Tour');
+  check('Four default stops selected',all('[data-stop]:checked').length===4);
+  check('Initial route estimate is 5995',$('#customize-total').textContent.includes('5,995'));
+  $('[data-stop="0"]').click();check('Removing a stop updates estimate to 5746',$('#customize-total').textContent.includes('5,746'));
+  $('.extra-stops').open=true;$('[data-stop="7"]').click();check('Adding an extra stop updates both route and price',$('#selected-stops').textContent.includes('Golden Temple')&&$('#customize-total').textContent.includes('5,995'));
+  $('#reset-stops').click();check('Reset restores original stops',all('[data-stop]:checked').length===4&&!$('[data-stop="7"]').checked);
+  all('[data-stop]:checked').forEach(el=>el.click());$('#continue-vehicle').click();check('Empty customisation has a helpful inline error',!$('#stop-error').hidden);
+  $('#reset-stops').click();$('#continue-vehicle').click();check('Continue records the customization step',JSON.parse(w.sessionStorage.getItem('heavenly-trip-preferences')).customized===true);
+  $('[data-vehicle="2"]').click();check('Vehicle choice appears in trip review',$('#review-vehicle').textContent==='Tempo Traveller');
+  check('Vehicle base plus four stops equals 8995',$('#review-total').textContent.includes('8,995'));
+  check('A selected vehicle provides a clear review action',$('#mobile-next').getAttribute('href')==='#booking');
+  input('#pickup','Tirupati Railway Station');input('#dropoff','Hotel in Tirupati');input('#name','Frontend QA');
+  input('#notes','Please allow time for older travellers.');
+  $('#people').value='1';$('#people-minus').click();check('Traveller minimum stays at one',$('#people').value==='1');
+  $('#people').value='200';$('#people-plus').click();check('Traveller maximum stays at 200',$('#people').value==='200');
+  $('#date').value='2000-01-01';check('Past dates are rejected',!$('#date').checkValidity());
+  $('#flexible-date').click();check('Flexible dates are clear and remove the date requirement',$('#date').disabled&&!$('#date').required);
+  check('Complete flexible-date enquiry is valid',$('#enquiry-form').checkValidity());
+  const draft=JSON.parse(w.sessionStorage.getItem('heavenly-travel-draft'));check('Entered details persist while browsing',draft.name==='Frontend QA'&&draft.pickup==='Tirupati Railway Station'&&draft.flexible===true);
+  let quote='';const nativeClick=w.HTMLAnchorElement.prototype.click;
+  w.HTMLAnchorElement.prototype.click=function(){if(this.href.startsWith('https://wa.me/')){quote=this.href;return;}return nativeClick.call(this);};
+  $('#enquiry-form').requestSubmit();const text=quote?new URL(quote).searchParams.get('text'):'';
+  check('Quote is a WhatsApp draft with the selected tour',text.includes('Family Temple Tour')&&text.includes('Tempo Traveller'));
+  check('Quote includes customized stops, contact and estimate',text.includes('Tiruchanur')&&text.includes('Tirupati Railway Station')&&text.includes('8,995')&&text.includes('Not decided yet'));
+  check('Quote adds requested traveller assistance',text.includes('older travellers'));
+  check('WhatsApp draft uses readable separate lines',text.includes(String.fromCharCode(10)+'Name: Frontend QA'));
+  $('#vehicle-help').click();check('Vehicle help remains available',$('#review-vehicle').textContent==='Help me choose a vehicle'&&JSON.parse(w.sessionStorage.getItem('heavenly-trip-preferences')).vehicleHelp===true);
+  $('#build-custom').click();check('Own-route mode is explicit',$('#customize-tour-name').textContent==='Your own temple journey'&&!$('#customize-panel').hidden);
+  $('[data-stop="0"]').click();$('[data-stop="4"]').click();check('Custom route prices two selected stops',$('#customize-total').textContent.includes('5,497'));
+  $('[data-vehicle="1"]').click();check('Custom route plus SUV recalculates to 6997',$('#review-total').textContent.includes('6,997'));
+  check('Changing route and vehicle keeps entered details',$('#name').value==='Frontend QA'&&$('#pickup').value==='Tirupati Railway Station');
+  $('#menu-toggle').click();check('Menu opens with explicit trip labels',$('#site-menu').open&&$('#site-menu').textContent.includes('Request your quote'));$('#menu-close').click();check('Menu closes accessibly',!$('#site-menu').open&&$('#menu-toggle').getAttribute('aria-expanded')==='false');
+  $('.optional-gallery').open=true;$('[data-landscape="0"]').click();$('#landscape-next').click();check('Optional image viewer still works',$('#landscape-count').textContent==='2 / 30');$('#landscape-close').click();$('.optional-gallery').open=false;
+  all('[data-stop]:checked').forEach(el=>el.click());$('#continue-vehicle').click();$('#route-help').click();
+  check('Undecided travellers can request route help without a forced selection',$('#review-tour').textContent==='Help me choose a tour'&&$('#customize-panel').hidden);
+  quote='';$('#enquiry-form').requestSubmit();check('An undecided-route enquiry still creates a valid draft',quote.includes('wa.me')&&new URL(quote).searchParams.get('text').includes('Please help me plan the route'));
+  for(const width of [320,390,768,1024,1440]){
+   frame.style.width=width+'px';await sleep(120);
+   check('No page overflow at '+width,d.documentElement.scrollWidth<=width,'scrollWidth='+d.documentElement.scrollWidth);
+   check('Package actions remain inside cards at '+width,all('.package-card').every(el=>el.scrollWidth<=el.clientWidth+1));
+   check('Vehicle actions remain inside cards at '+width,all('.vehicle-card').every(el=>el.scrollWidth<=el.clientWidth+1));
+  }
+  frame.style.width='1440px';w.scrollTo({top:0,behavior:'instant'});await sleep(1800);
+  const video=$('#hero-film');let before=video.currentTime;await sleep(800);
+  check('Background plays continuously',video.currentTime>before&&!video.paused,'time='+video.currentTime+' dimensions='+video.videoWidth+'x'+video.videoHeight);
+  check('Hero decodes at full HD',video.videoWidth===1920&&video.videoHeight===1080);
+  before=video.currentTime;w.scrollTo({top:180,behavior:'instant'});await sleep(500);
+  check('Scrolling does not pause or seek the visible hero',!video.paused&&video.currentTime>before&&video.currentTime-before<1.5);
+  check('No extracted scroll frames are downloaded',!w.performance.getEntriesByType('resource').some(entry=>entry.name.includes('/frames/dawn-')));
+  $('#motion-toggle').click();await sleep(100);check('Video pause control works',video.paused&&$('#motion-toggle').getAttribute('aria-pressed')==='true');
+  $('#motion-toggle').click();await sleep(300);check('Video can resume',!video.paused);
+  const quality=video.getVideoPlaybackQuality?.();if(quality)results.push({name:'Playback sample',pass:true,detail:{decoded:quality.totalVideoFrames,dropped:quality.droppedVideoFrames}});
+  w.HTMLAnchorElement.prototype.click=nativeClick;
+  document.querySelector('#results').textContent=JSON.stringify({state:'COMPLETE',passed:results.filter(x=>x.pass).length,total:results.length,results},null,2);document.querySelector('#results').dataset.state='complete';
+ }catch(error){document.querySelector('#results').textContent=JSON.stringify({state:'ERROR',message:String(error),stack:error.stack,results},null,2);document.querySelector('#results').dataset.state='error';}
+},{once:true});
+</script></body></html>

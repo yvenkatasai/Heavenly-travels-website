@@ -1,0 +1,93 @@
+{
+  "browser": {
+    "mode": "launch",
+    "executable_path": "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe"
+  },
+  "start_url": {
+    "url": "http://127.0.0.1:4188"
+  },
+  "environment": {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "timezone": "Asia/Calcutta",
+    "reduced_motion": "reduce"
+  },
+  "actions": [
+    {
+      "step_id": "explore-packages",
+      "action": "click",
+      "locator": {
+        "kind": "css",
+        "selector": ".hero-actions a.button"
+      },
+      "timeout_ms": 10000
+    },
+    {
+      "step_id": "family-filter",
+      "action": "click",
+      "locator": {
+        "kind": "css",
+        "selector": "[data-filter=\"family\"]"
+      },
+      "timeout_ms": 10000
+    },
+    {
+      "step_id": "choose-family-tour",
+      "action": "click",
+      "locator": {
+        "kind": "css",
+        "selector": "[data-tour=\"1\"]"
+      },
+      "timeout_ms": 10000
+    },
+    {
+      "step_id": "editor-ready",
+      "action": "wait_for_timeout",
+      "duration_ms": 300
+    },
+    {
+      "step_id": "remove-one-temple",
+      "action": "click",
+      "locator": {
+        "kind": "css",
+        "selector": "[data-stop=\"3\"]"
+      },
+      "timeout_ms": 10000
+    },
+    {
+      "step_id": "continue-to-vehicles",
+      "action": "click",
+      "locator": {
+        "kind": "css",
+        "selector": "#continue-vehicle"
+      },
+      "timeout_ms": 10000
+    },
+    {
+      "step_id": "choose-suv",
+      "action": "click",
+      "locator": {
+        "kind": "css",
+        "selector": "[data-vehicle=\"1\"]"
+      },
+      "timeout_ms": 10000
+    },
+    {
+      "step_id": "review-visible",
+      "action": "wait_for_timeout",
+      "duration_ms": 700
+    }
+  ],
+  "capture": {
+    "at_end": [
+      "screenshot",
+      "dom",
+      "accessibility"
+    ],
+    "events": [
+      "page-errors"
+    ]
+  }
+}

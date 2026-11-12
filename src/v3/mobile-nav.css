@@ -1,0 +1,23 @@
+/* An ivory floating plaque: a quiet frame, equal actions and readable labels. */
+.mobile-trip-nav{display:none}
+@media(max-width:767px){
+ body.has-heritage-shortcuts:not(.has-booking-selection){padding-bottom:calc(92px + env(safe-area-inset-bottom,0px))}
+ .mobile-trip-nav{position:fixed;left:max(12px,env(safe-area-inset-left));right:max(12px,env(safe-area-inset-right));bottom:max(12px,env(safe-area-inset-bottom));z-index:21;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));min-height:64px;padding:5px 7px;background:#f8f2e4;border:1px solid #b7a273;border-radius:4px;box-shadow:0 5px 19px #122f2114;backdrop-filter:none;isolation:isolate}
+ .mobile-trip-nav:before{content:'';position:absolute;inset:3px;border:1px solid #c6b88e66;border-radius:1px;pointer-events:none;z-index:-1}
+ .mobile-trip-nav>a,.mobile-trip-nav>button{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-width:0;min-height:52px;margin:0;padding:4px 6px 7px;border:0;border-radius:0;background:transparent;color:#355044;text-decoration:none;white-space:nowrap;cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation;transition:background-color .18s,color .18s}
+ .mobile-trip-nav>a:last-child{background:transparent;color:#355044}
+ .mobile-trip-nav>a:not(:last-child):after,.mobile-trip-nav>button:after{content:'';position:absolute;right:0;top:50%;height:26px;width:1px;background:#bdad8059;transform:translateY(-50%);pointer-events:none}
+ .mobile-trip-nav svg{display:block;width:19px;height:19px;flex-shrink:0;color:#8b703e}
+ .mobile-trip-nav .shortcut-label{font:600 17px/1.1 var(--display);letter-spacing:.015em;color:inherit}
+ .mobile-trip-nav>a:last-child .shortcut-label{color:inherit}
+ .mobile-trip-nav>a:hover,.mobile-trip-nav>button:hover{background:#eee5ce;color:#193c31}
+ .mobile-trip-nav .is-current,.mobile-trip-nav>a:last-child.is-current{background:#e9dfc754;color:#193c31}
+ .mobile-trip-nav .is-current:before{content:'';position:absolute;bottom:2px;left:50%;width:18px;height:2px;border-radius:1px;transform:translateX(-50%);background:#a18041;pointer-events:none}
+ .mobile-trip-nav .is-current svg{color:#705321}
+ .mobile-trip-nav>a:focus-visible,.mobile-trip-nav>button:focus-visible{outline:2px solid #9c7a3b;outline-offset:-3px;background:#ede3ca;color:#193c31}
+ .modal-open .mobile-trip-nav{visibility:hidden}
+ .has-booking-selection .mobile-trip-nav{display:none}
+}
+@media(max-width:360px){.mobile-trip-nav .shortcut-label{font-size:16px}.mobile-trip-nav{padding-inline:5px}.mobile-trip-nav>a,.mobile-trip-nav>button{padding-inline:4px}}
+@media(prefers-reduced-motion:reduce){.mobile-trip-nav>a,.mobile-trip-nav>button{transition:none}}
+.motion-paused .mobile-trip-nav>a,.motion-paused .mobile-trip-nav>button{transition:none}

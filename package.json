@@ -1,0 +1,26 @@
+{
+  "name": "heavenly-travel-frontend",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "python build.py",
+    "build:booking": "node scripts/build-booking.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "framer-motion": "^12.23.0",
+    "lucide-react": "^0.468.0",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^3.3.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "esbuild": "^0.25.0",
+    "tailwindcss": "^4.1.0",
+    "@tailwindcss/cli": "^4.1.0"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "browser": {
+    "mode": "launch",
+    "executable_path": "C:/Program Files/Google/Chrome/Application/chrome.exe"
+  },
+  "start_url": {
+    "url": "https://incredibles.dev/"
+  },
+  "environment": {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "reduced_motion": "no-preference",
+    "timezone": "Asia/Calcutta"
+  },
+  "actions": [
+    {
+      "step_id": "settled",
+      "action": "wait_for_timeout",
+      "duration_ms": 6500
+    }
+  ],
+  "capture": {
+    "at_end": [
+      "dom",
+      "screenshot",
+      "accessibility",
+      "url"
+    ],
+    "events": [
+      "page-errors"
+    ]
+  }
+}

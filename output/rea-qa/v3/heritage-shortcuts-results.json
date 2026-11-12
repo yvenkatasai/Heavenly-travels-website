@@ -1,0 +1,333 @@
+{
+  "checks": [
+    {
+      "name": "One floating navigation only",
+      "pass": true
+    },
+    {
+      "name": "Three original actions retained",
+      "pass": true
+    },
+    {
+      "name": "Original line icons replace symbols",
+      "pass": true
+    },
+    {
+      "name": "Readable label contrast: Packages",
+      "pass": true,
+      "detail": 10.861503428501562
+    },
+    {
+      "name": "Readable label contrast: Vehicles",
+      "pass": true,
+      "detail": 7.896711328702739
+    },
+    {
+      "name": "Readable label contrast: Plan trip",
+      "pass": true,
+      "detail": 7.896711328702739
+    },
+    {
+      "name": "Manual scroll selects Packages: package-types",
+      "pass": true
+    },
+    {
+      "name": "Manual scroll selects Packages: pilgrimage",
+      "pass": true
+    },
+    {
+      "name": "Manual scroll selects Packages: journeys",
+      "pass": true
+    },
+    {
+      "name": "Manual scroll selects Packages: day-packages",
+      "pass": true
+    },
+    {
+      "name": "Manual scroll selects Plan trip",
+      "pass": true
+    },
+    {
+      "name": "Manual scroll selects Vehicles",
+      "pass": true
+    },
+    {
+      "name": "Scrolling back selects Packages",
+      "pass": true
+    },
+    {
+      "name": "Only one selected item",
+      "pass": true
+    },
+    {
+      "name": "Still floating at 320",
+      "pass": true,
+      "detail": {
+        "x": 12,
+        "y": 492,
+        "width": 296,
+        "height": 64
+      }
+    },
+    {
+      "name": "Compact height at 320",
+      "pass": true,
+      "detail": {
+        "x": 12,
+        "y": 492,
+        "width": 296,
+        "height": 64
+      }
+    },
+    {
+      "name": "No rounded pill at 320",
+      "pass": true
+    },
+    {
+      "name": "Touch target at 320",
+      "pass": true,
+      "detail": {
+        "x": 18,
+        "y": 498,
+        "width": 94.65625,
+        "height": 52
+      }
+    },
+    {
+      "name": "Touch target at 320",
+      "pass": true,
+      "detail": {
+        "x": 112.65625,
+        "y": 498,
+        "width": 94.671875,
+        "height": 52
+      }
+    },
+    {
+      "name": "Touch target at 320",
+      "pass": true,
+      "detail": {
+        "x": 207.328125,
+        "y": 498,
+        "width": 94.65625,
+        "height": 52
+      }
+    },
+    {
+      "name": "No page overflow at 320",
+      "pass": true
+    },
+    {
+      "name": "Still floating at 390",
+      "pass": true,
+      "detail": {
+        "x": 12,
+        "y": 768,
+        "width": 366,
+        "height": 64
+      }
+    },
+    {
+      "name": "Compact height at 390",
+      "pass": true,
+      "detail": {
+        "x": 12,
+        "y": 768,
+        "width": 366,
+        "height": 64
+      }
+    },
+    {
+      "name": "No rounded pill at 390",
+      "pass": true
+    },
+    {
+      "name": "Touch target at 390",
+      "pass": true,
+      "detail": {
+        "x": 20,
+        "y": 774,
+        "width": 116.65625,
+        "height": 52
+      }
+    },
+    {
+      "name": "Touch target at 390",
+      "pass": true,
+      "detail": {
+        "x": 136.65625,
+        "y": 774,
+        "width": 116.671875,
+        "height": 52
+      }
+    },
+    {
+      "name": "Touch target at 390",
+      "pass": true,
+      "detail": {
+        "x": 253.328125,
+        "y": 774,
+        "width": 116.65625,
+        "height": 52
+      }
+    },
+    {
+      "name": "No page overflow at 390",
+      "pass": true
+    },
+    {
+      "name": "Still floating at 650",
+      "pass": true,
+      "detail": {
+        "x": 12,
+        "y": 624,
+        "width": 626,
+        "height": 64
+      }
+    },
+    {
+      "name": "Compact height at 650",
+      "pass": true,
+      "detail": {
+        "x": 12,
+        "y": 624,
+        "width": 626,
+        "height": 64
+      }
+    },
+    {
+      "name": "No rounded pill at 650",
+      "pass": true
+    },
+    {
+      "name": "Touch target at 650",
+      "pass": true,
+      "detail": {
+        "x": 20,
+        "y": 630,
+        "width": 203.328125,
+        "height": 52
+      }
+    },
+    {
+      "name": "Touch target at 650",
+      "pass": true,
+      "detail": {
+        "x": 223.328125,
+        "y": 630,
+        "width": 203.328125,
+        "height": 52
+      }
+    },
+    {
+      "name": "Touch target at 650",
+      "pass": true,
+      "detail": {
+        "x": 426.65625,
+        "y": 630,
+        "width": 203.328125,
+        "height": 52
+      }
+    },
+    {
+      "name": "No page overflow at 650",
+      "pass": true
+    },
+    {
+      "name": "Still floating at 754",
+      "pass": true,
+      "detail": {
+        "x": 12,
+        "y": 592,
+        "width": 730,
+        "height": 64
+      }
+    },
+    {
+      "name": "Compact height at 754",
+      "pass": true,
+      "detail": {
+        "x": 12,
+        "y": 592,
+        "width": 730,
+        "height": 64
+      }
+    },
+    {
+      "name": "No rounded pill at 754",
+      "pass": true
+    },
+    {
+      "name": "Touch target at 754",
+      "pass": true,
+      "detail": {
+        "x": 20,
+        "y": 598,
+        "width": 238,
+        "height": 52
+      }
+    },
+    {
+      "name": "Touch target at 754",
+      "pass": true,
+      "detail": {
+        "x": 258,
+        "y": 598,
+        "width": 238,
+        "height": 52
+      }
+    },
+    {
+      "name": "Touch target at 754",
+      "pass": true,
+      "detail": {
+        "x": 496,
+        "y": 598,
+        "width": 238,
+        "height": 52
+      }
+    },
+    {
+      "name": "No page overflow at 754",
+      "pass": true
+    },
+    {
+      "name": "Desktop keeps its existing header navigation",
+      "pass": true
+    },
+    {
+      "name": "Plan link still opens custom trip",
+      "pass": true
+    },
+    {
+      "name": "Dock stays out of open dialogs",
+      "pass": true
+    },
+    {
+      "name": "Vehicles page automatically selected",
+      "pass": true
+    },
+    {
+      "name": "Package link returns from vehicle page",
+      "pass": true
+    },
+    {
+      "name": "Fleet has Vehicles selected",
+      "pass": true
+    },
+    {
+      "name": "Booking review still opens",
+      "pass": true
+    },
+    {
+      "name": "Booking action has priority without two docks",
+      "pass": true
+    },
+    {
+      "name": "No runtime errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": []
+}

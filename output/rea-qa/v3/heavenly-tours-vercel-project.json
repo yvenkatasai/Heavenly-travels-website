@@ -1,0 +1,21 @@
+{
+  "id": "prj_c6IfMxCmaOxhnzUOBCdXSYppZ1ho",
+  "name": "heavenly-tours",
+  "createdAt": 1793904737856,
+  "updatedAt": 1793905237308,
+  "accountId": "team_GLbPHvq7Z4LTnmnoevcuZoxv",
+  "framework": null,
+  "rootDirectory": null,
+  "buildCommand": null,
+  "outputDirectory": "dist",
+  "production": {
+    "url": "heavenly-tours-7kf4iavt9-yvsai984858-5120s-projects.vercel.app",
+    "alias": [
+      "heavenly-tours.vercel.app",
+      "heavenly-tours-yvsai984858-5120s-projects.vercel.app"
+    ],
+    "createdAt": 1793905234704,
+    "readyState": "READY",
+    "id": "dpl_Crq6ib3md1Do8VFUyciwftFKgY3z"
+  }
+}

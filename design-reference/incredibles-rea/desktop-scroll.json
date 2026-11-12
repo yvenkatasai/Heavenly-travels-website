@@ -1,0 +1,167 @@
+{
+  "browser": {
+    "mode": "launch",
+    "executable_path": "C:/Program Files/Google/Chrome/Application/chrome.exe"
+  },
+  "start_url": {
+    "url": "https://incredibles.dev/"
+  },
+  "environment": {
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "reduced_motion": "no-preference",
+    "timezone": "Asia/Calcutta"
+  },
+  "actions": [
+    {
+      "step_id": "scroll-0",
+      "action": "press",
+      "locator": {
+        "kind": "css",
+        "selector": "body"
+      },
+      "key": "PageDown",
+      "timeout_ms": 5000
+    },
+    {
+      "step_id": "settled-0",
+      "action": "wait_for_timeout",
+      "duration_ms": 900
+    },
+    {
+      "step_id": "scroll-1",
+      "action": "press",
+      "locator": {
+        "kind": "css",
+        "selector": "body"
+      },
+      "key": "PageDown",
+      "timeout_ms": 5000
+    },
+    {
+      "step_id": "settled-1",
+      "action": "wait_for_timeout",
+      "duration_ms": 900
+    },
+    {
+      "step_id": "scroll-2",
+      "action": "press",
+      "locator": {
+        "kind": "css",
+        "selector": "body"
+      },
+      "key": "PageDown",
+      "timeout_ms": 5000
+    },
+    {
+      "step_id": "settled-2",
+      "action": "wait_for_timeout",
+      "duration_ms": 900
+    },
+    {
+      "step_id": "scroll-3",
+      "action": "press",
+      "locator": {
+        "kind": "css",
+        "selector": "body"
+      },
+      "key": "PageDown",
+      "timeout_ms": 5000
+    },
+    {
+      "step_id": "settled-3",
+      "action": "wait_for_timeout",
+      "duration_ms": 900
+    },
+    {
+      "step_id": "scroll-4",
+      "action": "press",
+      "locator": {
+        "kind": "css",
+        "selector": "body"
+      },
+      "key": "PageDown",
+      "timeout_ms": 5000
+    },
+    {
+      "step_id": "settled-4",
+      "action": "wait_for_timeout",
+      "duration_ms": 900
+    },
+    {
+      "step_id": "scroll-5",
+      "action": "press",
+      "locator": {
+        "kind": "css",
+        "selector": "body"
+      },
+      "key": "PageDown",
+      "timeout_ms": 5000
+    },
+    {
+      "step_id": "settled-5",
+      "action": "wait_for_timeout",
+      "duration_ms": 900
+    },
+    {
+      "step_id": "scroll-6",
+      "action": "press",
+      "locator": {
+        "kind": "css",
+        "selector": "body"
+      },
+      "key": "PageDown",
+      "timeout_ms": 5000
+    },
+    {
+      "step_id": "settled-6",
+      "action": "wait_for_timeout",
+      "duration_ms": 900
+    },
+    {
+      "step_id": "scroll-7",
+      "action": "press",
+      "locator": {
+        "kind": "css",
+        "selector": "body"
+      },
+      "key": "PageDown",
+      "timeout_ms": 5000
+    },
+    {
+      "step_id": "settled-7",
+      "action": "wait_for_timeout",
+      "duration_ms": 900
+    },
+    {
+      "step_id": "scroll-8",
+      "action": "press",
+      "locator": {
+        "kind": "css",
+        "selector": "body"
+      },
+      "key": "PageDown",
+      "timeout_ms": 5000
+    },
+    {
+      "step_id": "settled-8",
+      "action": "wait_for_timeout",
+      "duration_ms": 900
+    }
+  ],
+  "capture": {
+    "after_each_step": [
+      "screenshot"
+    ],
+    "at_end": [
+      "dom",
+      "accessibility",
+      "url"
+    ],
+    "events": [
+      "page-errors"
+    ]
+  }
+}

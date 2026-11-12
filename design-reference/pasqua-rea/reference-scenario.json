@@ -1,0 +1,37 @@
+{
+  "browser": {
+    "mode": "launch",
+    "executable_path": "C:/Program Files/Google/Chrome/Application/chrome.exe"
+  },
+  "start_url": {
+    "url": "https://pasqua.it/"
+  },
+  "environment": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "reduced_motion": "no-preference",
+    "timezone": "Asia/Calcutta"
+  },
+  "actions": [
+    {
+      "step_id": "settle",
+      "action": "wait_for_timeout",
+      "duration_ms": 8000
+    }
+  ],
+  "capture": {
+    "at_end": [
+      "dom",
+      "accessibility",
+      "screenshot",
+      "url"
+    ],
+    "events": [
+      "console",
+      "page-errors",
+      "network"
+    ]
+  }
+}

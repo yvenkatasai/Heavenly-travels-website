@@ -1,0 +1,23 @@
+{
+  "active_version": "3.0.0",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "directory": "versions/1.0.0",
+      "preview": "http://127.0.0.1:4189/",
+      "description": "Preserved user-friendly redesign"
+    },
+    {
+      "version": "2.0.0",
+      "directory": "versions/2.0.0",
+      "preview": "http://127.0.0.1:4190/",
+      "description": "Preserved cinematic design with smooth video"
+    },
+    {
+      "version": "3.0.0",
+      "directory": "versions/3.0.0",
+      "preview": "http://127.0.0.1:4188/",
+      "description": "Incredibles reference reconstruction adapted to Heavenly, simpler copy and mobile shortcuts"
+    }
+  ]
+}

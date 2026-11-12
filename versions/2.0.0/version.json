@@ -1,0 +1,8 @@
+{
+  "version": "2.0.0",
+  "description": "Restored earlier cinematic UX, retaining smooth native video playback.",
+  "build": "python build.py",
+  "static_directory": "dist",
+  "restored_from": "output/pre-journey-refinement",
+  "preserved_current_as": "1.0.0"
+}

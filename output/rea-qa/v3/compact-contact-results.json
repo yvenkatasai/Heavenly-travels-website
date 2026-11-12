@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Contact dialog fits 320",
+    "pass": true
+  },
+  {
+    "name": "Contact has no internal horizontal overflow 320",
+    "pass": true
+  },
+  {
+    "name": "Contact dialog fits 390",
+    "pass": true
+  },
+  {
+    "name": "Contact has no internal horizontal overflow 390",
+    "pass": true
+  },
+  {
+    "name": "Contact dialog fits 768",
+    "pass": true
+  },
+  {
+    "name": "Contact has no internal horizontal overflow 768",
+    "pass": true
+  },
+  {
+    "name": "Contact dialog fits 1024",
+    "pass": true
+  },
+  {
+    "name": "Contact has no internal horizontal overflow 1024",
+    "pass": true
+  },
+  {
+    "name": "Contact dialog fits 1440",
+    "pass": true
+  },
+  {
+    "name": "Contact has no internal horizontal overflow 1440",
+    "pass": true
+  },
+  {
+    "name": "Custom route opens when requested",
+    "pass": true
+  },
+  {
+    "name": "Expanded custom route fits phone",
+    "pass": true
+  }
+]

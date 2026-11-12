@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "target": "ES2022", "module": "ESNext", "moduleResolution": "Bundler",
+    "jsx": "react-jsx", "strict": true, "noEmit": true,
+    "esModuleInterop": true, "skipLibCheck": true,
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "baseUrl": ".", "paths": {"@/*": ["./*"]}
+  },
+  "include": ["components/**/*.tsx", "lib/**/*.ts", "src/booking/**/*.ts", "src/booking/**/*.tsx"]
+}

@@ -1,0 +1,6 @@
+{
+  "version": "1.0.0",
+  "description": "Preserved user-friendly design before rollback: visible package/vehicle grids, guided customization, simplified form, smooth video.",
+  "build": "python build.py",
+  "static_directory": "dist"
+}

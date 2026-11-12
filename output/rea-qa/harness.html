@@ -1,0 +1,41 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Heavenly frontend checks</title></head><body><h1>Heavenly frontend checks</h1><pre id="results">RUNNING</pre><iframe id="app" title="Frontend under test" src="/index.html" style="width:1440px;height:900px;border:0"></iframe><script>
+const frame=document.querySelector('#app');
+const results=[];
+const check=(name,pass,detail='')=>results.push({name,pass:!!pass,detail});
+const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+frame.addEventListener('load',async()=>{
+ try{
+ const d=frame.contentDocument,w=frame.contentWindow;
+ const $=s=>d.querySelector(s);
+ const input=(selector,value)=>{const el=$(selector);el.value=value;el.dispatchEvent(new w.Event('input',{bubbles:true}));};
+ await sleep(250);
+ check('Five packages rendered',d.querySelectorAll('[data-tour-card]').length===5);
+ check('Four vehicle choices rendered',d.querySelectorAll('[data-vehicle-card]').length===4);
+ check('Thirty generated landscapes rendered',d.querySelectorAll('[data-landscape]').length===30);
+ $('[data-tour="2"]').click();$('[data-vehicle="2"]').click();
+ check('Selected package retained in summary',$('#tour-summary').textContent.includes('Andhra Temple Tour'));
+ check('Selected vehicle retained in summary',$('#vehicle-summary').textContent.includes('Tempo Traveller'));
+ check('Base and four stops total 8995',$('#selected-route-summary').textContent.includes('8,995'));
+ $('.extra-stops').open=true;$('input[data-stop="7"]').click();
+ check('Added fifth stop recalculates to 9244',$('#selected-route-summary').textContent.includes('9,244'));
+ input('#pickup','Tirupati Railway Station');input('#dropoff','Tirupati hotel');input('#name','Frontend QA');
+ check('Pickup and dropoff reflected in route',$('#route-preview').textContent.includes('Tirupati Railway Station')&&$('#route-preview').textContent.includes('Tirupati hotel'));
+ $('#people').value='1';$('#people-minus').click();check('People minimum is one',$('#people').value==='1');
+ $('#people').value='200';$('#people-plus').click();check('People maximum is 200',$('#people').value==='200');
+ $('#date').value='2000-01-01';check('Past travel date rejected',!$('#date').checkValidity());
+ $('#flexible-date').click();check('Flexible date disables date and calendar',$('#date').disabled&&$('.calendar-open').disabled);
+ check('Complete enquiry with flexible date is valid',$('#enquiry-form').checkValidity());
+ check('Selections and stops persisted',JSON.parse(w.sessionStorage.getItem('heavenly-trip-preferences')).stops.some(([key,values])=>key===2&&values.includes(7)));
+ $('#menu-toggle').click();check('Menu opens as modal',$('#site-menu').open&&$('#menu-toggle').getAttribute('aria-expanded')==='true');$('#menu-close').click();check('Menu closes',!$('#site-menu').open);
+ $('[data-landscape="0"]').click();$('#landscape-next').click();check('Landscape viewer advances',$('#landscape-count').textContent==='2 / 30');$('#landscape-close').click();check('Landscape viewer closes',!$('#landscape-dialog').open);
+ for(const width of [320,390,768,1440]){
+  frame.style.width=width+'px';await sleep(100);
+  check('No page overflow at '+width,d.documentElement.scrollWidth<=width,'scrollWidth='+d.documentElement.scrollWidth);
+  const card=$('.tour-card.is-centered .book-details');check('Package content fits at '+width,card.scrollHeight<=card.clientHeight+1,'scrollHeight='+card.scrollHeight+' clientHeight='+card.clientHeight);
+ }
+ check('Inactive packages are inert',[...d.querySelectorAll('.tour-card:not(.is-centered)')].every(el=>el.inert));
+ const invalid=[];for(const img of d.images){if(img.complete&&img.naturalWidth===0)invalid.push(img.getAttribute('src').slice(0,90));}check('Loaded images decode successfully',invalid.length===0,invalid.join(', '));
+ document.querySelector('#results').dataset.state='complete';document.querySelector('#results').textContent=JSON.stringify({state:'COMPLETE',passed:results.filter(x=>x.pass).length,total:results.length,results},null,2);
+ }catch(error){document.querySelector('#results').dataset.state='error';document.querySelector('#results').textContent=JSON.stringify({state:'ERROR',message:String(error),stack:error.stack,results},null,2);}
+},{once:true});
+</script></body></html>

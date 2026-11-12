@@ -1,0 +1,28 @@
+{
+  "release_checks": {
+    "passed": 65,
+    "total": 65
+  },
+  "widths_checked": [
+    320,
+    390,
+    768,
+    1024,
+    1440
+  ],
+  "mobile_playback": {
+    "width": 1920,
+    "height": 1080,
+    "elapsedVideoSeconds": 3.3120000000000003,
+    "decodedFrames": 99,
+    "droppedFrames": 0,
+    "source": "http://127.0.0.1:4188/assets/mountains/mountain-dawn-smooth-mobile-v2.mp4",
+    "paused": false
+  },
+  "whatsapp_draft_line_breaks": true,
+  "limitations": [
+    "REA returned cleanup_incomplete after requested browser observations; page assertions and screenshots are retained as partial tool evidence.",
+    "Playback sample describes this local run, not every device or network."
+  ],
+  "preview": "http://127.0.0.1:4188/?v=journey-refinement"
+}
