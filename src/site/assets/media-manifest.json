@@ -1,0 +1,23 @@
+{
+  "film": {
+    "file": "showreel.mp4",
+    "source": "Previously generated project landscape still; the intermediate render is not retained.",
+    "dimensions": [
+      1920,
+      1080
+    ],
+    "fps": 60,
+    "description": "Smooth camera motion from AI-generated landscape still; not real location footage."
+  },
+  "thumbnail": {
+    "file": "showreel-loop.mp4",
+    "width": 720,
+    "fps": 24,
+    "codec": "H.264",
+    "generated_with": "FFmpeg 9.0.2, CRF 26, faststart"
+  },
+  "photos": {
+    "temples": "Existing licensed project photographs; credits embedded in Privacy & credits.",
+    "landscapes": "Selected existing project AI landscape artwork."
+  }
+}

@@ -1,6 +1,0 @@
-from pathlib import Path
-p=Path('src/v3/app.js');s=p.read_text(encoding='utf-8');s=s.replace("$('#tour-select').value=value;render()}","$('#tour-select').value=value;render();updateInclusions()}")
-s=s.replace("${ROUTES[i].length} temple stops","${ROUTES[i].length} temple ${ROUTES[i].length===1?'stop':'stops'}")
-s=s.replace("$('#travel-date').disabled=state.flexible;render();","$('#travel-date').disabled=state.flexible;render();updateInclusions();")
-p.write_text(s,encoding='utf-8')
-p=Path('src/v3/style.css');s=p.read_text(encoding='utf-8');s+='\n.tour-controls{display:flex;justify-content:space-between;align-items:center;padding:0 12px 14px;gap:12px;font-size:11px;color:#656565}.tour-controls>div{display:flex;gap:6px}.tour-controls button{width:44px;height:44px;border:1px solid #dedede;border-radius:50%;background:#fafafa;color:#2b2b2b;font-size:20px}.tour-controls button:hover{background:#ffbfd2}.tour-inclusions{font-size:12px;line-height:1.6;margin-top:12px}.tour-inclusions summary{cursor:pointer;padding:8px 0;text-decoration:underline;text-underline-offset:3px;min-height:36px}.tour-inclusions ul{padding-left:18px;color:#656565;margin:8px 0 0}.tour-inclusions li+li{margin-top:5px}\n';p.write_text(s,encoding='utf-8')

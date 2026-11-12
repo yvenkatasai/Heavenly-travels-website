@@ -1,8 +1,7 @@
 {
   "version": "3.0.0",
-  "description": "React parallax five-day itinerary, service/package preferences, horizontal floating vehicle tiles and WhatsApp selection review.",
-  "build": "python build.py",
+  "description": "Heavenly Tours & Travels static pilgrimage travel website.",
+  "build": "python scripts/build_site.py",
   "static_directory": "dist",
-  "source": "src/v3",
-  "preserved_previous_as": "2.0.0"
+  "source": "src/site"
 }

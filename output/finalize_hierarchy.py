@@ -1,9 +1,0 @@
-from pathlib import Path
-R=Path(__file__).resolve().parents[1];p=R/'src/v3/page.html';s=p.read_text(encoding='utf-8')
-for label,identity,title in [('Complete Package','complete-category','pilgrimage-title'),('Individual Packages','individual-category','journeys-title'),('Travel Assistance','assistance-category','complete-title')]:
- s=s.replace(f'<p class="chapter-name">{label}</p>',f'<p id="{identity}" class="chapter-name">{label}</p>')
- s=s.replace(f'aria-labelledby="{title}"',f'aria-labelledby="{identity} {title}"')
-p.write_text(s,encoding='utf-8')
-p=R/'src/booking/main.tsx';s=p.read_text(encoding='utf-8').replace('className="chapter-name">Day-wise Packages','id="day-category" className="chapter-name">Day-wise Packages').replace('aria-labelledby="day-packages-title"','aria-labelledby="day-category day-packages-title"');p.write_text(s,encoding='utf-8')
-p=R/'README-V3.md';s=p.read_text(encoding='utf-8');s+='\n\nPackage hierarchy revision: explicit Complete Package (7 temples), Individual Packages (5 routes), Day-wise Packages (1–5 days), Travel Assistance and Custom Packages. A three-choice navigation leads directly to the package categories. Numbered chapter dividers, quiet background changes and locally served Cinzel category labels distinguish the sections. Cormorant Garamond titles use stronger weights and readable DM Sans body sizes. Cinzel label subset is 16.7 KB with OFL and source records in assets/fonts. Validation: 33 category/font/navigation checks plus 56 compact-layout and enquiry checks passed.\n';p.write_text(s,encoding='utf-8')
-p=R/'deploy_vercel.py';s=p.read_text(encoding='utf-8');s=s.replace('Compact responsive cards and dialogs, progressive details, reduced text, no misleading signature arrows; no pricing','Explicit package categories, section navigation and dividers, local Cinzel inscriptions and refined readable serif typography; compact layout and no pricing');p.write_text(s,encoding='utf-8')

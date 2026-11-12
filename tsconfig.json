@@ -4,7 +4,7 @@
     "jsx": "react-jsx", "strict": true, "noEmit": true,
     "esModuleInterop": true, "skipLibCheck": true,
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
-    "baseUrl": ".", "paths": {"@/*": ["./*"]}
+    "paths": {"@/*": ["./src/*"]}
   },
-  "include": ["components/**/*.tsx", "lib/**/*.ts", "src/booking/**/*.ts", "src/booking/**/*.tsx"]
+  "include": ["src/components/**/*.tsx", "src/lib/**/*.ts", "src/booking/**/*.ts", "src/booking/**/*.tsx"]
 }

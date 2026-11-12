@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "python build.py",
+    "build": "python scripts/build_site.py",
     "build:booking": "node scripts/build-booking.mjs",
     "typecheck": "tsc --noEmit"
   },
