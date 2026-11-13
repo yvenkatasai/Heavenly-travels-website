@@ -77,6 +77,8 @@ For code or build changes, run typecheck and build. For behavior changes, run th
 - **Hosting target:** Cloudflare Workers static assets
 
 ### Done
+- [x] Applied the approved desktop valley and mobile temple hero images with uncropped proportional fitting and responsive image preloads.
+- [x] Verified the hero update with TypeScript, the production build, and browser checks at 360/390/1440/1920px; correct image selection, full-image fitting and no horizontal overflow passed.
 - [x] Reorganized the repository around the active static-site architecture.
 - [x] Removed duplicate and unused legacy site/build files.
 - [x] Made builds clean and source-safe; confirmed the active build and typecheck pass.
@@ -121,6 +123,7 @@ For code or build changes, run typecheck and build. For behavior changes, run th
 - The portable Node.js build was validated on Windows; it was not run on macOS or Linux in this environment.
 
 ### Changelog
+- 2026-11-13 - Added approved desktop and portrait mobile hero backgrounds, preserved full-image visibility, and positioned mobile copy above the temple and road. Files: `src/site/page.html`, `src/site/hero-fit.css`, `src/site/assets/`, `scripts/build_site.mjs`, `artifacts/image-generation/`.
 - 2026-11-12 - Reorganized the repository around the active static-site architecture, moved project files to purpose-based folders, and removed confirmed obsolete source/build artifacts.
 - 2026-11-12 - Reordered and rewrote `agent.md` and `README.md` to explain the current project, layout, build workflow and deployment boundaries.
 - 2026-11-12 - Renamed `agent.md` to `AGENTS.md` for automatic workspace instruction discovery. Files: `AGENTS.md`, `README.md`.

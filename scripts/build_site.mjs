@@ -66,6 +66,7 @@ const sourceFiles = [
   ['SIMPLE_CLOSING_CSS', 'simple-closing.css'],
   ['MOBILE_NAV_CSS', 'mobile-nav.css'],
   ['COMPLETE_PACKAGE_CSS', 'complete-package.css'],
+  ['HERO_FIT_CSS', 'hero-fit.css'],
   ['MOBILE_NAV_JS', 'mobile-nav.js'],
   ['PILGRIMAGE_JS', 'pilgrimage.js'],
   ['APP', 'app.js'],
