@@ -1,7 +1,8 @@
 {
   "version": "3.0.0",
   "description": "Heavenly Tours & Travels static pilgrimage travel website.",
-  "build": "python scripts/build_site.py",
+  "build": "node scripts/build_site.mjs",
   "static_directory": "dist",
-  "source": "src/site"
+  "source": "src/site",
+  "deployment": "Cloudflare Workers static assets"
 }

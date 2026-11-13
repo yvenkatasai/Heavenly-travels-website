@@ -2,20 +2,18 @@
 
 A static pilgrimage travel website for exploring temple trips, travel services, package preferences and vehicle options. The site includes a React booking interface compiled into local static assets. It has no application backend, API or database.
 
-**Live site:** [heavenly-tours.vercel.app](https://heavenly-tours.vercel.app)
-
 ## Get started
 
-Requirements: Node.js/npm and Python.
+Requirements: Node.js and npm. The build is supported on Windows, macOS and Linux.
 
-```powershell
+```sh
 npm ci
 npm run typecheck
 npm run build
-python -m http.server 4188 --bind 127.0.0.1 --directory dist
+npm run dev
 ```
 
-Open http://127.0.0.1:4188/. The build runs locally and emits the complete site to `dist/`; it does not depend on a third-party runtime JavaScript CDN.
+Wrangler serves the built site locally. The build emits the complete static site to `dist/` and does not depend on a third-party runtime JavaScript CDN.
 
 ## What the site does
 
@@ -33,6 +31,7 @@ src/
   components/ui/        Reusable React components
   lib/                  Shared TypeScript helpers
 scripts/                Build, asset compilation and deployment tools
+wrangler.jsonc          Cloudflare Workers static-assets configuration
 tests/browser/          Browser scenarios, captures and QA reports
 docs/
   business/             Pricing and visitor-journey notes
@@ -47,13 +46,14 @@ The active site source is in `src/site/`, without a version-numbered source fold
 
 ## Build workflow
 
-`npm run build` calls `scripts/build_site.py`. It:
+`npm run build` calls the Node.js build scripts. It:
 
 1. Compiles the React booking island and prefixed Tailwind CSS into `dist/assets/`.
 2. Assembles the HTML pages from `src/site/` templates and source modules.
 3. Copies the active site media into `dist/assets/`.
 
 The build recreates `dist/` first so deleted or outdated assets cannot remain in the output. It refuses to use source, tooling, docs, tests, dependencies or Git directories as the output location.
+`wrangler.jsonc` configures an assets-only Cloudflare Worker that serves `dist/`.
 
 Useful commands:
 
@@ -62,16 +62,21 @@ Useful commands:
 | `npm run typecheck` | Type-check the React/TypeScript source |
 | `npm run build` | Build the complete static site |
 | `npm run build:booking` | Build only the React booking island into `dist/assets/` |
-| `python -m http.server 4188 --bind 127.0.0.1 --directory dist` | Serve the built site locally |
+| `npm run dev` | Build and run the local Cloudflare Worker preview |
+| `npm run deploy` | Build and deploy the Worker using your Wrangler login |
 
 ## Find project information
 
 - [Agent guide](AGENTS.md): repository conventions and coding-agent workflow
-- [Deployment guide](docs/DEPLOYMENT.md): Vercel deployment details and verification notes
+- [Deployment guide](docs/DEPLOYMENT.md): Cloudflare Workers setup and deployment
 - [Pricing notes](docs/business/PRICING.md)
 - [Visitor journey](docs/business/VISITOR-JOURNEY.md)
 - Design system and reference material: `docs/design/`
 - Browser QA evidence: `tests/browser/evidence/`
 - Generated artwork, prompts and provenance: `artifacts/image-generation/`
 
-Deployment uses the existing local Vercel CLI login via `scripts/deploy_vercel.py`. Do not deploy or alter remote configuration without approval from Vamsi.
+Authenticate with `npx wrangler login` before deploying. Do not deploy or alter remote configuration without approval from Vamsi.
+
+## Licensing
+
+The project has no project-wide MIT license. This change does not apply an open-source license to the site's original code. Third-party components, fonts and images keep their own licenses and required notices; those notices are not removed for commercial use.

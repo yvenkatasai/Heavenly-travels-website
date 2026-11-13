@@ -56,9 +56,9 @@ export interface MorphicNavbarProps {
 // The demo links to in-page anchors so it never navigates away. Use route
 // paths ("/", "/works", ...) as keys in a real app.
 const DEFAULT_NAV_ITEMS: Record<string, NavItem> = {
- "#pilgrimage":{name:"Complete Package"},
- "#journeys":{name:"Individual Packages"},
- "#day-packages":{name:"Day-wise Packages"},
+ "#pilgrimage":{name:"Complete Trip"},
+ "#journeys":{name:"Individual Trips"},
+ "#day-packages":{name:"Day-wise Trips"},
 };
 
 /** Gap opened on each side of the active link, in px. */
@@ -712,7 +712,7 @@ export function MorphicNavbar({
 
   return (
     <nav
-      aria-label="Choose a package type"
+      aria-label="Choose a trip type"
       className={cn("split-nav", className)}
     >
       {/* biome-ignore lint/a11y/noNoninteractiveElementInteractions: the row only adds scrubbing and arrow keys on top of real links */}

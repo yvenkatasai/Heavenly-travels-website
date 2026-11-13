@@ -7,3 +7,4 @@
 @media(prefers-reduced-motion:reduce){.split-link,.split-marker{transition:none}}
 .motion-paused .split-link,.motion-paused .split-marker{transition:none}
 .day-dialog-scroll-hint{flex:0 0 auto;font:400 11px/1.6 var(--body);color:#77623e;background:#eee6d3;margin:0;padding:7px 30px;border-bottom:1px solid #d8ceb7}.day-dialog-content:focus-visible{outline:2px solid #a18048;outline-offset:-3px}@media(max-width:767px){.day-dialog-scroll-hint{padding-inline:20px}}
+@media(min-width:768px){.day-packages .momentum-track{padding-inline:max(32px,calc(50vw - 432.5px))}}

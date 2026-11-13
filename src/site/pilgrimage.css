@@ -14,3 +14,7 @@
 @media(max-width:650px){.pilgrimage-card{min-height:calc(100svh - 190px);padding:27px 24px 66px}.pilgrimage-card .eyebrow{font-size:6.5px;margin-bottom:16px}.pilgrimage-card-copy h2{font-size:34px;line-height:1.02}.pilgrimage-card-copy h2 br{display:none}.pilgrimage-lead{display:none}.temple-directory{margin-top:22px}.temple-directory-label{font-size:6.5px;line-height:1.5;margin-bottom:11px}.temple-directory li{min-height:43px;padding-block:6px;gap:10px}.temple-directory strong{font-size:18px;line-height:1.02}.temple-directory small{font-size:6.5px;line-height:1.4;margin-top:3px}.pilgrimage-card-open{padding:0 24px 19px}.gateway-arrow{width:32px;height:32px;font-size:19px}.services-intro-note{font:400 13px/1.9 var(--body);color:var(--muted);margin-top:23px}}
 @media(max-width:360px){.pilgrimage-card{padding-inline:21px}.pilgrimage-card-copy h2{font-size:31px}.temple-directory strong{font-size:17px}.temple-directory li{gap:9px}.pilgrimage-card-open{padding-inline:21px}}
 .services-intro-note{font:400 14px/1.9 var(--body);color:var(--muted);max-width:650px;margin-top:25px}
+
+.custom-trip-card{background:#e7e8dc}
+.custom-trip-card .custom-trip-card-note{font:400 14px/1.8 var(--body);color:#586750;margin:20px 0 0;max-width:480px}
+@media(min-width:900px) and (min-height:740px){.custom-trip-card{position:relative!important;top:auto!important}}

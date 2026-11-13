@@ -3,7 +3,7 @@ export const SERVICE_LABELS:Record<string,string>={"Temple tour": "Temple trip",
 export const PACKAGES:TravelPackage[]=[
  {
   "id": "seven-temple",
-  "name": "Complete 7-Temple Package",
+  "name": "Complete 7-Temple Trip",
   "type": "signature",
   "image": "assets/tirumala.webp",
   "note": "All seven temples are included. Free extras: pickup and drop for your trip, plus help planning your temple visits.",
@@ -96,7 +96,7 @@ export const PACKAGES:TravelPackage[]=[
  },
  {
   "id": "days-1",
-  "name": "One-day package",
+  "name": "One-day trip",
   "type": "days",
   "duration": 1,
   "image": "assets/padmavathi.webp",
@@ -111,7 +111,7 @@ export const PACKAGES:TravelPackage[]=[
  },
  {
   "id": "days-2",
-  "name": "Two-day package",
+  "name": "Two-day trip",
   "type": "days",
   "duration": 2,
   "image": "assets/srikalahasti.webp",
@@ -126,7 +126,7 @@ export const PACKAGES:TravelPackage[]=[
  },
  {
   "id": "days-3",
-  "name": "Three-day package",
+  "name": "Three-day trip",
   "type": "days",
   "duration": 3,
   "image": "assets/tirumala.webp",
@@ -161,7 +161,7 @@ export const PACKAGES:TravelPackage[]=[
  },
  {
   "id": "days-4",
-  "name": "Four-day package",
+  "name": "Four-day trip",
   "type": "days",
   "duration": 4,
   "image": "assets/vellore.webp",
@@ -202,7 +202,7 @@ export const PACKAGES:TravelPackage[]=[
  },
  {
   "id": "days-5",
-  "name": "Five-day package",
+  "name": "Five-day trip",
   "type": "days",
   "duration": 5,
   "image": "assets/hilltop.webp",

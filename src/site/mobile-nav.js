@@ -6,7 +6,7 @@ const svg=path=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stro
 const temple=svg('<path d="M4 21h16M7 21V10h10v11M9 10V7h6v3M10 7V4h4v3M12 2v2M10 21v-5h4v5M5 13h14"/>');
 const car=svg('<path d="M4 17h16V11l-2-6H6l-2 6v6ZM4 11h16M5 17v3h3v-3m8 0v3h3v-3M7 14h2m6 0h2"/>');
 const calendar=svg('<rect x="4" y="5" width="16" height="16" rx="1"/><path d="M8 3v4m8-4v4M4 10h16M8 14h3m-3 3h7"/>');
-nav.innerHTML=`<a href="${vehiclePage?'index.html':''}#package-types" data-shortcut="packages">${temple}<span class="shortcut-label">Packages</span></a><button type="button" id="quick-vehicles" data-shortcut="vehicles">${car}<span class="shortcut-label">Vehicles</span></button><a href="${vehiclePage?'index.html':''}#custom-trip" data-shortcut="plan">${calendar}<span class="shortcut-label">Plan trip</span></a>`;
+nav.innerHTML=`<a href="${vehiclePage?'index.html':''}#package-types" data-shortcut="packages">${temple}<span class="shortcut-label">Trips</span></a><button type="button" id="quick-vehicles" data-shortcut="vehicles">${car}<span class="shortcut-label">Vehicles</span></button><a href="${vehiclePage?'index.html':''}#custom-trip" data-shortcut="plan">${calendar}<span class="shortcut-label">Plan trip</span></a>`;
 document.body.append(nav);document.body.classList.add('has-heritage-shortcuts');
 document.getElementById('quick-vehicles').onclick=()=>{if(vehiclePage){document.getElementById('vehicle-selection')?.scrollIntoView({behavior:'instant'})}else location.assign('vehicles.html')};
 let selected,frame=0;

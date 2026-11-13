@@ -20,6 +20,6 @@ The owner has not provided rates or guaranteed amenities for the four tiers, so 
 - Desktop/mobile fleet and review-popup screenshots were reviewed. The suggested itinerary, clip-reveal styling and inside/below service controls were reviewed.
 - Link clicks were intercepted during tests; no WhatsApp message was sent.
 
-Runtime source: `src/booking/main.tsx` and `src/booking/data.ts`. Visual styles: `src/site/booking.css`. Build: `scripts/build-booking.mjs`, called by `scripts/build_site.py`. Generated JS/CSS URLs receive content hashes so updates do not reuse stale cached bundles. Dependency notices are generated into `dist/assets`.
+Runtime source: `src/booking/main.tsx` and `src/booking/data.ts`. Visual styles: `src/site/booking.css`. Build: `scripts/build-booking.mjs`, called by `scripts/build_site.mjs`. Generated JS/CSS URLs receive content hashes so updates do not reuse stale cached bundles. Dependency notices are generated into `dist/assets`.
 
 REA retains the completed browser steps; complete step objects were extracted from retained output when the outer capture was still being written. No physical iPhone/Android certification or universal frame-rate guarantee is claimed.
