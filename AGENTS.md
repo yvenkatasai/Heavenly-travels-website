@@ -123,6 +123,7 @@ For code or build changes, run typecheck and build. For behavior changes, run th
 - The portable Node.js build was validated on Windows; it was not run on macOS or Linux in this environment.
 
 ### Changelog
+- 2026-11-13 - Corrected desktop hero letterboxing with edge-to-edge cover fitting anchored to the road at the bottom; retained the mobile portrait's contain fitting. Files: `src/site/hero-fit.css`, `dist/index.html`.
 - 2026-11-13 - Added approved desktop and portrait mobile hero backgrounds, preserved full-image visibility, and positioned mobile copy above the temple and road. Files: `src/site/page.html`, `src/site/hero-fit.css`, `src/site/assets/`, `scripts/build_site.mjs`, `artifacts/image-generation/`.
 - 2026-11-12 - Reorganized the repository around the active static-site architecture, moved project files to purpose-based folders, and removed confirmed obsolete source/build artifacts.
 - 2026-11-12 - Reordered and rewrote `agent.md` and `README.md` to explain the current project, layout, build workflow and deployment boundaries.

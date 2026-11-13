@@ -7,4 +7,4 @@ The desktop hero now uses the owner's selected morning hills and ghat-road image
 
 The mobile image was edited with the built-in image generation tool from the preceding portrait valley artwork. Prompt direction: retain the portrait format, broad wooded hills and winding ghat road; add a recognisable white-and-gold temple precinct on the right, keep the left centre clear for heading text, and use cinematic morning light with layered mist. These are artistic AI-generated compositions, not exact-location photographs.
 
-Both layouts use proportional contain fitting so the entire image remains visible. The mobile text sits above the temple and road. Existing trip selection, custom-trip planning and booking behavior are preserved.
+Mobile uses proportional contain fitting so the entire portrait remains visible, with text above the temple and road. Desktop uses edge-to-edge cover fitting anchored at the bottom to retain the ghat road and remove side bars on wide screens. Existing trip selection, custom-trip planning and booking behavior are preserved.
