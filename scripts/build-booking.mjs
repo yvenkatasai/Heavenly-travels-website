@@ -3,11 +3,50 @@ import { spawnSync } from 'node:child_process';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import fs from 'node:fs';
-const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
-const output=path.join(process.env.SITE_BUILD_OUTPUT||path.join(root,'dist'),'assets');
-fs.mkdirSync(output,{recursive:true});
-const css=spawnSync(process.execPath,[path.join(root,'node_modules/@tailwindcss/cli/dist/index.mjs'),'-i','src/booking/tailwind.css','-o',path.join(output,'booking-tailwind.css'),'--minify'],{cwd:root,encoding:'utf8'});
-if(css.status!==0)throw new Error(css.stderr||'Tailwind compilation failed');
-await build({entryPoints:[path.join(root,'src/booking/main.tsx')],outfile:path.join(output,'booking-flow.js'),bundle:true,minify:true,format:'iife',target:['es2022'],jsx:'automatic',define:{'process.env.NODE_ENV':'"production"'},legalComments:'linked',tsconfig:path.join(root,'tsconfig.json')});
-const licences=[];for(const name of ['react','react-dom','framer-motion','lucide-react','clsx','tailwind-merge','tailwindcss']){const folder=path.join(root,'node_modules',name);const file=fs.readdirSync(folder).find(x=>/^license(\.md|\.txt)?$/i.test(x));if(file)licences.push(name+'\n'+fs.readFileSync(path.join(folder,file),'utf8'))}fs.writeFileSync(path.join(output,'booking-dependency-licenses.txt'),licences.join('\n\n---\n\n'));
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const output = path.join(process.env.SITE_BUILD_OUTPUT || path.join(root, 'dist'), 'assets');
+fs.mkdirSync(output, { recursive: true });
+const css = spawnSync(
+  process.execPath,
+  [
+    path.join(root, 'node_modules/@tailwindcss/cli/dist/index.mjs'),
+    '-i',
+    'src/booking/tailwind.css',
+    '-o',
+    path.join(output, 'booking-tailwind.css'),
+    '--minify',
+  ],
+  { cwd: root, encoding: 'utf8' },
+);
+if (css.status !== 0) throw new Error(css.stderr || 'Tailwind compilation failed');
+await build({
+  entryPoints: [path.join(root, 'src/booking/main.tsx')],
+  outfile: path.join(output, 'booking-flow.js'),
+  bundle: true,
+  minify: true,
+  format: 'iife',
+  target: ['es2022'],
+  jsx: 'automatic',
+  define: { 'process.env.NODE_ENV': '"production"' },
+  legalComments: 'linked',
+  tsconfig: path.join(root, 'tsconfig.json'),
+});
+const licences = [];
+for (const name of [
+  'react',
+  'react-dom',
+  'framer-motion',
+  'lucide-react',
+  'clsx',
+  'tailwind-merge',
+  'tailwindcss',
+]) {
+  const folder = path.join(root, 'node_modules', name);
+  const file = fs.readdirSync(folder).find((x) => /^license(\.md|\.txt)?$/i.test(x));
+  if (file) licences.push(name + '\n' + fs.readFileSync(path.join(folder, file), 'utf8'));
+}
+fs.writeFileSync(
+  path.join(output, 'booking-dependency-licenses.txt'),
+  licences.join('\n\n---\n\n'),
+);
 console.log('React booking island and prefixed Tailwind utilities built.');
