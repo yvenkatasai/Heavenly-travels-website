@@ -1,11 +1,1165 @@
 /* Compact reading scale and deliberate disclosure instead of oversized panels. */
-.hero{height:auto;min-height:0;padding-block:50px 42px}.hero-inner{padding-block:0}.hero-title,.hero-business-name{font-size:clamp(80px,12vw,166px);line-height:.9}.hero-business-service{font-size:clamp(15px,2vw,24px);margin-top:18px}.hero-facts,.hero .destinations{display:none}.hero-tagline{margin-top:22px;font-size:23px}.hero-description{font-size:14px;line-height:1.7;max-width:410px}.hero-actions{margin-top:24px}.hero-actions .button{min-height:44px}.signature-section{padding-top:0}.signature-mask-stage{height:clamp(360px,60svh,560px);min-height:0}.signature-mask-caption{bottom:12%;max-width:700px}.signature-mask-caption h2{font-size:clamp(42px,5.5vw,74px);line-height:1.02;margin:18px 0}.signature-mask-caption>p:not(.eyebrow){font-size:14px;line-height:1.7}.signature-scroll-note{display:none}.signature-mask-caption .button{margin-top:20px}.signature-details{padding:40px 0;gap:30px 65px;grid-template-columns:.8fr 1.2fr}.signature-details>div:first-child{position:static}.signature-details h3{font-size:44px;line-height:1.08;margin-block:16px}.signature-details>div:first-child>p:not(.eyebrow){font-size:13px;line-height:1.7}.signature-details .button{margin-top:18px}.signature-details .temple-directory li{padding:10px 0;grid-template-columns:22px 1fr;gap:10px}.signature-details .temple-directory strong{font-size:19px;line-height:1.2}.signature-details .temple-directory small{font-size:10px;margin-top:3px}.signature-details .temple-directory-label{font-size:8px;margin-bottom:10px}.signature-details #gateway-service-picker{padding-top:0}.signature-details .service-choice{padding-top:20px}.signature-details .service-choice label{font-size:25px}.service-choice-controls{gap:12px}.service-choice select{min-height:44px;padding-block:10px}.service-choice .flow-button{min-height:44px;padding:11px 16px}
-.pilgrimage-packages{padding-block:48px}.pilgrimage-packages-heading{margin-bottom:25px}.heritage-section-heading h2,.flow-section-heading h2,.complete-pilgrimage-copy>h2,.pricing-intro>h2{font-size:clamp(37px,4vw,56px);line-height:1.05}.heritage-section-heading .section-heading-aside p{font-size:14px;line-height:1.7}.scroll-cue{display:none}.tour-rail.package-reveal-list{width:min(1120px,calc(100% - 80px));margin-inline:auto;gap:20px}.package-card.tour-mini,.package-card:nth-child(n){position:relative;top:auto;min-height:0;grid-template-columns:.8fr 1.2fr;box-shadow:none}.package-card .package-visual,.package-card:nth-child(even) .package-visual{order:0;min-height:290px}.package-card .package-copy,.package-card:nth-child(even) .package-copy{order:1;padding:25px 32px;justify-content:flex-start}.package-number{margin-bottom:12px;gap:9px}.package-number strong{font-size:32px}.package-type{margin-bottom:10px}.package-copy>h3{font-size:35px;line-height:1.08;max-width:530px}.package-stops{width:100%;margin-top:16px;border-top:1px solid #d1cebd}.package-stops summary{font:500 13px/1.5 var(--body);padding:13px 0;min-height:44px;cursor:pointer;color:var(--forest)}.package-stops .package-includes{margin:0 0 12px}.package-stops .package-includes li{font-size:13px;line-height:1.6;padding-block:6px}.package-actions{margin-top:13px;gap:10px}.package-actions>span{display:none}.package-actions .button{min-height:44px;font-size:10px;padding:11px 18px}
-.day-packages{padding:45px 0 35px}.day-packages .flow-section-heading{margin-bottom:4px}.flow-section-heading{gap:40px}.flow-section-heading>div:last-child>p:not(.flow-eyebrow){font-size:14px;line-height:1.7}.flow-eyebrow{margin-bottom:15px}.momentum-track{gap:20px;padding:20px calc(50vw - 137.5px) 22px}.momentum-card{width:275px;flex-basis:275px;height:345px}.momentum-card-tilt{border-radius:100px 100px 8px 8px}.momentum-duration{top:27px;font-size:9px;padding:5px 11px}.momentum-card-copy{left:22px;right:22px;bottom:21px}.momentum-card h3{font-size:32px;line-height:1.05;margin:11px 0}.momentum-card-copy p{font-size:12px;line-height:1.6;margin:0;min-height:0}.momentum-card-copy>span:first-child,.momentum-card-hint{display:none}.day-rail-dots{margin-bottom:15px}.day-itinerary{padding:24px 0 0;gap:35px;grid-template-columns:1fr 1fr}.day-itinerary h3{font-size:32px;margin-bottom:10px}.day-itinerary-intro>p:not(.flow-eyebrow){font-size:13px;line-height:1.6}.day-itinerary .flow-button{margin:14px 0 8px}.day-itinerary-intro .day-availability{margin:5px 0 0}.day-itinerary-stops{display:block;margin:0;align-self:start;background:#f2f1e6;border:1px solid #cccfbc;padding:0 18px;border-radius:5px}.day-itinerary-stops>summary{padding:15px 0;font:500 13px/1.6 var(--body);cursor:pointer;min-height:48px}.day-itinerary-content{display:grid;grid-template-columns:1fr 1fr;gap:22px;padding:5px 0 20px}.day-itinerary-content>ul,.day-itinerary-content>.flow-qualification{grid-column:1/-1}.day-itinerary-stops ul{font-size:13px}.day-itinerary-stops .day-plan h4{font-size:10px}.complete-pilgrimage{padding-block:42px}.complete-pilgrimage-copy>p:not(.eyebrow){font-size:14px;line-height:1.7}.traveller-needs th,.traveller-needs td{padding-block:13px;font-size:13px}.group-invitation-number{font-size:39px}.travel-reach{margin-top:25px;padding-top:20px}.travel-reach>p{font-size:25px}.pricing-section{padding-block:42px}.pricing-intro>p{font-size:14px;line-height:1.7}.final-cta{padding-block:42px}.final-cta h2{font-size:clamp(35px,4vw,55px)}
-.services-dialog.compact-services{inset:0;width:min(740px,calc(100vw - 32px));height:auto;max-height:85dvh;margin:auto;border:1px solid #d4c8ad;border-radius:9px;overflow:auto;overscroll-behavior:contain}.compact-services .services-dialog-body{padding:42px 32px 28px}.compact-services .services-dialog-heading{margin-bottom:20px}.compact-services .services-dialog-heading h2{font-size:39px;line-height:1.06;margin-block:13px}.compact-services .services-dialog-heading>p:last-child{font-size:14px;line-height:1.7;margin-top:15px}.compact-services .services-close{position:sticky;top:12px;margin:12px 12px -49px auto;z-index:5;width:35px;height:35px;font-size:25px}.service-highlights{display:flex;flex-wrap:wrap;gap:7px}.service-highlights>span{font:400 12px/1.5 var(--body);padding:7px 10px;background:#e7e8da;border-radius:4px}.compact-availability{font:400 12px/1.7 var(--body);margin:14px 0 22px;color:#72775e}.services-fold{border-top:1px solid #d5d4c1}.services-fold>summary{font:500 14px/1.5 var(--body);padding:16px 0;min-height:50px;cursor:pointer;color:#193c31}.services-fold .services-section-title,.services-fold .services-groups>.eyebrow,.services-fold .services-groups>h3,.services-fold .group-capacity{display:none}.services-fold .services-capabilities li{padding:12px 0;gap:15px}.services-fold .services-capabilities h3{font-size:22px;line-height:1.2}.services-fold .service-category{font-size:9px;margin-bottom:5px}.services-fold .service-index{font-size:11px}.services-fold .services-groups{margin:0 0 15px;padding:18px;position:static}.services-fold .group-types li{font-size:13px;line-height:1.6;padding-block:9px}.services-fold .services-travel-options{display:block;margin:0;padding:10px 0 20px}.services-fold .services-travel-options>div+div{margin-top:20px}.services-fold .services-travel-options h3{font-size:24px;line-height:1.2}.services-fold .services-travel-options p{font-size:13px;margin-top:7px}.compact-package-actions{display:flex;align-items:center;gap:20px;flex-wrap:wrap;border-top:1px solid #d5d4c1;padding-top:22px;margin-top:5px}.compact-package-actions .button{font-size:11px;min-height:44px}.compact-package-actions>a:last-child{font:400 12px/1.7 var(--body);color:#365341}
-.selected-journey{padding-top:25px}.selected-journey nav{padding-bottom:18px}.selected-journey-content{padding-block:25px;gap:35px}.selected-journey h1{font-size:clamp(36px,4vw,52px);margin-bottom:14px}.selected-journey p:not(.flow-eyebrow){font-size:13px;line-height:1.7}.vehicle-page .flow-fleet{padding:35px 0 20px}.vehicle-page .flow-section-heading{gap:35px;margin-bottom:10px}.floating-vehicle-rail,.vehicle-page .floating-vehicle-rail{padding-block:15px 28px;gap:18px}.floating-vehicle-tile{flex-basis:270px;min-height:0;padding:20px;border-radius:10px}.floating-vehicle-tile>svg{height:112px;margin:8px 0}.floating-vehicle-tile h3{font-size:30px}.floating-vehicle-tile>p{font-size:13px;line-height:1.6;margin:10px 0 17px;min-height:0}.vehicle-tile-tag{font-size:9px}.vehicle-tile-action{font-size:12px}.booking-review{width:min(510px,calc(100vw - 32px));max-height:85dvh;padding:37px 28px 22px}.booking-review h2{font-size:37px;line-height:1.08}.booking-review .flow-eyebrow{margin-bottom:12px}.booking-review-summary{margin-top:18px;padding-block:8px}.booking-review-summary>div{font-size:13px;padding-block:5px}.booking-review-fields{margin:18px 0;gap:13px}.booking-review-fields label{font-size:12px}.booking-review-fields input,.booking-review-fields select{min-height:44px;padding:9px;margin-top:5px}.booking-extra{border-top:1px solid #d4d3bf;margin-bottom:20px}.booking-extra>summary{font:400 12px/1.6 var(--body);min-height:44px;padding-block:13px;cursor:pointer}.booking-extra .booking-review-fields{margin:2px 0 16px}.booking-confirmation-note{font-size:11px;line-height:1.7;margin-top:12px}.booking-selection-dock{padding:10px 15px;gap:18px}.booking-selection-dock strong{font-size:23px}.booking-selection-dock .flow-button{min-height:42px}.vehicle-page-footer{padding-block:22px}
-@media(max-width:767px){.hero{padding:32px 0}.hero-title,.hero-business-name{font-size:clamp(77px,19vw,120px)}.hero-tagline{font-size:20px;margin-top:18px}.hero-description{font-size:14px;line-height:1.65}.hero-eyebrow{font-size:8px}.hero-actions{gap:10px;flex-wrap:wrap;margin-top:20px}.hero-actions .button{min-height:44px;padding:12px 16px;font-size:10px}.signature-mask-stage{height:400px;min-height:0;max-height:65svh}.signature-mask-caption{left:22px;bottom:10%;padding-right:22px}.signature-mask-caption h2{font-size:39px;line-height:1.04;margin-block:14px}.signature-mask-caption>p:not(.eyebrow){font-size:13px;line-height:1.65;max-width:270px}.signature-mask-caption .button{margin-top:16px;min-height:44px}.signature-details{padding:28px 0}.signature-details>div:first-child{margin-bottom:24px}.signature-details h3{font-size:33px;line-height:1.1;margin-block:12px}.signature-details h3 br{display:none}.signature-details .temple-directory li{padding:9px 0;gap:8px}.signature-details .temple-directory strong{font-size:17px;line-height:1.2}.signature-details .temple-directory small{font-size:11px}.signature-details .temple-directory-label{font-size:8px;line-height:1.6;margin-bottom:10px}.signature-details #gateway-service-picker{margin-top:22px}.signature-details .service-choice label{font-size:24px}.service-choice-controls{margin-top:12px}.signature-details .service-choice-inside .flow-button{min-height:44px;margin-top:8px}.pilgrimage-packages{padding-block:32px}.heritage-section-heading h2,.flow-section-heading h2,.complete-pilgrimage-copy>h2,.pricing-intro>h2{font-size:36px}.pilgrimage-packages-heading{margin-bottom:20px}.section-heading-aside{margin-top:16px}.tour-rail.package-reveal-list{width:calc(100% - 40px);gap:16px}.package-card.tour-mini,.package-card:nth-child(even){display:flex;flex-direction:column;min-height:0}.package-card .package-visual,.package-card:nth-child(even) .package-visual{height:130px;min-height:130px;width:100%}.package-card .package-copy,.package-card:nth-child(even) .package-copy{padding:18px 20px}.package-image-caption{font-size:9px;padding:12px}.package-number{margin-bottom:9px}.package-number strong{font-size:27px}.package-type{font-size:9px;margin-bottom:8px}.package-copy>h3{font-size:29px;line-height:1.1}.package-stops{margin-top:12px}.package-stops summary{font-size:13px;padding-block:11px}.package-stops .package-includes li{font-size:13px}.package-actions{margin-top:9px}.package-actions .button{font-size:11px;min-height:44px}.day-packages{padding:32px 0 26px}.flow-section-heading>div:last-child{margin-top:16px}.flow-section-heading>div:last-child>p:not(.flow-eyebrow){font-size:14px;line-height:1.7;margin-bottom:12px}.fleet-arrows{margin-top:14px}.fleet-arrows button{width:40px;height:40px}.momentum-track{padding:18px calc(50vw - 111px) 18px;gap:15px}.momentum-card{width:222px;flex-basis:222px;height:295px}.momentum-card-tilt{border-radius:85px 85px 7px 7px}.momentum-duration{top:23px;font-size:9px;padding:5px 10px}.momentum-card-copy{left:18px;right:18px;bottom:20px}.momentum-card h3{font-size:29px;margin-block:9px}.momentum-card-copy p{font-size:12px;line-height:1.5}.day-rail-dots{margin-bottom:10px}.day-itinerary{padding-top:20px}.day-itinerary h3{font-size:29px;margin-bottom:10px}.day-itinerary-intro>p:not(.flow-eyebrow){font-size:13px;line-height:1.6}.day-itinerary .flow-button{font-size:11px;min-height:44px;margin:12px 0 7px}.day-itinerary-stops{margin-top:17px;padding-inline:15px}.day-itinerary-content{grid-template-columns:1fr;gap:17px}.complete-pilgrimage{padding-block:32px}.travel-reach>p{font-size:23px}.traveller-needs{margin-top:25px}.pricing-section{padding-block:32px}.services-dialog.compact-services{width:calc(100vw - 24px);max-height:85dvh;inset:0;margin:auto;border-radius:8px}.compact-services .services-dialog-body{padding:37px 20px 23px}.compact-services .services-dialog-heading h2{font-size:31px;line-height:1.08}.compact-services .services-dialog-heading>p:last-child{font-size:13px;line-height:1.65}.service-highlights{gap:6px}.service-highlights>span{font-size:11px;padding:6px 8px}.compact-availability{font-size:12px;line-height:1.6;margin-block:13px}.services-fold>summary{font-size:13px;line-height:1.6;padding-block:14px}.services-fold .services-capabilities h3{font-size:21px}.services-fold .services-capabilities li{padding-block:11px;gap:11px}.compact-package-actions{gap:14px;padding-top:19px}.compact-package-actions .button{width:100%;min-height:44px}.selected-journey{padding-top:20px}.selected-journey-content{padding-block:20px}.selected-journey h1{font-size:36px;line-height:1.08}.selected-itinerary{padding:12px 16px;margin-top:12px}.vehicle-page .flow-fleet{padding-top:25px}.floating-vehicle-tile{flex:0 0 248px;min-height:0;padding:18px}.floating-vehicle-tile>svg{height:105px}.floating-vehicle-tile h3{font-size:29px}.floating-vehicle-tile>p{font-size:13px;line-height:1.6}.vehicle-tile-tag{font-size:9px;line-height:1.5}.vehicle-tile-action{font-size:12px}.booking-review{width:calc(100vw - 28px);max-height:85dvh;padding:37px 20px 22px}.booking-review h2{font-size:32px;line-height:1.1}.booking-review .flow-eyebrow{font-size:9px;margin-bottom:12px}.booking-review-summary{margin-top:16px}.booking-review-summary>div{font-size:12px;gap:12px}.booking-review-fields{grid-template-columns:1fr 1fr;gap:12px;margin-block:16px}.booking-review-fields label{font-size:11px}.booking-review-fields input,.booking-review-fields select{font-size:16px;min-height:44px}.booking-extra .booking-review-fields{grid-template-columns:1fr}.booking-confirmation-note{font-size:11px;line-height:1.6}.booking-selection-dock{left:10px;right:10px;padding:9px 12px}.vehicle-page .booking-selection-dock strong{font-size:22px}.vehicle-page .booking-selection-dock>div>span{font-size:9px}.booking-selection-dock .flow-button{font-size:10px;min-height:44px;padding-inline:13px}.mobile-trip-nav{padding-block:5px}.final-cta h2{font-size:34px}}
-.booking-review,.services-dialog.compact-services{height:fit-content;min-height:0}.final-cta{min-height:0}.contact-dialog{inset:0;width:min(880px,calc(100vw - 32px));height:fit-content;min-height:0;max-height:85dvh;margin:auto;border-radius:9px;border:1px solid #d1c5ab;overflow:hidden;padding:0}.contact-dialog[open]{animation:none}.contact-dialog .modal-background{border-radius:8px}.contact-scroller{height:auto;max-height:85dvh;padding:38px 30px 25px}.contact-layout{gap:28px;grid-template-columns:.8fr 1.2fr}.contact-intro{position:static;margin-bottom:20px}.contact-intro>h2{font-size:33px;line-height:1.1;margin-bottom:14px}.contact-intro>p{font-size:13px;line-height:1.7}.contact-intro>p:nth-of-type(n+2),.contact-location{display:none}.contact-step{margin-bottom:18px}.contact-step>legend{font-size:10px;letter-spacing:.06em;margin-bottom:12px}.contact-form input:not([type=checkbox]),.contact-form textarea,.contact-form #service-request{min-height:44px;padding:10px 12px;margin-bottom:11px;font-size:16px}.contact-form textarea{min-height:85px}.contact-dialog>.close-button{top:10px;right:10px;width:36px;height:36px}.audience-details{align-self:start;border-block:1px solid #d4d3bf}.audience-details>summary{cursor:pointer;padding:18px 0;font:500 14px/1.6 var(--body);color:var(--forest)}.audience-details .traveller-needs{margin:0;padding:0 0 15px}.audience-details .traveller-needs-label{display:none}
-@media(max-width:767px){.contact-dialog{width:calc(100vw - 24px);max-height:85dvh}.contact-scroller{padding:38px 20px 24px;max-height:85dvh}.contact-layout{display:block}.contact-intro>h2{font-size:31px}.contact-intro>p{margin-block:12px;font-size:13px;line-height:1.6}.contact-step{margin-bottom:18px}.audience-details{margin-top:22px}}
-@media(max-height:650px){.booking-review,.services-dialog.compact-services,.contact-dialog{max-height:88dvh}.contact-scroller{max-height:88dvh}.signature-mask-stage{max-height:none;height:350px}}
-.custom-plan-fold{width:min(1120px,calc(100% - 80px));margin:24px auto;border-block:1px solid #d4d3bf}.custom-plan-fold>summary{padding:22px 0;cursor:pointer;font:500 16px/1.6 var(--body);color:var(--forest)}.custom-plan-fold .pricing-section{width:100%;padding-block:20px 30px}.custom-plan-fold .planner-image{display:none}@media(max-width:767px){.custom-plan-fold{width:calc(100% - 48px);margin-block:15px}.custom-plan-fold>summary{font-size:14px;padding-block:18px}}
+.hero {
+  height: auto;
+  min-height: 0;
+  padding-block: 50px 42px;
+}
+.hero-inner {
+  padding-block: 0;
+}
+.hero-title,
+.hero-business-name {
+  font-size: clamp(80px, 12vw, 166px);
+  line-height: 0.9;
+}
+.hero-business-service {
+  font-size: clamp(15px, 2vw, 24px);
+  margin-top: 18px;
+}
+.hero-facts,
+.hero .destinations {
+  display: none;
+}
+.hero-tagline {
+  margin-top: 22px;
+  font-size: 23px;
+}
+.hero-description {
+  font-size: 14px;
+  line-height: 1.7;
+  max-width: 410px;
+}
+.hero-actions {
+  margin-top: 24px;
+}
+.hero-actions .button {
+  min-height: 44px;
+}
+.signature-section {
+  padding-top: 0;
+}
+.signature-mask-stage {
+  height: clamp(360px, 60svh, 560px);
+  min-height: 0;
+}
+.signature-mask-caption {
+  bottom: 12%;
+  max-width: 700px;
+}
+.signature-mask-caption h2 {
+  font-size: clamp(42px, 5.5vw, 74px);
+  line-height: 1.02;
+  margin: 18px 0;
+}
+.signature-mask-caption > p:not(.eyebrow) {
+  font-size: 14px;
+  line-height: 1.7;
+}
+.signature-scroll-note {
+  display: none;
+}
+.signature-mask-caption .button {
+  margin-top: 20px;
+}
+.signature-details {
+  padding: 40px 0;
+  gap: 30px 65px;
+  grid-template-columns: 0.8fr 1.2fr;
+}
+.signature-details > div:first-child {
+  position: static;
+}
+.signature-details h3 {
+  font-size: 44px;
+  line-height: 1.08;
+  margin-block: 16px;
+}
+.signature-details > div:first-child > p:not(.eyebrow) {
+  font-size: 13px;
+  line-height: 1.7;
+}
+.signature-details .button {
+  margin-top: 18px;
+}
+.signature-details .temple-directory li {
+  padding: 10px 0;
+  grid-template-columns: 22px 1fr;
+  gap: 10px;
+}
+.signature-details .temple-directory strong {
+  font-size: 19px;
+  line-height: 1.2;
+}
+.signature-details .temple-directory small {
+  font-size: 10px;
+  margin-top: 3px;
+}
+.signature-details .temple-directory-label {
+  font-size: 8px;
+  margin-bottom: 10px;
+}
+.signature-details #gateway-service-picker {
+  padding-top: 0;
+}
+.signature-details .service-choice {
+  padding-top: 20px;
+}
+.signature-details .service-choice label {
+  font-size: 25px;
+}
+.service-choice-controls {
+  gap: 12px;
+}
+.service-choice select {
+  min-height: 44px;
+  padding-block: 10px;
+}
+.service-choice .flow-button {
+  min-height: 44px;
+  padding: 11px 16px;
+}
+.pilgrimage-packages {
+  padding-block: 48px;
+}
+.pilgrimage-packages-heading {
+  margin-bottom: 25px;
+}
+.heritage-section-heading h2,
+.flow-section-heading h2,
+.complete-pilgrimage-copy > h2,
+.pricing-intro > h2 {
+  font-size: clamp(37px, 4vw, 56px);
+  line-height: 1.05;
+}
+.heritage-section-heading .section-heading-aside p {
+  font-size: 14px;
+  line-height: 1.7;
+}
+.scroll-cue {
+  display: none;
+}
+.tour-rail.package-reveal-list {
+  width: min(1120px, calc(100% - 80px));
+  margin-inline: auto;
+  gap: 20px;
+}
+.package-card.tour-mini,
+.package-card:nth-child(n) {
+  position: relative;
+  top: auto;
+  min-height: 0;
+  grid-template-columns: 0.8fr 1.2fr;
+  box-shadow: none;
+}
+.package-card .package-visual,
+.package-card:nth-child(even) .package-visual {
+  order: 0;
+  min-height: 290px;
+}
+.package-card .package-copy,
+.package-card:nth-child(even) .package-copy {
+  order: 1;
+  padding: 25px 32px;
+  justify-content: flex-start;
+}
+.package-number {
+  margin-bottom: 12px;
+  gap: 9px;
+}
+.package-number strong {
+  font-size: 32px;
+}
+.package-type {
+  margin-bottom: 10px;
+}
+.package-copy > h3 {
+  font-size: 35px;
+  line-height: 1.08;
+  max-width: 530px;
+}
+.package-stops {
+  width: 100%;
+  margin-top: 16px;
+  border-top: 1px solid #d1cebd;
+}
+.package-stops summary {
+  font: 500 13px/1.5 var(--body);
+  padding: 13px 0;
+  min-height: 44px;
+  cursor: pointer;
+  color: var(--forest);
+}
+.package-stops .package-includes {
+  margin: 0 0 12px;
+}
+.package-stops .package-includes li {
+  font-size: 13px;
+  line-height: 1.6;
+  padding-block: 6px;
+}
+.package-actions {
+  margin-top: 13px;
+  gap: 10px;
+}
+.package-actions > span {
+  display: none;
+}
+.package-actions .button {
+  min-height: 44px;
+  font-size: 10px;
+  padding: 11px 18px;
+}
+.day-packages {
+  padding: 45px 0 35px;
+}
+.day-packages .flow-section-heading {
+  margin-bottom: 4px;
+}
+.flow-section-heading {
+  gap: 40px;
+}
+.flow-section-heading > div:last-child > p:not(.flow-eyebrow) {
+  font-size: 14px;
+  line-height: 1.7;
+}
+.flow-eyebrow {
+  margin-bottom: 15px;
+}
+.momentum-track {
+  gap: 20px;
+  padding: 20px calc(50vw - 137.5px) 22px;
+}
+.momentum-card {
+  width: 275px;
+  flex-basis: 275px;
+  height: 345px;
+}
+.momentum-card-tilt {
+  border-radius: 100px 100px 8px 8px;
+}
+.momentum-duration {
+  top: 27px;
+  font-size: 9px;
+  padding: 5px 11px;
+}
+.momentum-card-copy {
+  left: 22px;
+  right: 22px;
+  bottom: 21px;
+}
+.momentum-card h3 {
+  font-size: 32px;
+  line-height: 1.05;
+  margin: 11px 0;
+}
+.momentum-card-copy p {
+  font-size: 12px;
+  line-height: 1.6;
+  margin: 0;
+  min-height: 0;
+}
+.momentum-card-copy > span:first-child,
+.momentum-card-hint {
+  display: none;
+}
+.day-rail-dots {
+  margin-bottom: 15px;
+}
+.day-itinerary {
+  padding: 24px 0 0;
+  gap: 35px;
+  grid-template-columns: 1fr 1fr;
+}
+.day-itinerary h3 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+.day-itinerary-intro > p:not(.flow-eyebrow) {
+  font-size: 13px;
+  line-height: 1.6;
+}
+.day-itinerary .flow-button {
+  margin: 14px 0 8px;
+}
+.day-itinerary-intro .day-availability {
+  margin: 5px 0 0;
+}
+.day-itinerary-stops {
+  display: block;
+  margin: 0;
+  align-self: start;
+  background: #f2f1e6;
+  border: 1px solid #cccfbc;
+  padding: 0 18px;
+  border-radius: 5px;
+}
+.day-itinerary-stops > summary {
+  padding: 15px 0;
+  font: 500 13px/1.6 var(--body);
+  cursor: pointer;
+  min-height: 48px;
+}
+.day-itinerary-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  padding: 5px 0 20px;
+}
+.day-itinerary-content > ul,
+.day-itinerary-content > .flow-qualification {
+  grid-column: 1/-1;
+}
+.day-itinerary-stops ul {
+  font-size: 13px;
+}
+.day-itinerary-stops .day-plan h4 {
+  font-size: 10px;
+}
+.complete-pilgrimage {
+  padding-block: 42px;
+}
+.complete-pilgrimage-copy > p:not(.eyebrow) {
+  font-size: 14px;
+  line-height: 1.7;
+}
+.traveller-needs th,
+.traveller-needs td {
+  padding-block: 13px;
+  font-size: 13px;
+}
+.group-invitation-number {
+  font-size: 39px;
+}
+.travel-reach {
+  margin-top: 25px;
+  padding-top: 20px;
+}
+.travel-reach > p {
+  font-size: 25px;
+}
+.pricing-section {
+  padding-block: 42px;
+}
+.pricing-intro > p {
+  font-size: 14px;
+  line-height: 1.7;
+}
+.final-cta {
+  padding-block: 42px;
+}
+.final-cta h2 {
+  font-size: clamp(35px, 4vw, 55px);
+}
+.services-dialog.compact-services {
+  inset: 0;
+  width: min(740px, calc(100vw - 32px));
+  height: auto;
+  max-height: 85dvh;
+  margin: auto;
+  border: 1px solid #d4c8ad;
+  border-radius: 9px;
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+.compact-services .services-dialog-body {
+  padding: 42px 32px 28px;
+}
+.compact-services .services-dialog-heading {
+  margin-bottom: 20px;
+}
+.compact-services .services-dialog-heading h2 {
+  font-size: 39px;
+  line-height: 1.06;
+  margin-block: 13px;
+}
+.compact-services .services-dialog-heading > p:last-child {
+  font-size: 14px;
+  line-height: 1.7;
+  margin-top: 15px;
+}
+.compact-services .services-close {
+  position: sticky;
+  top: 12px;
+  margin: 12px 12px -49px auto;
+  z-index: 5;
+  width: 35px;
+  height: 35px;
+  font-size: 25px;
+}
+.service-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+.service-highlights > span {
+  font: 400 12px/1.5 var(--body);
+  padding: 7px 10px;
+  background: #e7e8da;
+  border-radius: 4px;
+}
+.compact-availability {
+  font: 400 12px/1.7 var(--body);
+  margin: 14px 0 22px;
+  color: #72775e;
+}
+.services-fold {
+  border-top: 1px solid #d5d4c1;
+}
+.services-fold > summary {
+  font: 500 14px/1.5 var(--body);
+  padding: 16px 0;
+  min-height: 50px;
+  cursor: pointer;
+  color: #193c31;
+}
+.services-fold .services-section-title,
+.services-fold .services-groups > .eyebrow,
+.services-fold .services-groups > h3,
+.services-fold .group-capacity {
+  display: none;
+}
+.services-fold .services-capabilities li {
+  padding: 12px 0;
+  gap: 15px;
+}
+.services-fold .services-capabilities h3 {
+  font-size: 22px;
+  line-height: 1.2;
+}
+.services-fold .service-category {
+  font-size: 9px;
+  margin-bottom: 5px;
+}
+.services-fold .service-index {
+  font-size: 11px;
+}
+.services-fold .services-groups {
+  margin: 0 0 15px;
+  padding: 18px;
+  position: static;
+}
+.services-fold .group-types li {
+  font-size: 13px;
+  line-height: 1.6;
+  padding-block: 9px;
+}
+.services-fold .services-travel-options {
+  display: block;
+  margin: 0;
+  padding: 10px 0 20px;
+}
+.services-fold .services-travel-options > div + div {
+  margin-top: 20px;
+}
+.services-fold .services-travel-options h3 {
+  font-size: 24px;
+  line-height: 1.2;
+}
+.services-fold .services-travel-options p {
+  font-size: 13px;
+  margin-top: 7px;
+}
+.compact-package-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  border-top: 1px solid #d5d4c1;
+  padding-top: 22px;
+  margin-top: 5px;
+}
+.compact-package-actions .button {
+  font-size: 11px;
+  min-height: 44px;
+}
+.compact-package-actions > a:last-child {
+  font: 400 12px/1.7 var(--body);
+  color: #365341;
+}
+.selected-journey {
+  padding-top: 25px;
+}
+.selected-journey nav {
+  padding-bottom: 18px;
+}
+.selected-journey-content {
+  padding-block: 25px;
+  gap: 35px;
+}
+.selected-journey h1 {
+  font-size: clamp(36px, 4vw, 52px);
+  margin-bottom: 14px;
+}
+.selected-journey p:not(.flow-eyebrow) {
+  font-size: 13px;
+  line-height: 1.7;
+}
+.vehicle-page .flow-fleet {
+  padding: 35px 0 20px;
+}
+.vehicle-page .flow-section-heading {
+  gap: 35px;
+  margin-bottom: 10px;
+}
+.floating-vehicle-rail,
+.vehicle-page .floating-vehicle-rail {
+  padding-block: 15px 28px;
+  gap: 18px;
+}
+.floating-vehicle-tile {
+  flex-basis: 270px;
+  min-height: 0;
+  padding: 20px;
+  border-radius: 10px;
+}
+.floating-vehicle-tile > svg {
+  height: 112px;
+  margin: 8px 0;
+}
+.floating-vehicle-tile h3 {
+  font-size: 30px;
+}
+.floating-vehicle-tile > p {
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 10px 0 17px;
+  min-height: 0;
+}
+.vehicle-tile-tag {
+  font-size: 9px;
+}
+.vehicle-tile-action {
+  font-size: 12px;
+}
+.booking-review {
+  width: min(510px, calc(100vw - 32px));
+  max-height: 85dvh;
+  padding: 37px 28px 22px;
+}
+.booking-review h2 {
+  font-size: 37px;
+  line-height: 1.08;
+}
+.booking-review .flow-eyebrow {
+  margin-bottom: 12px;
+}
+.booking-review-summary {
+  margin-top: 18px;
+  padding-block: 8px;
+}
+.booking-review-summary > div {
+  font-size: 13px;
+  padding-block: 5px;
+}
+.booking-review-fields {
+  margin: 18px 0;
+  gap: 13px;
+}
+.booking-review-fields label {
+  font-size: 12px;
+}
+.booking-review-fields input,
+.booking-review-fields select {
+  min-height: 44px;
+  padding: 9px;
+  margin-top: 5px;
+}
+.booking-extra {
+  border-top: 1px solid #d4d3bf;
+  margin-bottom: 20px;
+}
+.booking-extra > summary {
+  font: 400 12px/1.6 var(--body);
+  min-height: 44px;
+  padding-block: 13px;
+  cursor: pointer;
+}
+.booking-extra .booking-review-fields {
+  margin: 2px 0 16px;
+}
+.booking-confirmation-note {
+  font-size: 11px;
+  line-height: 1.7;
+  margin-top: 12px;
+}
+.booking-selection-dock {
+  padding: 10px 15px;
+  gap: 18px;
+}
+.booking-selection-dock strong {
+  font-size: 23px;
+}
+.booking-selection-dock .flow-button {
+  min-height: 42px;
+}
+.vehicle-page-footer {
+  padding-block: 22px;
+}
+@media (max-width: 767px) {
+  .hero {
+    padding: 32px 0;
+  }
+  .hero-title,
+  .hero-business-name {
+    font-size: clamp(77px, 19vw, 120px);
+  }
+  .hero-tagline {
+    font-size: 20px;
+    margin-top: 18px;
+  }
+  .hero-description {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+  .hero-eyebrow {
+    font-size: 8px;
+  }
+  .hero-actions {
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  .hero-actions .button {
+    min-height: 44px;
+    padding: 12px 16px;
+    font-size: 10px;
+  }
+  .signature-mask-stage {
+    height: 400px;
+    min-height: 0;
+    max-height: 65svh;
+  }
+  .signature-mask-caption {
+    left: 22px;
+    bottom: 10%;
+    padding-right: 22px;
+  }
+  .signature-mask-caption h2 {
+    font-size: 39px;
+    line-height: 1.04;
+    margin-block: 14px;
+  }
+  .signature-mask-caption > p:not(.eyebrow) {
+    font-size: 13px;
+    line-height: 1.65;
+    max-width: 270px;
+  }
+  .signature-mask-caption .button {
+    margin-top: 16px;
+    min-height: 44px;
+  }
+  .signature-details {
+    padding: 28px 0;
+  }
+  .signature-details > div:first-child {
+    margin-bottom: 24px;
+  }
+  .signature-details h3 {
+    font-size: 33px;
+    line-height: 1.1;
+    margin-block: 12px;
+  }
+  .signature-details h3 br {
+    display: none;
+  }
+  .signature-details .temple-directory li {
+    padding: 9px 0;
+    gap: 8px;
+  }
+  .signature-details .temple-directory strong {
+    font-size: 17px;
+    line-height: 1.2;
+  }
+  .signature-details .temple-directory small {
+    font-size: 11px;
+  }
+  .signature-details .temple-directory-label {
+    font-size: 8px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+  .signature-details #gateway-service-picker {
+    margin-top: 22px;
+  }
+  .signature-details .service-choice label {
+    font-size: 24px;
+  }
+  .service-choice-controls {
+    margin-top: 12px;
+  }
+  .signature-details .service-choice-inside .flow-button {
+    min-height: 44px;
+    margin-top: 8px;
+  }
+  .pilgrimage-packages {
+    padding-block: 32px;
+  }
+  .heritage-section-heading h2,
+  .flow-section-heading h2,
+  .complete-pilgrimage-copy > h2,
+  .pricing-intro > h2 {
+    font-size: 36px;
+  }
+  .pilgrimage-packages-heading {
+    margin-bottom: 20px;
+  }
+  .section-heading-aside {
+    margin-top: 16px;
+  }
+  .tour-rail.package-reveal-list {
+    width: calc(100% - 40px);
+    gap: 16px;
+  }
+  .package-card.tour-mini,
+  .package-card:nth-child(even) {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+  .package-card .package-visual,
+  .package-card:nth-child(even) .package-visual {
+    height: 130px;
+    min-height: 130px;
+    width: 100%;
+  }
+  .package-card .package-copy,
+  .package-card:nth-child(even) .package-copy {
+    padding: 18px 20px;
+  }
+  .package-image-caption {
+    font-size: 9px;
+    padding: 12px;
+  }
+  .package-number {
+    margin-bottom: 9px;
+  }
+  .package-number strong {
+    font-size: 27px;
+  }
+  .package-type {
+    font-size: 9px;
+    margin-bottom: 8px;
+  }
+  .package-copy > h3 {
+    font-size: 29px;
+    line-height: 1.1;
+  }
+  .package-stops {
+    margin-top: 12px;
+  }
+  .package-stops summary {
+    font-size: 13px;
+    padding-block: 11px;
+  }
+  .package-stops .package-includes li {
+    font-size: 13px;
+  }
+  .package-actions {
+    margin-top: 9px;
+  }
+  .package-actions .button {
+    font-size: 11px;
+    min-height: 44px;
+  }
+  .day-packages {
+    padding: 32px 0 26px;
+  }
+  .flow-section-heading > div:last-child {
+    margin-top: 16px;
+  }
+  .flow-section-heading > div:last-child > p:not(.flow-eyebrow) {
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 12px;
+  }
+  .fleet-arrows {
+    margin-top: 14px;
+  }
+  .fleet-arrows button {
+    width: 40px;
+    height: 40px;
+  }
+  .momentum-track {
+    padding: 18px calc(50vw - 111px) 18px;
+    gap: 15px;
+  }
+  .momentum-card {
+    width: 222px;
+    flex-basis: 222px;
+    height: 295px;
+  }
+  .momentum-card-tilt {
+    border-radius: 85px 85px 7px 7px;
+  }
+  .momentum-duration {
+    top: 23px;
+    font-size: 9px;
+    padding: 5px 10px;
+  }
+  .momentum-card-copy {
+    left: 18px;
+    right: 18px;
+    bottom: 20px;
+  }
+  .momentum-card h3 {
+    font-size: 29px;
+    margin-block: 9px;
+  }
+  .momentum-card-copy p {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  .day-rail-dots {
+    margin-bottom: 10px;
+  }
+  .day-itinerary {
+    padding-top: 20px;
+  }
+  .day-itinerary h3 {
+    font-size: 29px;
+    margin-bottom: 10px;
+  }
+  .day-itinerary-intro > p:not(.flow-eyebrow) {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  .day-itinerary .flow-button {
+    font-size: 11px;
+    min-height: 44px;
+    margin: 12px 0 7px;
+  }
+  .day-itinerary-stops {
+    margin-top: 17px;
+    padding-inline: 15px;
+  }
+  .day-itinerary-content {
+    grid-template-columns: 1fr;
+    gap: 17px;
+  }
+  .complete-pilgrimage {
+    padding-block: 32px;
+  }
+  .travel-reach > p {
+    font-size: 23px;
+  }
+  .traveller-needs {
+    margin-top: 25px;
+  }
+  .pricing-section {
+    padding-block: 32px;
+  }
+  .services-dialog.compact-services {
+    width: calc(100vw - 24px);
+    max-height: 85dvh;
+    inset: 0;
+    margin: auto;
+    border-radius: 8px;
+  }
+  .compact-services .services-dialog-body {
+    padding: 37px 20px 23px;
+  }
+  .compact-services .services-dialog-heading h2 {
+    font-size: 31px;
+    line-height: 1.08;
+  }
+  .compact-services .services-dialog-heading > p:last-child {
+    font-size: 13px;
+    line-height: 1.65;
+  }
+  .service-highlights {
+    gap: 6px;
+  }
+  .service-highlights > span {
+    font-size: 11px;
+    padding: 6px 8px;
+  }
+  .compact-availability {
+    font-size: 12px;
+    line-height: 1.6;
+    margin-block: 13px;
+  }
+  .services-fold > summary {
+    font-size: 13px;
+    line-height: 1.6;
+    padding-block: 14px;
+  }
+  .services-fold .services-capabilities h3 {
+    font-size: 21px;
+  }
+  .services-fold .services-capabilities li {
+    padding-block: 11px;
+    gap: 11px;
+  }
+  .compact-package-actions {
+    gap: 14px;
+    padding-top: 19px;
+  }
+  .compact-package-actions .button {
+    width: 100%;
+    min-height: 44px;
+  }
+  .selected-journey {
+    padding-top: 20px;
+  }
+  .selected-journey-content {
+    padding-block: 20px;
+  }
+  .selected-journey h1 {
+    font-size: 36px;
+    line-height: 1.08;
+  }
+  .selected-itinerary {
+    padding: 12px 16px;
+    margin-top: 12px;
+  }
+  .vehicle-page .flow-fleet {
+    padding-top: 25px;
+  }
+  .floating-vehicle-tile {
+    flex: 0 0 248px;
+    min-height: 0;
+    padding: 18px;
+  }
+  .floating-vehicle-tile > svg {
+    height: 105px;
+  }
+  .floating-vehicle-tile h3 {
+    font-size: 29px;
+  }
+  .floating-vehicle-tile > p {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  .vehicle-tile-tag {
+    font-size: 9px;
+    line-height: 1.5;
+  }
+  .vehicle-tile-action {
+    font-size: 12px;
+  }
+  .booking-review {
+    width: calc(100vw - 28px);
+    max-height: 85dvh;
+    padding: 37px 20px 22px;
+  }
+  .booking-review h2 {
+    font-size: 32px;
+    line-height: 1.1;
+  }
+  .booking-review .flow-eyebrow {
+    font-size: 9px;
+    margin-bottom: 12px;
+  }
+  .booking-review-summary {
+    margin-top: 16px;
+  }
+  .booking-review-summary > div {
+    font-size: 12px;
+    gap: 12px;
+  }
+  .booking-review-fields {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-block: 16px;
+  }
+  .booking-review-fields label {
+    font-size: 11px;
+  }
+  .booking-review-fields input,
+  .booking-review-fields select {
+    font-size: 16px;
+    min-height: 44px;
+  }
+  .booking-extra .booking-review-fields {
+    grid-template-columns: 1fr;
+  }
+  .booking-confirmation-note {
+    font-size: 11px;
+    line-height: 1.6;
+  }
+  .booking-selection-dock {
+    left: 10px;
+    right: 10px;
+    padding: 9px 12px;
+  }
+  .vehicle-page .booking-selection-dock strong {
+    font-size: 22px;
+  }
+  .vehicle-page .booking-selection-dock > div > span {
+    font-size: 9px;
+  }
+  .booking-selection-dock .flow-button {
+    font-size: 10px;
+    min-height: 44px;
+    padding-inline: 13px;
+  }
+  .mobile-trip-nav {
+    padding-block: 5px;
+  }
+  .final-cta h2 {
+    font-size: 34px;
+  }
+}
+.booking-review,
+.services-dialog.compact-services {
+  height: fit-content;
+  min-height: 0;
+}
+.final-cta {
+  min-height: 0;
+}
+.contact-dialog {
+  inset: 0;
+  width: min(880px, calc(100vw - 32px));
+  height: fit-content;
+  min-height: 0;
+  max-height: 85dvh;
+  margin: auto;
+  border-radius: 9px;
+  border: 1px solid #d1c5ab;
+  overflow: hidden;
+  padding: 0;
+}
+.contact-dialog[open] {
+  animation: none;
+}
+.contact-dialog .modal-background {
+  border-radius: 8px;
+}
+.contact-scroller {
+  height: auto;
+  max-height: 85dvh;
+  padding: 38px 30px 25px;
+}
+.contact-layout {
+  gap: 28px;
+  grid-template-columns: 0.8fr 1.2fr;
+}
+.contact-intro {
+  position: static;
+  margin-bottom: 20px;
+}
+.contact-intro > h2 {
+  font-size: 33px;
+  line-height: 1.1;
+  margin-bottom: 14px;
+}
+.contact-intro > p {
+  font-size: 13px;
+  line-height: 1.7;
+}
+.contact-intro > p:nth-of-type(n + 2),
+.contact-location {
+  display: none;
+}
+.contact-step {
+  margin-bottom: 18px;
+}
+.contact-step > legend {
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  margin-bottom: 12px;
+}
+.contact-form input:not([type='checkbox']),
+.contact-form textarea,
+.contact-form #service-request {
+  min-height: 44px;
+  padding: 10px 12px;
+  margin-bottom: 11px;
+  font-size: 16px;
+}
+.contact-form textarea {
+  min-height: 85px;
+}
+.contact-dialog > .close-button {
+  top: 10px;
+  right: 10px;
+  width: 36px;
+  height: 36px;
+}
+.audience-details {
+  align-self: start;
+  border-block: 1px solid #d4d3bf;
+}
+.audience-details > summary {
+  cursor: pointer;
+  padding: 18px 0;
+  font: 500 14px/1.6 var(--body);
+  color: var(--forest);
+}
+.audience-details .traveller-needs {
+  margin: 0;
+  padding: 0 0 15px;
+}
+.audience-details .traveller-needs-label {
+  display: none;
+}
+@media (max-width: 767px) {
+  .contact-dialog {
+    width: calc(100vw - 24px);
+    max-height: 85dvh;
+  }
+  .contact-scroller {
+    padding: 38px 20px 24px;
+    max-height: 85dvh;
+  }
+  .contact-layout {
+    display: block;
+  }
+  .contact-intro > h2 {
+    font-size: 31px;
+  }
+  .contact-intro > p {
+    margin-block: 12px;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  .contact-step {
+    margin-bottom: 18px;
+  }
+  .audience-details {
+    margin-top: 22px;
+  }
+}
+@media (max-height: 650px) {
+  .booking-review,
+  .services-dialog.compact-services,
+  .contact-dialog {
+    max-height: 88dvh;
+  }
+  .contact-scroller {
+    max-height: 88dvh;
+  }
+  .signature-mask-stage {
+    max-height: none;
+    height: 350px;
+  }
+}
+.custom-plan-fold {
+  width: min(1120px, calc(100% - 80px));
+  margin: 24px auto;
+  border-block: 1px solid #d4d3bf;
+}
+.custom-plan-fold > summary {
+  padding: 22px 0;
+  cursor: pointer;
+  font: 500 16px/1.6 var(--body);
+  color: var(--forest);
+}
+.custom-plan-fold .pricing-section {
+  width: 100%;
+  padding-block: 20px 30px;
+}
+.custom-plan-fold .planner-image {
+  display: none;
+}
+@media (max-width: 767px) {
+  .custom-plan-fold {
+    width: calc(100% - 48px);
+    margin-block: 15px;
+  }
+  .custom-plan-fold > summary {
+    font-size: 14px;
+    padding-block: 18px;
+  }
+}

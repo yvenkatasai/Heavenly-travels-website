@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 /**
  * @author: @dorianbaffier
@@ -17,9 +17,9 @@ import {
   motionValue,
   useMotionValue,
   useTransform,
-} from "framer-motion";
+} from 'framer-motion';
 
-import {useDecorativeMotion} from "@/components/ui/parallax-scroll-feature-section";
+import { useDecorativeMotion } from '@/components/ui/parallax-scroll-feature-section';
 import {
   type FocusEvent,
   type KeyboardEvent,
@@ -30,8 +30,8 @@ import {
   useMemo,
   useRef,
   useState,
-} from "react";
-import { cn } from "@/lib/utils";
+} from 'react';
+import { cn } from '@/lib/utils';
 
 export interface NavItem {
   name: string;
@@ -56,9 +56,9 @@ export interface MorphicNavbarProps {
 // The demo links to in-page anchors so it never navigates away. Use route
 // paths ("/", "/works", ...) as keys in a real app.
 const DEFAULT_NAV_ITEMS: Record<string, NavItem> = {
- "#pilgrimage":{name:"Complete Trip"},
- "#journeys":{name:"Individual Trips"},
- "#day-packages":{name:"Day-wise Trips"},
+  '#pilgrimage': { name: 'Complete Trip' },
+  '#journeys': { name: 'Individual Trips' },
+  '#day-packages': { name: 'Day-wise Trips' },
 };
 
 /** Gap opened on each side of the active link, in px. */
@@ -76,24 +76,19 @@ const COMPACT_AFTER = 80;
 const CHEVRON_SIZE = 36;
 const CHEVRON_GAP = 4;
 
-const SPRING = { type: "spring", bounce: 0.15, visualDuration: 0.32 } as const;
+const SPRING = { type: 'spring', bounce: 0.15, visualDuration: 0.32 } as const;
 
 const round2 = (v: number) => Math.round(v * 100) / 100;
-const clamp = (v: number, min: number, max: number) =>
-  Math.min(max, Math.max(min, v));
+const clamp = (v: number, min: number, max: number) => Math.min(max, Math.max(min, v));
 
 const matchesPath = (path: string, current: string) =>
-  path === current || (path !== "/" && current.startsWith(`${path}/`));
+  path === current || (path !== '/' && current.startsWith(`${path}/`));
 
 /** The longest item path that matches, so "/docs/a" beats "/docs". */
 const findItemPath = (paths: string[], current: string | null) => {
   let match: string | undefined;
   for (const path of paths) {
-    if (
-      current &&
-      matchesPath(path, current) &&
-      (!match || path.length > match.length)
-    ) {
+    if (current && matchesPath(path, current) && (!match || path.length > match.length)) {
       match = path;
     }
   }
@@ -114,9 +109,7 @@ const splitOffsets = (count: number, focus: number, hover: number | null) => {
   for (let joint = 0; joint < count - 1; joint++) {
     let gap = SPLIT * Math.max(bump(focus, joint), bump(focus, joint + 1));
     const hoverJoint =
-      hover !== null &&
-      hover !== Math.round(focus) &&
-      (joint === hover - 1 || joint === hover);
+      hover !== null && hover !== Math.round(focus) && (joint === hover - 1 || joint === hover);
     if (hoverJoint) {
       gap = Math.max(gap, HOVER_SPLIT);
     }
@@ -142,9 +135,7 @@ const foldedOffsets = (layout: BarLayout, active: number) => {
   const groupWidth = activeWidth + CHEVRON_GAP + CHEVRON_SIZE;
   const activeCenter = rowWidth / 2 - groupWidth / 2 + activeWidth / 2;
   const xs = centers.map((center) => round2(activeCenter - center));
-  const chevron = round2(
-    activeCenter + activeWidth / 2 + CHEVRON_GAP + CHEVRON_SIZE / 2
-  );
+  const chevron = round2(activeCenter + activeWidth / 2 + CHEVRON_GAP + CHEVRON_SIZE / 2);
   return { xs, chevron };
 };
 
@@ -173,7 +164,7 @@ interface DragState {
   samples: { x: number; t: number }[];
 }
 
-const releaseVelocity = (samples: DragState["samples"], now: number) => {
+const releaseVelocity = (samples: DragState['samples'], now: number) => {
   const recent = samples.filter((s) => now - s.t <= VELOCITY_WINDOW);
   const first = recent[0];
   const last = recent.at(-1);
@@ -195,9 +186,8 @@ const KEY_MOVES: Record<string, (i: number, n: number) => number> = {
   End: (_, n) => n - 1,
 };
 
-const SURFACE = "split-surface";
-const FOCUS_RING =
-  "split-focus";
+const SURFACE = 'split-surface';
+const FOCUS_RING = 'split-focus';
 
 /**
  * In-page anchors scroll to their target and record the hash with
@@ -207,13 +197,7 @@ const FOCUS_RING =
  * (like the demo's) only moves the split.
  */
 const followHash = (event: MouseEvent<HTMLAnchorElement>, href: string) => {
-  if (
-    event.defaultPrevented ||
-    event.metaKey ||
-    event.ctrlKey ||
-    event.shiftKey ||
-    event.altKey
-  ) {
+  if (event.defaultPrevented || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
     return;
   }
   event.preventDefault();
@@ -221,10 +205,10 @@ const followHash = (event: MouseEvent<HTMLAnchorElement>, href: string) => {
   if (!target) {
     return;
   }
-  target.scrollIntoView({behavior:"instant"});
+  target.scrollIntoView({ behavior: 'instant' });
   if (window.location.hash !== href) {
-    window.history.pushState(null, "", href);
-    window.dispatchEvent(new Event("heavenly:package-navigation"));
+    window.history.pushState(null, '', href);
+    window.dispatchEvent(new Event('heavenly:package-navigation'));
   }
 };
 
@@ -280,40 +264,36 @@ function Segment({
   onHover,
 }: SegmentProps) {
   const transform = useTransform(() => `translate3d(${x.get()}px,0,0)`);
-  const opacity = useTransform(() =>
-    pinned ? 1 : round2(clamp(1 - fold.get() * 1.8, 0, 1))
-  );
+  const opacity = useTransform(() => (pinned ? 1 : round2(clamp(1 - fold.get() * 1.8, 0, 1))));
   const leftCap = useTransform(() =>
-    prevX ? capScale(x.get() - prevX.get(), fold.get()) : "scaleX(0)"
+    prevX ? capScale(x.get() - prevX.get(), fold.get()) : 'scaleX(0)',
   );
   const rightCap = useTransform(() =>
-    nextX ? capScale(nextX.get() - x.get(), fold.get()) : "scaleX(0)"
+    nextX ? capScale(nextX.get() - x.get(), fold.get()) : 'scaleX(0)',
   );
   // Next's Link scrolls the page when a hash matches no element, so in-page
   // anchors use a plain <a>, handled by `followHash`.
-  const isHash = href.startsWith("#");
-  const NavLink = "a";
+  const isHash = href.startsWith('#');
+  const NavLink = 'a';
 
   return (
     <motion.div
       className={cn(
-        "split-segment",
-        pinned ? "split-pinned" : "split-rest",
-        hidden && "split-hidden"
+        'split-segment',
+        pinned ? 'split-pinned' : 'split-rest',
+        hidden && 'split-hidden',
       )}
       onPointerEnter={(event) => onHover(event, true)}
       onPointerLeave={(event) => onHover(event, false)}
       style={{ transform, opacity }}
     >
       <NavLink
-        aria-current={current ? "location" : undefined}
+        aria-current={current ? 'location' : undefined}
         className={cn(
-          "split-link",
+          'split-link',
           SURFACE,
           FOCUS_RING,
-          highlighted
-            ? "split-highlighted"
-            : "split-muted"
+          highlighted ? 'split-highlighted' : 'split-muted',
         )}
         draggable={false}
         href={href}
@@ -331,30 +311,21 @@ function Segment({
         {prevX ? (
           <motion.span
             aria-hidden="true"
-            className={cn(
-              "split-cap split-cap-left",
-              SURFACE
-            )}
+            className={cn('split-cap split-cap-left', SURFACE)}
             style={{ transform: leftCap }}
           />
         ) : null}
         {nextX ? (
           <motion.span
             aria-hidden="true"
-            className={cn(
-              "split-cap split-cap-right",
-              SURFACE
-            )}
+            className={cn('split-cap split-cap-right', SURFACE)}
             style={{ transform: rightCap }}
           />
         ) : null}
         <span className="split-link-label">{name}</span>
         <span
           aria-hidden="true"
-          className={cn(
-            "split-marker",
-            highlighted ? "split-marker-on" : "split-marker-off"
-          )}
+          className={cn('split-marker', highlighted ? 'split-marker-on' : 'split-marker-off')}
         />
       </NavLink>
     </motion.div>
@@ -380,9 +351,9 @@ function useScrolledPast(enabled: boolean) {
       }
     };
     update();
-    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener('scroll', onScroll, { passive: true });
     return () => {
-      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener('scroll', onScroll);
       cancelAnimationFrame(frame);
     };
   }, [enabled]);
@@ -401,8 +372,8 @@ function useUserOpen(scrolledPast: boolean) {
         setOpenedAt(null);
       }
     };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
   }, [openedAt]);
   if (!scrolledPast && openedAt !== null) {
     setOpenedAt(null);
@@ -410,22 +381,30 @@ function useUserOpen(scrolledPast: boolean) {
   return [openedAt !== null, () => setOpenedAt(window.scrollY)] as const;
 }
 
-
 // Keep the selected category in sync with real sections, hashes and Back.
-function usePackageLocation(){
- const [path,setPath]=useState(()=>location.hash||"#pilgrimage");
- useEffect(()=>{
-  const update=()=>setPath(location.hash||"#pilgrimage");
-  const names=["hashchange","popstate","heavenly:package-navigation"];
-  names.forEach(name=>window.addEventListener(name,update));
-  const observer=new IntersectionObserver(entries=>{
-   const current=entries.find(entry=>entry.isIntersecting);
-   if(current)setPath("#"+current.target.id);
-  },{rootMargin:"-18% 0px -65% 0px"});
-  ["pilgrimage","journeys","day-packages"].forEach(id=>{const el=document.getElementById(id);if(el)observer.observe(el)});
-  return()=>{names.forEach(name=>window.removeEventListener(name,update));observer.disconnect()};
- },[]);
- return path;
+function usePackageLocation() {
+  const [path, setPath] = useState(() => location.hash || '#pilgrimage');
+  useEffect(() => {
+    const update = () => setPath(location.hash || '#pilgrimage');
+    const names = ['hashchange', 'popstate', 'heavenly:package-navigation'];
+    names.forEach((name) => window.addEventListener(name, update));
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const current = entries.find((entry) => entry.isIntersecting);
+        if (current) setPath('#' + current.target.id);
+      },
+      { rootMargin: '-18% 0px -65% 0px' },
+    );
+    ['pilgrimage', 'journeys', 'day-packages'].forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+    return () => {
+      names.forEach((name) => window.removeEventListener(name, update));
+      observer.disconnect();
+    };
+  }, []);
+  return path;
 }
 
 export function MorphicNavbar({
@@ -439,7 +418,7 @@ export function MorphicNavbar({
   const count = entries.length;
   const pathname = usePackageLocation();
   const [activePath, setActivePath] = useState(
-    () => findItemPath(paths, pathname) ?? defaultPath ?? paths[0] ?? "/"
+    () => findItemPath(paths, pathname) ?? defaultPath ?? paths[0] ?? '/',
   );
 
   // Follow the route when it changes to one of the items, so the active link
@@ -454,7 +433,7 @@ export function MorphicNavbar({
     }
   }
 
-  const activeIndex = paths.indexOf(findItemPath(paths, activePath) ?? "");
+  const activeIndex = paths.indexOf(findItemPath(paths, activePath) ?? '');
   /** Where a scrub or keyboard focus has moved the split, before committing. */
   const [previewIndex, setPreviewIndex] = useState<number | null>(null);
   const [hoverIndex, setHoverIndex] = useState<number | null>(null);
@@ -464,12 +443,7 @@ export function MorphicNavbar({
   const scrolledPast = useScrolledPast(compact);
   const [userOpen, openBar] = useUserOpen(scrolledPast);
   const folded =
-    compact &&
-    scrolledPast &&
-    !userOpen &&
-    !keyboardInside &&
-    !scrubbing &&
-    activeIndex >= 0;
+    compact && scrolledPast && !userOpen && !keyboardInside && !scrubbing && activeIndex >= 0;
 
   const highlightIndex = previewIndex ?? activeIndex;
 
@@ -477,13 +451,11 @@ export function MorphicNavbar({
   // biome-ignore lint/correctness/useExhaustiveDependencies: the first split only seeds new values; later moves animate them
   const xs = useMemo(
     () => splitOffsets(count, activeIndex, null).map((x) => motionValue(x)),
-    [count]
+    [count],
   );
   const fold = useMotionValue(0);
   const chevronX = useMotionValue(0);
-  const chevronTransform = useTransform(
-    () => `translate3d(${chevronX.get()}px,0,0)`
-  );
+  const chevronTransform = useTransform(() => `translate3d(${chevronX.get()}px,0,0)`);
 
   const rowRef = useRef<HTMLDivElement>(null);
   const linkRefs = useRef<(HTMLAnchorElement | null)[]>([]);
@@ -506,13 +478,9 @@ export function MorphicNavbar({
       return;
     }
     const measure = () => {
-      const boxes = linkRefs.current
-        .slice(0, count)
-        .map((el) => el?.parentElement);
+      const boxes = linkRefs.current.slice(0, count).map((el) => el?.parentElement);
       layoutRef.current = {
-        centers: boxes.map((box) =>
-          box ? box.offsetLeft + box.offsetWidth / 2 : 0
-        ),
+        centers: boxes.map((box) => (box ? box.offsetLeft + box.offsetWidth / 2 : 0)),
         widths: boxes.map((box) => box?.offsetWidth ?? 0),
         rowWidth: row.offsetWidth,
       };
@@ -545,11 +513,7 @@ export function MorphicNavbar({
       chevron = result.chevron;
     } else {
       const focus = drag?.scrubbing ? drag.focus : state.highlightIndex;
-      targets = splitOffsets(
-        state.count,
-        focus,
-        drag?.scrubbing ? null : state.hoverIndex
-      );
+      targets = splitOffsets(state.count, focus, drag?.scrubbing ? null : state.hoverIndex);
       // Unfolded, the chevron waits tucked behind the active link.
       const anchor = Math.max(0, state.activeIndex);
       chevron = (layout?.centers[anchor] ?? 0) + (targets[anchor] ?? 0);
@@ -575,15 +539,11 @@ export function MorphicNavbar({
   };
 
   const toFocus = (clientX: number, drag: DragState) =>
-    clamp(
-      indexAt(layoutRef.current?.centers ?? [], clientX - drag.rowLeft),
-      0,
-      count - 1
-    );
+    clamp(indexAt(layoutRef.current?.centers ?? [], clientX - drag.rowLeft), 0, count - 1);
 
   const onPointerDown = (event: PointerEvent<HTMLDivElement>) => {
     const target = event.target as HTMLElement;
-    if (event.button !== 0 || folded || target.closest("[data-chevron]")) {
+    if (event.button !== 0 || folded || target.closest('[data-chevron]')) {
       return;
     }
     dragRef.current = {
@@ -636,9 +596,7 @@ export function MorphicNavbar({
     }
     // A flick lands where its velocity would carry it, so it can skip links.
     const velocity = releaseVelocity(drag.samples, event.timeStamp);
-    const index = Math.round(
-      toFocus(event.clientX + velocity * PROJECTION, drag)
-    );
+    const index = Math.round(toFocus(event.clientX + velocity * PROJECTION, drag));
     // The browser still sends a click for this press; swallow it and fire
     // the chosen link's own click so Next's router (or the anchor) handles it.
     suppressClickRef.current = true;
@@ -659,9 +617,7 @@ export function MorphicNavbar({
 
   const onKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
     const move = KEY_MOVES[event.key];
-    const from = linkRefs.current.indexOf(
-      document.activeElement as HTMLAnchorElement
-    );
+    const from = linkRefs.current.indexOf(document.activeElement as HTMLAnchorElement);
     if (!move || from < 0) {
       return;
     }
@@ -673,7 +629,7 @@ export function MorphicNavbar({
   };
 
   const onLinkFocus = (index: number, event: FocusEvent<HTMLAnchorElement>) => {
-    if (event.currentTarget.matches(":focus-visible")) {
+    if (event.currentTarget.matches(':focus-visible')) {
       // Keyboard moves are instant: no spring for something done this often.
       instantRef.current = true;
       setKeyboardInside(true);
@@ -689,12 +645,8 @@ export function MorphicNavbar({
     }
   };
 
-  const onHover = (
-    index: number,
-    event: PointerEvent<HTMLDivElement>,
-    entering: boolean
-  ) => {
-    if (event.pointerType !== "mouse" || dragRef.current?.scrubbing) {
+  const onHover = (index: number, event: PointerEvent<HTMLDivElement>, entering: boolean) => {
+    if (event.pointerType !== 'mouse' || dragRef.current?.scrubbing) {
       return;
     }
     setHoverIndex((current) => {
@@ -711,10 +663,7 @@ export function MorphicNavbar({
   };
 
   return (
-    <nav
-      aria-label="Choose a trip type"
-      className={cn("split-nav", className)}
-    >
+    <nav aria-label="Choose a trip type" className={cn('split-nav', className)}>
       {/* biome-ignore lint/a11y/noNoninteractiveElementInteractions: the row only adds scrubbing and arrow keys on top of real links */}
       {/* biome-ignore lint/a11y/noStaticElementInteractions: same as above */}
       <div
@@ -755,10 +704,10 @@ export function MorphicNavbar({
             aria-hidden={!folded}
             aria-label="Show all links"
             className={cn(
-              "split-chevron",
+              'split-chevron',
               SURFACE,
               FOCUS_RING,
-              folded ? "split-pinned" : "split-hidden"
+              folded ? 'split-pinned' : 'split-hidden',
             )}
             data-chevron=""
             onClick={openFolded}

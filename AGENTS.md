@@ -49,6 +49,16 @@ The active site lives in `src/site/`; do not create release-numbered copies of i
 
 For code or build changes, run typecheck and build. For behavior changes, run the relevant browser checks when available.
 
+## Security and privacy boundaries
+
+- Treat this as a public static frontend: there is no server-side authorization, database, or private API.
+- Keep only non-sensitive trip-planning preferences in `sessionStorage`; never store credentials, payment details, or identity documents.
+- WhatsApp links may only open a prefilled draft for the visitor to review and send. Encode enquiry text in the URL; never send messages automatically.
+- Keep visitor-controlled text out of `innerHTML` and executable contexts. Prefer `textContent` and DOM APIs; validate/allowlist values used in URLs and encode query parameters.
+- External links opened in a new tab must use `rel="noopener noreferrer"`. Do not add remote scripts or runtime CDNs; keep approved runtime assets local.
+- Keep secrets out of source, generated assets, browser storage, and test evidence. Use local Wrangler authentication for deployment.
+- Tests must intercept WhatsApp links and must never send real messages or submit personal data to external services.
+
 ## Working rules
 
 1. Make the smallest complete change; follow the existing patterns and update directly related documentation.
@@ -59,6 +69,10 @@ For code or build changes, run typecheck and build. For behavior changes, run th
 6. Preserve third-party license and attribution notices; commercial use does not remove their terms.
 7. Do not deploy or change remote configuration without Vamsi's approval.
 8. Do not remove files just because they look old; first confirm whether they are referenced, required evidence or licensed provenance.
+9. Format editable source with Prettier (`npm run format`); check it with `npm run format:check`.
+10. Use two-space indentation and LF line endings. Keep HTML inside template literals multiline and indented.
+11. Add comments only to explain non-obvious intent, constraints, invariants, or side effects; do not narrate obvious code.
+12. Keep generated output, browser evidence, reference captures, and asset metadata out of formatting changes.
 
 ## More information
 
@@ -73,7 +87,7 @@ For code or build changes, run typecheck and build. For behavior changes, run th
 
 ### Current status
 - **Phase:** Testing
-- **Last updated:** 2026-11-13
+- **Last updated:** 2026-11-14
 - **Hosting target:** Cloudflare Workers static assets
 
 ### Done
@@ -95,6 +109,9 @@ For code or build changes, run typecheck and build. For behavior changes, run th
 - [x] Centered the initial day-wise carousel choices on desktop and retained the centered first card and horizontal scrolling on mobile.
 - [x] Added a matching custom-trip card after the five individual trips; it opens the existing planner with all itinerary stops selected and editable.
 - [x] Replaced customer-facing “package(s)” wording with “trip(s)” across the booking and trip-selection flow.
+- [x] Removed the extra custom-planner disclosure, kept the large custom-trip card as the entry point, added a collage of the first four trip images, and renamed the card “Customize your trip.”
+- [x] Added Prettier and editor settings, formatted editable source and scripts, and documented indentation and comment conventions.
+- [x] Reviewed the static frontend, WhatsApp handoff, storage, external links, Cloudflare config, and dependencies; no actionable security vulnerabilities were identified.
 
 ### In progress
 - None.
@@ -116,13 +133,20 @@ For code or build changes, run typecheck and build. For behavior changes, run th
 | 2026-11-12 | Use Node.js for the complete build | Avoids requiring a separate Python runtime across developer systems and the deployment build |
 | 2026-11-12 | Center the initial three day-wise cards on desktop while keeping one centered card on mobile | Makes the first visible choices balanced without changing carousel navigation |
 | 2026-11-13 | Put custom-trip planning after the five individual trips and preselect every itinerary stop | Makes the custom option easier to find and lets visitors remove stops they do not want |
+| 2026-11-14 | Build the custom-trip card collage from the first four trip images in CSS | Reuses existing licensed assets without adding a generated image file |
+| 2026-11-14 | Use Prettier with two-space indentation for editable source and scripts | Keeps formatting consistent and repeatable without touching generated output or evidence |
+| 2026-11-14 | Keep security guidance aligned with the public static-site and visitor-reviewed WhatsApp flow | The site has no backend, authentication, payment processing, or automatic message sending |
 
 ### Open questions
 - No project-wide MIT license or private license file was present; third-party notices remain. Add only owner-approved legal terms if a project license is needed.
 - A production deployment and custom domain were not configured; they require Vamsi's Cloudflare account and approval.
 - The portable Node.js build was validated on Windows; it was not run on macOS or Linux in this environment.
+- In local Playwright checks, Escape dispatched a cancel event but did not close the credits dialog; a pointer click on its close button worked. Confirm expected keyboard dismissal in a real browser before changing dialog behavior.
 
 ### Changelog
+- 2026-11-14 - Reviewed the static frontend and added site-specific security/privacy boundaries for browser storage, safe DOM and URL handling, external links, Cloudflare deployment, and WhatsApp tests. No actionable vulnerabilities found. Files: `AGENTS.md`.
+- 2026-11-14 - Added Prettier scripts and editor configuration, formatted editable source and scripts, clarified embedded markup, and documented when to add comments. Files: `.editorconfig`, `.prettierignore`, `.prettierrc.json`, `package.json`, `package-lock.json`, `src/`, `scripts/`, `AGENTS.md`.
+- 2026-11-14 - Removed the duplicate custom-planner disclosure, retained the large custom-trip card as its entry point, added a four-image trip collage, and changed its title to “Customize your trip.” Files: `src/site/app.js`, `src/site/page.html`, `src/site/pilgrimage.css`, `AGENTS.md`.
 - 2026-11-13 - Applied the owner's supplied temple-and-ghat-road image only to the desktop hero and adjusted its focal position to retain the temple on wide screens. The mobile portrait is unchanged. Files: `src/site/page.html`, `src/site/hero-fit.css`, `src/site/assets/`, `artifacts/image-generation/`, `dist/`.
 - 2026-11-13 - Corrected desktop hero letterboxing with edge-to-edge cover fitting anchored to the road at the bottom; retained the mobile portrait's contain fitting. Files: `src/site/hero-fit.css`, `dist/index.html`.
 - 2026-11-13 - Added approved desktop and portrait mobile hero backgrounds, preserved full-image visibility, and positioned mobile copy above the temple and road. Files: `src/site/page.html`, `src/site/hero-fit.css`, `src/site/assets/`, `scripts/build_site.mjs`, `artifacts/image-generation/`.

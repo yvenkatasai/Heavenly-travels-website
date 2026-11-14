@@ -1,14 +1,68 @@
 /* Desktop fills the hero edge to edge; mobile preserves its portrait composition. */
-.hero.dot-field-surface{margin:92px 0 0;height:calc(100svh - 92px);min-height:620px;max-height:none;padding:60px 0;box-sizing:border-box;background:#183c31;display:flex;align-items:center}
-.hero.dot-field-surface .hero-scene{inset:0;aspect-ratio:auto;height:100%;width:100%}
-.hero.dot-field-surface .hero-scene img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 35%;transform:none;animation:none}
-.hero.dot-field-surface .hero-scene:after{inset:0;background:linear-gradient(90deg,#09271f9c, #102d2240 48%,transparent 78%)}
-.hero.dot-field-surface .hero-inner{padding:0}
-@media(max-width:767px){
- .hero.dot-field-surface .hero-scene img{object-fit:contain;object-position:center}
- .hero.dot-field-surface{margin-top:92px;height:177.68vw;min-height:680px;padding:40px 0 310px;align-items:center}
- .hero.dot-field-surface .hero-scene:after{background:linear-gradient(180deg,#102d2230 0%,#09271f99 30%,#09271f99 60%,#102d2226 78%,transparent 100%)}
- .hero.dot-field-surface .hero-eyebrow{margin-bottom:22px}
- .hero.dot-field-surface .dot-field-canvas{opacity:.04!important}
+.hero.dot-field-surface {
+  margin: 92px 0 0;
+  height: calc(100svh - 92px);
+  min-height: 620px;
+  max-height: none;
+  padding: 60px 0;
+  box-sizing: border-box;
+  background: #183c31;
+  display: flex;
+  align-items: center;
 }
-@media(max-width:650px){.hero.dot-field-surface{margin-top:74px}}
+.hero.dot-field-surface .hero-scene {
+  inset: 0;
+  aspect-ratio: auto;
+  height: 100%;
+  width: 100%;
+}
+.hero.dot-field-surface .hero-scene img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+  transform: none;
+  animation: none;
+}
+.hero.dot-field-surface .hero-scene:after {
+  inset: 0;
+  background: linear-gradient(90deg, #09271f9c, #102d2240 48%, transparent 78%);
+}
+.hero.dot-field-surface .hero-inner {
+  padding: 0;
+}
+@media (max-width: 767px) {
+  .hero.dot-field-surface .hero-scene img {
+    object-fit: contain;
+    object-position: center;
+  }
+  .hero.dot-field-surface {
+    margin-top: 92px;
+    height: 177.68vw;
+    min-height: 680px;
+    padding: 40px 0 310px;
+    align-items: center;
+  }
+  .hero.dot-field-surface .hero-scene:after {
+    background: linear-gradient(
+      180deg,
+      #102d2230 0%,
+      #09271f99 30%,
+      #09271f99 60%,
+      #102d2226 78%,
+      transparent 100%
+    );
+  }
+  .hero.dot-field-surface .hero-eyebrow {
+    margin-bottom: 22px;
+  }
+  .hero.dot-field-surface .dot-field-canvas {
+    opacity: 0.04 !important;
+  }
+}
+@media (max-width: 650px) {
+  .hero.dot-field-surface {
+    margin-top: 74px;
+  }
+}

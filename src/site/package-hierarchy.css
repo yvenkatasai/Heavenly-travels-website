@@ -1,13 +1,524 @@
 /* Three clearly named choices, with a restrained inscription/serif hierarchy. */
-@font-face{font-family:HeavenlyInscription;src:url('assets/fonts/cinzel-labels.ttf') format('truetype');font-weight:600;font-style:normal;font-display:swap}
-:root{--inscription:HeavenlyInscription,Georgia,serif;--reading:#41564b;--antique-gold:#886a36}
-html{scroll-padding-top:92px}.package-category-nav{width:min(1120px,calc(100% - 80px));margin:0 auto;padding:30px 0 25px;display:grid;grid-template-columns:.8fr 1.5fr;gap:35px;align-items:center;background:var(--page)}.section-overline{font:500 10px/1.6 var(--body);letter-spacing:.12em;color:var(--antique-gold)}.category-nav-intro h2{font:600 27px/1.15 var(--display);margin:9px 0 0;letter-spacing:-.015em}.category-nav-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-block:1px solid #cfc5ad}.category-nav-links a{padding:17px 14px;min-height:74px;color:var(--forest);text-decoration:none;border-right:1px solid #d9d1bf;display:flex;flex-direction:column;justify-content:center;gap:5px;transition:background .2s}.category-nav-links a:last-child{border-right:0}.category-nav-links a:hover{background:#eae5d7}.category-nav-links strong{font:500 13px/1.5 var(--body)}.category-nav-links span{font:400 12px/1.5 var(--body);color:#626c5e}.category-nav-links a:focus-visible{outline:2px solid #987a41;outline-offset:3px}
-.package-chapter{width:min(1120px,calc(100% - 80px));margin:0 auto 26px;padding:16px 0;display:flex;align-items:center;gap:15px;border-block:1px solid #cfc4aa;color:var(--forest)}.chapter-number{width:30px;height:34px;display:grid;place-items:center;border:1px solid #b9a477;border-radius:15px 15px 2px 2px;color:#8a6933;font:500 12px/1 var(--body);flex-shrink:0}.package-chapter .chapter-name{font:600 15px/1.5 var(--inscription);letter-spacing:.035em;margin:0;color:inherit}.chapter-note{font:400 12px/1.5 var(--body);color:#66705f;margin-left:auto;text-align:right}.chapter-inverse{color:#f7efda;border-color:#d7c38e45;margin-bottom:0}.chapter-inverse .chapter-number{color:#dfc995;border-color:#d7c38e80}.chapter-inverse .chapter-note{color:#cfceba}.signature-section{padding-top:18px}.signature-mask-caption>.eyebrow{display:none}.signature-mask-caption h2{font-weight:600;letter-spacing:-.012em}.signature-mask-caption h2 em{font-weight:500}.signature-details h3{font-weight:600;letter-spacing:-.012em}.signature-details .temple-directory strong{font-weight:600}.signature-details .temple-directory-label{font-size:10px;letter-spacing:.08em}.signature-details .temple-directory small{font-size:12px;letter-spacing:.05em}.signature-details .service-choice label{font-weight:600;font-size:27px}
-.pilgrimage-packages{background:#fbf8f0;border-top:1px solid #ded5c2;padding-top:30px}.day-packages{background:#ece7d9;border-top:1px solid #cfc4aa;padding-top:30px}.complete-pilgrimage>.package-chapter{grid-column:1/-1;width:100%;margin:0 0 25px}.complete-pilgrimage{border-bottom:1px solid #d8cfba}.heritage-section-heading h2,.flow-section-heading h2,.complete-pilgrimage-copy>h2,.pricing-intro>h2{font-size:clamp(36px,3.8vw,51px);font-weight:600;line-height:1.08;letter-spacing:-.015em}.heritage-section-heading h2 em,.flow-section-heading h2 em,.complete-pilgrimage-copy>h2 em{font-weight:500;color:#8a6b38}.heritage-section-heading .eyebrow,.flow-section-heading .flow-eyebrow,.complete-pilgrimage-copy>.eyebrow{font:500 10px/1.6 var(--body);letter-spacing:.1em;margin-bottom:14px;color:#806539}.section-heading-aside p,.flow-section-heading>div:last-child>p:not(.flow-eyebrow){font-size:15px;line-height:1.7;color:var(--reading)}.package-copy>h3{font-size:36px;font-weight:600;letter-spacing:-.015em;line-height:1.08}.package-type{font-size:11px;letter-spacing:.07em;color:#736344}.package-stops summary{font-size:14px}.package-stops .package-includes li{font-size:14px;line-height:1.65}.package-actions .button,.flow-button{font-size:12px;letter-spacing:.035em}.momentum-card h3{font-weight:600;letter-spacing:-.01em}.momentum-card-copy p{font-size:13px;line-height:1.6}.day-itinerary h3{font-size:33px;font-weight:600;letter-spacing:-.015em}.day-itinerary-stops>summary{font-size:14px}.day-itinerary-stops ul,.selected-itinerary ul{font-size:14px;line-height:1.75}.day-plan h4{font-size:11px;letter-spacing:.06em;color:#7d6030}.custom-plan-fold{margin-block:32px;border-color:#cbbd9b}.custom-plan-fold>summary{padding:21px 0;color:var(--forest)}.custom-plan-title{font:600 16px/1.6 var(--inscription);letter-spacing:.025em}.custom-plan-note{font:400 13px/1.6 var(--body);margin-left:22px;color:#66705f}.selected-journey h1{font-weight:600;letter-spacing:-.015em}.floating-vehicle-tile h3{font-weight:600}.booking-review h2,.compact-services .services-dialog-heading h2,.contact-intro>h2{font-weight:600;letter-spacing:-.015em}.booking-review-summary>div{font-size:13px}.booking-extra>summary{font-size:13px}.booking-confirmation-note{font-size:12px}.service-highlights>span{font-size:12px}.services-fold>summary{font-size:14px}.faq-heading h2{font-weight:600}.faq-toggle{font-size:15px;line-height:1.6}.button{letter-spacing:.045em}
-@media(max-width:1000px){.package-category-nav{display:block}.category-nav-intro{margin-bottom:18px}.category-nav-intro h2{font-size:25px}.package-chapter{gap:12px}.chapter-note{font-size:11px}.package-chapter .chapter-name{font-size:14px}}
-@media(max-width:767px){html{scroll-padding-top:82px}.package-category-nav{width:calc(100% - 40px);padding:24px 0}.category-nav-intro h2{font-size:25px;line-height:1.15}.section-overline{font-size:10px}.category-nav-links a{padding:12px 9px;min-height:85px;gap:5px}.category-nav-links strong{font-size:12px;line-height:1.4}.category-nav-links span{font-size:11px;line-height:1.5}.package-chapter{width:calc(100% - 40px);gap:10px;padding:14px 0;margin-bottom:22px;flex-wrap:wrap}.chapter-number{width:27px;height:31px;font-size:11px}.package-chapter .chapter-name{font-size:14px;letter-spacing:.015em}.chapter-note{width:100%;margin-left:37px;margin-top:-4px;text-align:left;font-size:12px}.chapter-inverse{margin-bottom:0}.signature-section{padding-top:12px}.signature-mask-caption h2{font-size:39px;font-weight:600;line-height:1.05}.signature-details h3{font-size:33px}.signature-details .temple-directory strong{font-size:18px;line-height:1.25}.signature-details .temple-directory small{font-size:12px}.signature-details .temple-directory-label{font-size:10px;line-height:1.7;letter-spacing:.07em}.signature-details .service-choice label{font-size:25px}.pilgrimage-packages,.day-packages{padding-top:24px}.heritage-section-heading h2,.flow-section-heading h2,.complete-pilgrimage-copy>h2,.pricing-intro>h2{font-size:35px;line-height:1.1}.heritage-section-heading .eyebrow,.flow-section-heading .flow-eyebrow,.complete-pilgrimage-copy>.eyebrow{font-size:10px;line-height:1.7;letter-spacing:.07em}.section-heading-aside p,.flow-section-heading>div:last-child>p:not(.flow-eyebrow){font-size:14px;line-height:1.75}.package-copy>h3{font-size:30px;line-height:1.1}.package-type{font-size:10px;letter-spacing:.05em}.package-stops summary{font-size:14px}.package-stops .package-includes li{font-size:14px}.package-actions .button,.flow-button{font-size:11px;line-height:1.5}.momentum-card h3{font-size:29px}.momentum-card-copy p{font-size:12px}.day-itinerary h3{font-size:30px}.day-itinerary-stops>summary{font-size:14px}.complete-pilgrimage>.package-chapter{margin-bottom:23px}.custom-plan-title{display:block;font-size:15px;margin-top:-25px;margin-left:18px;padding-top:2px}.custom-plan-note{display:block;margin:4px 0 0 18px;font-size:13px;line-height:1.6}.custom-plan-fold{margin-block:24px}.custom-plan-fold>summary{padding-block:19px}.selected-journey h1{font-size:36px}.booking-review h2{font-size:33px}.booking-confirmation-note{font-size:11px;line-height:1.7}}
-@media(max-width:360px){.package-chapter .chapter-name{font-size:13px}.category-nav-links a{padding-inline:7px}.category-nav-links strong{font-size:12px}.category-nav-links span{font-size:10px}.package-copy>h3{font-size:28px}.signature-mask-caption h2{font-size:37px}}
-@media(prefers-reduced-motion:reduce){.category-nav-links a{transition:none}}
+@font-face {
+  font-family: HeavenlyInscription;
+  src: url('assets/fonts/cinzel-labels.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+:root {
+  --inscription: HeavenlyInscription, Georgia, serif;
+  --reading: #41564b;
+  --antique-gold: #886a36;
+}
+html {
+  scroll-padding-top: 92px;
+}
+.package-category-nav {
+  width: min(1120px, calc(100% - 80px));
+  margin: 0 auto;
+  padding: 30px 0 25px;
+  display: grid;
+  grid-template-columns: 0.8fr 1.5fr;
+  gap: 35px;
+  align-items: center;
+  background: var(--page);
+}
+.section-overline {
+  font: 500 10px/1.6 var(--body);
+  letter-spacing: 0.12em;
+  color: var(--antique-gold);
+}
+.category-nav-intro h2 {
+  font: 600 27px/1.15 var(--display);
+  margin: 9px 0 0;
+  letter-spacing: -0.015em;
+}
+.category-nav-links {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-block: 1px solid #cfc5ad;
+}
+.category-nav-links a {
+  padding: 17px 14px;
+  min-height: 74px;
+  color: var(--forest);
+  text-decoration: none;
+  border-right: 1px solid #d9d1bf;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  transition: background 0.2s;
+}
+.category-nav-links a:last-child {
+  border-right: 0;
+}
+.category-nav-links a:hover {
+  background: #eae5d7;
+}
+.category-nav-links strong {
+  font: 500 13px/1.5 var(--body);
+}
+.category-nav-links span {
+  font: 400 12px/1.5 var(--body);
+  color: #626c5e;
+}
+.category-nav-links a:focus-visible {
+  outline: 2px solid #987a41;
+  outline-offset: 3px;
+}
+.package-chapter {
+  width: min(1120px, calc(100% - 80px));
+  margin: 0 auto 26px;
+  padding: 16px 0;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border-block: 1px solid #cfc4aa;
+  color: var(--forest);
+}
+.chapter-number {
+  width: 30px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #b9a477;
+  border-radius: 15px 15px 2px 2px;
+  color: #8a6933;
+  font: 500 12px/1 var(--body);
+  flex-shrink: 0;
+}
+.package-chapter .chapter-name {
+  font: 600 15px/1.5 var(--inscription);
+  letter-spacing: 0.035em;
+  margin: 0;
+  color: inherit;
+}
+.chapter-note {
+  font: 400 12px/1.5 var(--body);
+  color: #66705f;
+  margin-left: auto;
+  text-align: right;
+}
+.chapter-inverse {
+  color: #f7efda;
+  border-color: #d7c38e45;
+  margin-bottom: 0;
+}
+.chapter-inverse .chapter-number {
+  color: #dfc995;
+  border-color: #d7c38e80;
+}
+.chapter-inverse .chapter-note {
+  color: #cfceba;
+}
+.signature-section {
+  padding-top: 18px;
+}
+.signature-mask-caption > .eyebrow {
+  display: none;
+}
+.signature-mask-caption h2 {
+  font-weight: 600;
+  letter-spacing: -0.012em;
+}
+.signature-mask-caption h2 em {
+  font-weight: 500;
+}
+.signature-details h3 {
+  font-weight: 600;
+  letter-spacing: -0.012em;
+}
+.signature-details .temple-directory strong {
+  font-weight: 600;
+}
+.signature-details .temple-directory-label {
+  font-size: 10px;
+  letter-spacing: 0.08em;
+}
+.signature-details .temple-directory small {
+  font-size: 12px;
+  letter-spacing: 0.05em;
+}
+.signature-details .service-choice label {
+  font-weight: 600;
+  font-size: 27px;
+}
+.pilgrimage-packages {
+  background: #fbf8f0;
+  border-top: 1px solid #ded5c2;
+  padding-top: 30px;
+}
+.day-packages {
+  background: #ece7d9;
+  border-top: 1px solid #cfc4aa;
+  padding-top: 30px;
+}
+.complete-pilgrimage > .package-chapter {
+  grid-column: 1/-1;
+  width: 100%;
+  margin: 0 0 25px;
+}
+.complete-pilgrimage {
+  border-bottom: 1px solid #d8cfba;
+}
+.heritage-section-heading h2,
+.flow-section-heading h2,
+.complete-pilgrimage-copy > h2,
+.pricing-intro > h2 {
+  font-size: clamp(36px, 3.8vw, 51px);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+}
+.heritage-section-heading h2 em,
+.flow-section-heading h2 em,
+.complete-pilgrimage-copy > h2 em {
+  font-weight: 500;
+  color: #8a6b38;
+}
+.heritage-section-heading .eyebrow,
+.flow-section-heading .flow-eyebrow,
+.complete-pilgrimage-copy > .eyebrow {
+  font: 500 10px/1.6 var(--body);
+  letter-spacing: 0.1em;
+  margin-bottom: 14px;
+  color: #806539;
+}
+.section-heading-aside p,
+.flow-section-heading > div:last-child > p:not(.flow-eyebrow) {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--reading);
+}
+.package-copy > h3 {
+  font-size: 36px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.08;
+}
+.package-type {
+  font-size: 11px;
+  letter-spacing: 0.07em;
+  color: #736344;
+}
+.package-stops summary {
+  font-size: 14px;
+}
+.package-stops .package-includes li {
+  font-size: 14px;
+  line-height: 1.65;
+}
+.package-actions .button,
+.flow-button {
+  font-size: 12px;
+  letter-spacing: 0.035em;
+}
+.momentum-card h3 {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.momentum-card-copy p {
+  font-size: 13px;
+  line-height: 1.6;
+}
+.day-itinerary h3 {
+  font-size: 33px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+.day-itinerary-stops > summary {
+  font-size: 14px;
+}
+.day-itinerary-stops ul,
+.selected-itinerary ul {
+  font-size: 14px;
+  line-height: 1.75;
+}
+.day-plan h4 {
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: #7d6030;
+}
+.custom-plan-fold {
+  margin-block: 32px;
+  border-color: #cbbd9b;
+}
+.custom-plan-fold > summary {
+  padding: 21px 0;
+  color: var(--forest);
+}
+.custom-plan-title {
+  font: 600 16px/1.6 var(--inscription);
+  letter-spacing: 0.025em;
+}
+.custom-plan-note {
+  font: 400 13px/1.6 var(--body);
+  margin-left: 22px;
+  color: #66705f;
+}
+.selected-journey h1 {
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+.floating-vehicle-tile h3 {
+  font-weight: 600;
+}
+.booking-review h2,
+.compact-services .services-dialog-heading h2,
+.contact-intro > h2 {
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+.booking-review-summary > div {
+  font-size: 13px;
+}
+.booking-extra > summary {
+  font-size: 13px;
+}
+.booking-confirmation-note {
+  font-size: 12px;
+}
+.service-highlights > span {
+  font-size: 12px;
+}
+.services-fold > summary {
+  font-size: 14px;
+}
+.faq-heading h2 {
+  font-weight: 600;
+}
+.faq-toggle {
+  font-size: 15px;
+  line-height: 1.6;
+}
+.button {
+  letter-spacing: 0.045em;
+}
+@media (max-width: 1000px) {
+  .package-category-nav {
+    display: block;
+  }
+  .category-nav-intro {
+    margin-bottom: 18px;
+  }
+  .category-nav-intro h2 {
+    font-size: 25px;
+  }
+  .package-chapter {
+    gap: 12px;
+  }
+  .chapter-note {
+    font-size: 11px;
+  }
+  .package-chapter .chapter-name {
+    font-size: 14px;
+  }
+}
+@media (max-width: 767px) {
+  html {
+    scroll-padding-top: 82px;
+  }
+  .package-category-nav {
+    width: calc(100% - 40px);
+    padding: 24px 0;
+  }
+  .category-nav-intro h2 {
+    font-size: 25px;
+    line-height: 1.15;
+  }
+  .section-overline {
+    font-size: 10px;
+  }
+  .category-nav-links a {
+    padding: 12px 9px;
+    min-height: 85px;
+    gap: 5px;
+  }
+  .category-nav-links strong {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+  .category-nav-links span {
+    font-size: 11px;
+    line-height: 1.5;
+  }
+  .package-chapter {
+    width: calc(100% - 40px);
+    gap: 10px;
+    padding: 14px 0;
+    margin-bottom: 22px;
+    flex-wrap: wrap;
+  }
+  .chapter-number {
+    width: 27px;
+    height: 31px;
+    font-size: 11px;
+  }
+  .package-chapter .chapter-name {
+    font-size: 14px;
+    letter-spacing: 0.015em;
+  }
+  .chapter-note {
+    width: 100%;
+    margin-left: 37px;
+    margin-top: -4px;
+    text-align: left;
+    font-size: 12px;
+  }
+  .chapter-inverse {
+    margin-bottom: 0;
+  }
+  .signature-section {
+    padding-top: 12px;
+  }
+  .signature-mask-caption h2 {
+    font-size: 39px;
+    font-weight: 600;
+    line-height: 1.05;
+  }
+  .signature-details h3 {
+    font-size: 33px;
+  }
+  .signature-details .temple-directory strong {
+    font-size: 18px;
+    line-height: 1.25;
+  }
+  .signature-details .temple-directory small {
+    font-size: 12px;
+  }
+  .signature-details .temple-directory-label {
+    font-size: 10px;
+    line-height: 1.7;
+    letter-spacing: 0.07em;
+  }
+  .signature-details .service-choice label {
+    font-size: 25px;
+  }
+  .pilgrimage-packages,
+  .day-packages {
+    padding-top: 24px;
+  }
+  .heritage-section-heading h2,
+  .flow-section-heading h2,
+  .complete-pilgrimage-copy > h2,
+  .pricing-intro > h2 {
+    font-size: 35px;
+    line-height: 1.1;
+  }
+  .heritage-section-heading .eyebrow,
+  .flow-section-heading .flow-eyebrow,
+  .complete-pilgrimage-copy > .eyebrow {
+    font-size: 10px;
+    line-height: 1.7;
+    letter-spacing: 0.07em;
+  }
+  .section-heading-aside p,
+  .flow-section-heading > div:last-child > p:not(.flow-eyebrow) {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+  .package-copy > h3 {
+    font-size: 30px;
+    line-height: 1.1;
+  }
+  .package-type {
+    font-size: 10px;
+    letter-spacing: 0.05em;
+  }
+  .package-stops summary {
+    font-size: 14px;
+  }
+  .package-stops .package-includes li {
+    font-size: 14px;
+  }
+  .package-actions .button,
+  .flow-button {
+    font-size: 11px;
+    line-height: 1.5;
+  }
+  .momentum-card h3 {
+    font-size: 29px;
+  }
+  .momentum-card-copy p {
+    font-size: 12px;
+  }
+  .day-itinerary h3 {
+    font-size: 30px;
+  }
+  .day-itinerary-stops > summary {
+    font-size: 14px;
+  }
+  .complete-pilgrimage > .package-chapter {
+    margin-bottom: 23px;
+  }
+  .custom-plan-title {
+    display: block;
+    font-size: 15px;
+    margin-top: -25px;
+    margin-left: 18px;
+    padding-top: 2px;
+  }
+  .custom-plan-note {
+    display: block;
+    margin: 4px 0 0 18px;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  .custom-plan-fold {
+    margin-block: 24px;
+  }
+  .custom-plan-fold > summary {
+    padding-block: 19px;
+  }
+  .selected-journey h1 {
+    font-size: 36px;
+  }
+  .booking-review h2 {
+    font-size: 33px;
+  }
+  .booking-confirmation-note {
+    font-size: 11px;
+    line-height: 1.7;
+  }
+}
+@media (max-width: 360px) {
+  .package-chapter .chapter-name {
+    font-size: 13px;
+  }
+  .category-nav-links a {
+    padding-inline: 7px;
+  }
+  .category-nav-links strong {
+    font-size: 12px;
+  }
+  .category-nav-links span {
+    font-size: 10px;
+  }
+  .package-copy > h3 {
+    font-size: 28px;
+  }
+  .signature-mask-caption h2 {
+    font-size: 37px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .category-nav-links a {
+    transition: none;
+  }
+}
 
-.booking-extra>summary{min-height:48px;padding-block:12px;font-size:15px;font-weight:600;color:#193c31;cursor:pointer}
-@media(max-width:767px){.booking-extra>summary{font-size:16px}}
+.booking-extra > summary {
+  min-height: 48px;
+  padding-block: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #193c31;
+  cursor: pointer;
+}
+@media (max-width: 767px) {
+  .booking-extra > summary {
+    font-size: 16px;
+  }
+}
