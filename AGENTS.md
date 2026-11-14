@@ -144,6 +144,7 @@ For code or build changes, run typecheck and build. For behavior changes, run th
 - In local Playwright checks, Escape dispatched a cancel event but did not close the credits dialog; a pointer click on its close button worked. Confirm expected keyboard dismissal in a real browser before changing dialog behavior.
 
 ### Changelog
+- 2026-11-14 - Fixed the enquiry dialog's Edit your route action to reveal the current custom-planner panel after the obsolete details wrapper was removed. Files: `src/site/app.js`, `dist/index.html`.
 - 2026-11-14 - Reviewed the static frontend and added site-specific security/privacy boundaries for browser storage, safe DOM and URL handling, external links, Cloudflare deployment, and WhatsApp tests. No actionable vulnerabilities found. Files: `AGENTS.md`.
 - 2026-11-14 - Added Prettier scripts and editor configuration, formatted editable source and scripts, clarified embedded markup, and documented when to add comments. Files: `.editorconfig`, `.prettierignore`, `.prettierrc.json`, `package.json`, `package-lock.json`, `src/`, `scripts/`, `AGENTS.md`.
 - 2026-11-14 - Removed the duplicate custom-planner disclosure, retained the large custom-trip card as its entry point, added a four-image trip collage, and changed its title to “Customize your trip.” Files: `src/site/app.js`, `src/site/page.html`, `src/site/pilgrimage.css`, `AGENTS.md`.

@@ -377,9 +377,11 @@
     openContact();
   };
   $('#edit-plan').onclick = () => {
+    returnFocus = $('#tour-select');
     closeDialog('#contact-dialog');
     setTab(0);
-    $('#custom-trip').closest('details').open = true;
+    if (customPlan) customPlan.hidden = false;
+    customCard.querySelector('#build-custom-plan').setAttribute('aria-expanded', 'true');
     $('#custom-trip').scrollIntoView();
     $('#tour-select').focus({ preventScroll: true });
   };
