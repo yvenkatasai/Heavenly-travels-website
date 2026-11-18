@@ -16,6 +16,7 @@ export const SERVICE_LABELS: Record<string, string> = {
   'Local sightseeing / outstation travel': 'Local visits / travel to other cities',
   'Custom multi-day South India tour': 'Trip with your own temple stops',
 };
+export const ACCOMMODATIONS = ['Deluxe (Budget)', 'Exclusive', 'Premium'] as const;
 export const PACKAGES: TravelPackage[] = [
   {
     id: 'seven-temple',
@@ -36,7 +37,7 @@ export const PACKAGES: TravelPackage[] = [
   },
   {
     id: 'tour-1',
-    name: 'Tirupati Express',
+    name: 'Express Package',
     type: 'tour',
     image: 'assets/tirumala.webp',
     note: 'Pickup in Tirupati, travel to Tirumala, nearby temple visits if time allows, and a return drop.',
@@ -51,7 +52,7 @@ export const PACKAGES: TravelPackage[] = [
   },
   {
     id: 'tour-2',
-    name: 'Family Temple Trip',
+    name: 'Govindham Package',
     type: 'tour',
     image: 'assets/padmavathi.webp',
     note: 'Visit Tirupati, Tirumala and nearby temples with your family. We help with hotels and travel.',
@@ -66,7 +67,7 @@ export const PACKAGES: TravelPackage[] = [
   },
   {
     id: 'tour-3',
-    name: 'South Andhra Temple Trip',
+    name: 'Divine Pilgrimage Package',
     type: 'tour',
     image: 'assets/srikalahasti.webp',
     note: 'Visit Tirumala, Srikalahasti, Kanipakam and Tiruchanur, with local temple visits arranged around your route.',
@@ -75,7 +76,7 @@ export const PACKAGES: TravelPackage[] = [
   },
   {
     id: 'tour-4',
-    name: 'Tirupati and Vellore Temple Trip',
+    name: 'Wholesome Pilgrim Package',
     type: 'tour',
     image: 'assets/vellore.webp',
     note: 'Connect Tirupati, Tirumala and Srikalahasti with the Golden Temple in Vellore. Kanchipuram can be added on request.',
@@ -90,11 +91,59 @@ export const PACKAGES: TravelPackage[] = [
   },
   {
     id: 'tour-5',
-    name: 'South India Temple Trip',
+    name: 'South Indian Package',
     type: 'tour',
     image: 'assets/srirangam.webp',
-    note: 'A temple trip from Tirupati and Kanchipuram to Madurai and Rameswaram. Choose the days you need.',
-    places: ['Tirupati', 'Kanchipuram', 'Tiruvannamalai', 'Srirangam', 'Madurai', 'Rameswaram'],
+    note: 'Visit South India from Tirupati to Rameswaram, Kanyakumari and Trivandrum, including Chidambaram and Thanjavur. Our team will help plan the days you need.',
+    places: [
+      'Tirupati',
+      'Kanchipuram',
+      'Tiruvannamalai',
+      'Srirangam',
+      'Madurai',
+      'Rameswaram',
+      'Kanyakumari',
+      'Chidambaram',
+      'Thanjavur (Tanjore)',
+      'Trivandrum (Thiruvananthapuram)',
+    ],
+    days: [],
+  },
+  {
+    id: 'tour-6',
+    name: 'Jyotirlingas Package',
+    type: 'tour',
+    image: 'assets/somnath.webp',
+    note: 'Visit the 12 Jyotirlinga shrines across India. Our team will confirm dates, travel arrangements and your preferred Vaidyanath and Nageshwar locations.',
+    places: [
+      'Somnath — Prabhas Patan, Gujarat',
+      'Mallikarjuna — Srisailam, Andhra Pradesh',
+      'Mahakaleshwar — Ujjain, Madhya Pradesh',
+      'Omkareshwar — Khandwa, Madhya Pradesh',
+      'Kedarnath — Uttarakhand',
+      'Bhimashankar — Maharashtra',
+      'Kashi Vishwanath — Varanasi, Uttar Pradesh',
+      'Trimbakeshwar — Nashik, Maharashtra',
+      'Vaidyanath — Deoghar, Jharkhand or Parli Vaijnath, Maharashtra',
+      'Nageshwar — Dwarka, Gujarat or Aundha Nagnath, Maharashtra',
+      'Rameshwaram — Rameswaram, Tamil Nadu',
+      'Grishneshwar — Chhatrapati Sambhajinagar, Maharashtra',
+    ],
+    days: [],
+  },
+  {
+    id: 'tour-7',
+    name: 'Pancha Bhoota Lingas Package',
+    type: 'tour',
+    image: 'assets/srikalahasti.webp',
+    note: 'Visit all five Pancha Bhoota temples: Earth, Water, Fire, Air and Space. We help plan the route and travel arrangements.',
+    places: [
+      'Earth (Prithvi) — Ekambareswarar Temple, Kanchipuram, Tamil Nadu; a sand lingam',
+      'Water (Jala) — Jambukeshwarar Temple, Thiruvanaikaval, Trichy, Tamil Nadu; a spring beneath the lingam',
+      'Fire (Agni) — Arunachaleswarar Temple, Tiruvannamalai, Tamil Nadu; Shiva worshipped as fire',
+      'Air (Vayu) — Sri Kalahasteeswara Temple, Srikalahasti, Andhra Pradesh; associated with the flickering sanctum lamp',
+      'Space (Akasha) — Thillai Nataraja Temple, Chidambaram, Tamil Nadu; the Chidambara Rahasya and Lord Nataraja',
+    ],
     days: [],
   },
   {
@@ -292,6 +341,7 @@ export interface LegacySnapshot {
   date: string;
   pickup: string;
   name: string;
+  accommodation: string;
 }
 export interface LegacyBridge {
   get: () => LegacySnapshot;

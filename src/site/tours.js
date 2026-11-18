@@ -1,6 +1,6 @@
 const tours = [
   {
-    name: 'Tirupati Express',
+    name: 'Express Package',
     tag: 'A short temple trip',
     category: 'short',
     art: '',
@@ -17,7 +17,7 @@ const tours = [
     ],
   },
   {
-    name: 'Family Temple Trip',
+    name: 'Govindham Package',
     tag: 'For your family',
     category: 'family',
     art: 'family',
@@ -34,7 +34,7 @@ const tours = [
     ],
   },
   {
-    name: 'South Andhra Temple Trip',
+    name: 'Divine Pilgrimage Package',
     tag: 'A connected temple circuit',
     category: 'short multi',
     art: 'multi',
@@ -45,7 +45,7 @@ const tours = [
     includes: ['Tirumala', 'Srikalahasti', 'Kanipakam', 'Tiruchanur', 'Local temple visits'],
   },
   {
-    name: 'Tirupati and Vellore Temple Trip',
+    name: 'Wholesome Pilgrim Package',
     tag: 'Two sacred destinations',
     category: 'multi',
     art: 'long',
@@ -62,14 +62,67 @@ const tours = [
     ],
   },
   {
-    name: 'South India Temple Trip',
+    name: 'South Indian Package',
     tag: 'Your multi-day yatra',
     category: 'multi',
     art: 'yatra',
-    route: 'Tirupati · Kanchipuram · Tiruvannamalai · Srirangam · Madurai · Rameswaram',
+    route:
+      'Tirupati · Kanchipuram · Tiruvannamalai · Srirangam · Madurai · Rameswaram · Kanyakumari · Chidambaram · Thanjavur · Trivandrum',
     best: 'Multi-day temple travel',
     description:
-      'A temple trip from Tirupati and Kanchipuram to Madurai and Rameswaram. Choose the days you need.',
-    includes: ['Tirupati', 'Kanchipuram', 'Tiruvannamalai', 'Srirangam', 'Madurai', 'Rameswaram'],
+      'Visit South India from Tirupati to Rameswaram, Kanyakumari and Trivandrum, including Chidambaram and Thanjavur. Our team will help plan the days you need.',
+    includes: [
+      'Tirupati',
+      'Kanchipuram',
+      'Tiruvannamalai',
+      'Srirangam',
+      'Madurai',
+      'Rameswaram',
+      'Kanyakumari',
+      'Chidambaram',
+      'Thanjavur (Tanjore)',
+      'Trivandrum (Thiruvananthapuram)',
+    ],
+  },
+  {
+    name: 'Jyotirlingas Package',
+    tag: 'All 12 Jyotirlingas',
+    category: 'multi',
+    art: 'jyotirlingas',
+    route: '12 Jyotirlinga shrines across India',
+    best: 'Devotees planning an India-wide pilgrimage',
+    description:
+      'Visit the 12 Jyotirlinga shrines across India. Our team will confirm dates, travel arrangements and your preferred Vaidyanath and Nageshwar locations.',
+    includes: [
+      'Somnath — Prabhas Patan, Gujarat',
+      'Mallikarjuna — Srisailam, Andhra Pradesh',
+      'Mahakaleshwar — Ujjain, Madhya Pradesh',
+      'Omkareshwar — Khandwa, Madhya Pradesh',
+      'Kedarnath — Uttarakhand',
+      'Bhimashankar — Maharashtra',
+      'Kashi Vishwanath — Varanasi, Uttar Pradesh',
+      'Trimbakeshwar — Nashik, Maharashtra',
+      'Vaidyanath — Deoghar, Jharkhand or Parli Vaijnath, Maharashtra',
+      'Nageshwar — Dwarka, Gujarat or Aundha Nagnath, Maharashtra',
+      'Rameshwaram — Rameswaram, Tamil Nadu',
+      'Grishneshwar — Chhatrapati Sambhajinagar, Maharashtra',
+    ],
+  },
+  {
+    name: 'Pancha Bhoota Lingas Package',
+    tag: 'Five temples · Five elements',
+    category: 'multi',
+    art: 'pancha',
+    route: 'Kanchipuram · Trichy · Tiruvannamalai · Srikalahasti · Chidambaram',
+    best: 'A five-element Shiva temple pilgrimage',
+    description:
+      'Visit all five Pancha Bhoota temples: Earth, Water, Fire, Air and Space. We help plan the route and travel arrangements.',
+    includes: [
+      'Earth (Prithvi) — Ekambareswarar Temple, Kanchipuram, Tamil Nadu; a sand lingam',
+      'Water (Jala) — Jambukeshwarar Temple, Thiruvanaikaval, Trichy, Tamil Nadu; a spring beneath the lingam',
+      'Fire (Agni) — Arunachaleswarar Temple, Tiruvannamalai, Tamil Nadu; Shiva worshipped as fire',
+      'Air (Vayu) — Sri Kalahasteeswara Temple, Srikalahasti, Andhra Pradesh; associated with the flickering sanctum lamp',
+      'Space (Akasha) — Thillai Nataraja Temple, Chidambaram, Tamil Nadu; the Chidambara Rahasya and Lord Nataraja',
+    ],
   },
 ];

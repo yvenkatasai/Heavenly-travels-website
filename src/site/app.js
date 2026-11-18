@@ -22,9 +22,16 @@
         JSON.stringify({
           ...state,
           fields: Object.fromEntries(
-            ['name', 'phone', 'pickup', 'dropoff', 'people', 'notes', 'service-request'].map(
-              (id) => [id, $('#' + id).value],
-            ),
+            [
+              'name',
+              'phone',
+              'pickup',
+              'dropoff',
+              'people',
+              'notes',
+              'service-request',
+              'accommodation',
+            ].map((id) => [id, $('#' + id).value]),
           ),
         }),
       );
@@ -66,7 +73,7 @@
         <div class="package-number">
           <span>TRIP</span>
           <strong>0${i + 1}</strong>
-          <span>OF 05</span>
+          <span>OF ${String(tours.length).padStart(2, '0')}</span>
         </div>
         <p class="package-type">${t.tag}</p>
         <h3 id="package-title-${i}">${t.name}</h3>
@@ -385,7 +392,16 @@
     $('#custom-trip').scrollIntoView();
     $('#tour-select').focus({ preventScroll: true });
   };
-  ['name', 'phone', 'pickup', 'dropoff', 'people', 'notes', 'service-request'].forEach((id) => {
+  [
+    'name',
+    'phone',
+    'pickup',
+    'dropoff',
+    'people',
+    'notes',
+    'service-request',
+    'accommodation',
+  ].forEach((id) => {
     $('#' + id).addEventListener('input', store);
     if (saved.fields && typeof saved.fields[id] === 'string') $('#' + id).value = saved.fields[id];
   });
@@ -417,6 +433,7 @@
           ? ''
           : `Vehicle: ${state.vehicle === '' ? 'Please help me choose' : VEHICLES[Number(state.vehicle)].name}`,
         `People: ${$('#people').value}`,
+        `Accommodation: ${$('#accommodation').value}`,
         `Date: ${nonTemple ? 'Please see additional requests or discuss with me' : dateLabel()}`,
         `${nonTemple ? (flight ? 'Departure' : 'Hotel destination') : 'Pickup'}: ${$('#pickup').value.trim()}`,
         `${nonTemple ? (flight ? 'Destination' : 'Preferred hotel') : 'Drop-off'}: ${$('#dropoff').value.trim() || (nonTemple ? 'Not decided yet' : $('#pickup').value.trim())}`,
@@ -607,6 +624,7 @@
       date: state.date,
       pickup: $('#pickup').value,
       name: $('#name').value,
+      accommodation: $('#accommodation').value,
     }),
     setService: (value) => {
       if ([...$('#service-request').options].some((o) => o.value === value)) {

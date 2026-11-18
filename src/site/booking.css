@@ -1017,3 +1017,32 @@
   opacity: 1 !important;
   clip-path: none !important;
 }
+.accommodation-choice {
+  display: flex;
+  flex-direction: column;
+  grid-column: 1 / -1;
+  gap: 7px;
+  color: var(--forest);
+  font: 500 13px/1.5 var(--body);
+  margin-block: 12px;
+}
+.accommodation-choice > span,
+.accommodation-choice small {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 400;
+}
+.accommodation-choice select {
+  width: 100%;
+  min-height: 46px;
+  padding: 11px 12px;
+  border: 1px solid #b9baa6;
+  border-radius: 3px;
+  background: var(--white);
+  color: var(--forest);
+  font: 400 16px/1.4 var(--body);
+}
+.accommodation-choice select:focus-visible {
+  outline: 2px solid #93713d;
+  outline-offset: 3px;
+}

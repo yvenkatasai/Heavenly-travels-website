@@ -121,7 +121,7 @@
         <div class="hero-inner">
           <p class="hero-eyebrow">TIRUPATI · PRIVATE TEMPLE TRIPS</p>
           <ul class="hero-facts" aria-label="Our travel options">
-            <li>5 temple tours</li>
+            <li>7 temple trips</li>
             <li>5 vehicle options</li>
             <li>Your own route</li>
           </ul>
@@ -277,11 +277,11 @@
         <div class="package-chapter">
           <span class="chapter-number" aria-hidden="true">02</span>
           <p id="individual-category" class="chapter-name">Temple Trips</p>
-          <span class="chapter-note">5 trips · Choose one</span>
+          <span class="chapter-note">7 trips · Choose one</span>
         </div>
         <header class="heritage-section-heading pilgrimage-packages-heading">
           <div>
-            <p class="eyebrow">CHOOSE ONE OF FIVE TRIPS</p>
+            <p class="eyebrow">CHOOSE ONE OF SEVEN TRIPS</p>
             <h2 id="journeys-title">Choose a temple<br /><em>trip.</em></h2>
           </div>
           <div class="section-heading-aside">
@@ -292,7 +292,7 @@
         <div
           class="tour-rail package-reveal-list"
           id="tour-rail"
-          aria-label="Five temple trips and a custom trip option"
+          aria-label="Seven temple trips and a custom trip option"
         ></div>
         <div id="custom-plan-slot"></div>
       </section>
@@ -628,6 +628,23 @@
                 maxlength="1200"
                 placeholder="Anything else? Older travellers, luggage, hotel help, preferred language…"
               ></textarea>
+              <label class="accommodation-choice" for="accommodation">
+                Accommodation type <span>(required)</span>
+                <select
+                  id="accommodation"
+                  name="accommodation"
+                  required
+                  aria-describedby="accommodation-note"
+                >
+                  <option value="" disabled selected>Choose accommodation</option>
+                  <option value="Deluxe (Budget)">Deluxe (Budget)</option>
+                  <option value="Exclusive">Exclusive</option>
+                  <option value="Premium">Premium</option>
+                </select>
+                <small id="accommodation-note"
+                  >Our team will confirm hotel options and availability.</small
+                >
+              </label>
             </fieldset>
             <button class="button primary form-submit" type="submit">
               Review on WhatsApp <span aria-hidden="true">↗</span>

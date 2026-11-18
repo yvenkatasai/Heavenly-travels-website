@@ -1,0 +1,26 @@
+[
+  {
+    "width": 320,
+    "packages": 7,
+    "jyotirlingas": 12,
+    "panchaBhoota": 5,
+    "accommodationRequired": true,
+    "bothWhatsAppFlows": true
+  },
+  {
+    "width": 390,
+    "packages": 7,
+    "jyotirlingas": 12,
+    "panchaBhoota": 5,
+    "accommodationRequired": true,
+    "bothWhatsAppFlows": true
+  },
+  {
+    "width": 1440,
+    "packages": 7,
+    "jyotirlingas": 12,
+    "panchaBhoota": 5,
+    "accommodationRequired": true,
+    "bothWhatsAppFlows": true
+  }
+]

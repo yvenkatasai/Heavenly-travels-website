@@ -10,6 +10,7 @@ import SplitNav from '@/components/ui/split-nav';
 import {
   SERVICES,
   SERVICE_LABELS,
+  ACCOMMODATIONS,
   PACKAGES,
   DAY_PACKAGES,
   FLEET,
@@ -24,6 +25,7 @@ type Selection = {
   packageId: string;
   vehicle: VehicleId | null;
   preference: string;
+  accommodation: string;
   customer: Customer;
 };
 const TRAVEL_STYLES: Record<string, string> = {
@@ -57,6 +59,11 @@ function load(): Selection {
     preference: Object.keys(TRAVEL_STYLES).includes(saved.preference || '')
       ? saved.preference!
       : '',
+    accommodation: ACCOMMODATIONS.some((value) => value === saved.accommodation)
+      ? saved.accommodation!
+      : ACCOMMODATIONS.some((value) => value === legacy?.accommodation)
+        ? legacy!.accommodation
+        : '',
     customer: saved.customer || {
       name: legacy?.name || '',
       people: legacy?.people || '4',
@@ -500,6 +507,7 @@ function App() {
   }
   function openDraft() {
     if (!selected || !vehicle || !form.current?.reportValidity()) return false;
+    if (!ACCOMMODATIONS.some((value) => value === state.accommodation)) return false;
     const c = state.customer;
     const lines = [
       'Hello Heavenly Tours & Travels, I would like to book the following trip.',
@@ -510,6 +518,7 @@ function App() {
         ? `Travel style: ${TRAVEL_STYLES[state.preference] || state.preference}`
         : '',
       `Selected vehicle: ${vehicle.name}`,
+      `Accommodation: ${state.accommodation}`,
       `People: ${c.people}`,
       `Travel date: ${c.date || 'Not decided yet'}`,
       c.pickup.trim() ? `Pickup: ${c.pickup.trim()}` : '',
@@ -717,6 +726,30 @@ function App() {
                     setState((s) => ({ ...s, customer: { ...s.customer, people: e.target.value } }))
                   }
                 />
+              </label>
+            </div>
+            <div className="booking-review-fields">
+              <label className="accommodation-choice">
+                Accommodation type <span>(required)</span>
+                <select
+                  id="booking-accommodation"
+                  required
+                  value={state.accommodation}
+                  onChange={(e) => setState((s) => ({ ...s, accommodation: e.target.value }))}
+                  aria-describedby="booking-accommodation-note"
+                >
+                  <option value="" disabled>
+                    Choose accommodation
+                  </option>
+                  {ACCOMMODATIONS.map((value) => (
+                    <option key={value} value={value}>
+                      {value}
+                    </option>
+                  ))}
+                </select>
+                <small id="booking-accommodation-note">
+                  Our team will confirm hotel options and availability.
+                </small>
               </label>
             </div>
             <details className="booking-extra">

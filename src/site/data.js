@@ -13,8 +13,37 @@ const STOPS = [
   ['Srirangam', 'Tamil Nadu'],
   ['Madurai', 'Tamil Nadu'],
   ['Rameswaram', 'Tamil Nadu'],
+  ['Kanyakumari', 'Tamil Nadu'],
+  ['Chidambaram', 'Tamil Nadu'],
+  ['Thanjavur (Tanjore)', 'Tamil Nadu'],
+  ['Trivandrum (Thiruvananthapuram)', 'Kerala'],
+  ['Somnath', 'Prabhas Patan, Gujarat'],
+  ['Mallikarjuna', 'Srisailam, Andhra Pradesh'],
+  ['Mahakaleshwar', 'Ujjain, Madhya Pradesh'],
+  ['Omkareshwar', 'Khandwa, Madhya Pradesh'],
+  ['Kedarnath', 'Uttarakhand'],
+  ['Bhimashankar', 'Maharashtra'],
+  ['Kashi Vishwanath', 'Varanasi, Uttar Pradesh'],
+  ['Trimbakeshwar', 'Nashik, Maharashtra'],
+  ['Vaidyanath', 'Deoghar, Jharkhand or Parli Vaijnath, Maharashtra'],
+  ['Nageshwar', 'Dwarka, Gujarat or Aundha Nagnath, Maharashtra'],
+  ['Rameshwaram', 'Rameswaram, Tamil Nadu'],
+  ['Grishneshwar', 'Chhatrapati Sambhajinagar, Maharashtra'],
+  ['Ekambareswarar Temple', 'Kanchipuram · Earth'],
+  ['Jambukeshwarar Temple', 'Thiruvanaikaval, Trichy · Water'],
+  ['Arunachaleswarar Temple', 'Tiruvannamalai · Fire'],
+  ['Sri Kalahasteeswara Temple', 'Srikalahasti · Air'],
+  ['Thillai Nataraja Temple', 'Chidambaram · Space'],
 ];
-const ROUTES = [[0], [0, 1, 2, 3], [0, 4, 5, 1], [0, 4, 7], [0, 9, 10, 11, 12, 13]];
+const ROUTES = [
+  [0],
+  [0, 1, 2, 3],
+  [0, 4, 5, 1],
+  [0, 4, 7],
+  [0, 9, 10, 11, 12, 13, 14, 15, 16, 17],
+  [18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29],
+  [30, 31, 32, 33, 34],
+];
 const VEHICLES = [
   {
     name: 'Sedan',
@@ -43,6 +72,8 @@ const TOUR_IMAGES = [
   'srikalahasti.webp',
   'vellore.webp',
   'srirangam.webp',
+  'somnath.webp',
+  'srikalahasti.webp',
 ];
 const PHOTO_POOL = [
   'tirumala.webp',
