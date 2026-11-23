@@ -462,6 +462,11 @@
     raf = 0;
     if (!visible || !allowed()) return;
     if (resizePending) resize();
+    // Mobile keeps a still texture at rest; touch wakes the spring animation immediately.
+    if (mobile() && !awake) {
+      stats.animated = false;
+      return;
+    }
     const interval = awake
       ? mobile() && lowPower()
         ? 1000 / 30

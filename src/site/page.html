@@ -21,13 +21,13 @@
     <link
       rel="preload"
       as="image"
-      href="assets/tirumala-morning-valley-portrait-temple.webp"
+      href="assets/tirumala-hero-mobile-fast.webp"
       media="(max-width: 767px)"
     />
     <link
       rel="preload"
       as="image"
-      href="assets/tirumala-morning-valley-desktop-approved.webp"
+      href="assets/tirumala-hero-desktop-fast.webp"
       media="(min-width: 768px)"
     />
     <link rel="stylesheet" href="assets/booking-tailwind.css" />
@@ -109,14 +109,14 @@
         <picture class="hero-scene" aria-hidden="true"
           ><source
             media="(max-width: 767px)"
-            srcset="assets/tirumala-morning-valley-portrait-temple.webp" />
+            srcset="assets/tirumala-hero-mobile-fast.webp" />
           <img
-            src="assets/tirumala-morning-valley-desktop-approved.webp"
+            src="assets/tirumala-hero-desktop-fast.webp"
             alt=""
             width="1672"
             height="941"
             fetchpriority="high"
-            decoding="sync" /></picture
+            decoding="async" /></picture
         ><canvas class="dot-field-canvas" aria-hidden="true"></canvas>
         <div class="hero-inner">
           <p class="hero-eyebrow">TIRUPATI · PRIVATE TEMPLE TRIPS</p>
@@ -864,6 +864,6 @@
       /*__DOT_FIELD__*/
       /*__PILGRIMAGE_JS__*/
     </script>
-    <script src="assets/booking-flow.js" defer></script>
+    <script src="assets/booking-flow.js" defer fetchpriority="low"></script>
   </body>
 </html>
