@@ -3,7 +3,7 @@ import { spawnSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { transform } from 'esbuild';
+import { build, transform } from 'esbuild';
 import { prepareAgentContent } from './build-agent-content.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -108,7 +108,18 @@ const sourceFiles = [
 ];
 
 for (const [token, filename] of sourceFiles) {
-  const content = fs.readFileSync(path.join(source, filename), 'utf8');
+  const content =
+    token === 'APP'
+      ? (
+          await build({
+            entryPoints: [path.join(source, filename)],
+            bundle: true,
+            write: false,
+            format: 'iife',
+            target: 'es2022',
+          })
+        ).outputFiles[0].text
+      : fs.readFileSync(path.join(source, filename), 'utf8');
   page = page.replaceAll(`/*__${token}__*/`, content);
   vehiclePage = vehiclePage.replaceAll(`/*__${token}__*/`, content);
 }

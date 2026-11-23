@@ -1,3 +1,5 @@
+import { formatWhatsAppEnquiry, whatsAppEnquiryUrl } from '../lib/whatsapp-message';
+
 (() => {
   'use strict';
   const $ = (s) => document.querySelector(s);
@@ -382,29 +384,29 @@
         $('#service-request').value.includes('flights') ||
         $('#service-request').value === 'Hotel & accommodation',
       flight = $('#service-request').value.includes('flights');
-    const nl = String.fromCharCode(10),
-      lines = [
-        'Hello Heavenly Tours & Travels, I need help planning a trip.',
-        `Name: ${$('#name').value.trim()}`,
-        $('#phone').value.trim() ? `Phone: ${$('#phone').value.trim()}` : '',
-        `Service requested: ${$('#service-request').selectedOptions[0].text}`,
-        nonTemple ? '' : `Route: ${tourLabel()}`,
-        nonTemple
-          ? ''
-          : `Vehicle: ${state.vehicle === '' ? 'Please help me choose' : VEHICLES[Number(state.vehicle)].name}`,
-        `People: ${$('#people').value}`,
-        `Accommodation: ${$('#accommodation').value}`,
-        `Date: ${nonTemple ? 'Please see additional requests or discuss with me' : dateLabel()}`,
-        `${nonTemple ? (flight ? 'Departure' : 'Hotel destination') : 'Pickup'}: ${$('#pickup').value.trim()}`,
-        `${nonTemple ? (flight ? 'Destination' : 'Preferred hotel') : 'Drop-off'}: ${$('#dropoff').value.trim() || (nonTemple ? 'Not decided yet' : $('#pickup').value.trim())}`,
-        nonTemple
-          ? ''
-          : `Temple stops: ${state.stops.map((i) => STOPS[i][0]).join(' → ') || 'Please help me plan'}`,
-        $('#notes').value.trim() ? `Additional requests: ${$('#notes').value.trim()}` : '',
-      ];
+    const message = formatWhatsAppEnquiry({
+      name: $('#name').value,
+      phone: $('#phone').value,
+      service: $('#service-request').selectedOptions[0].text,
+      trip: nonTemple ? undefined : tourLabel(),
+      vehicle: nonTemple
+        ? undefined
+        : state.vehicle === ''
+          ? 'Please help me choose'
+          : VEHICLES[Number(state.vehicle)].name,
+      people: $('#people').value,
+      accommodation: $('#accommodation').value,
+      date: nonTemple ? '' : state.date,
+      flexibleDate: !nonTemple && state.flexible,
+      pickup: $('#pickup').value,
+      pickupLabel: nonTemple ? (flight ? 'Departure' : 'Hotel destination') : 'Pickup',
+      dropoff: $('#dropoff').value,
+      dropoffLabel: nonTemple ? (flight ? 'Destination' : 'Preferred hotel') : 'Drop-off',
+      places: nonTemple ? [] : state.stops.map((i) => STOPS[i][0]),
+      notes: $('#notes').value,
+    });
     const a = document.createElement('a');
-    a.href =
-      'https://wa.me/919700181493?text=' + encodeURIComponent(lines.filter(Boolean).join(nl));
+    a.href = whatsAppEnquiryUrl(message);
     a.target = '_blank';
     a.rel = 'noopener noreferrer';
     document.body.append(a);

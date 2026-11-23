@@ -7,6 +7,7 @@ import { useDecorativeMotion } from '@/components/ui/parallax-scroll-feature-sec
 import { useMomentumRail } from '@/components/ui/use-momentum-rail';
 import SlideCommit from '@/components/ui/SlideCommit';
 import SplitNav from '@/components/ui/split-nav';
+import { formatWhatsAppEnquiry, whatsAppEnquiryUrl } from '@/lib/whatsapp-message';
 import {
   SERVICES,
   SERVICE_LABELS,
@@ -509,28 +510,32 @@ function App() {
     if (!selected || !vehicle || !form.current?.reportValidity()) return false;
     if (!ACCOMMODATIONS.some((value) => value === state.accommodation)) return false;
     const c = state.customer;
-    const lines = [
-      'Hello Heavenly Tours & Travels, I would like to book the following trip.',
-      c.name.trim() ? `Name: ${c.name.trim()}` : '',
-      `Service: ${SERVICE_LABELS[state.service] || state.service}`,
-      `Selected trip: ${selected.name}`,
-      state.preference
-        ? `Travel style: ${TRAVEL_STYLES[state.preference] || state.preference}`
-        : '',
-      `Selected vehicle: ${vehicle.name}`,
-      `Accommodation: ${state.accommodation}`,
-      `People: ${c.people}`,
-      `Travel date: ${c.date || 'Not decided yet'}`,
-      c.pickup.trim() ? `Pickup: ${c.pickup.trim()}` : '',
-      selected.note,
-      'TRIP PLAN',
-      ...selected.places,
-      ...selected.days.flatMap((d) => [d.title, ...d.places]),
-      'Please confirm the temples, hotel needs, vehicle, seats and available dates. I understand that you guide me on ticket booking and do not book darshan tickets.',
-    ];
+    const flight = state.service === 'Domestic / international flights';
+    const hotel = state.service === 'Hotel & accommodation';
+    const nonTemple = flight || hotel;
+    const message = formatWhatsAppEnquiry({
+      name: c.name,
+      service: SERVICE_LABELS[state.service] || state.service,
+      trip: nonTemple ? undefined : selected.name,
+      travelStyle: state.preference
+        ? TRAVEL_STYLES[state.preference] || state.preference
+        : undefined,
+      vehicle: nonTemple ? undefined : vehicle.name,
+      accommodation: state.accommodation,
+      people: c.people,
+      date: c.date,
+      pickup: c.pickup,
+      pickupLabel: flight ? 'Departure' : hotel ? 'Hotel destination' : 'Pickup',
+      places: nonTemple ? [] : selected.places,
+      days: nonTemple ? [] : selected.days,
+      completeSevenTemples: !nonTemple && selected.id === 'seven-temple',
+      includedExtras:
+        !nonTemple && selected.id === 'seven-temple'
+          ? ['Pickup and drop for this trip.', 'Help planning temple visits.']
+          : [],
+    });
     const a = document.createElement('a');
-    a.href =
-      'https://wa.me/919700181493?text=' + encodeURIComponent(lines.filter(Boolean).join('\n'));
+    a.href = whatsAppEnquiryUrl(message);
     a.target = '_blank';
     a.rel = 'noopener noreferrer';
     document.body.append(a);
