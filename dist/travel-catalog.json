@@ -1,0 +1,426 @@
+{
+  "schemaVersion": "1.0",
+  "business": {
+    "name": "Heavenly Tours & Travels",
+    "url": "https://heavenlytoursandtravels.com",
+    "owner": "Hemanth Kumar",
+    "email": "heavenlytoursandtravels1@gmail.com",
+    "telephone": "+919700181493",
+    "baseLocation": "Tirupati / Renigunta, Andhra Pradesh, India",
+    "areaServed": [
+      "Tirupati",
+      "Tirumala",
+      "South India",
+      "India"
+    ]
+  },
+  "booking": {
+    "mode": "whatsapp_enquiry",
+    "whatsapp": "https://wa.me/919700181493",
+    "humanConfirmationRequired": true,
+    "paymentOnWebsite": false,
+    "priceAndAvailability": "Confirm directly with the owner for your dates, route, group and vehicle.",
+    "terms": "Payment, booking confirmation, cancellations, refunds and date changes are handled directly with owner Hemanth Kumar on WhatsApp. Ask the owner to confirm the terms for your trip in writing before you pay.",
+    "tirumalaTicketPolicy": "We only guide you on how to book Tirumala darshan tickets. We do not book tickets for you. Darshan is subject to official availability.",
+    "groupSize": {
+      "minimum": 2,
+      "maximum": 200
+    }
+  },
+  "accommodationTypes": [
+    "Deluxe (Budget)",
+    "Exclusive",
+    "Premium"
+  ],
+  "services": [
+    "Temple trip",
+    "Group trip",
+    "Flight tickets",
+    "Hotel stays",
+    "Airport / station pickup",
+    "Local visits / travel to other cities",
+    "Trip with your own temple stops"
+  ],
+  "vehicles": [
+    {
+      "id": "sedan",
+      "name": "Sedan",
+      "description": "An AC car for a small group.",
+      "seating": "Confirm with the owner; no guaranteed seat count is published."
+    },
+    {
+      "id": "suv",
+      "name": "SUV",
+      "description": "More space for your family and bags.",
+      "seating": "Confirm with the owner; no guaranteed seat count is published."
+    },
+    {
+      "id": "tempo",
+      "name": "Tempo Traveller",
+      "description": "For families and groups travelling together.",
+      "seating": "Confirm with the owner; no guaranteed seat count is published."
+    },
+    {
+      "id": "mini-bus",
+      "name": "Mini Bus",
+      "description": "For bigger groups. Ask us about seats.",
+      "seating": "Confirm with the owner; no guaranteed seat count is published."
+    },
+    {
+      "id": "bus",
+      "name": "Bus",
+      "description": "For large groups. Tell us how many people are coming.",
+      "seating": "Confirm with the owner; no guaranteed seat count is published."
+    }
+  ],
+  "trips": [
+    {
+      "id": "seven-temple",
+      "name": "Complete 7-Temple Trip",
+      "type": "signature",
+      "description": "All seven temples are included. Free extras: pickup and drop for your trip, plus help planning your temple visits.",
+      "stops": [
+        "Sri Venkateswara Temple — Tirumala",
+        "Sri Padmavathi Ammavari Temple — Tiruchanur",
+        "Sri Kalahasteeswara Temple — Srikalahasti",
+        "Sri Varasiddhi Vinayaka Temple — Kanipakam",
+        "Sri Lakshmi Narayani Golden Temple — Vellore",
+        "Sri Kamakshi Amman Temple — Kanchipuram",
+        "Sri Arunachaleswarar Temple — Tiruvannamalai"
+      ],
+      "days": [],
+      "url": "https://heavenlytoursandtravels.com/trips/complete-7-temple-trip",
+      "bookingUrl": "https://heavenlytoursandtravels.com/vehicles?package=seven-temple",
+      "availability": "Confirm with owner; selecting this trip does not reserve it."
+    },
+    {
+      "id": "tour-1",
+      "name": "Express Package",
+      "type": "tour",
+      "description": "Pickup in Tirupati, travel to Tirumala, nearby temple visits if time allows, and a return drop.",
+      "stops": [
+        "Tirupati arrival and pickup",
+        "Travel to Tirumala",
+        "Nearby temple visits, if time allows",
+        "Return drop",
+        "Good for a short visit"
+      ],
+      "days": [],
+      "url": "https://heavenlytoursandtravels.com/trips/express-package",
+      "bookingUrl": "https://heavenlytoursandtravels.com/vehicles?package=tour-1",
+      "availability": "Confirm with owner; selecting this trip does not reserve it."
+    },
+    {
+      "id": "tour-2",
+      "name": "Govindham Package",
+      "type": "tour",
+      "description": "Visit Tirupati, Tirumala and nearby temples with your family. We help with hotels and travel.",
+      "stops": [
+        "Tirupati and Tirumala",
+        "Padmavathi Temple",
+        "Govindaraja Swamy Temple",
+        "Kapila Theertham",
+        "Help with hotels, pickup and drop"
+      ],
+      "days": [],
+      "url": "https://heavenlytoursandtravels.com/trips/govindham-package",
+      "bookingUrl": "https://heavenlytoursandtravels.com/vehicles?package=tour-2",
+      "availability": "Confirm with owner; selecting this trip does not reserve it."
+    },
+    {
+      "id": "tour-3",
+      "name": "Divine Pilgrimage Package",
+      "type": "tour",
+      "description": "Visit Tirumala, Srikalahasti, Kanipakam and Tiruchanur, with local temple visits arranged around your route.",
+      "stops": [
+        "Tirumala",
+        "Srikalahasti",
+        "Kanipakam",
+        "Tiruchanur",
+        "Local temple visits"
+      ],
+      "days": [],
+      "url": "https://heavenlytoursandtravels.com/trips/divine-pilgrimage-package",
+      "bookingUrl": "https://heavenlytoursandtravels.com/vehicles?package=tour-3",
+      "availability": "Confirm with owner; selecting this trip does not reserve it."
+    },
+    {
+      "id": "tour-4",
+      "name": "Wholesome Pilgrim Package",
+      "type": "tour",
+      "description": "Connect Tirupati, Tirumala and Srikalahasti with the Golden Temple in Vellore. Kanchipuram can be added on request.",
+      "stops": [
+        "Tirupati",
+        "Tirumala",
+        "Srikalahasti",
+        "Golden Temple, Vellore",
+        "Optional Kanchipuram"
+      ],
+      "days": [],
+      "url": "https://heavenlytoursandtravels.com/trips/wholesome-pilgrim-package",
+      "bookingUrl": "https://heavenlytoursandtravels.com/vehicles?package=tour-4",
+      "availability": "Confirm with owner; selecting this trip does not reserve it."
+    },
+    {
+      "id": "tour-5",
+      "name": "South Indian Package",
+      "type": "tour",
+      "description": "Visit South India from Tirupati to Rameswaram, Kanyakumari and Trivandrum, including Chidambaram and Thanjavur. Our team will help plan the days you need.",
+      "stops": [
+        "Tirupati",
+        "Kanchipuram",
+        "Tiruvannamalai",
+        "Srirangam",
+        "Madurai",
+        "Rameswaram",
+        "Kanyakumari",
+        "Chidambaram",
+        "Thanjavur (Tanjore)",
+        "Trivandrum (Thiruvananthapuram)"
+      ],
+      "days": [],
+      "url": "https://heavenlytoursandtravels.com/trips/south-indian-package",
+      "bookingUrl": "https://heavenlytoursandtravels.com/vehicles?package=tour-5",
+      "availability": "Confirm with owner; selecting this trip does not reserve it."
+    },
+    {
+      "id": "tour-6",
+      "name": "Jyotirlingas Package",
+      "type": "tour",
+      "description": "Visit the 12 Jyotirlinga shrines across India. Our team will confirm dates, travel arrangements and your preferred Vaidyanath and Nageshwar locations.",
+      "stops": [
+        "Somnath — Prabhas Patan, Gujarat",
+        "Mallikarjuna — Srisailam, Andhra Pradesh",
+        "Mahakaleshwar — Ujjain, Madhya Pradesh",
+        "Omkareshwar — Khandwa, Madhya Pradesh",
+        "Kedarnath — Uttarakhand",
+        "Bhimashankar — Maharashtra",
+        "Kashi Vishwanath — Varanasi, Uttar Pradesh",
+        "Trimbakeshwar — Nashik, Maharashtra",
+        "Vaidyanath — Deoghar, Jharkhand or Parli Vaijnath, Maharashtra",
+        "Nageshwar — Dwarka, Gujarat or Aundha Nagnath, Maharashtra",
+        "Rameshwaram — Rameswaram, Tamil Nadu",
+        "Grishneshwar — Chhatrapati Sambhajinagar, Maharashtra"
+      ],
+      "days": [],
+      "url": "https://heavenlytoursandtravels.com/trips/jyotirlingas-package",
+      "bookingUrl": "https://heavenlytoursandtravels.com/vehicles?package=tour-6",
+      "availability": "Confirm with owner; selecting this trip does not reserve it."
+    },
+    {
+      "id": "tour-7",
+      "name": "Pancha Bhoota Lingas Package",
+      "type": "tour",
+      "description": "Visit all five Pancha Bhoota temples: Earth, Water, Fire, Air and Space. We help plan the route and travel arrangements.",
+      "stops": [
+        "Earth (Prithvi) — Ekambareswarar Temple, Kanchipuram, Tamil Nadu; a sand lingam",
+        "Water (Jala) — Jambukeshwarar Temple, Thiruvanaikaval, Trichy, Tamil Nadu; a spring beneath the lingam",
+        "Fire (Agni) — Arunachaleswarar Temple, Tiruvannamalai, Tamil Nadu; Shiva worshipped as fire",
+        "Air (Vayu) — Sri Kalahasteeswara Temple, Srikalahasti, Andhra Pradesh; associated with the flickering sanctum lamp",
+        "Space (Akasha) — Thillai Nataraja Temple, Chidambaram, Tamil Nadu; the Chidambara Rahasya and Lord Nataraja"
+      ],
+      "days": [],
+      "url": "https://heavenlytoursandtravels.com/trips/pancha-bhoota-lingas-package",
+      "bookingUrl": "https://heavenlytoursandtravels.com/vehicles?package=tour-7",
+      "availability": "Confirm with owner; selecting this trip does not reserve it."
+    },
+    {
+      "id": "days-1",
+      "name": "One-day trip",
+      "type": "days",
+      "description": "Darshan ticket already booked.",
+      "durationDays": 1,
+      "stops": [
+        "Padmavathi Temple",
+        "Varahaswamy Temple",
+        "Govindaraja Temple",
+        "Tirumala darshan"
+      ],
+      "days": [],
+      "url": "https://heavenlytoursandtravels.com/trips/one-day-trip",
+      "bookingUrl": "https://heavenlytoursandtravels.com/vehicles?package=days-1",
+      "availability": "Confirm with owner; selecting this trip does not reserve it."
+    },
+    {
+      "id": "days-2",
+      "name": "Two-day trip",
+      "type": "days",
+      "description": "Tirumala, Tirupati local temples and Srikalahasti.",
+      "durationDays": 2,
+      "stops": [
+        "Tirumala darshan",
+        "Varahaswamy darshan",
+        "Tirupati local temples: Padmavathi, Govindaraja, Kapileswar and ISKCON",
+        "Sri Kalahasti Shiva Temple"
+      ],
+      "days": [],
+      "url": "https://heavenlytoursandtravels.com/trips/two-day-trip",
+      "bookingUrl": "https://heavenlytoursandtravels.com/vehicles?package=days-2",
+      "availability": "Confirm with owner; selecting this trip does not reserve it."
+    },
+    {
+      "id": "days-3",
+      "name": "Three-day trip",
+      "type": "days",
+      "description": "Tirumala, Vellore and the temples around Tirupati.",
+      "durationDays": 3,
+      "stops": [],
+      "days": [
+        {
+          "title": "Day 1",
+          "places": [
+            "Tirumala darshan",
+            "Varahaswamy darshan",
+            "Tirumala sightseeing"
+          ]
+        },
+        {
+          "title": "Day 2",
+          "places": [
+            "Golden Temple, Vellore",
+            "Kanipakam Ganesh Temple",
+            "Srinivasamangapuram Temple",
+            "Vakulamatha Temple"
+          ]
+        },
+        {
+          "title": "Day 3",
+          "places": [
+            "Tirupati local temples: Padmavathi, Govindaraja, Kapileswar and ISKCON",
+            "Sri Kalahasti Shiva Temple"
+          ]
+        }
+      ],
+      "url": "https://heavenlytoursandtravels.com/trips/three-day-trip",
+      "bookingUrl": "https://heavenlytoursandtravels.com/vehicles?package=days-3",
+      "availability": "Confirm with owner; selecting this trip does not reserve it."
+    },
+    {
+      "id": "days-4",
+      "name": "Four-day trip",
+      "type": "days",
+      "description": "Temple visits with a night in Tiruvannamalai.",
+      "durationDays": 4,
+      "stops": [],
+      "days": [
+        {
+          "title": "Day 1",
+          "places": [
+            "Tirumala darshan",
+            "Tirumala sightseeing"
+          ]
+        },
+        {
+          "title": "Day 2",
+          "places": [
+            "Arunachaleswarar Temple, Tiruvannamalai",
+            "Night stay at Tiruvannamalai"
+          ]
+        },
+        {
+          "title": "Day 3",
+          "places": [
+            "Golden Temple, Vellore",
+            "Kanipakam Ganesh Temple",
+            "Srinivasamangapuram Temple",
+            "Vakulamatha Temple"
+          ]
+        },
+        {
+          "title": "Day 4",
+          "places": [
+            "Tirupati local temples: Padmavathi, Govindaraja, Kapileswar and ISKCON",
+            "Sri Kalahasti Shiva Temple"
+          ]
+        }
+      ],
+      "url": "https://heavenlytoursandtravels.com/trips/four-day-trip",
+      "bookingUrl": "https://heavenlytoursandtravels.com/vehicles?package=days-4",
+      "availability": "Confirm with owner; selecting this trip does not reserve it."
+    },
+    {
+      "id": "days-5",
+      "name": "Five-day trip",
+      "type": "days",
+      "description": "A five-day temple trip with Kanchipuram and Thiruthani.",
+      "durationDays": 5,
+      "stops": [],
+      "days": [
+        {
+          "title": "Day 1",
+          "places": [
+            "Tirumala darshan",
+            "Tirumala sightseeing"
+          ]
+        },
+        {
+          "title": "Day 2",
+          "places": [
+            "Arunachaleswarar Temple, Tiruvannamalai",
+            "Night stay at Tiruvannamalai"
+          ]
+        },
+        {
+          "title": "Day 3",
+          "places": [
+            "Golden Temple, Vellore",
+            "Kanipakam Ganesh Temple",
+            "Srinivasamangapuram Temple",
+            "Vakulamatha Temple"
+          ]
+        },
+        {
+          "title": "Day 4",
+          "places": [
+            "Tirupati local temples: Padmavathi, Govindaraja, Kapileswar and ISKCON",
+            "Sri Kalahasti Shiva Temple"
+          ]
+        },
+        {
+          "title": "Day 5",
+          "places": [
+            "Kanchipuram temples — 3 temples",
+            "Thiruthani Temple"
+          ]
+        }
+      ],
+      "url": "https://heavenlytoursandtravels.com/trips/five-day-trip",
+      "bookingUrl": "https://heavenlytoursandtravels.com/vehicles?package=days-5",
+      "availability": "Confirm with owner; selecting this trip does not reserve it."
+    }
+  ],
+  "faq": [
+    {
+      "question": "How do I book a trip?",
+      "answer": "Choose a trip and vehicle, then send your enquiry on WhatsApp. Owner Hemanth Kumar handles payment and booking confirmation directly. An enquiry is not a confirmed booking, and no payment is taken on this website."
+    },
+    {
+      "question": "Can I change the temples or number of days?",
+      "answer": "Yes. Use the custom trip planner or tell the owner what you need on WhatsApp. The route and date are confirmed directly with the owner."
+    },
+    {
+      "question": "Will you book Tirumala darshan tickets?",
+      "answer": "We only guide you on how to book Tirumala darshan tickets. We do not book tickets for you. Darshan is subject to official availability."
+    },
+    {
+      "question": "Can older people and children travel with us?",
+      "answer": "Yes. Tell us about walking needs, rest breaks and luggage so the owner can help plan a suitable trip and vehicle."
+    },
+    {
+      "question": "Can you pick us up from an airport or station?",
+      "answer": "Yes. Share your arrival place and time on WhatsApp. The owner will confirm pickup arrangements."
+    },
+    {
+      "question": "What if I have not chosen a travel date?",
+      "answer": "You can send an enquiry now and discuss the travel date with the owner later."
+    },
+    {
+      "question": "How do cancellations, refunds and date changes work?",
+      "answer": "All cancellation, refund and date-change terms are handled directly with owner Hemanth Kumar on WhatsApp. Ask for the terms for your trip in writing before making a payment."
+    },
+    {
+      "question": "Are vehicles and hotel rooms confirmed when I choose them?",
+      "answer": "No. Your selections are preferences for an enquiry. The owner confirms the vehicle, accommodation, availability and booking details directly on WhatsApp."
+    }
+  ]
+}
