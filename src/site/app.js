@@ -1,10 +1,6 @@
 (() => {
   'use strict';
   const $ = (s) => document.querySelector(s);
-  $('#quick-vehicles').onclick = () => {
-    setTab(1);
-    location.assign('vehicles.html');
-  };
   $('#header-vehicles').onclick = () => {
     setTab(1);
     location.assign('vehicles.html');
@@ -54,49 +50,13 @@
   const option = (value, text) => new Option(text, value);
   tours.forEach((t, i) => {
     $('#tour-select').add(option(i, t.name));
-    const card = document.createElement('article');
-    card.className = 'tour-mini package-card';
-    card.setAttribute('aria-labelledby', 'package-title-' + i);
-    card.dataset.packageIndex = i;
-    card.innerHTML = `
-      <div class="package-visual">
-        <img
-          src="assets/${TOUR_IMAGES[i]}"
-          alt="${t.name} temple destination"
-          loading="lazy"
-          width="900"
-          height="1000"
-        >
-        <span class="package-image-caption">${t.route}</span>
-      </div>
-      <div class="package-copy">
-        <div class="package-number">
-          <span>TRIP</span>
-          <strong>0${i + 1}</strong>
-          <span>OF ${String(tours.length).padStart(2, '0')}</span>
-        </div>
-        <p class="package-type">${t.tag}</p>
-        <h3 id="package-title-${i}">${t.name}</h3>
-        <details class="package-stops">
-          <summary>See temples & trip details</summary>
-          <ul class="package-includes">
-            ${t.includes.map((item) => `<li>${item}</li>`).join('')}
-          </ul>
-        </details>
-        <div class="package-actions">
-          <button type="button" class="button primary package-plan" data-tour-pick="${i}">
-            Select this trip <span aria-hidden="true">↗</span>
-          </button>
-          <span>Private travel · Your own pace</span>
-        </div>
-      </div>
-    `;
-    card.querySelector('.package-plan').onclick = () => {
+    const card = document.querySelector(`[data-package-index="${i}"]`);
+    card.querySelector('.package-plan').onclick = (event) => {
+      event.preventDefault();
       chooseTour(String(i));
       setTab(0);
       location.assign('vehicles.html?package=tour-' + (i + 1));
     };
-    $('#tour-rail').append(card);
   });
   const customCard = document.createElement('article');
   customCard.id = 'custom-trip-card';
@@ -456,10 +416,10 @@
   const serviceRequest = $('#service-request');
   function setGroupMode() {
     const group = serviceRequest.value === 'Group package';
-    $('#people').min = group ? '2' : '1';
+    $('#people').min = '2';
     $('#group-size-note').hidden = !group;
     window.dispatchEvent(new CustomEvent('heavenly:service', { detail: serviceRequest.value }));
-    if (group && Number($('#people').value) < 2) $('#people').value = '2';
+    if (Number($('#people').value) < 2) $('#people').value = '2';
     const flight = serviceRequest.value.includes('flights'),
       hotel = serviceRequest.value === 'Hotel & accommodation';
     $('.trip-summary').hidden = flight || hotel;
@@ -489,77 +449,24 @@
   }
   serviceRequest.addEventListener('change', setGroupMode);
   setGroupMode();
-  const faqs = [
-    [
-      'How do I book a trip?',
-      'Choose a trip and vehicle, then send your details on WhatsApp. Our team will confirm the trip with you. You do not pay on this website.',
-    ],
-    [
-      'Can I change the temples or number of days?',
-      'Yes. Open the custom trip planner, or tell us what you want on WhatsApp. We can help you plan a different trip.',
-    ],
-    [
-      'Will you book Tirumala darshan tickets?',
-      'We only guide you on how to book Tirumala darshan tickets. We do not book tickets for you.',
-    ],
-    [
-      'Can older people and children travel with us?',
-      'Yes. Tell us if anyone needs less walking, extra rest or room for luggage. We will help you choose a suitable vehicle and plan.',
-    ],
-    [
-      'Can you pick us up from an airport or station?',
-      'Yes. Share your arrival place and time so we can plan your pickup.',
-    ],
-    [
-      'What if I have not chosen a travel date?',
-      'You can ask us now and choose your travel date later.',
-    ],
-  ];
-  faqs.forEach(([q, a], i) => {
-    const article = document.createElement('article');
-    article.className = 'faq-item';
-    article.innerHTML = `
-      <h3>
-        <button
-          class="faq-toggle"
-          type="button"
-          aria-expanded="false"
-          aria-controls="faq-answer-${i}"
-          id="faq-question-${i}"
-        >
-          <span>${q}</span>
-          <i aria-hidden="true"></i>
-        </button>
-      </h3>
-      <div
-        class="faq-answer"
-        id="faq-answer-${i}"
-        role="region"
-        aria-labelledby="faq-question-${i}"
-        hidden
-      >
-        <p>${a}</p>
-      </div>
-    `;
-    const b = article.querySelector('button'),
-      p = article.querySelector('.faq-answer');
-    b.onclick = () => {
-      const open = b.getAttribute('aria-expanded') !== 'true';
-      b.setAttribute('aria-expanded', open);
-      p.getAnimations().forEach((a) => a.cancel());
-      if (open) {
-        p.hidden = false;
-        if (motion())
-          p.animate(
-            [
-              { opacity: 0, transform: 'translateY(-8px)' },
-              { opacity: 1, transform: 'none' },
-            ],
-            { duration: 300, easing: 'ease-out' },
-          );
-      } else p.hidden = true;
+  document.querySelectorAll('#faq-list .faq-item').forEach((article) => {
+    const button = article.querySelector('button');
+    const answer = article.querySelector('.faq-answer');
+    button.onclick = () => {
+      const open = button.getAttribute('aria-expanded') !== 'true';
+      button.setAttribute('aria-expanded', String(open));
+      answer.getAnimations().forEach((animation) => animation.cancel());
+      answer.hidden = !open;
+      if (open && motion()) {
+        answer.animate(
+          [
+            { opacity: 0, transform: 'translateY(-8px)' },
+            { opacity: 1, transform: 'none' },
+          ],
+          { duration: 300, easing: 'ease-out' },
+        );
+      }
     };
-    $('#faq-list').append(article);
   });
   document.querySelectorAll('.pink-steps,.pink-fan,.pink-circles,.pink-diamonds').forEach((el) => {
     for (let i = 0; i < (el.classList.contains('pink-circles') ? 5 : 9); i++) {

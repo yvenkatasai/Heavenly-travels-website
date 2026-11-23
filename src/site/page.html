@@ -6,6 +6,7 @@
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <meta name="theme-color" content="#183c31" />
     <title>Heavenly Tours &amp; Travels — Temple trips made simple</title>
+    <!--__SEO__-->
     <meta
       name="description"
       content="Private Tirupati and South India temple trips. Choose your route, customize your temples and vehicle, and talk to Heavenly Tours & Travels for a personal quote."
@@ -107,9 +108,7 @@
     <main id="main-content">
       <section id="home" class="hero fluid-surface dot-field-surface" data-dot-field>
         <picture class="hero-scene" aria-hidden="true"
-          ><source
-            media="(max-width: 767px)"
-            srcset="assets/tirumala-hero-mobile-fast.webp" />
+          ><source media="(max-width: 767px)" srcset="assets/tirumala-hero-mobile-fast.webp" />
           <img
             src="assets/tirumala-hero-desktop-fast.webp"
             alt=""
@@ -293,7 +292,9 @@
           class="tour-rail package-reveal-list"
           id="tour-rail"
           aria-label="Seven temple trips and a custom trip option"
-        ></div>
+        >
+          <!--__HOME_CARDS__-->
+        </div>
         <div id="custom-plan-slot"></div>
       </section>
       <div id="booking-flow-root"><p class="flow-loading">Preparing one-to-five-day trips…</p></div>
@@ -480,7 +481,7 @@
               <button type="button" class="inline-link" data-contact>Ask our team.</button>
             </p>
           </div>
-          <div class="faq-list" id="faq-list"></div>
+          <div class="faq-list" id="faq-list"><!--__FAQ_HTML__--></div>
         </div>
       </section>
       <section class="closing-booking" aria-labelledby="final-title">
@@ -514,6 +515,11 @@
       <a href="#home" class="footer-name">Heavenly Tours &amp; Travels</a
       ><a href="https://wa.me/919700181493" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a>
     </footer>
+    <nav class="site-resources" aria-label="Business and trip information">
+      <a href="/about">About us</a><a href="/trips">All trip details</a
+      ><a href="/booking-information">Booking &amp; changes</a
+      ><a href="/questions">Common questions</a><a href="/privacy">Privacy</a>
+    </nav>
 
     <dialog class="contact-dialog" id="contact-dialog" aria-labelledby="contact-title">
       <div class="modal-background" aria-hidden="true"></div>
@@ -597,7 +603,7 @@
                   id="people"
                   name="people"
                   type="number"
-                  min="1"
+                  min="2"
                   max="200"
                   value="4"
                   required

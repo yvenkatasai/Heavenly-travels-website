@@ -448,3 +448,25 @@
     font-size: 33px;
   }
 }
+/* Keep detailed business information available without crowding the trip flow. */
+.site-resources {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px 26px;
+  padding: 20px 24px 34px;
+  color: #526353;
+  background: #f5f3ec;
+  font: 14px/1.6 var(--body);
+  border-top: 1px solid #d6c9af;
+}
+.site-resources a {
+  color: inherit;
+  text-underline-offset: 4px;
+}
+@media (max-width: 767px) {
+  .site-resources {
+    padding-bottom: 124px;
+    gap: 12px 20px;
+  }
+}

@@ -12,7 +12,9 @@
     "deploy": "npm run build && wrangler deploy",
     "format": "prettier --write \"src/booking/**/*.{ts,tsx,css}\" \"src/components/**/*.{ts,tsx,css}\" \"src/lib/**/*.{ts,tsx,css}\" \"src/site/**/*.{js,css,html}\" \"scripts/**/*.{js,mjs,ts,tsx}\"",
     "format:check": "prettier --check \"src/booking/**/*.{ts,tsx,css}\" \"src/components/**/*.{ts,tsx,css}\" \"src/lib/**/*.{ts,tsx,css}\" \"src/site/**/*.{js,css,html}\" \"scripts/**/*.{js,mjs,ts,tsx}\"",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "verify:production": "node scripts/check-production.mjs",
+    "verify:content": "node scripts/check-content.mjs"
   },
   "dependencies": {
     "clsx": "^2.1.1",

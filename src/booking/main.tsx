@@ -459,7 +459,7 @@ function App() {
     return () => document.removeEventListener('click', saveBeforeNavigation, true);
   }, [state]);
   useEffect(() => {
-    if (group && Number(state.customer.people) < 2)
+    if (Number(state.customer.people) < 2)
       setState((s) => ({ ...s, customer: { ...s.customer, people: '2' } }));
   }, [group]);
   useEffect(() => {
@@ -715,10 +715,10 @@ function App() {
                 />
               </label>
               <label>
-                People <span>({group ? '2' : '1'}–200)</span>
+                People <span>(2–200)</span>
                 <input
                   type="number"
-                  min={group ? 2 : 1}
+                  min={2}
                   max={200}
                   required
                   value={state.customer.people}
