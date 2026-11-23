@@ -23,6 +23,7 @@ dist/journey-qa.html
 dist/playback-qa.html
 
 # Local research captures
+design-reference/
 docs/design/reference/pasqua-rea/*-capture.json
 docs/design/reference/incredibles-rea/*-capture.json
 docs/design/reference/incredibles-rea/*-observation.json

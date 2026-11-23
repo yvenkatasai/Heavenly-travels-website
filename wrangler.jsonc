@@ -3,6 +3,16 @@
   "name": "heavenly-tours-travels",
   "compatibility_date": "2026-11-12",
   "workers_dev": true,
+  "routes": [
+    {
+      "pattern": "heavenlytoursandtravels.com",
+      "custom_domain": true
+    },
+    {
+      "pattern": "www.heavenlytoursandtravels.com",
+      "custom_domain": true
+    }
+  ],
   "assets": {
     "directory": "./dist",
     "not_found_handling": "404-page"
