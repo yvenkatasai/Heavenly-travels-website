@@ -43,6 +43,9 @@ The active site lives in `src/site/`; do not create release-numbered copies of i
 - `npm run build` runs the Node.js build scripts, compiles the booking island, and assembles the static pages and assets.
 - Build output defaults to `dist/`. The build recreates that directory to prevent stale assets and rejects protected source, tooling, documentation, test, dependency and Git paths.
 - `npm run build:booking` compiles the booking island independently into `dist/assets/`.
+- `npm run verify:content` checks the built trip catalog, nineteen public content URLs, schema itineraries, booking IDs and local links without sending enquiries.
+- `npm run verify:production` performs read-only checks against the configured production domain after deployment.
+- `npm run test:whatsapp` checks shared enquiry formatting, all thirteen routes, dates, optional fields and URL encoding without sending messages.
 - `npm run dev` builds and serves the site through Wrangler's local Worker runtime.
 - `npm run deploy` builds and deploys the static assets to Cloudflare Workers. Do not run deployment without Vamsi's approval.
 - Tests must intercept WhatsApp links; never send real messages.
@@ -87,7 +90,7 @@ For code or build changes, run typecheck and build. For behavior changes, run th
 
 ### Current status
 - **Phase:** Testing
-- **Last updated:** 2026-11-14
+- **Last updated:** 2026-11-23
 - **Hosting target:** Cloudflare Workers static assets
 
 ### Done
@@ -118,8 +121,8 @@ For code or build changes, run typecheck and build. For behavior changes, run th
 
 ### Next
 - Keep new work within the documented source, tooling, test, documentation and artifact folders.
-- Configure the Cloudflare account and custom domain, then deploy after approval.
-- Run the browser checks against the production domain after deployment.
+- Keep the live Cloudflare custom domain and its HTTPS, DNSSEC and canonical redirect configuration intact.
+- Run content and production checks after future approved deployments.
 
 ### Decisions
 | Date | Decision | Reason |
@@ -139,11 +142,16 @@ For code or build changes, run typecheck and build. For behavior changes, run th
 
 ### Open questions
 - No project-wide MIT license or private license file was present; third-party notices remain. Add only owner-approved legal terms if a project license is needed.
-- A production deployment and custom domain were not configured; they require Vamsi's Cloudflare account and approval.
+- The production domain is heavenlytoursandtravels.com; WWW redirects to it with path/query preserved. Publishing to Cloudflare does not authorize a GitHub push.
 - The portable Node.js build was validated on Windows; it was not run on macOS or Linux in this environment.
 - In local Playwright checks, Escape dispatched a cancel event but did not close the credits dialog; a pointer click on its close button worked. Confirm expected keyboard dismissal in a real browser before changing dialog behavior.
 
 ### Changelog
+- 2026-11-23 - Both enquiry forms now use src/lib/whatsapp-message.ts for bold section headings, whitespace, readable dates and complete numbered plans. Removed the requested ticket disclaimer from enquiry drafts; included extras are supplied only for the complete seven-temple trip. The homepage app is bundled with esbuild to share the TypeScript formatter. Added nineteen message tests and docs/WHATSAPP-MESSAGES.md with a beginner editing walkthrough. No automatic sending or payments added.
+- 2026-11-23 - Applied the AAO kit's website requirements: factual About, thirteen static trip pages, trip index, booking/changes, questions and privacy pages; build-time homepage cards/FAQ; Service/TouristTrip schema; JSON/plain-text catalog; sitemap and content checks. Owner-approved business facts live in site.config.json, FAQs in faqs.json, trips in booking/data.ts. New pages use information.css and scripts/build-agent-content.mjs. Preserved no public prices, original curtain and manual WhatsApp confirmation; all people inputs now use 2–200. See docs/AAO-IMPLEMENTATION.md for honest audit and external learning/account tasks, and docs/WEBSITE-EDITING-GUIDE.md for beginner steps.
+- 2026-11-23 - Centralized public site metadata in src/site/site.config.json; added canonical/social tags, factual travel-agency JSON-LD, robots.txt and sitemap generation, noindex booking/backup URLs, and a branded HTTP 404 page. Added npm run verify:production for read-only domain, redirect, security, crawl and media checks. Cloudflare's WWW-to-apex redirect preserves path/query strings.
+- 2026-11-23 - Added editable src/site/_headers for CSP, clickjacking and MIME protection, referrer/permission restrictions, HTTPS persistence and asset caching. Preserved the original curtain timing, made hero decoding asynchronous and gave homepage booking downloads low priority. Verify behavior through Wrangler so production headers are exercised.
+- 2026-11-23 - Extracted minified, content-hashed styles and deferred scripts during the build; added one-day static-asset caching, lighter hero derivatives, and touch-triggered mobile dot animation. The floating navigation owns its vehicle-button handler. Original hero masters and media attribution are preserved. Files: scripts/build_site.mjs, src/site/page.html, src/site/assets/, src/site/app.js, src/site/dot-field.js, docs/DEPLOYMENT.md.
 - 2026-11-18 - Added Jyotirlingas and Pancha Bhoota Lingas packages; renamed the first five, extended the South Indian route, and required accommodation preferences in both WhatsApp enquiry flows. Added route/content/validation browser checks and Somnath photo attribution. Files: src/site/, src/booking/, tests/browser/, docs/business/TRIP-CATALOG.md.
 - 2026-11-14 - Fixed the enquiry dialog's Edit your route action to reveal the current custom-planner panel after the obsolete details wrapper was removed. Files: `src/site/app.js`, `dist/index.html`.
 - 2026-11-14 - Reviewed the static frontend and added site-specific security/privacy boundaries for browser storage, safe DOM and URL handling, external links, Cloudflare deployment, and WhatsApp tests. No actionable vulnerabilities found. Files: `AGENTS.md`.
