@@ -1,0 +1,135 @@
+{
+  "summary": {
+    "health_score": null,
+    "business_type": "Local travel agency",
+    "score_status": "No fabricated overall score: field CWV, indexation and authority data unavailable",
+    "top_findings": [
+      "JavaScript-only homepage day cards",
+      "Missing website/breadcrumb schema",
+      "Very short day descriptions",
+      "Missing official TTD references",
+      "Faint small labels"
+    ],
+    "quick_wins": [
+      "Static day links",
+      "Canonical vehicle links",
+      "Accurate schema",
+      "Owner-approved answers preserved"
+    ]
+  },
+  "workflowVersion": "2.6.2",
+  "upstreamCommit": "468ed5b0d9e3249394783710e54abb02837e326b",
+  "auditDates": [
+    "2026-11-25",
+    "2026-11-26"
+  ],
+  "categories": [
+    {
+      "name": "Technical SEO",
+      "score": null,
+      "what_works": [
+        "24/24 sitemap URLs returned200",
+        "Unique metadata and oneH1 perpage",
+        "Correct canonicals",
+        "HTTPS/www redirects and real404"
+      ],
+      "findings": []
+    },
+    {
+      "name": "Schema",
+      "score": null,
+      "what_works": [
+        "47/47 baseline JSON-LD blocks parsed",
+        "24 new WebSite/BreadcrumbList nodes generated"
+      ],
+      "findings": []
+    },
+    {
+      "name": "AI Search Readiness",
+      "score": null,
+      "what_works": [
+        "Raw HTML approved answers",
+        "11 unverified user-agent access checks passed"
+      ],
+      "findings": []
+    }
+  ],
+  "performanceBaseline": {
+    "reportUrl": "https://pagespeed.web.dev/analysis/https-heavenlytoursandtravels-com/p9roku72sao15ithafiwc6?form_factor=mobile",
+    "lighthouseVersion": "13.6.0",
+    "device": "Emulated Moto G Power, slow 4G",
+    "performance": 93,
+    "accessibility": 96,
+    "bestPractices": 100,
+    "seo": 100,
+    "agenticBrowsing": "3/3",
+    "lcpMs": 2708,
+    "tbtMs": 22,
+    "cls": 0,
+    "fieldData": null,
+    "inp": null
+  },
+  "artifacts": {
+    "findings_dir": "findings/",
+    "rawCrawl": "artifacts/deployment/claude-seo-technical/crawl.json",
+    "schema": "generated-schema.json"
+  },
+  "deployment": {
+    "worker": "heavenly-tours-travels",
+    "version": "b7b3f795-dd66-4f35-aab6-0b473015615e",
+    "productionChecks": "passed on fresh full run after transient connection timeouts",
+    "sitemapUrlsChecked": 24,
+    "websiteSchemas": 1,
+    "breadcrumbLists": 23,
+    "githubPushed": false
+  },
+  "performanceAfter": {
+    "reportUrl": "https://pagespeed.web.dev/analysis/https-heavenlytoursandtravels-com/8rmjt14no5qm8m4kd45pk5?form_factor=mobile",
+    "date": "2026-11-26",
+    "lighthouseVersion": "13.6.0",
+    "device": "Emulated Moto G Power, slow 4G",
+    "performance": 90,
+    "accessibility": 100,
+    "bestPractices": 100,
+    "seo": 100,
+    "agenticBrowsing": "3/3",
+    "fcpMs": 1887,
+    "lcpMs": 2810,
+    "tbtMs": 79,
+    "cls": 0,
+    "speedIndexMs": 5088,
+    "fieldData": null,
+    "inp": null,
+    "testedWorkerVersion": "885e655e-d256-4277-8fda-a543db9b2076",
+    "note": "Measured before final navigation-only React link normalization"
+  },
+  "tests": {
+    "typecheck": "passed",
+    "build": "passed",
+    "content": "passed",
+    "whatsapp": {
+      "passed": 19,
+      "failed": 0
+    },
+    "analyticsConsent": {
+      "passed": 4,
+      "failed": 0
+    },
+    "browser": [
+      "Five-day dialog contents",
+      "Five-day selection reaches vehicles?package=days-5",
+      "Five static day links with JavaScript disabled",
+      "No duplicate day section",
+      "Live trip breadcrumb and official TTD links",
+      "No console errors in sampled pages",
+      "Final live day-dialog href is /vehicles?package=days-5; clicking reaches matching Five-day trip heading"
+    ]
+  },
+  "installation": {
+    "skillDirectories": 24,
+    "version": "2.6.2",
+    "managedPythonReady": false,
+    "method": "Codex skill-installer, pinned upstream commit; native audit workflow execution",
+    "paidExtensionsActivated": false
+  }
+}

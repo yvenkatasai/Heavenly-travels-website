@@ -1,0 +1,600 @@
+[
+  {
+    "file": "index.html",
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://heavenlytoursandtravels.com/#website",
+      "url": "https://heavenlytoursandtravels.com/",
+      "name": "Heavenly Tours & Travels",
+      "publisher": {
+        "@id": "https://heavenlytoursandtravels.com/#business"
+      },
+      "inLanguage": "en-IN"
+    }
+  },
+  {
+    "file": "about.html",
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "@id": "https://heavenlytoursandtravels.com/about#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://heavenlytoursandtravels.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "About Heavenly Tours & Travels",
+          "item": "https://heavenlytoursandtravels.com/about"
+        }
+      ]
+    }
+  },
+  {
+    "file": "booking-information.html",
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "@id": "https://heavenlytoursandtravels.com/booking-information#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://heavenlytoursandtravels.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "How booking works",
+          "item": "https://heavenlytoursandtravels.com/booking-information"
+        }
+      ]
+    }
+  },
+  {
+    "file": "privacy.html",
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "@id": "https://heavenlytoursandtravels.com/privacy#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://heavenlytoursandtravels.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Your details & privacy",
+          "item": "https://heavenlytoursandtravels.com/privacy"
+        }
+      ]
+    }
+  },
+  {
+    "file": "questions.html",
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "@id": "https://heavenlytoursandtravels.com/questions#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://heavenlytoursandtravels.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Common questions",
+          "item": "https://heavenlytoursandtravels.com/questions"
+        }
+      ]
+    }
+  },
+  {
+    "file": "terms.html",
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "@id": "https://heavenlytoursandtravels.com/terms#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://heavenlytoursandtravels.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Website terms",
+          "item": "https://heavenlytoursandtravels.com/terms"
+        }
+      ]
+    }
+  },
+  {
+    "file": "tirumala-tour-packages.html",
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "@id": "https://heavenlytoursandtravels.com/tirumala-tour-packages#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://heavenlytoursandtravels.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tirumala temple trips and family packages",
+          "item": "https://heavenlytoursandtravels.com/tirumala-tour-packages"
+        }
+      ]
+    }
+  },
+  {
+    "file": "tirupati-car-rentals.html",
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "@id": "https://heavenlytoursandtravels.com/tirupati-car-rentals#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://heavenlytoursandtravels.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tirupati car rentals and car travels",
+          "item": "https://heavenlytoursandtravels.com/tirupati-car-rentals"
+        }
+      ]
+    }
+  },
+  {
+    "file": "tirupati-temples.html",
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "@id": "https://heavenlytoursandtravels.com/tirupati-temples#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://heavenlytoursandtravels.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tirupati temples and trip coverage",
+          "item": "https://heavenlytoursandtravels.com/tirupati-temples"
+        }
+      ]
+    }
+  },
+  {
+    "file": "tirupati-tour-packages.html",
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "@id": "https://heavenlytoursandtravels.com/tirupati-tour-packages#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://heavenlytoursandtravels.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tirupati tour packages",
+          "item": "https://heavenlytoursandtravels.com/tirupati-tour-packages"
+        }
+      ]
+    }
+  },
+  {
+    "file": "trips.html",
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "@id": "https://heavenlytoursandtravels.com/trips#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://heavenlytoursandtravels.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Find your temple trip",
+          "item": "https://heavenlytoursandtravels.com/trips"
+        }
+      ]
+    }
+  },
+  {
+    "file": "trips/complete-7-temple-trip.html",
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "@id": "https://heavenlytoursandtravels.com/trips/complete-7-temple-trip#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://heavenlytoursandtravels.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Trips",
+          "item": "https://heavenlytoursandtravels.com/trips"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Complete 7-Temple Trip",
+          "item": "https://heavenlytoursandtravels.com/trips/complete-7-temple-trip"
+        }
+      ]
+    }
+  },
+  {
+    "file": "trips/divine-pilgrimage-package.html",
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "@id": "https://heavenlytoursandtravels.com/trips/divine-pilgrimage-package#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://heavenlytoursandtravels.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Trips",
+          "item": "https://heavenlytoursandtravels.com/trips"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Divine Pilgrimage Package",
+          "item": "https://heavenlytoursandtravels.com/trips/divine-pilgrimage-package"
+        }
+      ]
+    }
+  },
+  {
+    "file": "trips/express-package.html",
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "@id": "https://heavenlytoursandtravels.com/trips/express-package#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://heavenlytoursandtravels.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Trips",
+          "item": "https://heavenlytoursandtravels.com/trips"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Express Package",
+          "item": "https://heavenlytoursandtravels.com/trips/express-package"
+        }
+      ]
+    }
+  },
+  {
+    "file": "trips/five-day-trip.html",
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "@id": "https://heavenlytoursandtravels.com/trips/five-day-trip#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://heavenlytoursandtravels.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Trips",
+          "item": "https://heavenlytoursandtravels.com/trips"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Five-day trip",
+          "item": "https://heavenlytoursandtravels.com/trips/five-day-trip"
+        }
+      ]
+    }
+  },
+  {
+    "file": "trips/four-day-trip.html",
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "@id": "https://heavenlytoursandtravels.com/trips/four-day-trip#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://heavenlytoursandtravels.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Trips",
+          "item": "https://heavenlytoursandtravels.com/trips"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Four-day trip",
+          "item": "https://heavenlytoursandtravels.com/trips/four-day-trip"
+        }
+      ]
+    }
+  },
+  {
+    "file": "trips/govindham-package.html",
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "@id": "https://heavenlytoursandtravels.com/trips/govindham-package#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://heavenlytoursandtravels.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Trips",
+          "item": "https://heavenlytoursandtravels.com/trips"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Govindham Package",
+          "item": "https://heavenlytoursandtravels.com/trips/govindham-package"
+        }
+      ]
+    }
+  },
+  {
+    "file": "trips/jyotirlingas-package.html",
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "@id": "https://heavenlytoursandtravels.com/trips/jyotirlingas-package#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://heavenlytoursandtravels.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Trips",
+          "item": "https://heavenlytoursandtravels.com/trips"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Jyotirlingas Package",
+          "item": "https://heavenlytoursandtravels.com/trips/jyotirlingas-package"
+        }
+      ]
+    }
+  },
+  {
+    "file": "trips/one-day-trip.html",
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "@id": "https://heavenlytoursandtravels.com/trips/one-day-trip#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://heavenlytoursandtravels.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Trips",
+          "item": "https://heavenlytoursandtravels.com/trips"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "One-day trip",
+          "item": "https://heavenlytoursandtravels.com/trips/one-day-trip"
+        }
+      ]
+    }
+  },
+  {
+    "file": "trips/pancha-bhoota-lingas-package.html",
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "@id": "https://heavenlytoursandtravels.com/trips/pancha-bhoota-lingas-package#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://heavenlytoursandtravels.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Trips",
+          "item": "https://heavenlytoursandtravels.com/trips"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Pancha Bhoota Lingas Package",
+          "item": "https://heavenlytoursandtravels.com/trips/pancha-bhoota-lingas-package"
+        }
+      ]
+    }
+  },
+  {
+    "file": "trips/south-indian-package.html",
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "@id": "https://heavenlytoursandtravels.com/trips/south-indian-package#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://heavenlytoursandtravels.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Trips",
+          "item": "https://heavenlytoursandtravels.com/trips"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "South Indian Package",
+          "item": "https://heavenlytoursandtravels.com/trips/south-indian-package"
+        }
+      ]
+    }
+  },
+  {
+    "file": "trips/three-day-trip.html",
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "@id": "https://heavenlytoursandtravels.com/trips/three-day-trip#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://heavenlytoursandtravels.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Trips",
+          "item": "https://heavenlytoursandtravels.com/trips"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Three-day trip",
+          "item": "https://heavenlytoursandtravels.com/trips/three-day-trip"
+        }
+      ]
+    }
+  },
+  {
+    "file": "trips/two-day-trip.html",
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "@id": "https://heavenlytoursandtravels.com/trips/two-day-trip#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://heavenlytoursandtravels.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Trips",
+          "item": "https://heavenlytoursandtravels.com/trips"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Two-day trip",
+          "item": "https://heavenlytoursandtravels.com/trips/two-day-trip"
+        }
+      ]
+    }
+  },
+  {
+    "file": "trips/wholesome-pilgrim-package.html",
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "@id": "https://heavenlytoursandtravels.com/trips/wholesome-pilgrim-package#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://heavenlytoursandtravels.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Trips",
+          "item": "https://heavenlytoursandtravels.com/trips"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Wholesome Pilgrim Package",
+          "item": "https://heavenlytoursandtravels.com/trips/wholesome-pilgrim-package"
+        }
+      ]
+    }
+  }
+]

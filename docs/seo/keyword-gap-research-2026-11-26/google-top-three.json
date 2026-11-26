@@ -1,0 +1,192 @@
+{
+  "date": "2026-11-26",
+  "engine": "Google",
+  "parameters": {
+    "gl": "in",
+    "hl": "en",
+    "pws": 0
+  },
+  "observedCity": "Tirupati",
+  "scope": "First three non-ad organic web results; exclude AI overview citations, maps and sponsored placements; directories and official sites retained",
+  "personalizationLimit": "Signed-in browser with pws=0; positions vary by location, device and time",
+  "queries": [
+    {
+      "query": "Tirupati travels",
+      "results": [
+        {
+          "title": "Tirupati Travels Bus Booking Online",
+          "url": "https://www.redbus.in/travels/tirupati-travels"
+        },
+        {
+          "title": "TIRUPATI TOURS AND TRAVELS(tiav) | Book Bus Tickets ...",
+          "url": "http://www.tirupatibus.com/"
+        },
+        {
+          "title": "Package Tours",
+          "url": "https://www.tirumala.org/PackageTours.aspx"
+        }
+      ]
+    },
+    {
+      "query": "Tirupati temples",
+      "results": [
+        {
+          "title": "Religious Tourism",
+          "url": "https://tirupati.ap.gov.in/religious-tourism/"
+        },
+        {
+          "title": "THE 10 BEST Tirupati Sights & Landmarks (with Reviews)",
+          "url": "https://www.tripadvisor.in/Attractions-g297587-Activities-c47-Tirupati_Chittoor_District_Andhra_Pradesh.html"
+        },
+        {
+          "title": "List of Hindu temples in Tirupati",
+          "url": "https://en.wikipedia.org/wiki/List_of_Hindu_temples_in_Tirupati"
+        }
+      ]
+    },
+    {
+      "query": "Tirupati tour packages",
+      "results": [
+        {
+          "title": "Package Tours",
+          "url": "https://www.tirumala.org/PackageTours.aspx"
+        },
+        {
+          "title": "Tour Packages",
+          "url": "https://tourism.ap.gov.in/toursList"
+        },
+        {
+          "title": "Tirupathi – Mangapura TPTF (Sarva Darshana)",
+          "url": "https://kstdc.co/en/tour_packages/tirupathi-mangapura-tptf/"
+        }
+      ],
+      "title": "Tirupati tour packages - Google Search"
+    },
+    {
+      "query": "Tirupati car packages",
+      "results": [
+        {
+          "title": "Cab booking in Tirupati - Tour Packages",
+          "url": "https://taxiintirupati.com/tirupati-travel-package.html"
+        },
+        {
+          "title": "Tirupati Tour Package By Car",
+          "url": "https://www.tirupatitrip.com/tirupati-tour-package-by-car"
+        },
+        {
+          "title": "Book Car Rental in Tirupati with Driver",
+          "url": "https://www.makemytrip.com/car-rental/rental-cabs-in-tirupati.html"
+        }
+      ],
+      "title": "Tirupati car packages - Google Search"
+    },
+    {
+      "query": "Tirupati car travels",
+      "results": [
+        {
+          "title": "Book Car Rental in Tirupati with Driver",
+          "url": "https://www.makemytrip.com/car-rental/rental-cabs-in-tirupati.html"
+        },
+        {
+          "title": "Car Rentals and Travels in Tirupati | Tempo Traveller Services ...",
+          "url": "https://www.tirupatitrip.com/"
+        },
+        {
+          "title": "20+ Car Rental in Tirupati - 𝗕𝗼𝗼𝗸 𝗥𝗲𝗹𝗶𝗮𝗯𝗹𝗲 𝗩𝗲𝗵𝗶𝗰𝗹𝗲",
+          "url": "https://www.justdial.com/Tirupati/Car-Rental/nct-10076456"
+        }
+      ],
+      "title": "Tirupati car travels - Google Search"
+    },
+    {
+      "query": "Tirupati car rentals",
+      "results": [
+        {
+          "title": "Self Drive Car Rental in Tirupati | Hatchback, Sedan & SUV",
+          "url": "https://www.rentrip.in/rent-car/tirupati"
+        },
+        {
+          "title": "Book Car Rental in Tirupati with Driver",
+          "url": "https://www.makemytrip.com/car-rental/rental-cabs-in-tirupati.html"
+        },
+        {
+          "title": "Day Rent Taxi/Car Rentals in Tirupati",
+          "url": "https://taxiintirupati.com/tirupati-day-rent-car-rental.html"
+        }
+      ],
+      "title": "Tirupati car rentals - Google Search"
+    },
+    {
+      "query": "Tirumala cars package",
+      "results": [
+        {
+          "title": "Tirumala Tirupati Package Tour",
+          "url": "https://taxiintirupati.com/tirumala-package.html"
+        },
+        {
+          "title": "Tirumala Tours & Travels: Best Tirumala Darshan & Tirupati ...",
+          "url": "https://tirumalatoursandtravels.com/"
+        },
+        {
+          "title": "Tirupati Local Tour Packages by Car",
+          "url": "https://tirupatibalajitourstravels.com/tirupati-local-tour-packages-by-car/"
+        }
+      ],
+      "title": "Tirumala cars package - Google Search"
+    },
+    {
+      "query": "Tirumala family package",
+      "results": [
+        {
+          "title": "Package Tours",
+          "url": "https://www.tirumala.org/PackageTours.aspx"
+        },
+        {
+          "title": "1 Tirumala Family Tour Packages, Flat 20% Off",
+          "url": "https://www.trawell.in/tour-packages/tirumala-family-trip"
+        },
+        {
+          "title": "Package Tours",
+          "url": "https://www.tirumala.org/Package_Tours.aspx"
+        }
+      ],
+      "title": "Tirumala family package - Google Search"
+    },
+    {
+      "query": "Tirumala temple package",
+      "results": [
+        {
+          "title": "Package Tours",
+          "url": "https://www.tirumala.org/PackageTours.aspx"
+        },
+        {
+          "title": "Package Tours",
+          "url": "https://www.tirumala.org/Package_Tours.aspx"
+        },
+        {
+          "title": "Tirupati Tour Packages Starts 𝐚𝐭 ₹9228 𝘽𝙤𝙤𝙠 𝙉𝙤𝙬!",
+          "url": "https://www.makemytrip.com/holidays-india/tirupati-travel-packages.html"
+        }
+      ],
+      "title": "Tirumala temple package - Google Search"
+    },
+    {
+      "query": "South Indian package",
+      "results": [
+        {
+          "title": "South India Tour Packages Starts 𝐚𝐭 ₹4485 𝘽𝙤𝙤𝙠 𝙉𝙤𝙬!",
+          "url": "https://www.makemytrip.com/holidays-india/south_india-travel-packages.html"
+        },
+        {
+          "title": "South India Tour Packages Starting @ ₹ 7999",
+          "url": "https://www.easemytrip.com/holidays/south-india-tours-packages/"
+        },
+        {
+          "title": "South India Tour Packages",
+          "url": "https://www.irctctourism.com/beta/south-india-tour-packages"
+        }
+      ],
+      "title": "South Indian package - Google Search"
+    }
+  ]
+}

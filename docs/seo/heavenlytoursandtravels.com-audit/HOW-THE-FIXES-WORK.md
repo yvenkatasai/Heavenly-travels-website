@@ -1,0 +1,15 @@
+# How these fixes work — beginner guide
+
+You do not need to run these steps now; they explain the completed work so you can repeat a future edit.
+
+1. **Read the instructions first.** `AGENTS.md` identifies the active project and warns that `dist` is generated. I installed the requested SEO skill outside the website, in your Codex skills folder. A skill is a set of working instructions; it does not add code to the public site by itself.
+2. **Find the source of trip facts.** `src/booking/data.ts` contains the names, stops and day plans. I reused these records rather than typing five separate copies of the itinerary. Your approved short answers remain in `src/site/search-answers.json`.
+3. **Build content before JavaScript runs.** `scripts/build-agent-content.mjs` now creates the five day cards as ordinary HTML links. `src/site/page.html` contains a `DAY_CARDS` placeholder, and `scripts/build_site.mjs` fills it during the build. React still replaces that area with the interactive slider once it loads. This means a slow browser or crawler can already read the choices.
+4. **Give search engines accurate page information.** The generator includes five route-specific descriptions. The main build adds WebSite and BreadcrumbList JSON-LD—machine-readable information inside a non-executable script. Breadcrumbs describe Home → Trips → the chosen trip, matching the visible links. Adding schema does not guarantee a special search result.
+5. **Use real sources and direct links.** The generator adds official TTD references beside the guidance text. `src/site/app.js`, `mobile-nav.js`, `page.html` and the day-trip dialog in `src/booking/main.tsx` use `/vehicles` directly, preserving the selected trip in `?package=...`. The React navigation listener also recognizes the new links so it can retain travel preferences. This avoids an unnecessary redirect.
+6. **Improve small text without changing the theme.** `src/site/simple-closing.css` darkens specific small labels using the existing gold and green palette. The curtain script and timing are untouched.
+7. **Check before publishing.** `npm.cmd run typecheck` checks TypeScript; `npm.cmd run build` generates `dist`; `npm.cmd run verify:content` checks trip links, dates, metadata, schema and local assets. The WhatsApp and consent tests check message formatting and privacy without sending a message.
+8. **Test the actual journey.** I opened the five-day trip, checked all five days and selected it. The vehicle page showed the same trip. I then disabled JavaScript in a separate test tab, reloaded, and verified that all five HTML links still existed. Temporary browser settings were reset afterwards.
+9. **Deploy separately from Git.** Cloudflare serves the generated `dist` files. Publishing to Cloudflare does not push your repository. After publishing, `npm.cmd run verify:production` checks the live domain, redirects, sitemap pages, raw HTML and new schema.
+
+The report distinguishes things we can verify in code from things that require time or real business data, such as Google rankings, Maps verification and customer reviews. Those cannot be created by adding keywords or schema.

@@ -43,7 +43,7 @@ The active site lives in `src/site/`; do not create release-numbered copies of i
 - `npm run build` runs the Node.js build scripts, compiles the booking island, and assembles the static pages and assets.
 - Build output defaults to `dist/`. The build recreates that directory to prevent stale assets and rejects protected source, tooling, documentation, test, dependency and Git paths.
 - `npm run build:booking` compiles the booking island independently into `dist/assets/`.
-- `npm run verify:content` checks the built trip catalog, nineteen public content URLs, schema itineraries, booking IDs and local links without sending enquiries.
+- `npm run verify:content` checks the built trip catalog, twenty-four public content URLs, schema itineraries, website/breadcrumb entities, initial day-trip HTML, booking IDs and local links without sending enquiries.
 - `npm run verify:production` performs read-only checks against the configured production domain after deployment.
 - `npm run test:whatsapp` checks shared enquiry formatting, all thirteen routes, dates, optional fields and URL encoding without sending messages.
 - `npm run dev` builds and serves the site through Wrangler's local Worker runtime.
@@ -58,7 +58,7 @@ For code or build changes, run typecheck and build. For behavior changes, run th
 - Keep only non-sensitive trip-planning preferences in `sessionStorage`; never store credentials, payment details, or identity documents.
 - WhatsApp links may only open a prefilled draft for the visitor to review and send. Encode enquiry text in the URL; never send messages automatically.
 - Keep visitor-controlled text out of `innerHTML` and executable contexts. Prefer `textContent` and DOM APIs; validate/allowlist values used in URLs and encode query parameters.
-- External links opened in a new tab must use `rel="noopener noreferrer"`. Do not add remote scripts or runtime CDNs; keep approved runtime assets local.
+- External links opened in a new tab must use `rel="noopener noreferrer"`. Keep runtime assets local except the owner-approved Google Analytics tag, loaded only after opt-in consent. Never send form values, WhatsApp draft URLs or query strings to Analytics; keep enhanced measurement disabled.
 - Keep secrets out of source, generated assets, browser storage, and test evidence. Use local Wrangler authentication for deployment.
 - Tests must intercept WhatsApp links and must never send real messages or submit personal data to external services.
 
@@ -94,6 +94,7 @@ For code or build changes, run typecheck and build. For behavior changes, run th
 - **Hosting target:** Cloudflare Workers static assets
 
 ### Done
+- [x] Added five owner-approved short answers, four static travel guides, unique metadata checks and manually reviewed modification dates (2026-11-25). Source: search-answers.json, content-dates.json and build-agent-content.mjs. Added consent-gated Analytics with contact-method events and privacy tests; automatic outbound/form measurement is disabled in GA.
 - [x] Applied the approved desktop valley and mobile temple hero images with uncropped proportional fitting and responsive image preloads.
 - [x] Verified the hero update with TypeScript, the production build, and browser checks at 360/390/1440/1920px; correct image selection, full-image fitting and no horizontal overflow passed.
 - [x] Reorganized the repository around the active static-site architecture.
@@ -147,6 +148,8 @@ For code or build changes, run typecheck and build. For behavior changes, run th
 - In local Playwright checks, Escape dispatched a cancel event but did not close the credits dialog; a pointer click on its close button worked. Confirm expected keyboard dismissal in a real browser before changing dialog behavior.
 
 ### Changelog
+- 2026-11-26 - Compared the first three Google web results for ten owner-selected phrases. Added six factual planning sections through scripts/travel-planning-content.mjs, responsive definition-list comparisons and quote/rental checklists. Preserved existing page text and approved answers; unconfirmed fleet/fee terms remain questions for the owner. Research and beginner walkthrough: docs/seo/keyword-gap-research-2026-11-26/.
+- 2026-11-26 - Applied installed Claude SEO audit/technical/schema/GEO workflows: added initial HTML day-trip cards, factual day-route metadata, WebSite and matching BreadcrumbList schema, official TTD references, readable small labels, direct canonical vehicle links and synchronized discovery text. Extended regression/production checks; preserved curtain timing, approved answers and visitor-reviewed WhatsApp. Audit and beginner explanation: docs/seo/heavenlytoursandtravels.com-audit/.
 - 2026-11-23 - Both enquiry forms now use src/lib/whatsapp-message.ts for bold section headings, whitespace, readable dates and complete numbered plans. Removed the requested ticket disclaimer from enquiry drafts; included extras are supplied only for the complete seven-temple trip. The homepage app is bundled with esbuild to share the TypeScript formatter. Added nineteen message tests and docs/WHATSAPP-MESSAGES.md with a beginner editing walkthrough. No automatic sending or payments added.
 - 2026-11-23 - Applied the AAO kit's website requirements: factual About, thirteen static trip pages, trip index, booking/changes, questions and privacy pages; build-time homepage cards/FAQ; Service/TouristTrip schema; JSON/plain-text catalog; sitemap and content checks. Owner-approved business facts live in site.config.json, FAQs in faqs.json, trips in booking/data.ts. New pages use information.css and scripts/build-agent-content.mjs. Preserved no public prices, original curtain and manual WhatsApp confirmation; all people inputs now use 2–200. See docs/AAO-IMPLEMENTATION.md for honest audit and external learning/account tasks, and docs/WEBSITE-EDITING-GUIDE.md for beginner steps.
 - 2026-11-23 - Centralized public site metadata in src/site/site.config.json; added canonical/social tags, factual travel-agency JSON-LD, robots.txt and sitemap generation, noindex booking/backup URLs, and a branded HTTP 404 page. Added npm run verify:production for read-only domain, redirect, security, crawl and media checks. Cloudflare's WWW-to-apex redirect preserves path/query strings.
