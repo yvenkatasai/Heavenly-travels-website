@@ -136,6 +136,10 @@ await check('All sitemap URLs return 200 and approved answers are in raw HTML', 
     const schema = [
       ...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g),
     ].map((match) => JSON.parse(match[1]));
+    const business = schema.find((item) => item['@type'] === 'TravelAgency');
+    assert.deepEqual(business?.sameAs, [site.googleMapsUrl], url);
+    assert.deepEqual(business.openingHoursSpecification, site.openingHoursSpecification, url);
+    assert.ok(html.includes(site.openingHoursLabel), url);
     if (new URL(url).pathname === '/') {
       assert.ok(schema.some((item) => item['@type'] === 'WebSite'));
       assert.ok(html.includes('id="day-packages"'));

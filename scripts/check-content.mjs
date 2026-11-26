@@ -72,6 +72,13 @@ for (const file of documents) {
   const schemas = [
     ...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g),
   ].map((match) => JSON.parse(match[1]));
+  if (file !== 'vehicles.html') {
+    const business = schemas.find((schema) => schema['@type'] === 'TravelAgency');
+    assert.deepEqual(business?.sameAs, [site.googleMapsUrl], file);
+    assert.deepEqual(business.openingHoursSpecification, site.openingHoursSpecification, file);
+    assert.ok(html.includes(site.openingHoursLabel), `Hours must be visible: ${file}`);
+    assert.ok(!business.aggregateRating && !business.review, 'Do not invent business ratings');
+  }
   if (file === 'index.html') {
     const website = schemas.find((schema) => schema['@type'] === 'WebSite');
     assert.equal(website?.name, site.name);
@@ -134,6 +141,15 @@ for (const file of ['booking-information.html', 'tirumala-tour-packages.html']) 
   assert.ok(read(file).includes('https://www.tirumala.org/'), file);
 }
 assert.ok(read('llms.txt').includes('/tirupati-car-rentals'));
+assert.ok(read('about.html').includes(`href="${site.googleMapsUrl}"`));
+assert.ok(read('about.html').includes(`href="${site.googleReviewUrl}"`));
+for (const area of site.localServiceAreas) assert.ok(read('about.html').includes(area));
+for (const slug of ['three', 'four', 'five']) {
+  const html = read(`trips/${slug}-day-trip.html`);
+  assert.equal((html.match(/id="stay-plan"/g) || []).length, 1);
+  if (slug !== 'three') assert.ok(html.includes('Day 2: Night stay at Tiruvannamalai.'));
+  else assert.ok(!html.includes('Day 2: Night stay at Tiruvannamalai.'));
+}
 for (const [file, section] of [
   ['tirupati-tour-packages.html', 'compare-trips'],
   ['tirumala-tour-packages.html', 'family-checklist'],
