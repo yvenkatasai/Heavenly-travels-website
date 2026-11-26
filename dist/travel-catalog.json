@@ -39,7 +39,8 @@
     "Hotel stays",
     "Airport / station pickup",
     "Local visits / travel to other cities",
-    "Trip with your own temple stops"
+    "Trip with your own temple stops",
+    "Driver-operated and self-drive car rentals"
   ],
   "vehicles": [
     {
@@ -421,6 +422,28 @@
     {
       "question": "Are vehicles and hotel rooms confirmed when I choose them?",
       "answer": "No. Your selections are preferences for an enquiry. The owner confirms the vehicle, accommodation, availability and booking details directly on WhatsApp."
+    }
+  ],
+  "travelGuides": [
+    {
+      "title": "Tirupati Tour Packages & Temple Trips | Heavenly Tours & Travels",
+      "description": "Compare Tirupati temple tour packages, family trips and one-to-five-day plans. Choose your route and vehicle, then request an owner-confirmed quotation.",
+      "url": "https://heavenlytoursandtravels.com/tirupati-tour-packages"
+    },
+    {
+      "title": "Tirumala Tour & Family Packages | Heavenly Tours & Travels",
+      "description": "Plan a Tirumala temple trip or family package from Tirupati. Compare temple stops, transport and hotel preferences, with ticket guidance and WhatsApp quotations.",
+      "url": "https://heavenlytoursandtravels.com/tirumala-tour-packages"
+    },
+    {
+      "title": "Tirupati Car Rentals & Car Travels | Heavenly Tours & Travels",
+      "description": "Tirupati car rentals with a driver and self-drive options. Compare cars and group vehicles for temple trips, airport pickup and travel from Tirupati / Renigunta.",
+      "url": "https://heavenlytoursandtravels.com/tirupati-car-rentals"
+    },
+    {
+      "title": "Tirupati Temples & Seven-Temple Tour Guide | Heavenly Tours & Travels",
+      "description": "Read the temples covered by Heavenly trips around Tirupati and Tirumala, and compare the complete seven-temple route with individual and day-wise plans.",
+      "url": "https://heavenlytoursandtravels.com/tirupati-temples"
     }
   ]
 }
