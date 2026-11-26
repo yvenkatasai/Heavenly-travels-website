@@ -376,7 +376,7 @@
   order: 1;
 }
 .package-reveal-ready {
-  opacity: 0.4;
+  opacity: 1;
   transform: translateY(38px);
   transition:
     opacity 0.9s ease,
@@ -387,7 +387,7 @@
   clip-path: inset(0 0 100% 0);
 }
 .package-reveal-ready .package-includes li {
-  opacity: 0.4;
+  opacity: 1;
   transform: translateY(12px);
 }
 .package-reveal-ready.package-revealed {

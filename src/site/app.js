@@ -5,7 +5,7 @@ import { formatWhatsAppEnquiry, whatsAppEnquiryUrl } from '../lib/whatsapp-messa
   const $ = (s) => document.querySelector(s);
   $('#header-vehicles').onclick = () => {
     setTab(1);
-    location.assign('vehicles.html');
+    location.assign('/vehicles');
   };
   const state = { tour: '', vehicle: '', stops: [], date: '', flexible: false };
   let saved = {};
@@ -57,7 +57,7 @@ import { formatWhatsAppEnquiry, whatsAppEnquiryUrl } from '../lib/whatsapp-messa
       event.preventDefault();
       chooseTour(String(i));
       setTab(0);
-      location.assign('vehicles.html?package=tour-' + (i + 1));
+      location.assign('/vehicles?package=tour-' + (i + 1));
     };
   });
   const customCard = document.createElement('article');

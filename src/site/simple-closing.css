@@ -464,6 +464,27 @@
   color: inherit;
   text-underline-offset: 4px;
 }
+.content-updated {
+  margin: 0;
+  padding: 16px 24px;
+  text-align: center;
+  color: #526353;
+  background: #f5f3ec;
+  font-size: 12px;
+}
+
+/* Keep small heritage labels readable against the cream section backgrounds. */
+.package-card .package-number span,
+.package-card .package-type,
+.day-packages .chapter-number,
+.day-packages .flow-eyebrow,
+.day-packages .fleet-arrows span {
+  color: #665335;
+}
+.day-packages .chapter-note,
+.travel-help-reach {
+  color: #465643;
+}
 @media (max-width: 767px) {
   .site-resources {
     padding-bottom: 124px;

@@ -310,7 +310,7 @@ function DayRail() {
             <a
               className="flow-button"
               data-day-select={details.id}
-              href={'vehicles.html?package=' + details.id}
+              href={'/vehicles?package=' + details.id}
             >
               Select trip &amp; choose vehicle
             </a>
@@ -435,7 +435,7 @@ function App() {
   useEffect(() => {
     const saveBeforeNavigation = (e: MouseEvent) => {
       const a = (e.target as Element).closest<HTMLElement>(
-        'a[href*="vehicles.html"],[data-tour-pick],#header-vehicles,#quick-vehicles',
+        'a[href^="/vehicles"],a[href*="vehicles.html"],[data-tour-pick],#header-vehicles,#quick-vehicles',
       );
       if (!a) return;
       const snapshot = window.HeavenlyTrip?.get();

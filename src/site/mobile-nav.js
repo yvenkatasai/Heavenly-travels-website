@@ -35,7 +35,7 @@
   document.getElementById('quick-vehicles').onclick = () => {
     if (vehiclePage) {
       document.getElementById('vehicle-selection')?.scrollIntoView({ behavior: 'instant' });
-    } else location.assign('vehicles.html');
+    } else location.assign('/vehicles');
   };
   let selected,
     frame = 0;
