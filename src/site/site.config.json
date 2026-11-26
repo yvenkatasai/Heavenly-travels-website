@@ -7,6 +7,27 @@
   "telephone": "+919700181493",
   "email": "heavenlytoursandtravels1@gmail.com",
   "ownerName": "Hemanth Kumar",
+  "googleMapsUrl": "https://www.google.com/maps/place/Heavenly+tours+and+travels/data=!4m2!3m1!1s0x0:0xc808a373704f10af",
+  "googleReviewUrl": "https://g.page/r/Ca8QT3BzowjIEAI/review",
+  "openingHoursLabel": "Open 24 hours, every day",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "00:00",
+      "closes": "23:59"
+    }
+  ],
+  "localServiceAreas": [
+    "Tirupati",
+    "Renigunta",
+    "Srikalahasti",
+    "Gudur",
+    "Nellore",
+    "Nayudupeta",
+    "Venkatagiri",
+    "Chennai"
+  ],
   "baseLocation": "Tirupati / Renigunta, Andhra Pradesh, India",
   "image": "/assets/tirumala-hero-desktop-fast.webp",
   "imageAlt": "Cinematic view of temple towers, green hills and a winding ghat road",

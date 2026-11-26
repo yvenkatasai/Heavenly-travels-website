@@ -131,6 +131,7 @@ page = page.replace('/*__TOURS__*/', tours).replace('{{CREDITS}}', credits);
 page = page
   .replace('<!--__HOME_CARDS__-->', agentContent.homeCards)
   .replace('<!--__DAY_CARDS__-->', agentContent.dayCards)
+  .replace('<!--__BUSINESS_HOURS__-->', escapeAttribute(site.openingHoursLabel))
   .replace('<!--__FAQ_HTML__-->', agentContent.faqHtml);
 
 function escapeAttribute(value) {
@@ -185,6 +186,8 @@ function addMetadata(html, pathname, title, description, index) {
       },
       image: siteOrigin + site.image,
       areaServed: site.areaServed,
+      sameAs: [site.googleMapsUrl],
+      openingHoursSpecification: site.openingHoursSpecification,
     };
     // JSON-LD is non-executable data; escape markup before inserting it into HTML.
     tags.push(

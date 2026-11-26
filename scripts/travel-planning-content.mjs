@@ -55,3 +55,22 @@ export const travelPlanningContent = {
     <p><a href="/tirupati-car-rentals#rental-checklist">Booking a self-drive car? Check the rental questions too.</a></p>
   </section>`,
 };
+
+export function tripStayDetails(trip) {
+  if (!['days-3', 'days-4', 'days-5'].includes(trip.id)) return '';
+  const overnight = trip.days.flatMap((day) =>
+    day.places
+      .filter((place) => place.startsWith('Night stay at '))
+      .map((place) => `${day.title}: ${place}.`),
+  );
+  const finalVisit =
+    trip.id === 'days-5'
+      ? 'The final day covers three Kanchipuram temples and Thiruthani. Confirm your final drop and onward travel time before booking a return train or flight.'
+      : 'Share your return train or flight details so the owner can confirm the last temple visit and final drop.';
+  return `<section class="info-panel" id="stay-plan"><h2>Night stays and travel details</h2>
+    ${overnight.length ? `<p>${overnight.join(' ')}</p>` : '<p>This route lists the visits for each day. Ask the owner to confirm the hotel town for each overnight stop.</p>'}
+    <p>Confirm the other night stops, hotel names, room types, meals and charges in your written quote. Choosing Deluxe (Budget), Exclusive or Premium is a preference, not a confirmed room.</p>
+    <p>${finalVisit}</p>
+    <p>On the first day, plan transport around your booked Tirumala darshan reporting time. Share your arrival time, pickup place, luggage and any rest needs before the route is confirmed.</p>
+    <p>Hotel availability, temple access and travel conditions can change the visit order. The owner confirms the plan for your dates.</p>${quoteLink}</section>`;
+}

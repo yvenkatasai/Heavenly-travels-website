@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
 import { transform } from 'esbuild';
-import { travelPlanningContent } from './travel-planning-content.mjs';
+import { travelPlanningContent, tripStayDetails } from './travel-planning-content.mjs';
 
 const esc = (value) =>
   String(value)
@@ -117,8 +117,9 @@ export async function prepareAgentContent(source, site) {
     faq: faq.map(([question, answer]) => ({ question, answer })),
   };
   const footer = `<footer class="info-footer"><nav aria-label="More information"><a href="/about">About us</a><a href="/trips">All trips</a><a href="/booking-information">Booking information</a><a href="/questions">Common questions</a><a href="/privacy">Privacy</a><a href="/terms">Website terms</a><a href="mailto:${esc(site.email)}">${esc(site.email)}</a><button type="button" data-cookie-settings>Cookie choices</button></nav><p>${esc(site.name)} · ${esc(site.baseLocation)} · <a href="tel:${site.telephone}">+91 97001 81493</a></p></footer>`;
+  const hoursFooter = footer.replace('</footer>', `<p>${esc(site.openingHoursLabel)}</p></footer>`);
   const wrap = (title, description, content, schema = '') =>
-    `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#183c31"><title>${esc(title)}</title><meta name="description" content="${esc(description)}"><link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><!--__SEO__--><style>${styles}</style>${schema}</head><body><header class="info-header"><a class="info-brand" href="/">Heavenly<small>TOURS &amp; TRAVELS</small></a><nav aria-label="Main navigation"><a href="/trips">Our trips</a><a href="/about">About us</a><a href="${whatsapp}" target="_blank" rel="noopener noreferrer">Plan on WhatsApp</a></nav></header><main><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a> / ${trips.some((trip) => trip.name === title) ? '<a href="/trips">Trips</a> / ' : ''}<span aria-current="page">${esc(title)}</span></nav>${content}</main>${footer}</body></html>`;
+    `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#183c31"><title>${esc(title)}</title><meta name="description" content="${esc(description)}"><link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><!--__SEO__--><style>${styles}</style>${schema}</head><body><header class="info-header"><a class="info-brand" href="/">Heavenly<small>TOURS &amp; TRAVELS</small></a><nav aria-label="Main navigation"><a href="/trips">Our trips</a><a href="/about">About us</a><a href="${whatsapp}" target="_blank" rel="noopener noreferrer">Plan on WhatsApp</a></nav></header><main><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a> / ${trips.some((trip) => trip.name === title) ? '<a href="/trips">Trips</a> / ' : ''}<span aria-current="page">${esc(title)}</span></nav>${content}</main>${hoursFooter}</body></html>`;
   const intro = (label, title, description) =>
     `<p class="overline">${esc(label)}</p><h1>${esc(title)}</h1><p class="lead">${esc(description)}</p>`;
   const contact = `<div class="info-buttons"><a class="info-button" href="${whatsapp}" target="_blank" rel="noopener noreferrer">Talk to the owner</a><a class="info-button secondary" href="tel:${site.telephone}">Call +91 97001 81493</a></div>`;
@@ -218,6 +219,15 @@ export async function prepareAgentContent(source, site) {
       }),
     ),
   });
+  const about = pages.find((page) => page.path === '/about');
+  about.html = about.html.replace(
+    '</main>',
+    `<section class="info-panel" id="google-business"><h2>Find us on Google</h2><p>View our business listing on Google Maps. If you have travelled with us, you can share your honest experience to help other travellers.</p><div class="info-buttons"><a class="info-button" href="${esc(site.googleMapsUrl)}" target="_blank" rel="noopener noreferrer">View our Google listing</a><a class="info-button secondary" href="${esc(site.googleReviewUrl)}" target="_blank" rel="noopener noreferrer">Share your experience on Google</a></div></section></main>`,
+  );
+  about.html = about.html.replace(
+    '</main>',
+    `<section class="info-panel" id="service-area"><h2>Hours and service areas</h2><p>${esc(site.openingHoursLabel)}. Our team is based in ${esc(site.baseLocation)}.</p><p>Local service areas include ${esc(site.localServiceAreas.join(', '))}. We also arrange the listed temple routes across South India and India.</p><p>Share your pickup and final drop locations before booking. The owner confirms transport, rooms and availability for your dates.</p></section></main>`,
+  );
   const tripCards = trips
     .map(
       (trip) =>
@@ -311,6 +321,13 @@ export async function prepareAgentContent(source, site) {
     const page = pages.find((page) => page.path === pathname);
     page.html = page.html.replace('</main>', `${travelPlanningContent[pathname]}</main>`);
   }
+  for (const trip of trips) {
+    const details = tripStayDetails(trip);
+    if (details) {
+      const page = pages.find((page) => page.path === trip.path);
+      page.html = page.html.replace('</main>', `${details}</main>`);
+    }
+  }
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -393,6 +410,6 @@ export async function prepareAgentContent(source, site) {
     llms: llms + guideSources,
     fullText: fullText + guideSources + approvedAnswers,
     trips,
-    footer,
+    footer: hoursFooter,
   };
 }
