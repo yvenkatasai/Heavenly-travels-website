@@ -1,0 +1,3 @@
+# Public Cloudflare Web Analytics beacon identifier in historical third-party reference HTML.
+# It is a public site identifier, not an API authentication credential. Keep this exception exact.
+afb89e22f5968110765338fb8ae415cb39c319b4:design-reference/incredibles-rea/original-ssr.html:generic-api-key:1
