@@ -193,6 +193,25 @@ h3 {
 .info-list li {
   margin: 9px 0;
 }
+.info-comparison {
+  margin: 0;
+}
+.info-comparison > div {
+  display: grid;
+  grid-template-columns: minmax(140px, 0.65fr) minmax(0, 2fr);
+  gap: 12px 28px;
+  padding: 18px 0;
+  border-bottom: 1px solid #d6c9af;
+}
+.info-comparison dt {
+  font-weight: 600;
+}
+.info-comparison dd {
+  margin: 0;
+}
+section[id] {
+  scroll-margin-top: 24px;
+}
 .info-faq details {
   padding: 20px 0;
   border-bottom: 1px solid #d6c9af;
@@ -208,6 +227,28 @@ h3 {
   max-width: 1140px;
   margin: auto;
 }
+.info-topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  border-top: 1px solid #c9b793;
+  padding-top: 24px;
+  margin-top: 40px;
+  font-size: 14px;
+}
+.info-topics a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+.direct-answer {
+  max-width: 850px;
+}
+.content-updated {
+  margin: 32px 0 0;
+  color: #526353;
+  font-size: 13px;
+}
 .info-footer nav {
   display: flex;
   flex-wrap: wrap;
@@ -218,6 +259,10 @@ h3 {
   font-size: 13px;
 }
 @media (max-width: 760px) {
+  .info-comparison > div {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 6px;
+  }
   .info-header {
     align-items: flex-start;
     flex-direction: column;

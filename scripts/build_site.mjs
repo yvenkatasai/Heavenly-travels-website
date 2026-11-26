@@ -9,6 +9,7 @@ import { prepareAgentContent } from './build-agent-content.mjs';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const source = path.join(root, 'src', 'site');
 const site = JSON.parse(fs.readFileSync(path.join(source, 'site.config.json'), 'utf8'));
+const contentDates = JSON.parse(fs.readFileSync(path.join(source, 'content-dates.json'), 'utf8'));
 const siteOrigin = new URL(site.url).origin;
 if (site.url !== siteOrigin || !site.url.startsWith('https://')) {
   throw new Error('site.config.json must use an HTTPS origin without a trailing slash.');
@@ -129,6 +130,7 @@ const credits = fs.readFileSync(path.join(source, 'credits.html'), 'utf8');
 page = page.replace('/*__TOURS__*/', tours).replace('{{CREDITS}}', credits);
 page = page
   .replace('<!--__HOME_CARDS__-->', agentContent.homeCards)
+  .replace('<!--__DAY_CARDS__-->', agentContent.dayCards)
   .replace('<!--__FAQ_HTML__-->', agentContent.faqHtml);
 
 function escapeAttribute(value) {
@@ -156,6 +158,13 @@ function addMetadata(html, pathname, title, description, index) {
     meta('twitter:image', siteOrigin + site.image),
     meta('twitter:image:alt', site.imageAlt),
   ];
+  if (site.analyticsMeasurementId) {
+    if (!/^G-[A-Z0-9]+$/.test(site.analyticsMeasurementId))
+      throw new Error('Invalid Analytics measurement ID');
+    tags.push(`<meta name="ga-measurement-id" content="${site.analyticsMeasurementId}" />`);
+    tags.push(`<style>${fs.readFileSync(path.join(source, 'analytics.css'), 'utf8')}</style>`);
+    tags.push(`<script>${fs.readFileSync(path.join(source, 'analytics.js'), 'utf8')}</script>`);
+  }
   if (index) {
     const business = {
       '@context': 'https://schema.org',
@@ -181,10 +190,66 @@ function addMetadata(html, pathname, title, description, index) {
     tags.push(
       `<script type="application/ld+json">${JSON.stringify(business).replaceAll('<', '\\u003c')}</script>`,
     );
+    if (pathname === '/') {
+      tags.push(
+        `<script type="application/ld+json">${JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'WebSite',
+          '@id': `${siteOrigin}/#website`,
+          url: `${siteOrigin}/`,
+          name: site.name,
+          publisher: { '@id': `${siteOrigin}/#business` },
+          inLanguage: 'en-IN',
+        }).replaceAll('<', '\\u003c')}</script>`,
+      );
+    } else {
+      const current = html.match(/<span aria-current="page">([^<]+)<\/span>/)?.[1];
+      if (current) {
+        const name = current
+          .replaceAll('&amp;', '&')
+          .replaceAll('&quot;', '"')
+          .replaceAll('&lt;', '<')
+          .replaceAll('&gt;', '>');
+        const trail = [{ name: 'Home', item: `${siteOrigin}/` }];
+        if (pathname.startsWith('/trips/'))
+          trail.push({ name: 'Trips', item: `${siteOrigin}/trips` });
+        trail.push({ name, item: url });
+        tags.push(
+          `<script type="application/ld+json">${JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            '@id': `${url}#breadcrumb`,
+            itemListElement: trail.map((item, i) => ({
+              '@type': 'ListItem',
+              position: i + 1,
+              ...item,
+            })),
+          }).replaceAll('<', '\\u003c')}</script>`,
+        );
+      }
+    }
+    const modified = contentDates[pathname];
+    if (modified) {
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(modified))
+        throw new Error(`Invalid reviewed content date for ${pathname}`);
+      const visibleDate = new Intl.DateTimeFormat('en-IN', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric',
+        timeZone: 'UTC',
+      }).format(new Date(`${modified}T12:00:00Z`));
+      html = html.replace(
+        '</main>',
+        `<p class="content-updated">Last updated: <time datetime="${modified}">${visibleDate}</time></p></main>`,
+      );
+      tags.push(
+        `<script type="application/ld+json">${JSON.stringify({ '@context': 'https://schema.org', '@type': 'WebPage', '@id': `${url}#webpage`, url, name: title, description, dateModified: modified, publisher: { '@id': `${siteOrigin}/#business` } }).replaceAll('<', '\\u003c')}</script>`,
+      );
+    }
   }
   return html
     .replace(/<title>[\s\S]*?<\/title>/, `<title>${escapeAttribute(title)}</title>`)
-    .replace(/<meta\s+name="description"[\s\S]*?\/>/, meta('description', description))
+    .replace(/<meta\s+name="description"[^>]*>/, meta('description', description))
     .replace('<!--__SEO__-->', tags.join('\n'));
 }
 page = addMetadata(page, '/', site.title, site.description, true);
@@ -278,7 +343,7 @@ fs.writeFileSync(
 );
 fs.writeFileSync(
   path.join(output, 'sitemap.xml'),
-  `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${['/', ...agentContent.pages.map((page) => page.path)].map((pathname) => `  <url><loc>${siteOrigin}${pathname}</loc></url>`).join('\n')}\n</urlset>\n`,
+  `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${['/', ...agentContent.pages.map((page) => page.path)].map((pathname) => `  <url><loc>${siteOrigin}${pathname}</loc>${contentDates[pathname] ? `<lastmod>${contentDates[pathname]}</lastmod>` : ''}</url>`).join('\n')}\n</urlset>\n`,
 );
 fs.cpSync(path.join(source, 'assets'), path.join(output, 'assets'), { recursive: true });
 fs.copyFileSync(path.join(source, '_headers'), path.join(output, '_headers'));

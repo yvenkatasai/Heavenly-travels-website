@@ -3,6 +3,9 @@ import fs from 'node:fs';
 
 const site = JSON.parse(fs.readFileSync(new URL('../src/site/site.config.json', import.meta.url)));
 const origin = site.url;
+const reviewedDates = JSON.parse(
+  fs.readFileSync(new URL('../src/site/content-dates.json', import.meta.url)),
+);
 let failures = 0;
 async function check(label, operation) {
   try {
@@ -109,6 +112,48 @@ await check('Booking rules, readable FAQs and agent information are available', 
     const response = await request(origin + path);
     assert.equal(response.status, 200, path);
     assert.ok((await response.text()).includes(site.ownerName), path);
+  }
+});
+await check('All sitemap URLs return 200 and approved answers are in raw HTML', async () => {
+  const sitemap = await (await request(`${origin}/sitemap.xml`)).text();
+  const urls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]);
+  assert.equal(urls.length, 24);
+  const answers = JSON.parse(
+    fs.readFileSync(new URL('../src/site/search-answers.json', import.meta.url)),
+  );
+  const paths = [
+    '/tirupati-tour-packages',
+    '/tirumala-tour-packages',
+    '/trips/complete-7-temple-trip',
+    '/tirupati-temples',
+    '/tirupati-car-rentals',
+  ];
+  for (const url of urls) {
+    const response = await request(url);
+    assert.equal(response.status, 200, url);
+    const html = await response.text();
+    const index = paths.indexOf(new URL(url).pathname);
+    const schema = [
+      ...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g),
+    ].map((match) => JSON.parse(match[1]));
+    if (new URL(url).pathname === '/') {
+      assert.ok(schema.some((item) => item['@type'] === 'WebSite'));
+      assert.ok(html.includes('id="day-packages"'));
+      for (const days of ['one', 'two', 'three', 'four', 'five'])
+        assert.ok(html.includes(`href="/trips/${days}-day-trip"`));
+    } else {
+      const breadcrumb = schema.find((item) => item['@type'] === 'BreadcrumbList');
+      assert.equal(breadcrumb?.itemListElement.at(-1).item, url);
+    }
+    if (index !== -1) {
+      const expected = answers[index].answer
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;');
+      assert.ok(html.includes(expected), `Missing approved answer: ${url}`);
+      assert.ok(html.includes(`<time datetime="${reviewedDates[new URL(url).pathname]}">`), url);
+    }
   }
 });
 process.exitCode = failures ? 1 : 0;
