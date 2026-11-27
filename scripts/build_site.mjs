@@ -348,7 +348,12 @@ fs.writeFileSync(
   path.join(output, 'sitemap.xml'),
   `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${['/', ...agentContent.pages.map((page) => page.path)].map((pathname) => `  <url><loc>${siteOrigin}${pathname}</loc>${contentDates[pathname] ? `<lastmod>${contentDates[pathname]}</lastmod>` : ''}</url>`).join('\n')}\n</urlset>\n`,
 );
-fs.cpSync(path.join(source, 'assets'), path.join(output, 'assets'), { recursive: true });
+const assets = path.join(source, 'assets');
+const vehiclePhotoSources = path.join(assets, 'vehicles', 'originals');
+fs.cpSync(assets, path.join(output, 'assets'), {
+  recursive: true,
+  filter: (entry) => !isWithin(vehiclePhotoSources, entry),
+});
 fs.copyFileSync(path.join(source, '_headers'), path.join(output, '_headers'));
 console.log(
   `Heavenly ${version} built: ${output} (${new Intl.NumberFormat('en-US').format(Buffer.byteLength(page))} HTML bytes)`,

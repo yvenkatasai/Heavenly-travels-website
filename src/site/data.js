@@ -46,24 +46,53 @@ const ROUTES = [
 ];
 const VEHICLES = [
   {
-    name: 'Sedan',
-    tag: 'A smaller party',
-    description: 'Private travel for individuals, couples and small families.',
-  },
-  {
-    name: 'SUV',
-    tag: 'Extra room',
+    id: 'maruti-s-cross',
+    name: 'Maruti S-Cross',
+    tag: 'More room',
     description: 'A roomy option for families and additional luggage.',
+    image: '/assets/vehicles/maruti-s-cross.webp',
   },
   {
+    id: 'innova-crysta',
+    name: 'Innova Crysta',
+    tag: 'More room',
+    description: 'A roomy option for families and additional luggage.',
+    image: '/assets/vehicles/innova.webp',
+  },
+  {
+    id: 'innova',
+    name: 'Innova',
+    tag: 'More room',
+    description: 'A roomy option for families and additional luggage.',
+    image: '/assets/vehicles/innova.webp',
+  },
+  {
+    id: 'ertiga',
+    name: 'Ertiga',
+    tag: 'More room',
+    description: 'A roomy option for families and additional luggage.',
+    image: '/assets/vehicles/ertiga.webp',
+  },
+  {
+    id: 'tempo-traveller',
     name: 'Tempo Traveller',
-    tag: 'Stay together',
+    tag: 'Travel together',
     description: 'For families and groups who want to travel together.',
+    image: '/assets/vehicles/tempo-traveller.webp',
   },
   {
-    name: 'Mini bus / Bus',
-    tag: 'A larger group',
-    description: 'An option for larger families and temple tour groups.',
+    id: 'toyota-etios',
+    name: 'Toyota Etios',
+    tag: 'Small groups',
+    description: 'A comfortable car for a small group.',
+    image: '/assets/vehicles/toyota-etios.webp',
+  },
+  {
+    id: 'swift-dzire',
+    name: 'Swift Dzire',
+    tag: 'Small groups',
+    description: 'A comfortable car for a small group.',
+    image: '/assets/vehicles/swift-dzire.webp',
   },
 ];
 const TOUR_IMAGES = [

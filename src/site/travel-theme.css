@@ -159,9 +159,6 @@ body {
 .promise-eyebrow {
   color: #e5c996;
 }
-.vehicle-art {
-  filter: saturate(0.8);
-}
 .vehicle-price {
   color: var(--forest);
 }
