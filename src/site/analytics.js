@@ -68,10 +68,10 @@
   }
   const banner = document.createElement('section');
   banner.className = 'analytics-consent';
-  banner.setAttribute('aria-label', 'Optional website analytics');
+  banner.setAttribute('aria-label', 'Cookie choices');
   const text = document.createElement('p');
   text.textContent =
-    'May we use optional analytics to count visits, WhatsApp clicks and calls? Your trip details are not sent to Analytics.';
+    'Allow optional cookies to help us understand how people use our website? We use Google Analytics to count visits, WhatsApp clicks and calls. Your trip details are not shared.';
   const actions = document.createElement('div');
   const privacy = document.createElement('a');
   privacy.href = '/privacy';
@@ -90,8 +90,8 @@
     }
   }
   for (const [label, choice] of [
-    ['Allow analytics', 'accepted'],
-    ['Keep analytics off', 'declined'],
+    ['Allow cookies', 'accepted'],
+    ['Reject optional cookies', 'declined'],
   ]) {
     const button = document.createElement('button');
     button.type = 'button';
