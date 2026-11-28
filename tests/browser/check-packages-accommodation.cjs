@@ -16,6 +16,15 @@ const names = [
   'Pancha Bhoota Lingas Package',
 ];
 const accommodation = ['Deluxe (Budget)', 'Exclusive', 'Premium'];
+const vehicleModels = [
+  ['maruti-s-cross', 'Maruti S-Cross'],
+  ['innova-crysta', 'Innova Crysta'],
+  ['innova', 'Innova'],
+  ['ertiga', 'Ertiga'],
+  ['tempo-traveller', 'Tempo Traveller'],
+  ['toyota-etios', 'Toyota Etios'],
+  ['swift-dzire', 'Swift Dzire'],
+];
 const report = [];
 const mime = {
   '.html': 'text/html',
@@ -64,6 +73,11 @@ const server = http.createServer((req, res) => {
       });
       await context.route('**/wa.me/**', (route) => route.abort());
       const page = await context.newPage();
+      await page.goto(base);
+      assert.deepEqual(
+        await page.locator('#vehicle-grid .vehicle-option h3').allTextContents(),
+        vehicleModels.map(([, name]) => name),
+      );
       const dragToWhatsApp = async () => {
         const handle = page.locator('.slide-commit-handle');
         await handle.scrollIntoViewIfNeeded();
@@ -118,7 +132,16 @@ const server = http.createServer((req, res) => {
         await page.waitForURL(`**/vehicles.html?package=tour-${index + 1}`);
         await page.waitForSelector('.selected-journey h1');
         assert.equal(await page.locator('.selected-journey h1').textContent(), names[index]);
-        await page.locator('[data-vehicle="sedan"]').click();
+        assert.deepEqual(
+          await page.locator('.floating-vehicle-tile').evaluateAll((cards) =>
+            cards.map((card) => [
+              card.getAttribute('data-vehicle'),
+              card.querySelector('h3')?.textContent?.trim(),
+            ]),
+          ),
+          vehicleModels,
+        );
+        await page.locator('[data-vehicle="swift-dzire"]').click();
         await page.waitForSelector('#booking-review[open]');
         const select = page.locator('#booking-accommodation');
         assert.equal(await select.getAttribute('required'), '');
@@ -150,7 +173,7 @@ const server = http.createServer((req, res) => {
           new URL(window.testDrafts.at(-1)).searchParams.get('text'),
         );
         assert(message.includes(`Selected trip: ${names[index]}`));
-        assert(message.includes('Selected vehicle: Sedan'));
+        assert(message.includes('Selected vehicle: Swift Dzire'));
         assert(message.includes(`Accommodation: ${choice}`));
         if (index === 4)
           for (const stop of ['Kanyakumari', 'Chidambaram', 'Thanjavur', 'Trivandrum'])

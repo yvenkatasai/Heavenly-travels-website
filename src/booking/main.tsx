@@ -323,62 +323,15 @@ function DayRail() {
     </section>
   );
 }
-function VehicleArt({ kind }: { kind: string }) {
-  const isBus = kind === 'bus' || kind === 'minibus',
-    van = kind === 'van',
-    suv = kind === 'suv';
+function VehiclePhotos({ photos }: { photos: readonly { src: string; label: string }[] }) {
   return (
-    <svg viewBox="0 0 360 180" role="img" aria-label="Representative vehicle illustration">
-      <ellipse cx="180" cy="150" rx="143" ry="10" fill="#153c3012" />
-      <path
-        d={
-          isBus
-            ? 'M35 131V53Q35 34 56 34H291Q311 34 315 54L328 105V135H35Z'
-            : van
-              ? 'M38 131V68Q38 49 61 45L235 43Q258 44 270 69L295 100Q316 105 319 121V136H38Z'
-              : suv
-                ? 'M34 131L43 97 95 82 119 48H237L272 83 316 102 326 135H34Z'
-                : 'M29 130L36 110 90 91 126 61H224L265 94 310 104 329 136H29Z'
-        }
-        fill="#d8c7a1"
-        stroke="#234b3c"
-        strokeWidth="2"
-      />
-      {isBus ? (
-        <>
-          <path d="M51 49H289L302 85H51Z" fill="#ecf2e9" stroke="#234b3c" strokeWidth="1.5" />
-          {[88, 126, 164, 202, 240, 278].map((x) => (
-            <path key={x} d={`M${x} 49V85`} stroke="#234b3c" />
-          ))}
-        </>
-      ) : (
-        <>
-          <path
-            d={
-              van
-                ? 'M60 59H233L251 88H55Z'
-                : suv
-                  ? 'M127 60H229L254 88H105Z'
-                  : 'M133 71H219L244 96H105Z'
-            }
-            fill="#ecf2e9"
-            stroke="#234b3c"
-            strokeWidth="1.5"
-          />
-          <path d="M175 60V96" stroke="#234b3c" strokeWidth="1.5" />
-        </>
-      )}
-      <path d="M43 112H311M182 101V129" stroke="#234b3c" strokeWidth="1.2" />
-      <rect x="278" y="111" width="25" height="7" rx="2" fill="#faf4d7" />
-      <path d="M46 120H62" stroke="#f7faf0" strokeWidth="4" />
-      {[88, 275].map((x) => (
-        <g key={x}>
-          <circle cx={x} cy="135" r="24" fill="#1a362c" />
-          <circle cx={x} cy="135" r="12" fill="#c4ccbf" />
-          <circle cx={x} cy="135" r="5" fill="#456253" />
-        </g>
+    <div className="vehicle-photo-gallery" aria-label="Representative vehicle photographs">
+      {photos.map((photo) => (
+        <figure key={photo.src}>
+          <img src={photo.src} alt="" width="680" height="380" loading="lazy" decoding="async" />
+        </figure>
       ))}
-    </svg>
+    </div>
   );
 }
 
@@ -629,7 +582,7 @@ function App() {
             ref={rail}
             className="floating-vehicle-rail"
             onScroll={measure}
-            aria-label="Five vehicle options"
+            aria-label={`${FLEET.length} vehicle models`}
           >
             {FLEET.map((item, i) => (
               <motion.button
@@ -650,7 +603,7 @@ function App() {
                     {state.vehicle === item.id ? <Check size={16} /> : <CarFront size={17} />}
                   </span>
                 </span>
-                <VehicleArt kind={item.kind} />
+                <VehiclePhotos photos={item.photos} />
                 <span className="vehicle-tile-tag">{item.tag}</span>
                 <h3>{item.name}</h3>
                 <p>{item.description}</p>

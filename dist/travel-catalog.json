@@ -44,33 +44,45 @@
   ],
   "vehicles": [
     {
-      "id": "sedan",
-      "name": "Sedan",
-      "description": "An AC car for a small group.",
+      "id": "maruti-s-cross",
+      "name": "Maruti S-Cross",
+      "description": "A roomy option for families and additional luggage.",
       "seating": "Confirm with the owner; no guaranteed seat count is published."
     },
     {
-      "id": "suv",
-      "name": "SUV",
-      "description": "More space for your family and bags.",
+      "id": "innova-crysta",
+      "name": "Innova Crysta",
+      "description": "A roomy option for families and additional luggage.",
       "seating": "Confirm with the owner; no guaranteed seat count is published."
     },
     {
-      "id": "tempo",
+      "id": "innova",
+      "name": "Innova",
+      "description": "A roomy option for families and additional luggage.",
+      "seating": "Confirm with the owner; no guaranteed seat count is published."
+    },
+    {
+      "id": "ertiga",
+      "name": "Ertiga",
+      "description": "A roomy option for families and additional luggage.",
+      "seating": "Confirm with the owner; no guaranteed seat count is published."
+    },
+    {
+      "id": "tempo-traveller",
       "name": "Tempo Traveller",
       "description": "For families and groups travelling together.",
       "seating": "Confirm with the owner; no guaranteed seat count is published."
     },
     {
-      "id": "mini-bus",
-      "name": "Mini Bus",
-      "description": "For bigger groups. Ask us about seats.",
+      "id": "toyota-etios",
+      "name": "Toyota Etios",
+      "description": "A comfortable car for a small group.",
       "seating": "Confirm with the owner; no guaranteed seat count is published."
     },
     {
-      "id": "bus",
-      "name": "Bus",
-      "description": "For large groups. Tell us how many people are coming.",
+      "id": "swift-dzire",
+      "name": "Swift Dzire",
+      "description": "A comfortable car for a small group.",
       "seating": "Confirm with the owner; no guaranteed seat count is published."
     }
   ],

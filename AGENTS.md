@@ -90,7 +90,7 @@ For code or build changes, run typecheck and build. For behavior changes, run th
 
 ### Current status
 - **Phase:** Testing
-- **Last updated:** 2026-11-23
+- **Last updated:** 2026-11-27
 - **Hosting target:** Cloudflare Workers static assets
 
 ### Done
@@ -117,6 +117,7 @@ For code or build changes, run typecheck and build. For behavior changes, run th
 - [x] Removed the extra custom-planner disclosure, kept the large custom-trip card as the entry point, added a collage of the first four trip images, and renamed the card “Customize your trip.”
 - [x] Added Prettier and editor settings, formatted editable source and scripts, and documented indentation and comment conventions.
 - [x] Reviewed the static frontend, WhatsApp handoff, storage, external links, Cloudflare config, and dependencies; no actionable security vulnerabilities were identified.
+- [x] Added owner-supplied representative car photos for seven individual vehicle-model choices; preserved originals outside deployed assets and used uncropped optimized WebP derivatives.
 
 ### In progress
 - None.
@@ -141,6 +142,7 @@ For code or build changes, run typecheck and build. For behavior changes, run th
 | 2026-11-14 | Build the custom-trip card collage from the first four trip images in CSS | Reuses existing licensed assets without adding a generated image file |
 | 2026-11-14 | Use Prettier with two-space indentation for editable source and scripts | Keeps formatting consistent and repeatable without touching generated output or evidence |
 | 2026-11-14 | Keep security guidance aligned with the public static-site and visitor-reviewed WhatsApp flow | The site has no backend, authentication, payment processing, or automatic message sending |
+| 2026-11-27 | Offer the seven supplied vehicle models individually rather than generic vehicle classes | Lets visitors choose and enquire about the specific model shown in its representative photo |
 
 ### Open questions
 - No project-wide MIT license or private license file was present; third-party notices remain. Add only owner-approved legal terms if a project license is needed.
@@ -149,6 +151,8 @@ For code or build changes, run typecheck and build. For behavior changes, run th
 - In local Playwright checks, Escape dispatched a cancel event but did not close the credits dialog; a pointer click on its close button worked. Confirm expected keyboard dismissal in a real browser before changing dialog behavior.
 
 ### Changelog
+- 2026-11-27 - Replaced generic sedan/SUV/bus categories with the seven supplied vehicle models, applied model-specific representative photos to both booking pickers, and updated the vehicle FAQ and group-trip copy. Files: `src/booking/`, `src/site/`, `tests/browser/check-packages-accommodation.cjs`, `AGENTS.md`.
+- 2026-11-27 - Added optimized representative vehicle photos to matching booking choices, retained the supplied originals outside deployed assets, and documented that photos do not confirm fleet availability. Files: `src/booking/`, `src/site/assets/vehicles/`, `src/site/booking.css`, `src/site/compact-layout.css`, `src/site/credits.html`, `scripts/build_site.mjs`, `AGENTS.md`.
 - 2026-11-26 - Rechecked the actual Google Business Profile and owner confirmation of 24-hour operation. Added matching visible/schema hours, About service areas and canonical-data-based night-stay guidance for three-to-five-day trips. Missing fleet specifications and first-hand photos remain unverified and are not fabricated. Beginner explanation: docs/business/BUSINESS-DETAILS-REVIEW-2026-11-26.md.
 - 2026-11-26 - Checked the owner's real Google Search Console and verified Business Profile. Main guides and previously excluded trip URLs are indexed on fresh inspection; requested South Indian trip indexing successfully. Added verified Maps/review links and TravelAgency sameAs locally with regression checks. Publication currently needs restored Cloudflare authentication. Owner checklist and beginner explanation: docs/seo/RANKING-NEXT-STEPS-2026-11-26.md.
 - 2026-11-26 - Compared the first three Google web results for ten owner-selected phrases. Added six factual planning sections through scripts/travel-planning-content.mjs, responsive definition-list comparisons and quote/rental checklists. Preserved existing page text and approved answers; unconfirmed fleet/fee terms remain questions for the owner. Research and beginner walkthrough: docs/seo/keyword-gap-research-2026-11-26/.

@@ -507,14 +507,15 @@
   gap: 18px;
 }
 .floating-vehicle-tile {
-  flex-basis: 270px;
+  flex-basis: 300px;
   min-height: 0;
   padding: 20px;
   border-radius: 10px;
 }
-.floating-vehicle-tile > svg {
-  height: 112px;
-  margin: 8px 0;
+.floating-vehicle-tile > svg,
+.floating-vehicle-tile > .vehicle-photo-gallery {
+  height: 168px;
+  margin: 8px 0 12px;
 }
 .floating-vehicle-tile h3 {
   font-size: 30px;
@@ -916,12 +917,13 @@
     padding-top: 25px;
   }
   .floating-vehicle-tile {
-    flex: 0 0 248px;
+    flex: 0 0 min(78vw, 280px);
     min-height: 0;
     padding: 18px;
   }
-  .floating-vehicle-tile > svg {
-    height: 105px;
+  .floating-vehicle-tile > svg,
+  .floating-vehicle-tile > .vehicle-photo-gallery {
+    height: 148px;
   }
   .floating-vehicle-tile h3 {
     font-size: 29px;

@@ -19,6 +19,7 @@ import { formatWhatsAppEnquiry, whatsAppEnquiryUrl } from '../lib/whatsapp-messa
         'heavenly-v3-trip',
         JSON.stringify({
           ...state,
+          vehicleId: VEHICLES[Number(state.vehicle)]?.id || '',
           fields: Object.fromEntries(
             [
               'name',
@@ -145,29 +146,17 @@ import { formatWhatsAppEnquiry, whatsAppEnquiryUrl } from '../lib/whatsapp-messa
     el.className = 'vehicle-option';
     el.innerHTML = `
       <span class="mono">${v.tag}</span>
-      <svg
-        class="vehicle-art"
-        viewBox="0 0 300 130"
-        aria-hidden="true"
-      >
-        <path
-          d="M30 86V65Q30 54 44 51L${i > 1 ? '64 25H230L253 52' : '91 27H190L222 52'}Q269 55 273 73V96H30Z"
-          fill="#e8d9b8"
-          stroke="#183c31"
-          stroke-width="2"
+      <div class="vehicle-visual">
+        <img
+          class="vehicle-art"
+          src="${v.image}"
+          alt=""
+          width="680"
+          height="380"
+          loading="lazy"
+          decoding="async"
         />
-        <path
-          d="M${i > 1 ? '75 36H218V57H68' : '99 36H182L205 58H78'}Z"
-          fill="#fafafa"
-          stroke="#183c31"
-          stroke-width="2"
-        />
-        <path d="M150 35V60M33 75H267" fill="none" stroke="#183c31" stroke-width="2" />
-        <circle cx="78" cy="96" r="19" fill="#183c31" />
-        <circle cx="225" cy="96" r="19" fill="#183c31" />
-        <circle cx="78" cy="96" r="8" fill="#fafafa" />
-        <circle cx="225" cy="96" r="8" fill="#fafafa" />
-      </svg>
+      </div>
       <h3>${v.name}</h3>
       <p>${v.description}</p>
       <button class="button primary" type="button">Discuss this vehicle ↗</button>
@@ -564,8 +553,9 @@ import { formatWhatsAppEnquiry, whatsAppEnquiryUrl } from '../lib/whatsapp-messa
       : [];
     $('#tour-select').value = state.tour;
   }
-  if (/^[0-3]$/.test(String(saved.vehicle))) {
-    state.vehicle = String(saved.vehicle);
+  const savedVehicleIndex = VEHICLES.findIndex((vehicle) => vehicle.id === saved.vehicleId);
+  if (savedVehicleIndex >= 0) {
+    state.vehicle = String(savedVehicleIndex);
     $('#vehicle-select').value = state.vehicle;
   }
   if (
