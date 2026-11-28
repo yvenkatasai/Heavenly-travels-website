@@ -43,25 +43,67 @@
   const cards = [...document.querySelectorAll('.package-card')],
     motion = matchMedia('(prefers-reduced-motion: reduce)');
   const allowed = () => !motion.matches && window.heavenlyMotionAllowed?.() !== false;
+  const visibleCards = new Set(),
+    imageReadiness = new WeakMap();
+  function prepareImages(card) {
+    return Promise.all(
+      [...card.querySelectorAll('.package-visual img')].map((image) => {
+        if (!imageReadiness.has(image)) {
+          const ready = new Promise((resolve) => {
+            if (image.complete) return resolve();
+            const finish = () => {
+              image.removeEventListener('load', finish);
+              image.removeEventListener('error', finish);
+              resolve();
+            };
+            image.addEventListener('load', finish);
+            image.addEventListener('error', finish);
+            // Fully masked lazy images may not load until after their reveal has finished.
+            image.loading = 'eager';
+          }).then(() => image.decode().catch(() => {}));
+          imageReadiness.set(image, ready);
+        }
+        return imageReadiness.get(image);
+      }),
+    );
+  }
+  const imageObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        prepareImages(entry.target);
+        imageObserver.unobserve(entry.target);
+      });
+    },
+    { rootMargin: '600px 0px' },
+  );
   const observer = new IntersectionObserver(
     (entries) =>
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('package-revealed');
-          observer.unobserve(entry.target);
-        }
+          visibleCards.add(entry.target);
+          prepareImages(entry.target).then(() => {
+            if (!visibleCards.has(entry.target) || !allowed()) return;
+            entry.target.classList.add('package-revealed');
+            observer.unobserve(entry.target);
+            visibleCards.delete(entry.target);
+          });
+        } else visibleCards.delete(entry.target);
       }),
     { threshold: 0.12, rootMargin: '0px 0px -20px 0px' },
   );
   if (allowed())
     cards.forEach((card) => {
       card.classList.add('package-reveal-ready');
+      imageObserver.observe(card);
       observer.observe(card);
     });
   function revealAll() {
     if (!allowed()) {
       cards.forEach((card) => card.classList.add('package-revealed'));
       observer.disconnect();
+      imageObserver.disconnect();
+      visibleCards.clear();
     }
   }
   window.addEventListener('motionchange', revealAll);

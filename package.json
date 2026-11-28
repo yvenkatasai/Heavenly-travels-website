@@ -17,6 +17,7 @@
     "verify:content": "node scripts/check-content.mjs",
     "test:whatsapp": "node --test tests/whatsapp-message.test.mjs",
     "test:indexnow": "node --test tests/indexnow.test.mjs",
+    "test:reveals": "node --test tests/package-reveal.test.mjs",
     "indexnow:check": "node scripts/indexnow.mjs",
     "indexnow:submit": "node scripts/indexnow.mjs --submit"
   },
