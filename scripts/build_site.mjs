@@ -11,6 +11,10 @@ const source = path.join(root, 'src', 'site');
 const site = JSON.parse(fs.readFileSync(path.join(source, 'site.config.json'), 'utf8'));
 const contentDates = JSON.parse(fs.readFileSync(path.join(source, 'content-dates.json'), 'utf8'));
 const siteOrigin = new URL(site.url).origin;
+const indexNow = JSON.parse(fs.readFileSync(path.join(source, 'indexnow.json'), 'utf8'));
+if (!/^[a-zA-Z0-9-]{8,128}$/.test(indexNow.key)) {
+  throw new Error('Invalid IndexNow ownership key.');
+}
 if (site.url !== siteOrigin || !site.url.startsWith('https://')) {
   throw new Error('site.config.json must use an HTTPS origin without a trailing slash.');
 }
@@ -201,6 +205,7 @@ function addMetadata(html, pathname, title, description, index) {
           '@id': `${siteOrigin}/#website`,
           url: `${siteOrigin}/`,
           name: site.name,
+          alternateName: 'Heavenly Tours and Travels Tirupati',
           publisher: { '@id': `${siteOrigin}/#business` },
           inLanguage: 'en-IN',
         }).replaceAll('<', '\\u003c')}</script>`,
@@ -336,6 +341,7 @@ fs.writeFileSync(
 );
 fs.writeFileSync(path.join(output, 'llms.txt'), agentContent.llms);
 fs.writeFileSync(path.join(output, 'llms-full.txt'), agentContent.fullText);
+fs.writeFileSync(path.join(output, `${indexNow.key}.txt`), `${indexNow.key}\n`);
 fs.writeFileSync(
   path.join(output, '404.html'),
   await extractRuntime(fs.readFileSync(path.join(source, '404.html'), 'utf8')),

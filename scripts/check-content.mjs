@@ -172,6 +172,10 @@ for (const [pathname, date] of Object.entries(reviewedDates)) {
   assert.ok(html.includes(`<time datetime="${date}">`), pathname);
   assert.ok(html.includes(`"dateModified":"${date}"`), pathname);
 }
+const { key: indexNowKey } = JSON.parse(fs.readFileSync(path.join(root, 'src/site/indexnow.json')));
+assert.match(indexNowKey, /^[a-zA-Z0-9-]{8,128}$/);
+assert.equal(read(`${indexNowKey}.txt`).trim(), indexNowKey);
+assert.ok(read('index.html').includes(site.title.replaceAll('&', '&amp;')));
 console.log(
   'PASS: 13 trips, 24 indexable URLs, approved answers, honest content dates, booking links, local assets and schema.',
 );

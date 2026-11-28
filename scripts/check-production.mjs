@@ -160,4 +160,27 @@ await check('All sitemap URLs return 200 and approved answers are in raw HTML', 
     }
   }
 });
+await check('IndexNow ownership file is live', async () => {
+  const { key } = JSON.parse(
+    fs.readFileSync(new URL('../src/site/indexnow.json', import.meta.url)),
+  );
+  const response = await request(`${origin}/${key}.txt`);
+  assert.equal(response.status, 200);
+  assert.equal((await response.text()).trim(), key);
+});
+await check('Bingbot and search assistants can fetch HTML without a challenge', async () => {
+  for (const userAgent of ['bingbot', 'OAI-SearchBot', 'Claude-SearchBot', 'PerplexityBot']) {
+    const response = await fetch(`${origin}/`, {
+      headers: { 'User-Agent': userAgent },
+      redirect: 'manual',
+      signal: AbortSignal.timeout(20000),
+    });
+    assert.equal(response.status, 200, userAgent);
+    assert.ok(!response.headers.get('cf-mitigated'), userAgent);
+    assert.ok(!response.headers.get('x-robots-tag')?.includes('noindex'), userAgent);
+    const html = await response.text();
+    assert.ok(html.includes(`rel="canonical" href="${origin}/"`), userAgent);
+    assert.ok(html.includes('id="day-packages"'), userAgent);
+  }
+});
 process.exitCode = failures ? 1 : 0;
