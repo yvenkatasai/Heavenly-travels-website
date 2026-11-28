@@ -13,7 +13,7 @@
     bottom: max(12px, env(safe-area-inset-bottom));
     z-index: 21;
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     min-height: 64px;
     padding: 5px 7px;
     background: #f8f2e4;
@@ -126,6 +126,21 @@
   .has-booking-selection .mobile-trip-nav {
     display: none;
   }
+  /* The chat shortcut is an action, not navigation, so it reads differently. */
+  .mobile-trip-nav > a[data-shortcut='whatsapp'] {
+    margin: 3px;
+    border-radius: 3px;
+    background: #355044;
+    color: #f8f2e4;
+  }
+  .mobile-trip-nav > a[data-shortcut='whatsapp'] svg {
+    color: #f8f2e4;
+  }
+  .mobile-trip-nav > a[data-shortcut='whatsapp']:hover,
+  .mobile-trip-nav > a[data-shortcut='whatsapp']:focus-visible {
+    background: #193c31;
+    color: #fff;
+  }
 }
 @media (max-width: 360px) {
   .mobile-trip-nav .shortcut-label {
@@ -148,4 +163,49 @@
 .motion-paused .mobile-trip-nav > a,
 .motion-paused .mobile-trip-nav > button {
   transition: none;
+}
+
+/* Desktop-only floating contact so reaching the owner is one tap from anywhere on the page. */
+.floating-contact {
+  display: none;
+}
+@media (min-width: 768px) {
+  .has-floating-contact {
+    padding-bottom: 104px;
+  }
+  .floating-contact {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 7px;
+  }
+  .floating-contact .floating-whatsapp {
+    box-shadow: 0 8px 24px #122f2133;
+  }
+  .floating-call {
+    padding: 5px 10px;
+    border-radius: 4px;
+    background: #f8f2e4;
+    border: 1px solid #b7a273;
+    color: #193c31;
+    font: 500 12px/1.2 var(--body);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .floating-call:hover {
+    background: #eee5ce;
+  }
+  .modal-open .floating-contact {
+    visibility: hidden;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .floating-whatsapp,
+  .floating-call {
+    transition: none;
+  }
 }

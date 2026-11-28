@@ -16,6 +16,18 @@
   const calendar = svg(
     '<rect x="4" y="5" width="16" height="16" rx="1"/><path d="M8 3v4m8-4v4M4 10h16M8 14h3m-3 3h7"/>',
   );
+  const chat = svg('<path d="M4 5h16v11H9l-5 4V5Z"/><path d="M8 9h8M8 12h5"/>');
+  // Non-sensitive trip preference saved by the booking flows; absent when nothing was viewed.
+  function rememberedTripName() {
+    try {
+      const current = sessionStorage.getItem('heavenly-trip-name');
+      if (current) return current;
+      const legacy = JSON.parse(sessionStorage.getItem('heavenly-v3-trip') || '{}');
+      return typeof legacy.tourName === 'string' ? legacy.tourName : '';
+    } catch {
+      return '';
+    }
+  }
   nav.innerHTML = `
     <a href="${vehiclePage ? 'index.html' : ''}#package-types" data-shortcut="packages">
       ${temple}
@@ -29,9 +41,27 @@
       ${calendar}
       <span class="shortcut-label">Plan trip</span>
     </a>
+    <a
+      href="https://wa.me/919700181493?text=Hello%20Heavenly%20Tours%20%26%20Travels%2C%20I%20would%20like%20to%20plan%20a%20temple%20trip."
+      target="_blank"
+      rel="noopener noreferrer"
+      data-shortcut="whatsapp"
+    >
+      ${chat}
+      <span class="shortcut-label">Chat</span>
+    </a>
   `;
   document.body.append(nav);
   document.body.classList.add('has-heritage-shortcuts');
+  // If the visitor was viewing a trip, the draft names it so the owner has context.
+  const chatLink = nav.querySelector('[data-shortcut="whatsapp"]');
+  chatLink?.addEventListener('click', () => {
+    const name = rememberedTripName();
+    if (!name) return;
+    chatLink.href = `https://wa.me/919700181493?text=${encodeURIComponent(
+      `Hello Heavenly Tours & Travels, I was looking at the ${name}.`,
+    )}`;
+  });
   document.getElementById('quick-vehicles').onclick = () => {
     if (vehiclePage) {
       document.getElementById('vehicle-selection')?.scrollIntoView({ behavior: 'instant' });

@@ -50,7 +50,7 @@ async function main() {
     const file = pathname === '/' ? 'index.html' : `${pathname.slice(1)}.html`;
     const html = fs.readFileSync(path.join(root, 'dist', file), 'utf8');
     assert.ok(html.includes(`rel="canonical" href="${url}"`), `Missing canonical: ${url}`);
-    assert.ok(!/content="[^\"]*noindex/i.test(html), `Noindex page: ${url}`);
+    assert.ok(!/content="[^"]*noindex/i.test(html), `Noindex page: ${url}`);
     return { url, hash: digest(html) };
   });
   const stateFile = path.join(root, 'artifacts/deployment/indexnow-receipt.json');

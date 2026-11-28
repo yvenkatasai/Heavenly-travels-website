@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { build, transform } from 'esbuild';
+import { PurgeCSS } from 'purgecss';
 import { prepareAgentContent } from './build-agent-content.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -89,6 +90,20 @@ if (bookingBuild.status !== 0) {
 const agentContent = await prepareAgentContent(source, site);
 let page = fs.readFileSync(path.join(source, 'page.html'), 'utf8');
 let vehiclePage = fs.readFileSync(path.join(source, 'vehicles.html'), 'utf8');
+
+// Contact details are defined once in site.config.json and injected everywhere they appear.
+const whatsappUrl = `https://wa.me/${site.telephone.replace('+', '')}`;
+const telUrl = `tel:${site.telephone}`;
+const phoneDisplay = /^(\+91)(\d{5})(\d{5})$/.test(site.telephone)
+  ? site.telephone.replace(/^(\+91)(\d{5})(\d{5})$/, '$1 $2 $3')
+  : site.telephone;
+function applyContact(text) {
+  return text
+    .replaceAll('https://wa.me/919700181493', whatsappUrl)
+    .replaceAll('tel:+919700181493', telUrl)
+    .replaceAll('+91 97001 81493', phoneDisplay);
+}
+
 const sourceFiles = [
   ['CSS', 'style.css'],
   ['THEME', 'travel-theme.css'],
@@ -125,18 +140,61 @@ for (const [token, filename] of sourceFiles) {
           })
         ).outputFiles[0].text
       : fs.readFileSync(path.join(source, filename), 'utf8');
-  page = page.replaceAll(`/*__${token}__*/`, content);
-  vehiclePage = vehiclePage.replaceAll(`/*__${token}__*/`, content);
+  if (filename.endsWith('.css')) {
+    // CSS tokens are resolved later, after unused selectors are purged against the final markup.
+    continue;
+  }
+  const script = applyContact(content);
+  page = page.replaceAll(`/*__${token}__*/`, script);
+  vehiclePage = vehiclePage.replaceAll(`/*__${token}__*/`, script);
 }
 
-const tours = fs.readFileSync(path.join(source, 'tours.js'), 'utf8');
-const credits = fs.readFileSync(path.join(source, 'credits.html'), 'utf8');
+const tours = applyContact(fs.readFileSync(path.join(source, 'tours.js'), 'utf8'));
+const credits = applyContact(fs.readFileSync(path.join(source, 'credits.html'), 'utf8'));
 page = page.replace('/*__TOURS__*/', tours).replace('{{CREDITS}}', credits);
 page = page
   .replace('<!--__HOME_CARDS__-->', agentContent.homeCards)
   .replace('<!--__DAY_CARDS__-->', agentContent.dayCards)
   .replace('<!--__BUSINESS_HOURS__-->', escapeAttribute(site.openingHoursLabel))
   .replace('<!--__FAQ_HTML__-->', agentContent.faqHtml);
+page = applyContact(page);
+vehiclePage = applyContact(vehiclePage);
+
+// The compiled booking flow embeds the WhatsApp URL from src/lib; keep it on the configured number.
+const bookingFlowPath = path.join(output, 'assets', 'booking-flow.js');
+fs.writeFileSync(bookingFlowPath, applyContact(fs.readFileSync(bookingFlowPath, 'utf8')));
+
+// Purge unused selectors so the homepage and vehicle bundles stay small. Content covers the
+// assembled markup, every site script (including class names added at runtime) and the
+// compiled booking flow; dynamic state classes are safelisted.
+const purgeContent = [
+  { raw: page },
+  { raw: vehiclePage },
+  { raw: tours },
+  { raw: credits },
+  ...sourceFiles
+    .filter(([, filename]) => filename.endsWith('.js'))
+    .map(([, filename]) => ({ raw: fs.readFileSync(path.join(source, filename), 'utf8') })),
+  { raw: fs.readFileSync(path.join(output, 'assets', 'booking-flow.js'), 'utf8') },
+];
+const purgeCss = async (css) => {
+  const [result] = await new PurgeCSS().purge({
+    content: purgeContent,
+    css: [{ raw: css }],
+    safelist: {
+      standard: [/^is-/, /^has-/, /^intro-/, /^motion-/, /^modal-/, /^sr-/],
+      deep: [/^is-/, /^has-/],
+    },
+  });
+  if (!result) throw new Error('CSS purge produced no output.');
+  return result.css;
+};
+for (const [token, filename] of sourceFiles) {
+  if (!filename.endsWith('.css')) continue;
+  const purged = await purgeCss(applyContact(fs.readFileSync(path.join(source, filename), 'utf8')));
+  page = page.replaceAll(`/*__${token}__*/`, purged);
+  vehiclePage = vehiclePage.replaceAll(`/*__${token}__*/`, purged);
+}
 
 function escapeAttribute(value) {
   return String(value).replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;');
@@ -344,7 +402,7 @@ fs.writeFileSync(path.join(output, 'llms-full.txt'), agentContent.fullText);
 fs.writeFileSync(path.join(output, `${indexNow.key}.txt`), `${indexNow.key}\n`);
 fs.writeFileSync(
   path.join(output, '404.html'),
-  await extractRuntime(fs.readFileSync(path.join(source, '404.html'), 'utf8')),
+  await extractRuntime(applyContact(fs.readFileSync(path.join(source, '404.html'), 'utf8'))),
 );
 fs.writeFileSync(
   path.join(output, 'robots.txt'),

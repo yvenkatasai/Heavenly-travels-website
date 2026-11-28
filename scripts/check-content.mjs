@@ -109,7 +109,12 @@ for (const name of ['cormorant-garamond.woff2', 'dm-sans.woff2'])
 const sitemapUrls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]);
 assert.deepEqual(
   sitemapUrls.sort(),
-  [...expectedSitemapUrls(site.url, catalog.trips.map((trip) => trip.url))].sort(),
+  [
+    ...expectedSitemapUrls(
+      site.url,
+      catalog.trips.map((trip) => trip.url),
+    ),
+  ].sort(),
 );
 assert.ok(read('about.html').includes(site.email));
 assert.ok(read('booking-information.html').includes('Cancellations, refunds &amp; date changes'));

@@ -65,6 +65,17 @@ export async function prepareAgentContent(source, site) {
       'Choose a five-day temple trip through Tirumala, Tiruvannamalai, Vellore and Tirupati, with Kanchipuram and Thiruthani. Ask about vehicles and hotels.',
   };
   const whatsapp = `https://wa.me/${site.telephone.replace('+', '')}`;
+  const phoneDisplay = /^(\+91)(\d{5})(\d{5})$/.test(site.telephone)
+    ? site.telephone.replace(/^(\+91)(\d{5})(\d{5})$/, '$1 $2 $3')
+    : site.telephone;
+  // Draft opener matches the page being viewed, so the owner knows the context.
+  const pageOpener = (title) => {
+    const trip = trips.find((item) => title.startsWith(item.name));
+    if (trip) return `Hello Heavenly Tours & Travels, I am looking at the ${trip.name}.`;
+    if (/car rentals/i.test(title))
+      return 'Hello Heavenly Tours & Travels, I would like to arrange a car with a driver from Tirupati.';
+    return 'Hello Heavenly Tours & Travels, I have a question about planning a temple trip.';
+  };
   const terms =
     'Payment, booking confirmation, cancellations, refunds and date changes are handled directly with owner Hemanth Kumar on WhatsApp. Ask the owner to confirm the terms for your trip in writing before you pay.';
   const ticketRule =
@@ -116,13 +127,13 @@ export async function prepareAgentContent(source, site) {
     })),
     faq: faq.map(([question, answer]) => ({ question, answer })),
   };
-  const footer = `<footer class="info-footer"><nav aria-label="More information"><a href="/about">About us</a><a href="/trips">All trips</a><a href="/booking-information">Booking information</a><a href="/questions">Common questions</a><a href="/privacy">Privacy</a><a href="/terms">Website terms</a><a href="mailto:${esc(site.email)}">${esc(site.email)}</a><button type="button" data-cookie-settings>Cookie choices</button></nav><p>${esc(site.name)} · ${esc(site.baseLocation)} · <a href="tel:${site.telephone}">+91 97001 81493</a></p></footer>`;
+  const footer = `<footer class="info-footer"><nav aria-label="More information"><a href="/about">About us</a><a href="/trips">All trips</a><a href="/booking-information">Booking information</a><a href="/questions">Common questions</a><a href="/privacy">Privacy</a><a href="/terms">Website terms</a><a href="mailto:${esc(site.email)}">${esc(site.email)}</a><button type="button" data-cookie-settings>Cookie choices</button></nav><p>${esc(site.name)} · ${esc(site.baseLocation)} · <a href="tel:${site.telephone}">${esc(phoneDisplay)}</a></p></footer>`;
   const hoursFooter = footer.replace('</footer>', `<p>${esc(site.openingHoursLabel)}</p></footer>`);
   const wrap = (title, description, content, schema = '') =>
-    `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#183c31"><title>${esc(title)}</title><meta name="description" content="${esc(description)}"><link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><!--__SEO__--><style>${styles}</style>${schema}</head><body><header class="info-header"><a class="info-brand" href="/">Heavenly<small>TOURS &amp; TRAVELS</small></a><nav aria-label="Main navigation"><a href="/trips">Our trips</a><a href="/about">About us</a><a href="${whatsapp}" target="_blank" rel="noopener noreferrer">Plan on WhatsApp</a></nav></header><main><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a> / ${trips.some((trip) => trip.name === title) ? '<a href="/trips">Trips</a> / ' : ''}<span aria-current="page">${esc(title)}</span></nav>${content}</main>${hoursFooter}</body></html>`;
+    `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#183c31"><title>${esc(title)}</title><meta name="description" content="${esc(description)}"><link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><!--__SEO__--><style>${styles}</style>${schema}</head><body><header class="info-header"><a class="info-brand" href="/">Heavenly<small>TOURS &amp; TRAVELS</small></a><nav aria-label="Main navigation"><a href="/trips">Our trips</a><a href="/about">About us</a><a href="${whatsapp}?text=${encodeURIComponent(pageOpener(title))}" target="_blank" rel="noopener noreferrer">Plan on WhatsApp</a></nav></header><main><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a> / ${trips.some((trip) => trip.name === title) ? '<a href="/trips">Trips</a> / ' : ''}<span aria-current="page">${esc(title)}</span></nav>${content}</main>${hoursFooter}</body></html>`;
   const intro = (label, title, description) =>
     `<p class="overline">${esc(label)}</p><h1>${esc(title)}</h1><p class="lead">${esc(description)}</p>`;
-  const contact = `<div class="info-buttons"><a class="info-button" href="${whatsapp}" target="_blank" rel="noopener noreferrer">Talk to the owner</a><a class="info-button secondary" href="tel:${site.telephone}">Call +91 97001 81493</a></div>`;
+  const contact = `<div class="info-buttons"><a class="info-button" href="${whatsapp}" target="_blank" rel="noopener noreferrer">Talk to the owner</a><a class="info-button secondary" href="tel:${site.telephone}">Call ${esc(phoneDisplay)}</a></div>`;
   const pages = [];
   const serviceTopics = `<nav class="info-topics" aria-label="Travel planning guides"><a href="/tirupati-tour-packages">Tirupati tour packages</a><a href="/tirumala-tour-packages">Tirumala family trips</a><a href="/tirupati-car-rentals">Tirupati car rentals</a><a href="/tirupati-temples">Temple guide</a><a href="/trips/south-indian-package">South India temple tours</a></nav>`;
   const tripLinks = (ids) =>
@@ -373,7 +384,7 @@ export async function prepareAgentContent(source, site) {
   const homeCards = legacy.tours
     .map((trip, i) => {
       const page = trips.find((item) => item.id === `tour-${i + 1}`);
-      return `<article class="tour-mini package-card" aria-labelledby="package-title-${i}" data-package-index="${i}"><div class="package-visual"><img src="assets/${legacy.TOUR_IMAGES[i]}" alt="${esc(trip.name)} temple destination" loading="lazy" decoding="async" width="900" height="1000"><span class="package-image-caption">${esc(trip.route)}</span></div><div class="package-copy"><div class="package-number"><span>TRIP</span><strong>0${i + 1}</strong><span>OF ${String(legacy.tours.length).padStart(2, '0')}</span></div><p class="package-type">${esc(trip.tag)}</p><h3 id="package-title-${i}">${esc(trip.name)}</h3><details class="package-stops"><summary>See temples &amp; trip details</summary><ul class="package-includes">${trip.includes.map((stop) => `<li>${esc(stop)}</li>`).join('')}</ul></details><div class="package-actions"><a href="/vehicles?package=tour-${i + 1}" class="button primary package-plan" data-tour-pick="${i}">Select this trip <span aria-hidden="true">↗</span></a><a href="${page.path}" aria-label="Full trip details for ${esc(trip.name)}">Full trip details</a></div></div></article>`;
+      return `<article class="tour-mini package-card" aria-labelledby="package-title-${i}" data-package-index="${i}"><div class="package-visual"><img src="assets/${legacy.TOUR_IMAGES[i]}" alt="${esc(trip.name)} temple destination" loading="lazy" decoding="async" width="900" height="1000"><span class="package-image-caption">${esc(trip.route)}</span></div><div class="package-copy"><div class="package-number"><span>TRIP</span><strong>0${i + 1}</strong><span>OF ${String(legacy.tours.length).padStart(2, '0')}</span></div><p class="package-type">${esc(trip.tag)}</p><h3 id="package-title-${i}">${esc(trip.name)}</h3><details class="package-stops"><summary>See temples &amp; trip details</summary><ul class="package-includes">${trip.includes.map((stop) => `<li>${esc(stop)}</li>`).join('')}</ul></details><div class="package-actions"><a href="/vehicles?package=tour-${i + 1}" class="button primary package-plan" data-tour-pick="${i}">Select this trip <span aria-hidden="true">↗</span></a><div class="package-links"><a href="${page.path}" aria-label="Full trip details for ${esc(trip.name)}">Full trip details</a><a href="${whatsapp}?text=${encodeURIComponent(`Hello ${site.name}, please help me plan the ${trip.name}.`)}" target="_blank" rel="noopener noreferrer" aria-label="Enquire about ${esc(trip.name)} on WhatsApp">Enquire on WhatsApp</a></div></div></div></article>`;
     })
     .join('');
   // Useful initial HTML stays available while React loads or when JavaScript is unavailable.

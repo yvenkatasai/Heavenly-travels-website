@@ -313,6 +313,9 @@ import { formatWhatsAppEnquiry, whatsAppEnquiryUrl } from '../lib/whatsapp-messa
       if (!anotherOpen) returnFocus?.focus({ preventScroll: true });
       if (d.id === 'reel-dialog') $('#journey-film').pause();
     });
+    d.addEventListener('cancel', () => {
+      if (d.open) d.close();
+    });
     d.addEventListener('click', (e) => {
       if (e.target === d && d.id !== 'contact-dialog') d.close();
     });
@@ -571,4 +574,23 @@ import { formatWhatsAppEnquiry, whatsAppEnquiryUrl } from '../lib/whatsapp-messa
   $('#travel-date').disabled = state.flexible;
   render();
   updateInclusions();
+  // The floating WhatsApp shortcut names the trip the visitor was viewing, when one was saved.
+  function rememberedTripName() {
+    try {
+      const current = sessionStorage.getItem('heavenly-trip-name');
+      if (current) return current;
+      const legacy = JSON.parse(sessionStorage.getItem('heavenly-v3-trip') || '{}');
+      return typeof legacy.tourName === 'string' ? legacy.tourName : '';
+    } catch {
+      return '';
+    }
+  }
+  const floatingWhatsApp = document.querySelector('.floating-whatsapp');
+  floatingWhatsApp?.addEventListener('click', () => {
+    const name = rememberedTripName();
+    if (!name) return;
+    floatingWhatsApp.href = `https://wa.me/919700181493?text=${encodeURIComponent(
+      `Hello Heavenly Tours & Travels, I was looking at the ${name}.`,
+    )}`;
+  });
 })();

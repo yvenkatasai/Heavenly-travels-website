@@ -11,6 +11,7 @@
     "dev": "npm run build && wrangler dev",
     "deploy": "npm run build && wrangler deploy",
     "format": "prettier --write \"src/booking/**/*.{ts,tsx,css}\" \"src/components/**/*.{ts,tsx,css}\" \"src/lib/**/*.{ts,tsx,css}\" \"src/site/**/*.{js,css,html}\" \"scripts/**/*.{js,mjs,ts,tsx}\"",
+    "lint": "eslint src scripts tests",
     "format:check": "prettier --check \"src/booking/**/*.{ts,tsx,css}\" \"src/components/**/*.{ts,tsx,css}\" \"src/lib/**/*.{ts,tsx,css}\" \"src/site/**/*.{js,css,html}\" \"scripts/**/*.{js,mjs,ts,tsx}\"",
     "typecheck": "tsc --noEmit",
     "verify:production": "node scripts/check-production.mjs",
@@ -31,11 +32,15 @@
     "tailwind-merge": "^3.3.0"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "@tailwindcss/cli": "^4.1.0",
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",
     "esbuild": "^0.25.0",
+    "eslint": "^10.16.0",
+    "globals": "^17.14.0",
     "prettier": "^3.10.1",
+    "purgecss": "^9.1.0",
     "tailwindcss": "^4.1.0",
     "typescript": "^5.9.0",
     "wrangler": "^4.161.0"

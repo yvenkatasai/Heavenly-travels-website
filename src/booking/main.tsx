@@ -76,6 +76,8 @@ function load(): Selection {
 function persist(s: Selection) {
   try {
     sessionStorage.setItem(KEY, JSON.stringify(s));
+    const tripName = PACKAGES.find((item) => item.id === s.packageId)?.name || '';
+    sessionStorage.setItem('heavenly-trip-name', tripName);
   } catch {}
 }
 function jump(id: string) {
@@ -666,6 +668,7 @@ function App() {
                 <input
                   autoComplete="name"
                   maxLength={100}
+                  placeholder="e.g. Ravi"
                   value={state.customer.name}
                   onChange={(e) =>
                     setState((s) => ({ ...s, customer: { ...s.customer, name: e.target.value } }))
@@ -755,7 +758,8 @@ function App() {
             </details>
             <SlideCommit key={state.vehicle} onConfirm={openDraft} disabled={!vehicle} />
             <p className="booking-confirmation-note">
-              Check your message in WhatsApp, then tap Send. No payment is taken here.
+              Check your message in WhatsApp, then tap Send. You agree everything directly with the
+              owner — no payment is taken here.
             </p>
           </form>
         </dialog>

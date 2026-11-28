@@ -369,6 +369,12 @@
   letter-spacing: 0.03em;
   color: #74806f;
 }
+.package-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
 .package-card:nth-child(even) .package-visual {
   order: 2;
 }
