@@ -212,7 +212,7 @@ function DayRail() {
               <div className="momentum-card-tilt">
                 <img
                   src={item.image}
-                  alt=""
+                  alt={item.imageAlt}
                   loading="lazy"
                   width="700"
                   height="850"
@@ -330,7 +330,14 @@ function VehiclePhotos({ photos }: { photos: readonly { src: string; label: stri
     <div className="vehicle-photo-gallery" aria-label="Representative vehicle photographs">
       {photos.map((photo) => (
         <figure key={photo.src}>
-          <img src={photo.src} alt="" width="680" height="380" loading="lazy" decoding="async" />
+          <img
+            src={photo.src}
+            alt={`Representative ${photo.label} vehicle`}
+            width="680"
+            height="380"
+            loading="lazy"
+            decoding="async"
+          />
         </figure>
       ))}
     </div>

@@ -50,6 +50,14 @@ const uniqueTitles = new Set();
 const uniqueDescriptions = new Set();
 for (const file of documents) {
   const html = read(file);
+  for (const [image] of html.matchAll(/<img\b[^>]*>/g)) {
+    const alt = image.match(/\balt="([^"]*)"/);
+    assert.ok(alt, `Image needs an alt attribute: ${file}`);
+    assert.ok(
+      alt[1].trim() || image.includes('role="presentation"'),
+      `Informative image needs a description: ${file}`,
+    );
+  }
   const title = html.match(/<title>([\s\S]*?)<\/title>/)?.[1];
   const description = html.match(/<meta\s+name="description"\s+content="([^"]+)"/)?.[1];
   assert.ok(title && !uniqueTitles.has(title), `Missing or duplicate title: ${file}`);
@@ -65,7 +73,11 @@ for (const file of documents) {
   ].map((match) => JSON.parse(match[1]));
   if (file !== 'vehicles.html') {
     const business = schemas.find((schema) => schema['@type'] === 'TravelAgency');
-    assert.deepEqual(business?.sameAs, [site.googleMapsUrl], file);
+    assert.deepEqual(
+      business?.sameAs,
+      [site.googleMapsUrl, site.instagramUrl].filter(Boolean),
+      file,
+    );
     assert.deepEqual(business.openingHoursSpecification, site.openingHoursSpecification, file);
     assert.ok(html.includes(site.openingHoursLabel), `Hours must be visible: ${file}`);
     assert.ok(!business.aggregateRating && !business.review, 'Do not invent business ratings');
@@ -142,6 +154,7 @@ for (const file of ['booking-information.html', 'tirumala-tour-packages.html']) 
 assert.ok(read('llms.txt').includes('/tirupati-car-rentals'));
 assert.ok(read('about.html').includes(`href="${site.googleMapsUrl}"`));
 assert.ok(read('about.html').includes(`href="${site.googleReviewUrl}"`));
+assert.ok(read('about.html').includes(`href="${site.instagramUrl}"`));
 for (const area of site.localServiceAreas) assert.ok(read('about.html').includes(area));
 for (const slug of ['three', 'four', 'five']) {
   const html = read(`trips/${slug}-day-trip.html`);

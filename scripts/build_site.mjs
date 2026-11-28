@@ -248,7 +248,7 @@ function addMetadata(html, pathname, title, description, index) {
       },
       image: siteOrigin + site.image,
       areaServed: site.areaServed,
-      sameAs: [site.googleMapsUrl],
+      sameAs: [site.googleMapsUrl, site.instagramUrl].filter(Boolean),
       openingHoursSpecification: site.openingHoursSpecification,
     };
     // JSON-LD is non-executable data; escape markup before inserting it into HTML.

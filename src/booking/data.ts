@@ -23,6 +23,7 @@ export const PACKAGES: TravelPackage[] = [
     name: 'Complete 7-Temple Trip',
     type: 'signature',
     image: 'assets/tirumala.webp',
+    imageAlt: 'Sri Venkateswara Temple at Tirumala',
     note: 'All seven temples are included. Free extras: pickup and drop for your trip, plus help planning your temple visits.',
     places: [
       'Sri Venkateswara Temple — Tirumala',
@@ -40,6 +41,7 @@ export const PACKAGES: TravelPackage[] = [
     name: 'Express Package',
     type: 'tour',
     image: 'assets/tirumala.webp',
+    imageAlt: 'Sri Venkateswara Temple at Tirumala',
     note: 'Pickup in Tirupati, travel to Tirumala, nearby temple visits if time allows, and a return drop.',
     places: [
       'Tirupati arrival and pickup',
@@ -55,6 +57,7 @@ export const PACKAGES: TravelPackage[] = [
     name: 'Govindham Package',
     type: 'tour',
     image: 'assets/padmavathi.webp',
+    imageAlt: 'Sri Padmavathi Ammavari Temple at Tiruchanur',
     note: 'Visit Tirupati, Tirumala and nearby temples with your family. We help with hotels and travel.',
     places: [
       'Tirupati and Tirumala',
@@ -70,6 +73,7 @@ export const PACKAGES: TravelPackage[] = [
     name: 'Divine Pilgrimage Package',
     type: 'tour',
     image: 'assets/srikalahasti.webp',
+    imageAlt: 'Sri Kalahasteeswara Temple at Srikalahasti',
     note: 'Visit Tirumala, Srikalahasti, Kanipakam and Tiruchanur, with local temple visits arranged around your route.',
     places: ['Tirumala', 'Srikalahasti', 'Kanipakam', 'Tiruchanur', 'Local temple visits'],
     days: [],
@@ -79,6 +83,7 @@ export const PACKAGES: TravelPackage[] = [
     name: 'Wholesome Pilgrim Package',
     type: 'tour',
     image: 'assets/vellore.webp',
+    imageAlt: 'Sri Lakshmi Narayani Golden Temple at Vellore',
     note: 'Connect Tirupati, Tirumala and Srikalahasti with the Golden Temple in Vellore. Kanchipuram can be added on request.',
     places: [
       'Tirupati',
@@ -94,6 +99,7 @@ export const PACKAGES: TravelPackage[] = [
     name: 'South Indian Package',
     type: 'tour',
     image: 'assets/srirangam.webp',
+    imageAlt: 'Sri Ranganathaswamy Temple at Srirangam',
     note: 'Visit South India from Tirupati to Rameswaram, Kanyakumari and Trivandrum, including Chidambaram and Thanjavur. Our team will help plan the days you need.',
     places: [
       'Tirupati',
@@ -114,6 +120,7 @@ export const PACKAGES: TravelPackage[] = [
     name: 'Jyotirlingas Package',
     type: 'tour',
     image: 'assets/somnath.webp',
+    imageAlt: 'Somnath Temple in Gujarat',
     note: 'Visit the 12 Jyotirlinga shrines across India. Our team will confirm dates, travel arrangements and your preferred Vaidyanath and Nageshwar locations.',
     places: [
       'Somnath — Prabhas Patan, Gujarat',
@@ -136,6 +143,7 @@ export const PACKAGES: TravelPackage[] = [
     name: 'Pancha Bhoota Lingas Package',
     type: 'tour',
     image: 'assets/srikalahasti.webp',
+    imageAlt: 'Sri Kalahasteeswara Temple at Srikalahasti',
     note: 'Visit all five Pancha Bhoota temples: Earth, Water, Fire, Air and Space. We help plan the route and travel arrangements.',
     places: [
       'Earth (Prithvi) — Ekambareswarar Temple, Kanchipuram, Tamil Nadu; a sand lingam',
@@ -152,6 +160,7 @@ export const PACKAGES: TravelPackage[] = [
     type: 'days',
     duration: 1,
     image: 'assets/padmavathi.webp',
+    imageAlt: 'Sri Padmavathi Ammavari Temple at Tiruchanur',
     note: 'Darshan ticket already booked.',
     places: ['Padmavathi Temple', 'Varahaswamy Temple', 'Govindaraja Temple', 'Tirumala darshan'],
     days: [],
@@ -162,6 +171,7 @@ export const PACKAGES: TravelPackage[] = [
     type: 'days',
     duration: 2,
     image: 'assets/srikalahasti.webp',
+    imageAlt: 'Sri Kalahasteeswara Temple at Srikalahasti',
     note: 'Tirumala, Tirupati local temples and Srikalahasti.',
     places: [
       'Tirumala darshan',
@@ -177,6 +187,7 @@ export const PACKAGES: TravelPackage[] = [
     type: 'days',
     duration: 3,
     image: 'assets/tirumala.webp',
+    imageAlt: 'Sri Venkateswara Temple at Tirumala',
     note: 'Tirumala, Vellore and the temples around Tirupati.',
     places: [],
     days: [
@@ -208,6 +219,7 @@ export const PACKAGES: TravelPackage[] = [
     type: 'days',
     duration: 4,
     image: 'assets/vellore.webp',
+    imageAlt: 'Sri Lakshmi Narayani Golden Temple at Vellore',
     note: 'Temple visits with a night in Tiruvannamalai.',
     places: [],
     days: [
@@ -243,6 +255,7 @@ export const PACKAGES: TravelPackage[] = [
     type: 'days',
     duration: 5,
     image: 'assets/hilltop.webp',
+    imageAlt: 'Tirumala hills and temple landscape',
     note: 'A five-day temple trip with Kanchipuram and Thiruthani.',
     places: [],
     days: [
@@ -334,6 +347,7 @@ export type TravelPackage = {
   name: string;
   type: string;
   image: string;
+  imageAlt: string;
   note: string;
   duration?: number;
   places: string[];

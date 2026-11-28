@@ -67,7 +67,10 @@ import { formatWhatsAppEnquiry, whatsAppEnquiryUrl } from '../lib/whatsapp-messa
   customCard.setAttribute('aria-labelledby', 'custom-trip-card-title');
   // Reuse trip photos for the collage rather than adding a duplicate image asset.
   const collageImages = TOUR_IMAGES.slice(0, 4)
-    .map((image) => `<img src="assets/${image}" alt="" loading="lazy" width="900" height="1000">`)
+    .map(
+      (image) =>
+        `<img src="assets/${image}" alt="" role="presentation" loading="lazy" width="900" height="1000">`,
+    )
     .join('');
   customCard.innerHTML = `
     <div class="package-visual">
@@ -150,7 +153,7 @@ import { formatWhatsAppEnquiry, whatsAppEnquiryUrl } from '../lib/whatsapp-messa
         <img
           class="vehicle-art"
           src="${v.image}"
-          alt=""
+          alt="Representative ${v.name} vehicle"
           width="680"
           height="380"
           loading="lazy"
