@@ -1,8 +1,11 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import { expectedSitemapUrls, loadTrips } from './site-paths.mjs';
 
 const site = JSON.parse(fs.readFileSync(new URL('../src/site/site.config.json', import.meta.url)));
 const origin = site.url;
+const packages = await loadTrips();
+const deployedTripUrls = [];
 const reviewedDates = JSON.parse(
   fs.readFileSync(new URL('../src/site/content-dates.json', import.meta.url)),
 );
@@ -81,11 +84,15 @@ await check('Mobile hero image has the correct type and cache policy', async () 
   assert.ok(response.headers.get('cache-control').includes('max-age=86400'));
   assert.ok((await response.arrayBuffer()).byteLength > 10000);
 });
-await check('Public business details and all 13 trip pages are available', async () => {
+await check('Public business details and every trip page are available', async () => {
   const response = await request(`${origin}/travel-catalog.json`);
   assert.equal(response.status, 200);
   const catalog = await response.json();
-  assert.equal(catalog.trips.length, 13);
+  assert.deepEqual(
+    catalog.trips.map((trip) => trip.id).sort(),
+    packages.map((trip) => trip.id).sort(),
+  );
+  deployedTripUrls.push(...catalog.trips.map((trip) => trip.url));
   assert.equal(catalog.business.owner, site.ownerName);
   assert.equal(catalog.business.email, site.email);
   assert.equal(catalog.booking.paymentOnWebsite, false);
@@ -117,7 +124,7 @@ await check('Booking rules, readable FAQs and agent information are available', 
 await check('All sitemap URLs return 200 and approved answers are in raw HTML', async () => {
   const sitemap = await (await request(`${origin}/sitemap.xml`)).text();
   const urls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]);
-  assert.equal(urls.length, 24);
+  assert.deepEqual([...urls].sort(), [...expectedSitemapUrls(origin, deployedTripUrls)].sort());
   const answers = JSON.parse(
     fs.readFileSync(new URL('../src/site/search-answers.json', import.meta.url)),
   );

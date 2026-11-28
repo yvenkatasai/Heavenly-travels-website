@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
+import { expectedSitemapUrls, loadTrips, staticPages } from './site-paths.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const dist = path.join(root, 'dist');
@@ -9,8 +10,11 @@ const site = JSON.parse(fs.readFileSync(path.join(root, 'src/site/site.config.js
 const catalog = JSON.parse(read('travel-catalog.json'));
 const sitemap = read('sitemap.xml');
 const home = read('index.html');
-assert.equal(catalog.trips.length, 13);
-assert.equal(new Set(catalog.trips.map((trip) => trip.id)).size, 13);
+const packages = await loadTrips();
+assert.deepEqual(
+  catalog.trips.map((trip) => trip.id).sort(),
+  packages.map((trip) => trip.id).sort(),
+);
 assert.equal(catalog.business.owner, site.ownerName);
 assert.equal(catalog.business.email, site.email);
 assert.deepEqual(catalog.booking.groupSize, { minimum: 2, maximum: 200 });
@@ -23,20 +27,7 @@ assert.ok(
 assert.equal((home.match(/data-package-index=/g) || []).length, 7);
 assert.equal((home.match(/class="faq-item"/g) || []).length, 8);
 
-const documents = [
-  'index.html',
-  'about.html',
-  'trips.html',
-  'booking-information.html',
-  'questions.html',
-  'privacy.html',
-  'vehicles.html',
-  'terms.html',
-  'tirupati-tour-packages.html',
-  'tirumala-tour-packages.html',
-  'tirupati-car-rentals.html',
-  'tirupati-temples.html',
-];
+const documents = [...staticPages];
 for (const trip of catalog.trips) {
   const pathname = new URL(trip.url).pathname;
   const file = `${pathname.slice(1)}.html`;
@@ -115,8 +106,11 @@ for (const file of documents) {
 }
 for (const name of ['cormorant-garamond.woff2', 'dm-sans.woff2'])
   assert.ok(fs.existsSync(path.join(dist, 'assets/fonts', name)));
-assert.equal((sitemap.match(/<loc>/g) || []).length, 24);
-assert.ok(!sitemap.includes('/vehicles'));
+const sitemapUrls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]);
+assert.deepEqual(
+  sitemapUrls.sort(),
+  [...expectedSitemapUrls(site.url, catalog.trips.map((trip) => trip.url))].sort(),
+);
 assert.ok(read('about.html').includes(site.email));
 assert.ok(read('booking-information.html').includes('Cancellations, refunds &amp; date changes'));
 assert.ok(read('vehicles.html').includes('noindex, follow'));
@@ -177,5 +171,5 @@ assert.match(indexNowKey, /^[a-zA-Z0-9-]{8,128}$/);
 assert.equal(read(`${indexNowKey}.txt`).trim(), indexNowKey);
 assert.ok(read('index.html').includes(site.title.replaceAll('&', '&amp;')));
 console.log(
-  'PASS: 13 trips, 24 indexable URLs, approved answers, honest content dates, booking links, local assets and schema.',
+  `PASS: ${catalog.trips.length} trips, ${sitemapUrls.length} indexable URLs, approved answers, honest content dates, booking links, local assets and schema.`,
 );

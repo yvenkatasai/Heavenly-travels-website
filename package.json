@@ -15,6 +15,7 @@
     "typecheck": "tsc --noEmit",
     "verify:production": "node scripts/check-production.mjs",
     "verify:content": "node scripts/check-content.mjs",
+    "test:analytics": "node --test tests/analytics-consent.test.mjs",
     "test:whatsapp": "node --test tests/whatsapp-message.test.mjs",
     "test:indexnow": "node --test tests/indexnow.test.mjs",
     "test:reveals": "node --test tests/package-reveal.test.mjs",
