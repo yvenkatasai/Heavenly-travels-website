@@ -42,7 +42,7 @@ After an approved upload, run `npm.cmd run verify:production`. Before uploading,
 
 ## Public business and discovery content
 
-Edit public business facts in `src/site/site.config.json`, FAQ answers in `src/site/faqs.json`, and canonical trip data in `src/booking/data.ts`. `scripts/build-agent-content.mjs` generates the information pages, thirteen trip detail pages, `travel-catalog.json`, `llms.txt` and `llms-full.txt`. The main build adds metadata, schema, robots instructions and a nineteen-URL sitemap. All are public facts; never add private customer information or authentication material.
+Edit public business facts in `src/site/site.config.json`, FAQ answers in `src/site/faqs.json`, and canonical trip data in `src/booking/data.ts`. `scripts/build-agent-content.mjs` generates the information pages, thirteen trip detail pages, `travel-catalog.json`, `llms.txt` and `llms-full.txt`. The main build adds metadata, schema, robots instructions and a twenty-four-URL sitemap. All are public facts; never add private customer information or authentication material.
 
 Vehicle selection is noindex and unknown URLs return the branded HTTP 404 page. The catalog is read-only custom JSON, not a merchant checkout feed or an implemented commerce protocol. No public prices or online payments are enabled. See `AAO-IMPLEMENTATION.md` for audit scope and `WEBSITE-EDITING-GUIDE.md` for the editing walkthrough.
 
@@ -53,6 +53,10 @@ Do not deploy or change remote configuration without approval from Vamsi.
 Cloudflare serves the HTML, CSS, JavaScript, images, fonts and videos from `dist/` as Worker static assets. The build extracts and minifies page styles and scripts into content-hashed files, preserving script order with `defer` and root-relative font URLs. The booking bundle and stylesheet receive content-hash query strings. Generated `_headers` allows browsers to cache assets for one day; HTML keeps Cloudflare's default revalidation so visitors receive updated bundle references. Give changed media a new filename to avoid stale browser caches. Unknown paths return 404 rather than the homepage.
 
 The approved full-resolution hero masters remain in `src/site/assets/`. The homepage uses lighter `tirumala-hero-mobile-fast.webp` (720 × 1279) and `tirumala-hero-desktop-fast.webp` (1672 × 941) derivatives. Mobile decorative dots render a still texture while idle and animate on touch.
+
+## Bing notifications after deployment
+
+Run `npm.cmd run indexnow:check` to preview new/changed canonical pages, then `npm.cmd run indexnow:submit` after an approved deployment. The helper verifies the live ownership key, sitemap and HTML before notifying IndexNow. HTTP 200/202 acknowledges receipt, not indexing or ranking. See [Bing setup and beginner walkthrough](seo/BING-SETUP.md). Receipts are local and ignored by Git.
 
 ## Licensing
 

@@ -94,6 +94,7 @@ For code or build changes, run typecheck and build. For behavior changes, run th
 - **Hosting target:** Cloudflare Workers static assets
 
 ### Done
+- [x] Added explicit IndexNow preview/submission commands with live ownership/content checks and local deduplication receipts; clarified Tirupati brand metadata and documented Bing Webmaster Tools setup (2026-11-27). Run submission after deployment, never claim an acknowledgement guarantees indexing. Files: scripts/indexnow.mjs, src/site/indexnow.json, tests/indexnow.test.mjs, docs/seo/BING-SETUP.md.
 - [x] Added five owner-approved short answers, four static travel guides, unique metadata checks and manually reviewed modification dates (2026-11-25). Source: search-answers.json, content-dates.json and build-agent-content.mjs. Added consent-gated Analytics with contact-method events and privacy tests; automatic outbound/form measurement is disabled in GA.
 - [x] Applied the approved desktop valley and mobile temple hero images with uncropped proportional fitting and responsive image preloads.
 - [x] Verified the hero update with TypeScript, the production build, and browser checks at 360/390/1440/1920px; correct image selection, full-image fitting and no horizontal overflow passed.
